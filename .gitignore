@@ -23,3 +23,11 @@ test-results/
 *.tsbuildinfo
 .DS_Store
 Thumbs.db
+
+# OpenNext
+.open-next
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example

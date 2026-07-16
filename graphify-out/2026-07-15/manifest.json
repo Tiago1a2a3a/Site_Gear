@@ -10,7 +10,7 @@
     "semantic_hash": "c19cd6fbb8f121207afc1b8916664f09"
   },
   "next-env.d.ts": {
-    "mtime": 1784156598.995922,
+    "mtime": 1784157334.847751,
     "ast_hash": "d0f8375ae1199dc7acd3977fc33b78b8",
     "semantic_hash": "d0f8375ae1199dc7acd3977fc33b78b8"
   },
@@ -65,9 +65,9 @@
     "semantic_hash": ""
   },
   "src/app/(site)/aprendizado/page.tsx": {
-    "mtime": 1784134010.5740895,
-    "ast_hash": "804aa02f8594b5eb11e6ea549b3afb71",
-    "semantic_hash": "804aa02f8594b5eb11e6ea549b3afb71"
+    "mtime": 1784157306.0347126,
+    "ast_hash": "0853f8493d72d015944d9c1362173f76",
+    "semantic_hash": ""
   },
   "src/app/(site)/aprendizado/trilhas/[trilha]/page.tsx": {
     "mtime": 1784155950.3395555,
@@ -205,8 +205,8 @@
     "semantic_hash": "2c6b35e7b1bc66ca29199b4ee3743755"
   },
   "tests/e2e/site-map.spec.ts": {
-    "mtime": 1784156379.8396254,
-    "ast_hash": "f66fb9dd46c8b31974a9dad811c15fc1",
+    "mtime": 1784157299.5101464,
+    "ast_hash": "1a1504b48ff5725196d86a72643e91f6",
     "semantic_hash": ""
   },
   "tests/unit/home.test.tsx": {
@@ -807,6 +807,11 @@
   "public/images/sponsors/verlab.png": {
     "mtime": 1784141042.1780636,
     "ast_hash": "112c67978ca5ce1715349d34f77c1d68",
+    "semantic_hash": ""
+  },
+  "graphify-out/memory/query_20260715_230450_implementar_milestones_7_e_8_consultando_o_grafo_p.md": {
+    "mtime": 1784156690.671847,
+    "ast_hash": "e5718c8054f235dfcfc734aa3d5b94ab",
     "semantic_hash": ""
   }
 }

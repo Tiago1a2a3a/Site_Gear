@@ -43,8 +43,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "content_schemas_slug",
-      "community": 17,
-      "community_name": "types.ts",
+      "community": 5,
+      "community_name": "paths",
       "norm_label": "slug()"
     },
     {
@@ -1462,7 +1462,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_app_site_aprendizado_cursos_page",
-      "community": 18,
+      "community": 21,
       "community_name": "types.ts",
       "norm_label": "page.tsx"
     },
@@ -1473,7 +1473,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "src_app_site_aprendizado_cursos_page_cursospage",
-      "community": 18,
+      "community": 21,
       "community_name": "types.ts",
       "norm_label": "cursospage()"
     },
@@ -1484,19 +1484,30 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_app_site_aprendizado_page",
-      "community": 0,
-      "community_name": "TemporaryPage.tsx",
+      "community": 21,
+      "community_name": "types.ts",
       "norm_label": "page.tsx"
+    },
+    {
+      "label": "areas",
+      "file_type": "code",
+      "source_file": "src/app/(site)/aprendizado/page.tsx",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "src_app_site_aprendizado_page_areas",
+      "community": 21,
+      "community_name": "types.ts",
+      "norm_label": "areas"
     },
     {
       "label": "AprendizadoPage()",
       "file_type": "code",
       "source_file": "src/app/(site)/aprendizado/page.tsx",
-      "source_location": "L3",
+      "source_location": "L24",
       "_origin": "ast",
       "id": "src_app_site_aprendizado_page_aprendizadopage",
-      "community": 0,
-      "community_name": "TemporaryPage.tsx",
+      "community": 21,
+      "community_name": "types.ts",
       "norm_label": "aprendizadopage()"
     },
     {
@@ -1946,7 +1957,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_features_aulas_components_aulabreadcrumbs_aulabreadcrumbs",
-      "community": 17,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "aulabreadcrumbs()"
     },
@@ -2331,7 +2342,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_features_cursos_components_cursocard",
-      "community": 18,
+      "community": 21,
       "community_name": "types.ts",
       "norm_label": "cursocard.tsx"
     },
@@ -2342,7 +2353,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_features_cursos_components_cursocard_cursocard",
-      "community": 18,
+      "community": 21,
       "community_name": "types.ts",
       "norm_label": "cursocard()"
     },
@@ -6736,6 +6747,61 @@
       "norm_label": "source nodes"
     },
     {
+      "label": "query_20260715_230450_implementar_milestones_7_e_8_consultando_o_grafo_p.md",
+      "file_type": "document",
+      "source_file": "graphify-out/memory/query_20260715_230450_implementar_milestones_7_e_8_consultando_o_grafo_p.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "graphify_out_memory_query_20260715_230450_implementar_milestones_7_e_8_consultando_o_grafo_p",
+      "community": 106,
+      "community_name": "Q: Implementar milestones 7 e 8 consultando o grafo primeiro",
+      "norm_label": "query_20260715_230450_implementar_milestones_7_e_8_consultando_o_grafo_p.md"
+    },
+    {
+      "label": "Q: Implementar milestones 7 e 8 consultando o grafo primeiro",
+      "file_type": "document",
+      "source_file": "graphify-out/memory/query_20260715_230450_implementar_milestones_7_e_8_consultando_o_grafo_p.md",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "graphify_out_memory_query_20260715_230450_implementar_milestones_7_e_8_consultando_o_grafo_p_q_implementar_milestones_7_e_8_consultando_o_grafo_primeiro",
+      "community": 106,
+      "community_name": "Q: Implementar milestones 7 e 8 consultando o grafo primeiro",
+      "norm_label": "q: implementar milestones 7 e 8 consultando o grafo primeiro"
+    },
+    {
+      "label": "Answer",
+      "file_type": "document",
+      "source_file": "graphify-out/memory/query_20260715_230450_implementar_milestones_7_e_8_consultando_o_grafo_p.md",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "graphify_out_memory_query_20260715_230450_implementar_milestones_7_e_8_consultando_o_grafo_p_answer",
+      "community": 106,
+      "community_name": "Q: Implementar milestones 7 e 8 consultando o grafo primeiro",
+      "norm_label": "answer"
+    },
+    {
+      "label": "Outcome",
+      "file_type": "document",
+      "source_file": "graphify-out/memory/query_20260715_230450_implementar_milestones_7_e_8_consultando_o_grafo_p.md",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "graphify_out_memory_query_20260715_230450_implementar_milestones_7_e_8_consultando_o_grafo_p_outcome",
+      "community": 106,
+      "community_name": "Q: Implementar milestones 7 e 8 consultando o grafo primeiro",
+      "norm_label": "outcome"
+    },
+    {
+      "label": "Source Nodes",
+      "file_type": "document",
+      "source_file": "graphify-out/memory/query_20260715_230450_implementar_milestones_7_e_8_consultando_o_grafo_p.md",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "graphify_out_memory_query_20260715_230450_implementar_milestones_7_e_8_consultando_o_grafo_p_source_nodes",
+      "community": 106,
+      "community_name": "Q: Implementar milestones 7 e 8 consultando o grafo primeiro",
+      "norm_label": "source nodes"
+    },
+    {
       "label": "comunicacao-serial.mdx",
       "file_type": "document",
       "source_file": "src/content/aprendizado/aulas/comunicacao-serial.mdx",
@@ -9956,11 +10022,22 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/(site)/aprendizado/page.tsx",
-      "source_location": "L3",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_site_aprendizado_page",
       "target": "src_app_site_aprendizado_page_aprendizadopage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(site)/aprendizado/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_site_aprendizado_page",
+      "target": "src_app_site_aprendizado_page_areas",
       "confidence_score": 1.0
     },
     {
@@ -9972,7 +10049,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_site_aprendizado_page",
-      "target": "src_shared_components_layout_temporarypage",
+      "target": "src_shared_components_ui_button",
       "confidence_score": 1.0
     },
     {
@@ -9984,7 +10061,31 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_site_aprendizado_page",
-      "target": "src_shared_components_layout_temporarypage_temporarypage",
+      "target": "src_shared_components_ui_button_button",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(site)/aprendizado/page.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_site_aprendizado_page",
+      "target": "src_shared_components_ui_card",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(site)/aprendizado/page.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_site_aprendizado_page",
+      "target": "src_shared_components_ui_card_card",
       "confidence_score": 1.0
     },
     {
@@ -16756,6 +16857,50 @@
       "_origin": "ast",
       "source": "graphify_out_memory_query_20260715_220936_use_o_graphify_para_entender_a_arquitetura_e_imple_q_use_o_graphify_para_entender_a_arquitetura_e_implemente_a_milestone_6_deste_projeto_consulte_o_grafo_primeiro_fa\u00e7a_as_altera\u00e7\u00f5es_necess\u00e1rias_e_rode_os_testes",
       "target": "graphify_out_memory_query_20260715_220936_use_o_graphify_para_entender_a_arquitetura_e_imple_source_nodes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "graphify-out/memory/query_20260715_230450_implementar_milestones_7_e_8_consultando_o_grafo_p.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "graphify_out_memory_query_20260715_230450_implementar_milestones_7_e_8_consultando_o_grafo_p",
+      "target": "graphify_out_memory_query_20260715_230450_implementar_milestones_7_e_8_consultando_o_grafo_p_q_implementar_milestones_7_e_8_consultando_o_grafo_primeiro",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "graphify-out/memory/query_20260715_230450_implementar_milestones_7_e_8_consultando_o_grafo_p.md",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "graphify_out_memory_query_20260715_230450_implementar_milestones_7_e_8_consultando_o_grafo_p_q_implementar_milestones_7_e_8_consultando_o_grafo_primeiro",
+      "target": "graphify_out_memory_query_20260715_230450_implementar_milestones_7_e_8_consultando_o_grafo_p_answer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "graphify-out/memory/query_20260715_230450_implementar_milestones_7_e_8_consultando_o_grafo_p.md",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "graphify_out_memory_query_20260715_230450_implementar_milestones_7_e_8_consultando_o_grafo_p_q_implementar_milestones_7_e_8_consultando_o_grafo_primeiro",
+      "target": "graphify_out_memory_query_20260715_230450_implementar_milestones_7_e_8_consultando_o_grafo_p_outcome",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "graphify-out/memory/query_20260715_230450_implementar_milestones_7_e_8_consultando_o_grafo_p.md",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "graphify_out_memory_query_20260715_230450_implementar_milestones_7_e_8_consultando_o_grafo_p_q_implementar_milestones_7_e_8_consultando_o_grafo_primeiro",
+      "target": "graphify_out_memory_query_20260715_230450_implementar_milestones_7_e_8_consultando_o_grafo_p_source_nodes",
       "confidence_score": 1.0
     },
     {

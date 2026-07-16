@@ -10,9 +10,9 @@
     "semantic_hash": "c19cd6fbb8f121207afc1b8916664f09"
   },
   "next-env.d.ts": {
-    "mtime": 1784157334.847751,
-    "ast_hash": "d0f8375ae1199dc7acd3977fc33b78b8",
-    "semantic_hash": "d0f8375ae1199dc7acd3977fc33b78b8"
+    "mtime": 1784160352.7810838,
+    "ast_hash": "2a74d3909800ca5467fa83b0ab4a4890",
+    "semantic_hash": ""
   },
   "next.config.ts": {
     "mtime": 1784131411.8671513,
@@ -20,8 +20,8 @@
     "semantic_hash": "daad32b4de0b92afe04301ebf0a6cc76"
   },
   "package.json": {
-    "mtime": 1784138932.2281222,
-    "ast_hash": "59beb899e08b386663158720fafc200b",
+    "mtime": 1784158192.0023954,
+    "ast_hash": "2934cfeadee5bb8d0a853978616d42c8",
     "semantic_hash": ""
   },
   "playwright.config.ts": {
@@ -40,13 +40,13 @@
     "semantic_hash": ""
   },
   "src/app/(site)/aprendizado/aulas/busca/page.tsx": {
-    "mtime": 1784134010.6016579,
-    "ast_hash": "0b09672f2cafa74f537fcfa072b9ce20",
-    "semantic_hash": "0b09672f2cafa74f537fcfa072b9ce20"
+    "mtime": 1784158563.1136048,
+    "ast_hash": "d568a2fe64c3b5e2e88b262d11e526df",
+    "semantic_hash": ""
   },
   "src/app/(site)/aprendizado/aulas/page.tsx": {
-    "mtime": 1784153027.2565086,
-    "ast_hash": "4bd382c8ec2c8a19827d667159a074f0",
+    "mtime": 1784158633.1981096,
+    "ast_hash": "c29f11c2f21ca510fd08a093689c0f14",
     "semantic_hash": ""
   },
   "src/app/(site)/aprendizado/cursos/[curso]/page.tsx": {
@@ -55,13 +55,13 @@
     "semantic_hash": ""
   },
   "src/app/(site)/aprendizado/cursos/busca/page.tsx": {
-    "mtime": 1784134010.5897474,
-    "ast_hash": "fa8b46313418c017fbb2c5ecb517736c",
-    "semantic_hash": "fa8b46313418c017fbb2c5ecb517736c"
+    "mtime": 1784158563.0933082,
+    "ast_hash": "228a9e388f6f5b4272b8e2b823491e1d",
+    "semantic_hash": ""
   },
   "src/app/(site)/aprendizado/cursos/page.tsx": {
-    "mtime": 1784155950.2395575,
-    "ast_hash": "34127b9b8f5f098c5db9851d4685c1ab",
+    "mtime": 1784158633.2046783,
+    "ast_hash": "526701c78e4c61f680a842a3664c53e4",
     "semantic_hash": ""
   },
   "src/app/(site)/aprendizado/page.tsx": {
@@ -75,13 +75,13 @@
     "semantic_hash": ""
   },
   "src/app/(site)/aprendizado/trilhas/busca/page.tsx": {
-    "mtime": 1784134010.581355,
-    "ast_hash": "1fa2b051223604585b3449810f38d968",
-    "semantic_hash": "1fa2b051223604585b3449810f38d968"
+    "mtime": 1784158563.0813167,
+    "ast_hash": "1bb7d1d8c1b893f00713416db71faa13",
+    "semantic_hash": ""
   },
   "src/app/(site)/aprendizado/trilhas/page.tsx": {
-    "mtime": 1784155950.3120794,
-    "ast_hash": "9c0a28f0ad7de66f1b316f81268097a4",
+    "mtime": 1784158633.2046783,
+    "ast_hash": "73678b81e78b3f26fcf99c853839a2a4",
     "semantic_hash": ""
   },
   "src/app/(site)/layout.tsx": {
@@ -100,8 +100,8 @@
     "semantic_hash": "8cb1314ee3c8960397b3c3bf3cb31aa8"
   },
   "src/app/(site)/page.tsx": {
-    "mtime": 1784150654.1983051,
-    "ast_hash": "090acfb7a1afdc6b3f14ef38f7277c80",
+    "mtime": 1784159652.6968234,
+    "ast_hash": "a90b91647c39fed8248d8376f3f4a7e7",
     "semantic_hash": ""
   },
   "src/app/(site)/patrocinadores/page.tsx": {
@@ -115,14 +115,14 @@
     "semantic_hash": "7bcf99a3d449b057c866b23879679a47"
   },
   "src/app/(site)/projetos/[projeto]/page.tsx": {
-    "mtime": 1784134010.6164262,
-    "ast_hash": "0149fe3d6fb6585eec113adede02cdb5",
-    "semantic_hash": "0149fe3d6fb6585eec113adede02cdb5"
+    "mtime": 1784159769.2444153,
+    "ast_hash": "bb44a20f7afa9df12c26ff183bae2265",
+    "semantic_hash": ""
   },
   "src/app/(site)/projetos/page.tsx": {
-    "mtime": 1784134010.614413,
-    "ast_hash": "8de704a06b548ff1510a2a69685bc05e",
-    "semantic_hash": "8de704a06b548ff1510a2a69685bc05e"
+    "mtime": 1784159701.8526556,
+    "ast_hash": "e8d34f7d68907610a7918c628ac18b0f",
+    "semantic_hash": ""
   },
   "src/app/(site)/sobre/page.tsx": {
     "mtime": 1784134010.6312351,
@@ -160,9 +160,9 @@
     "semantic_hash": "e2ebd7ddedcadeeadbf819c35985c768"
   },
   "src/features/projetos/types.ts": {
-    "mtime": 1784132024.75709,
-    "ast_hash": "e2ebd7ddedcadeeadbf819c35985c768",
-    "semantic_hash": "e2ebd7ddedcadeeadbf819c35985c768"
+    "mtime": 1784159583.2334797,
+    "ast_hash": "4ba3ca6205279d8f6e3ab66a8464810d",
+    "semantic_hash": ""
   },
   "src/features/trilhas/types.ts": {
     "mtime": 1784155637.058667,
@@ -195,8 +195,8 @@
     "semantic_hash": ""
   },
   "tests/e2e/home.spec.ts": {
-    "mtime": 1784137516.4816964,
-    "ast_hash": "70038013501f843bca5e2803f0d66226",
+    "mtime": 1784159913.5740142,
+    "ast_hash": "e94b26759a53049435483f87bf0ea161",
     "semantic_hash": ""
   },
   "tests/e2e/responsive-navigation.spec.ts": {
@@ -205,13 +205,13 @@
     "semantic_hash": "2c6b35e7b1bc66ca29199b4ee3743755"
   },
   "tests/e2e/site-map.spec.ts": {
-    "mtime": 1784157299.5101464,
-    "ast_hash": "1a1504b48ff5725196d86a72643e91f6",
+    "mtime": 1784159757.073867,
+    "ast_hash": "4d31fda9bc221f8b23e495628a7e2c50",
     "semantic_hash": ""
   },
   "tests/unit/home.test.tsx": {
-    "mtime": 1784137563.0721426,
-    "ast_hash": "a2476c2480ce684ba111f4ffb8a78978",
+    "mtime": 1784159757.073867,
+    "ast_hash": "b086436eec9d7b6795acfc12947df088",
     "semantic_hash": ""
   },
   "tests/unit/site-navigation.test.ts": {
@@ -475,8 +475,8 @@
     "semantic_hash": ""
   },
   "agent.md": {
-    "mtime": 1784152483.1612184,
-    "ast_hash": "1e6937157327a88a5e14a1d9083e2e20",
+    "mtime": 1784161005.7220347,
+    "ast_hash": "d1357664e2b7ddceb824fac11f732fa0",
     "semantic_hash": ""
   },
   "docs/baselines/m5-content.md": {
@@ -690,8 +690,8 @@
     "semantic_hash": ""
   },
   "src/content/projetos/robo-exemplo.mdx": {
-    "mtime": 1784138971.6570804,
-    "ast_hash": "86b5cc88649382a9467e31cc762da894",
+    "mtime": 1784160011.4848232,
+    "ast_hash": "061e9fe6bd5acc7c24a66e0a4792d095",
     "semantic_hash": ""
   },
   "src/features/aulas/README.md": {
@@ -700,8 +700,8 @@
     "semantic_hash": ""
   },
   "src/features/busca/README.md": {
-    "mtime": 1784133305.1947997,
-    "ast_hash": "54af75d86e341881e5481bc2b8e70f3f",
+    "mtime": 1784158480.9036872,
+    "ast_hash": "358018ba4013fb48418e72c008ed7867",
     "semantic_hash": ""
   },
   "src/features/cursos/README.md": {
@@ -725,8 +725,8 @@
     "semantic_hash": ""
   },
   "src/features/projetos/README.md": {
-    "mtime": 1784133305.2320795,
-    "ast_hash": "b68cf5e67fa624df4efe80ce9733508d",
+    "mtime": 1784159652.6968234,
+    "ast_hash": "fee9bd6f82da8835da893a524b63bc61",
     "semantic_hash": ""
   },
   "src/features/trilhas/README.md": {
@@ -812,6 +812,116 @@
   "graphify-out/memory/query_20260715_230450_implementar_milestones_7_e_8_consultando_o_grafo_p.md": {
     "mtime": 1784156690.671847,
     "ast_hash": "e5718c8054f235dfcfc734aa3d5b94ab",
+    "semantic_hash": ""
+  },
+  "src/features/busca/components/BuscaLocal.tsx": {
+    "mtime": 1784158860.8166094,
+    "ast_hash": "0555d8729af1102a4175090574eb1b9a",
+    "semantic_hash": ""
+  },
+  "src/features/busca/components/FilterDrawer.tsx": {
+    "mtime": 1784158621.7103329,
+    "ast_hash": "cb321a225c4894313ee0e6384991e782",
+    "semantic_hash": ""
+  },
+  "src/features/busca/components/FilterPanel.tsx": {
+    "mtime": 1784158527.9033706,
+    "ast_hash": "bef0584aed8ce200cd778b4664fc0697",
+    "semantic_hash": ""
+  },
+  "src/features/busca/components/ResultList.tsx": {
+    "mtime": 1784158527.9265988,
+    "ast_hash": "bc19c4042a8137e8ac20bc28642a6c90",
+    "semantic_hash": ""
+  },
+  "src/features/busca/components/SearchBar.tsx": {
+    "mtime": 1784158527.9388473,
+    "ast_hash": "9a821bd697122840008c40ad9e3a5d18",
+    "semantic_hash": ""
+  },
+  "src/features/busca/data/indices.ts": {
+    "mtime": 1784158860.8108575,
+    "ast_hash": "26fd8a0db6b3fc110f3d9084584f493c",
+    "semantic_hash": ""
+  },
+  "src/features/busca/data/motor.ts": {
+    "mtime": 1784158860.8108575,
+    "ast_hash": "4be9d47a6b1c75af827d021db1e2f37a",
+    "semantic_hash": ""
+  },
+  "src/features/busca/types.ts": {
+    "mtime": 1784158366.251418,
+    "ast_hash": "7d3adbbec21111d7c7ace43adb518350",
+    "semantic_hash": ""
+  },
+  "src/features/projetos/components/ProjetoCard.tsx": {
+    "mtime": 1784159701.646592,
+    "ast_hash": "5a4b680dd44be130fbd640a2b6b98143",
+    "semantic_hash": ""
+  },
+  "src/features/projetos/components/ProjetoConteudoMDX.tsx": {
+    "mtime": 1784159701.6798947,
+    "ast_hash": "03ae3bd9c74c0f34d648649faefb0a37",
+    "semantic_hash": ""
+  },
+  "src/features/projetos/components/ProjetoDetalhe.tsx": {
+    "mtime": 1784160011.4951253,
+    "ast_hash": "11aa1ce91425e24de8b193c1dc5e8b02",
+    "semantic_hash": ""
+  },
+  "src/features/projetos/components/ProjetoGaleria.tsx": {
+    "mtime": 1784159701.7486808,
+    "ast_hash": "04020757aab78fadc80805e10b1a6060",
+    "semantic_hash": ""
+  },
+  "src/features/projetos/components/ProjetoTecnologias.tsx": {
+    "mtime": 1784159583.243513,
+    "ast_hash": "008b0504f774851d0d25634a4da82769",
+    "semantic_hash": ""
+  },
+  "src/features/projetos/data/projetos.ts": {
+    "mtime": 1784159583.243513,
+    "ast_hash": "cfe342cb451e727dfb5948cf7359dd74",
+    "semantic_hash": ""
+  },
+  "src/shared/components/ui/VideoEmbed.tsx": {
+    "mtime": 1784159701.8240037,
+    "ast_hash": "99602354f86879f2fd3b655bb9ec3c91",
+    "semantic_hash": ""
+  },
+  "tests/e2e/busca.spec.ts": {
+    "mtime": 1784158794.1784701,
+    "ast_hash": "9cfb1f65a8261386b190c28195f09410",
+    "semantic_hash": ""
+  },
+  "tests/e2e/projetos.spec.ts": {
+    "mtime": 1784160020.5183215,
+    "ast_hash": "e7418b6280c885d8d06dd6525462fbd6",
+    "semantic_hash": ""
+  },
+  "tests/unit/busca.test.ts": {
+    "mtime": 1784158860.8186214,
+    "ast_hash": "637284b254806353241e4f8e179b52fa",
+    "semantic_hash": ""
+  },
+  "tests/unit/projetos.test.tsx": {
+    "mtime": 1784160200.632295,
+    "ast_hash": "3c582e7e3a5a45a58049dcd835d17c1c",
+    "semantic_hash": ""
+  },
+  "PARTE A/produtacao ate 1 pausa.md": {
+    "mtime": 1784161005.7191105,
+    "ast_hash": "1732be775678ba8296f07217f0ee877d",
+    "semantic_hash": ""
+  },
+  "graphify-out/memory/query_20260715_234330_use_o_graphify_para_entender_a_arquitetura_e_imple.md": {
+    "mtime": 1784159010.1380944,
+    "ast_hash": "31e5b4d7bdc7543f76568a89fd4e4d2c",
+    "semantic_hash": ""
+  },
+  "graphify-out/memory/query_20260716_000504_use_o_graphify_para_entender_a_arquitetura_e_imple.md": {
+    "mtime": 1784160304.2253206,
+    "ast_hash": "866cbbb9c43998052309138389280d53",
     "semantic_hash": ""
   }
 }

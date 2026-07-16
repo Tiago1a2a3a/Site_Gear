@@ -1,16 +1,16 @@
 # Graph Report - GEAR_SITE  (2026-07-15)
 
 ## Corpus Check
-- 148 files · ~58,793 words
+- 170 files · ~64,714 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 700 nodes · 840 edges · 107 communities (69 shown, 38 thin omitted)
-- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 5 edges (avg confidence: 0.68)
+- 798 nodes · 1055 edges · 111 communities (75 shown, 36 thin omitted)
+- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 7 edges (avg confidence: 0.63)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `f5ae9a57`
+- Built from commit: `91a795c2`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -30,6 +30,7 @@
 - postcss.config.mjs
 - .prettierrc.json
 - site-map.spec.ts
+- types.ts
 - types.ts
 - types.ts
 - types.ts
@@ -95,6 +96,8 @@
 - README.md
 - README.md
 - Q: Implementar milestones 7 e 8 consultando o grafo primeiro
+- Q: Use o Graphify para entender a arquitetura e implemente a milestone 9 deste projeto.
+- Q: Use o Graphify para entender a arquitetura e implemente a milestone 10 deste projeto.
 
 ## God Nodes (most connected - your core abstractions)
 1. `Plano de Desenvolvimento — Portal GEAR` - 19 edges
@@ -102,11 +105,11 @@
 3. `14. Roadmap do Projeto` - 17 edges
 4. `compilerOptions` - 16 edges
 5. `Documentação de Arquitetura — Portal GEAR` - 16 edges
-6. `scripts` - 14 edges
-7. `TemporaryPage()` - 12 edges
-8. `Badge()` - 11 edges
-9. `Regras do agente — Portal GEAR` - 10 edges
-10. `Card()` - 9 edges
+6. `Badge()` - 15 edges
+7. `scripts` - 14 edges
+8. `Card()` - 11 edges
+9. `Regras do agente — Portal GEAR` - 11 edges
+10. `prepararBusca()` - 10 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `AulaPreRequisitos()` --indirect_call--> `slug()`  [INFERRED]
@@ -123,7 +126,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (107 total, 38 thin omitted)
+## Communities (111 total, 36 thin omitted)
 
 ### Community 1 - "devDependencies"
 Cohesion: 0.06
@@ -150,8 +153,8 @@ Cohesion: 0.07
 Nodes (27): **10\. Controle de Acesso**, **11\. Desenvolvimento**, **12\. Escalabilidade**, **13\. Dependências**, **14\. Convenções**, **15\. Documentação**, **16\. Alterações na Arquitetura**, **17\. Diretrizes para IA** (+19 more)
 
 ### Community 7 - "dependencies"
-Cohesion: 0.10
-Nodes (18): Branches e commits, Como contribuir, Conteudo, Pull Requests, Uso responsavel de IA, Verificacoes locais, Campos e formatos, Diagnóstico (+10 more)
+Cohesion: 0.05
+Nodes (35): Branches e commits, Como contribuir, Conteudo, Pull Requests, Uso responsavel de IA, Verificacoes locais, Baseline do pipeline de conteúdo — M5, Campos e formatos (+27 more)
 
 ### Community 17 - "types.ts"
 Cohesion: 0.10
@@ -161,9 +164,13 @@ Nodes (28): AulaPage(), AulaPageProps, generateMetadata(), generateStaticParams(
 Cohesion: 0.14
 Nodes (22): CursoPage(), CursoPageProps, generateMetadata(), generateStaticParams(), AulaBreadcrumbs(), CursoAulaLink(), CursoAulas(), CursoBreadcrumbs() (+14 more)
 
+### Community 20 - "types.ts"
+Cohesion: 0.11
+Nodes (32): minisearch, minisearch, BuscaDeAulasPage(), BuscaDeCursosPage(), BuscaDeTrilhasPage(), BuscaLocal(), BuscaLocalProps, rotulos (+24 more)
+
 ### Community 21 - "types.ts"
-Cohesion: 0.09
-Nodes (29): CursosPage(), areas, TrilhasPage(), generateMetadata(), generateStaticParams(), TrilhaPage(), TrilhaPageProps, Home() (+21 more)
+Cohesion: 0.07
+Nodes (37): CursosPage(), areas, Home(), ProjetosPage(), generateMetadata(), generateStaticParams(), ProjetoPage(), ProjetoPageProps (+29 more)
 
 ### Community 24 - "4. Backlog completo"
 Cohesion: 0.11
@@ -174,8 +181,8 @@ Cohesion: 0.12
 Nodes (17): 14. Roadmap do Projeto, Backlog futuro (fora do escopo desta versão, mas compatível com a arquitetura), Milestone 0 — Planejamento executável, Milestone 10 — Projetos, Milestone 11 — Institucional completo e patrocinadores, Milestone 12 — Notícias, Milestone 13 — Qualidade e publicação, Milestone 14 — Conteúdo real e lançamento (+9 more)
 
 ### Community 26 - "Regras do agente — Portal GEAR"
-Cohesion: 0.15
-Nodes (12): 1. Hierarquia das fontes de verdade, 2. Roteamento obrigatório pelo Graphify, 3. Leitura proporcional das fontes oficiais, 4. Gates e limites de implementação, 5. Segurança de conteúdo e dados, 6. Qualidade antes de declarar concluído, 7. Processo de trabalho curto, 8. Condições para parar e pedir direção (+4 more)
+Cohesion: 0.14
+Nodes (13): 10. Objetivo, 1. Hierarquia das fontes de verdade, 2. Roteamento obrigatório pelo Graphify, 3. Leitura proporcional das fontes oficiais, 4. Gates e limites de implementação, 5. Segurança de conteúdo e dados, 6. Qualidade antes de declarar concluído, 7. Processo de trabalho curto (+5 more)
 
 ### Community 27 - "2.4 Decisões adotadas e recomendações técnicas"
 Cohesion: 0.17
@@ -190,7 +197,7 @@ Cohesion: 0.25
 Nodes (7): Checklist, Como validar, Escopo, Impactos e riscos, Item do backlog, O que mudou, Uso de IA
 
 ### Community 30 - "Plano de Desenvolvimento — Portal GEAR"
-Cohesion: 0.25
+Cohesion: 0.29
 Nodes (7): 14. Riscos técnicos do projeto, 15. Boas práticas durante o desenvolvimento, 2. Ordem correta de implementação, 3. Divisão em Milestones, 8. Convenções de nomenclatura, Plano de Desenvolvimento — Portal GEAR, Referências operacionais externas
 
 ### Community 31 - "11. Estratégia de testes"
@@ -289,29 +296,45 @@ Nodes (4): 5.1 Papéis, 5.2 Matriz de permissões, 5.3 Como uma pessoa se torna 
 Cohesion: 0.50
 Nodes (3): Camada compartilhada, Primitivos disponíveis, Tokens visuais
 
+### Community 56 - "m5-content.md"
+Cohesion: 0.20
+Nodes (14): TrilhasPage(), generateMetadata(), generateStaticParams(), TrilhaPage(), TrilhaPageProps, TrilhaCard(), TrilhaDetalhe(), TrilhaPercurso() (+6 more)
+
+### Community 79 - "README.md"
+Cohesion: 0.50
+Nodes (3): Busca, Contrato e indexação, Limites para reavaliar a busca client-side
+
 ### Community 106 - "Q: Implementar milestones 7 e 8 consultando o grafo primeiro"
 Cohesion: 0.40
 Nodes (4): Answer, Outcome, Q: Implementar milestones 7 e 8 consultando o grafo primeiro, Source Nodes
 
+### Community 107 - "Q: Use o Graphify para entender a arquitetura e implemente a milestone 9 deste projeto."
+Cohesion: 0.40
+Nodes (4): Answer, Outcome, Q: Use o Graphify para entender a arquitetura e implemente a milestone 9 deste projeto., Source Nodes
+
+### Community 108 - "Q: Use o Graphify para entender a arquitetura e implemente a milestone 10 deste projeto."
+Cohesion: 0.40
+Nodes (4): Answer, Outcome, Q: Use o Graphify para entender a arquitetura e implemente a milestone 10 deste projeto., Source Nodes
+
 ## Knowledge Gaps
-- **361 isolated node(s):** `plugins`, `publicationStatus`, `difficulty`, `trailItem`, `titledUrl` (+356 more)
+- **394 isolated node(s):** `plugins`, `publicationStatus`, `difficulty`, `trailItem`, `titledUrl` (+389 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **38 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **36 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `slug()` connect `paths` to `types.ts`, `types.ts`?**
-  _High betweenness centrality (0.025) - this node is a cross-community bridge._
-- **Why does `Documentação de Arquitetura — Portal GEAR` connect `Documentação de Arquitetura — Portal GEAR` to `11. Design System`, `13. Checklist Técnico`, `10. Wireframes ASCII`, `1. Visão Geral`, `4. Fluxos dos Usuários`, `8. Organização das Trilhas/Cursos/Aulas`, `9. Organização dos Componentes`, `12. Estratégia de Escalabilidade`, `5. Papéis e permissões`, `14. Roadmap do Projeto`, `2.4 Decisões adotadas e recomendações técnicas`, `7. Organização dos Dados`?**
-  _High betweenness centrality (0.016) - this node is a cross-community bridge._
-- **Why does `AulaPreRequisitos()` connect `types.ts` to `paths`?**
-  _High betweenness centrality (0.014) - this node is a cross-community bridge._
+- **Why does `minisearch` connect `types.ts` to `scripts`?**
+  _High betweenness centrality (0.050) - this node is a cross-community bridge._
+- **Why does `dependencies` connect `scripts` to `types.ts`?**
+  _High betweenness centrality (0.050) - this node is a cross-community bridge._
 - **What connects `plugins`, `publicationStatus`, `difficulty` to the rest of the system?**
-  _361 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `TemporaryPage.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.11666666666666667 - nodes in this community are weakly interconnected._
+  _394 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `devDependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.05714285714285714 - nodes in this community are weakly interconnected._
 - **Should `scripts` be split into smaller, more focused modules?**
   _Cohesion score 0.06896551724137931 - nodes in this community are weakly interconnected._
+- **Should `layout.tsx` be split into smaller, more focused modules?**
+  _Cohesion score 0.11954022988505747 - nodes in this community are weakly interconnected._
+- **Should `compilerOptions` be split into smaller, more focused modules?**
+  _Cohesion score 0.05128205128205128 - nodes in this community are weakly interconnected._

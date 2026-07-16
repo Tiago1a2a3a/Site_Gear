@@ -1,11 +1,11 @@
 # Graph Report - GEAR_SITE  (2026-07-15)
 
 ## Corpus Check
-- 147 files · ~58,496 words
+- 148 files · ~58,793 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 694 nodes · 833 edges · 106 communities (68 shown, 38 thin omitted)
+- 700 nodes · 840 edges · 107 communities (69 shown, 38 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 5 edges (avg confidence: 0.68)
 - Token cost: 0 input · 0 output
 
@@ -94,6 +94,7 @@
 - README.md
 - README.md
 - README.md
+- Q: Implementar milestones 7 e 8 consultando o grafo primeiro
 
 ## God Nodes (most connected - your core abstractions)
 1. `Plano de Desenvolvimento — Portal GEAR` - 19 edges
@@ -102,18 +103,18 @@
 4. `compilerOptions` - 16 edges
 5. `Documentação de Arquitetura — Portal GEAR` - 16 edges
 6. `scripts` - 14 edges
-7. `TemporaryPage()` - 13 edges
+7. `TemporaryPage()` - 12 edges
 8. `Badge()` - 11 edges
 9. `Regras do agente — Portal GEAR` - 10 edges
-10. `7. Organização dos Dados` - 9 edges
+10. `Card()` - 9 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `assertNoPrerequisiteCycle()` --indirect_call--> `slug()`  [INFERRED]
-  content.validation.ts → content.schemas.ts
-- `resolverAulasDoCurso()` --indirect_call--> `slug()`  [INFERRED]
-  src/features/cursos/data/cursos.ts → content.schemas.ts
 - `AulaPreRequisitos()` --indirect_call--> `slug()`  [INFERRED]
   src/features/aulas/components/AulaPreRequisitos.tsx → content.schemas.ts
+- `resolverAulasDoCurso()` --indirect_call--> `slug()`  [INFERRED]
+  src/features/cursos/data/cursos.ts → content.schemas.ts
+- `assertNoPrerequisiteCycle()` --indirect_call--> `slug()`  [INFERRED]
+  content.validation.ts → content.schemas.ts
 - `prepare()` --calls--> `validateContent()`  [EXTRACTED]
   velite.config.mts → content.validation.ts
 - `prepare()` --calls--> `prepareContent()`  [EXTRACTED]
@@ -122,7 +123,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (106 total, 38 thin omitted)
+## Communities (107 total, 38 thin omitted)
 
 ### Community 1 - "devDependencies"
 Cohesion: 0.06
@@ -142,7 +143,7 @@ Nodes (38): dom, dom.iterable, esnext, **/*.mts, .next/dev/types/**/*.ts, next-e
 
 ### Community 5 - "paths"
 Cohesion: 0.06
-Nodes (40): ContentCollections, Course, courseFrontmatterSchema, courses, courseSchema, difficulty, download, Lesson (+32 more)
+Nodes (41): ContentCollections, Course, courseFrontmatterSchema, courses, courseSchema, difficulty, download, Lesson (+33 more)
 
 ### Community 6 - "include"
 Cohesion: 0.07
@@ -154,15 +155,15 @@ Nodes (18): Branches e commits, Como contribuir, Conteudo, Pull Requests, Uso re
 
 ### Community 17 - "types.ts"
 Cohesion: 0.10
-Nodes (30): slug(), AulaPage(), AulaPageProps, generateMetadata(), generateStaticParams(), AulasPage(), AulasPageProps, AulaBanner() (+22 more)
+Nodes (28): AulaPage(), AulaPageProps, generateMetadata(), generateStaticParams(), AulasPage(), AulasPageProps, AulaBanner(), AulaCard() (+20 more)
 
 ### Community 18 - "types.ts"
-Cohesion: 0.13
-Nodes (23): CursoPage(), CursoPageProps, generateMetadata(), generateStaticParams(), CursosPage(), CursoAulaLink(), CursoAulas(), CursoBreadcrumbs() (+15 more)
+Cohesion: 0.14
+Nodes (22): CursoPage(), CursoPageProps, generateMetadata(), generateStaticParams(), AulaBreadcrumbs(), CursoAulaLink(), CursoAulas(), CursoBreadcrumbs() (+14 more)
 
 ### Community 21 - "types.ts"
-Cohesion: 0.10
-Nodes (26): TrilhasPage(), generateMetadata(), generateStaticParams(), TrilhaPage(), TrilhaPageProps, Home(), TrilhaCard(), TrilhaDetalhe() (+18 more)
+Cohesion: 0.09
+Nodes (29): CursosPage(), areas, TrilhasPage(), generateMetadata(), generateStaticParams(), TrilhaPage(), TrilhaPageProps, Home() (+21 more)
 
 ### Community 24 - "4. Backlog completo"
 Cohesion: 0.11
@@ -288,25 +289,29 @@ Nodes (4): 5.1 Papéis, 5.2 Matriz de permissões, 5.3 Como uma pessoa se torna 
 Cohesion: 0.50
 Nodes (3): Camada compartilhada, Primitivos disponíveis, Tokens visuais
 
+### Community 106 - "Q: Implementar milestones 7 e 8 consultando o grafo primeiro"
+Cohesion: 0.40
+Nodes (4): Answer, Outcome, Q: Implementar milestones 7 e 8 consultando o grafo primeiro, Source Nodes
+
 ## Knowledge Gaps
-- **357 isolated node(s):** `plugins`, `publicationStatus`, `difficulty`, `trailItem`, `titledUrl` (+352 more)
+- **361 isolated node(s):** `plugins`, `publicationStatus`, `difficulty`, `trailItem`, `titledUrl` (+356 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **38 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `slug()` connect `types.ts` to `types.ts`, `paths`?**
+- **Why does `slug()` connect `paths` to `types.ts`, `types.ts`?**
   _High betweenness centrality (0.025) - this node is a cross-community bridge._
 - **Why does `Documentação de Arquitetura — Portal GEAR` connect `Documentação de Arquitetura — Portal GEAR` to `11. Design System`, `13. Checklist Técnico`, `10. Wireframes ASCII`, `1. Visão Geral`, `4. Fluxos dos Usuários`, `8. Organização das Trilhas/Cursos/Aulas`, `9. Organização dos Componentes`, `12. Estratégia de Escalabilidade`, `5. Papéis e permissões`, `14. Roadmap do Projeto`, `2.4 Decisões adotadas e recomendações técnicas`, `7. Organização dos Dados`?**
   _High betweenness centrality (0.016) - this node is a cross-community bridge._
+- **Why does `AulaPreRequisitos()` connect `types.ts` to `paths`?**
+  _High betweenness centrality (0.014) - this node is a cross-community bridge._
 - **What connects `plugins`, `publicationStatus`, `difficulty` to the rest of the system?**
-  _357 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _361 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `TemporaryPage.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.10826210826210826 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.11666666666666667 - nodes in this community are weakly interconnected._
 - **Should `devDependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.05714285714285714 - nodes in this community are weakly interconnected._
 - **Should `scripts` be split into smaller, more focused modules?**
   _Cohesion score 0.06896551724137931 - nodes in this community are weakly interconnected._
-- **Should `layout.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.11954022988505747 - nodes in this community are weakly interconnected._

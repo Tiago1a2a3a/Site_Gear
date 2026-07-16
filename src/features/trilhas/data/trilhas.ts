@@ -11,7 +11,9 @@ export function ordenarTrilhas(trilhasParaOrdenar: readonly Trilha[]) {
 }
 
 export function listarTrilhasPublicadas() {
-  return ordenarTrilhas(trails);
+  return ordenarTrilhas(
+    trails.filter((trilha) => trilha.status === "publicado"),
+  );
 }
 
 export function encontrarTrilhaPorSlug(slug: string) {

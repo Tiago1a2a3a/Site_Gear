@@ -1,6 +1,10 @@
 import MiniSearch, { type Options, type SearchResult } from "minisearch";
 
+import { normalizarTermoBusca } from "@shared/lib/busca";
+
 import type { DocumentoBusca, NomeFiltroBusca } from "../types";
+
+export { normalizarTermoBusca } from "@shared/lib/busca";
 
 const camposIndexados = ["titulo", "descricao", "conteudo", "tags"];
 const camposArmazenados = [
@@ -14,13 +18,6 @@ const camposArmazenados = [
   "tipo",
   "titulo",
 ];
-
-export function normalizarTermoBusca(termo: string) {
-  return termo
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLocaleLowerCase("pt-BR");
-}
 
 export function opcoesDoIndice(): Options<DocumentoBusca> {
   return {

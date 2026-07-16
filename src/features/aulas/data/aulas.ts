@@ -11,7 +11,7 @@ export function ordenarAulas(aulas: readonly Aula[]) {
 }
 
 export function listarAulasPublicadas() {
-  return ordenarAulas(lessons);
+  return ordenarAulas(lessons.filter((aula) => aula.status === "publicado"));
 }
 
 export function encontrarAulaPorSlug(slug: string) {

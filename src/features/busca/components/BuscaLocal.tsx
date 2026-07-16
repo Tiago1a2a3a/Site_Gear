@@ -11,6 +11,10 @@ import {
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 import { Button } from "@shared/components/ui/Button";
+import {
+  Breadcrumbs,
+  type BreadcrumbItem,
+} from "@shared/components/ui/Breadcrumbs";
 
 import { FilterDrawer } from "./FilterDrawer";
 import { FilterPanel } from "./FilterPanel";
@@ -25,6 +29,7 @@ import type {
   DocumentoBusca,
   FiltroBusca,
   NomeFiltroBusca,
+  TipoBusca,
   TipoDocumentoBusca,
 } from "../types";
 
@@ -32,7 +37,7 @@ type BuscaLocalProps = Readonly<{
   documentos: readonly DocumentoBusca[];
   filtros: readonly FiltroBusca[];
   indiceSerializado: string;
-  tipo: TipoDocumentoBusca;
+  tipo: TipoBusca;
 }>;
 
 const rotulos: Record<TipoDocumentoBusca, string> = {
@@ -149,13 +154,28 @@ export function BuscaLocal({
   const fecharDrawer = useCallback(() => setDrawerAberto(false), []);
 
   const estadoInicial = !termo.trim() && !haFiltros;
-  const rotulo = rotulos[tipo];
+  const buscaGeral = tipo === "geral";
+  const rotulo = buscaGeral ? "todos os conteúdos" : rotulos[tipo];
+  const breadcrumbs: BreadcrumbItem[] = [
+    { href: "/aprendizado", label: "Aprendizado" },
+  ];
+
+  if (!buscaGeral) {
+    breadcrumbs.push({
+      href: `/aprendizado/${tipo}s`,
+      label: rotulos[tipo],
+    });
+  }
+
+  breadcrumbs.push({ label: "Busca" });
 
   return (
     <div className="search-page">
+      <div className="learning-list-breadcrumbs">
+        <Breadcrumbs items={breadcrumbs} />
+      </div>
       <header className="page-heading">
-        <p className="status-label">Aprendizado / {rotulo} / Busca</p>
-        <h1>Busca de {rotulo}</h1>
+        <h1>{buscaGeral ? "Pesquisar conteúdos" : `Busca de ${rotulo}`}</h1>
         <p>
           Esta busca consulta exclusivamente {rotulo.toLocaleLowerCase("pt-BR")}{" "}
           publicados.

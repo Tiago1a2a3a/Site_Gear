@@ -15,7 +15,7 @@ const plannedRoutes = [
   ["/projetos", "Projetos"],
   ["/projetos/robo-exemplo", "Robô móvel de demonstração"],
   ["/noticias", "Notícias"],
-  ["/noticias/exemplo", "Notícia"],
+  ["/noticias/fundacao-mdx", "Portal adota conteúdo estruturado em MDX"],
   ["/sobre", "Sobre o GEAR"],
   ["/patrocinadores", "Patrocinadores e parceiros"],
   ["/privacidade", "Privacidade"],
@@ -48,7 +48,11 @@ test("links internos da navegação principal e do rodapé são válidos", async
         new Set(
           links
             .map((link) => link.getAttribute("href"))
-            .filter((href) => Boolean(href) && href !== "/404"),
+            .filter(
+              (href) =>
+                Boolean(href) &&
+                !["/404", "/login", "/meu-aprendizado"].includes(href!),
+            ),
         ),
       ),
     );
@@ -112,6 +116,23 @@ test("grupo de avisos usa a 404 enquanto o link oficial não existe", async ({
   await expect(
     page.getByRole("heading", { level: 1, name: "Página não encontrada" }),
   ).toBeVisible();
+});
+
+test("acessos pessoais provisórios usam a 404 até entrarem no roadmap", async ({
+  page,
+  request,
+}) => {
+  for (const rota of ["/meu-aprendizado", "/login"]) {
+    expect((await request.get(rota)).status()).toBe(404);
+  }
+
+  await page.goto("/");
+  await expect(
+    page.getByRole("link", { name: "Meu aprendizado" }).first(),
+  ).toHaveAttribute("href", "/meu-aprendizado");
+  await expect(
+    page.getByRole("link", { name: "Login" }).first(),
+  ).toHaveAttribute("href", "/login");
 });
 
 test("Aprendizado apresenta as três formas de explorar conteúdo", async ({

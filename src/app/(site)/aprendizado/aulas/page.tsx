@@ -6,6 +6,7 @@ import {
   paginarAulas,
 } from "@features/aulas/data/aulas";
 import { Button } from "@shared/components/ui/Button";
+import { Breadcrumbs } from "@shared/components/ui/Breadcrumbs";
 
 type AulasPageProps = Readonly<{
   searchParams: Promise<{ pagina?: string }>;
@@ -18,8 +19,15 @@ export default async function AulasPage({ searchParams }: AulasPageProps) {
 
   return (
     <div className="lessons-page">
+      <div className="learning-list-breadcrumbs">
+        <Breadcrumbs
+          items={[
+            { href: "/aprendizado", label: "Aprendizado" },
+            { label: "Aulas" },
+          ]}
+        />
+      </div>
       <header className="page-heading">
-        <p className="status-label">Aprendizado / Aulas</p>
         <h1>Aulas</h1>
         <p>
           Conteúdos práticos e independentes para aprender robótica, programação

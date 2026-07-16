@@ -32,7 +32,13 @@ describe("Home", () => {
         name: "Robótica feita para compartilhar.",
       }),
     ).toBeDefined();
-    expect(screen.getAllByRole("heading", { level: 3 })).toHaveLength(5);
+    expect(
+      screen.getByRole("heading", {
+        level: 2,
+        name: "Pessoas que movem o grupo.",
+      }),
+    ).toBeDefined();
+    expect(screen.getByText("Equipe em atualização")).toBeDefined();
     expect(screen.getByText("Trilhas em preparação")).toBeDefined();
     expect(screen.getByText("Robô móvel de demonstração")).toBeDefined();
     expect(screen.getByRole("link", { name: "Ver projeto" })).toHaveProperty(

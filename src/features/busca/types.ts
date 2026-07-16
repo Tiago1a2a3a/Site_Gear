@@ -1,4 +1,5 @@
 export type TipoDocumentoBusca = "aula" | "curso" | "trilha";
+export type TipoBusca = TipoDocumentoBusca | "geral";
 
 export type DocumentoBusca = Readonly<{
   area?: string;
@@ -14,7 +15,8 @@ export type DocumentoBusca = Readonly<{
   titulo: string;
 }>;
 
-export type NomeFiltroBusca = "area" | "categoria" | "dificuldade" | "tag";
+export type NomeFiltroBusca =
+  "area" | "categoria" | "dificuldade" | "tag" | "tipo";
 export type FiltroBusca = Readonly<{
   nome: NomeFiltroBusca;
   opcoes: readonly string[];

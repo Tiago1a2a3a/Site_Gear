@@ -1,15 +1,7 @@
 import { Badge } from "@shared/components/ui/Badge";
+import { formatarDataLonga } from "@shared/lib/formatar-data";
 
 import type { Aula } from "../types";
-
-const formatadorDeData = new Intl.DateTimeFormat("pt-BR", {
-  dateStyle: "long",
-  timeZone: "UTC",
-});
-
-function formatarData(data: string) {
-  return formatadorDeData.format(new Date(`${data}T00:00:00Z`));
-}
 
 export function AulaMetadados({ aula }: Readonly<{ aula: Aula }>) {
   return (
@@ -18,11 +10,11 @@ export function AulaMetadados({ aula }: Readonly<{ aula: Aula }>) {
       {aula.categoria ? <span>{aula.categoria}</span> : null}
       <span>Por {aula.autores.join(", ")}</span>
       <time dateTime={aula.dataPublicacao}>
-        Publicada em {formatarData(aula.dataPublicacao)}
+        Publicada em {formatarDataLonga(aula.dataPublicacao)}
       </time>
       {aula.dataAtualizacao ? (
         <time dateTime={aula.dataAtualizacao}>
-          Atualizada em {formatarData(aula.dataAtualizacao)}
+          Atualizada em {formatarDataLonga(aula.dataAtualizacao)}
         </time>
       ) : null}
     </div>

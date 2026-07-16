@@ -207,3 +207,70 @@ Se a auditoria mostrar que M6, M7, M8 ou M9 já satisfazem seus gates, registrar
 - [Guia editorial](../docs/content-editorial.md)
 - [Baseline M5](../docs/baselines/m5-content.md)
 - [Relatório do grafo](../graphify-out/GRAPH_REPORT.md)
+
+## 10. Adendo visual e de navegação — 16 de julho de 2026
+
+> **Escopo deste adendo:** estas decisões vieram de testes visuais locais aprovados pelo responsável do projeto. Elas refinam a aparência e a navegação do Portal, mas não substituem gates formais de Milestones. Preservar estas escolhas salvo nova orientação explícita.
+
+### 10.1 Direção visual aprovada
+
+- O Portal deve ter mais identidade GEAR: vermelho GEAR, grafite, branco e cinza claro. O azul não deve ser a cor de destaque principal.
+- Em telas desktop, a área útil deve ser ampla; evitar grandes faixas vazias nas laterais. A leitura de textos continua limitada por colunas internas, sem esticar parágrafos até a borda.
+- O fundo global deve permanecer **cinza liso**. Foram testadas texturas/padrões técnicos no fundo e elas foram rejeitadas por parecerem densas ou distrativas. Não reintroduzir padrão no fundo sem nova aprovação.
+- Usar animações discretas, com pouco deslocamento e fade curto. O objetivo é dar vida ao site, não criar sensação de página deslizando ou de efeitos excessivos.
+- Respeitar `prefers-reduced-motion`: pessoas que pedem menos movimento devem ver o conteúdo sem animações de entrada.
+
+### 10.2 Home / landing page
+
+- A Home usa uma largura de container maior e uma paleta em vermelho, grafite, branco e cinza claro.
+- O hero deixou de ser estático: ele é um carrossel de conteúdo completo, trocando título, descrição, CTAs e pose do mascote a cada **5 segundos**. Os pontos permitem troca manual; o ciclo pausa quando há interação.
+- O hero usa a logo compacta somente no painel visual interno; o Header usa a logo principal tradicional.
+- As seções da Home possuem linhas divisórias em vermelho claro, levemente mais grossas. Não usar `>` no fim das linhas e não adicionar linha inferior extra no último bloco.
+- Os rótulos técnicos das seções (`01 / MISSÃO`, `02 / ÁREAS DE PESQUISA` etc.) foram aumentados levemente e devem manter o estilo monoespaçado/vermelho.
+- A Home usa entrada de conteúdo no scroll para as seções principais: fade curto + pequeno deslocamento vertical, uma única vez por bloco.
+
+### 10.3 Patrocinadores e rodapé
+
+- A faixa de patrocinadores deve ser compacta, no fim da página, com logos clicáveis e sem ocupar a altura de uma seção grande.
+- O fundo grafite para patrocinadores foi testado e rejeitado porque prejudicava a leitura de logos escuras/azuis. A versão aprovada usa fundo cinza muito claro, cartões brancos e borda vermelha discreta no topo.
+- Visualmente, mostrar só as logos; os nomes continuam disponíveis para acessibilidade.
+
+### 10.4 Header e acessos provisórios
+
+- Manter a logo principal tradicional no Header.
+- Agrupar os links principais no lado direito, próximos aos acessos de conta.
+- A ordem visual aprovada é: links principais → `Meu aprendizado` → `Login`.
+- `Meu aprendizado` aponta temporariamente para `/meu-aprendizado`, que deve exibir o 404 até existir a funcionalidade real. `Login` também continua provisório em `/login`.
+- No mobile, `Meu aprendizado` deve continuar acessível pelo menu, sem comprimir o Header.
+
+### 10.5 Página principal de Aprendizado
+
+Estrutura aprovada, na ordem:
+
+1. cabeçalho de Aprendizado;
+2. carrossel compacto de Cursos em destaque;
+3. bloco `Novos conteúdos`;
+4. bloco `Explorar` com Aulas, Cursos e Trilhas.
+
+Regras específicas:
+
+- O carrossel de cursos mostra apenas **imagem de capa/banner + título**. Não adicionar descrição, CTA ou card complexo dentro do slide. O slide inteiro é clicável e abre o curso.
+- Exibir até quatro cursos marcados com `destaque: true`; trocar a cada **4 segundos**. A imagem vem de `imagemCapa`, portanto o upload/troca da capa continua sendo responsabilidade do conteúdo do Curso, não de um cadastro duplicado do carrossel.
+- `Novos conteúdos` é uma lista compacta de cinco links, sem imagens/cards grandes, podendo misturar Curso, Trilha e Aula. O título fica à esquerda; o mascote em pose pensativa aparece à direita.
+- Cursos e Trilhas podem usar `dataPublicacao` para participar da lista de conteúdos recentes. Conteúdo deve estar `publicado`; rascunhos não podem aparecer na vitrine, listagens ou busca.
+- O bloco `Explorar` mantém Aulas, Cursos e Trilhas e recebe as mesmas linhas e animações suaves da linguagem visual da Home.
+
+### 10.6 Busca unificada e breadcrumbs
+
+- Acima dos três cards de `Explorar`, manter o botão `Pesquisar todos os conteúdos` levando a `/aprendizado/busca`.
+- A busca unificada consulta Aulas, Cursos e Trilhas publicados. Deve permitir filtro por tipo de conteúdo, dificuldade, categoria, tags e área de trilha quando aplicável.
+- As buscas específicas continuam existindo; a busca geral não as substitui.
+- Em toda página de Aprendizado que represente uma lista ou busca, caminhos visíveis devem ser breadcrumbs reais, não apenas texto decorativo. Cada nível anterior deve ser clicável.
+- Exemplos: `APRENDIZADO / CURSOS`, `APRENDIZADO / AULAS / BUSCA` e `APRENDIZADO / BUSCA`. Páginas internas de Aula, Curso e Trilha já seguem o mesmo princípio.
+
+### 10.7 Orientação para mudanças futuras
+
+- Antes de alterar visual aprovado, discutir a intenção com o responsável e preferir testes locais reversíveis.
+- Reutilizar os componentes de carrossel, busca, breadcrumbs e revelação no scroll já criados; não duplicar a fonte de conteúdo em componentes visuais.
+- Quando uma capa real de Curso for aprovada, substituir o arquivo/caminho de `imagemCapa` no MDX correspondente. Não editar o carrossel para trocar apenas a imagem.
+- Manter a verificação proporcional após mudanças: `npm run build` e `npm test` passaram após este conjunto de ajustes visuais e de navegação.

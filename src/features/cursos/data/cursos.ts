@@ -14,7 +14,13 @@ export function ordenarCursos(cursos: readonly Curso[]) {
 }
 
 export function listarCursosPublicados() {
-  return ordenarCursos(courses);
+  return ordenarCursos(courses.filter((curso) => curso.status === "publicado"));
+}
+
+export function listarCursosEmDestaque(limite = 4) {
+  return listarCursosPublicados()
+    .filter((curso) => curso.destaque)
+    .slice(0, Math.max(0, limite));
 }
 
 export function encontrarCursoPorSlug(slug: string) {

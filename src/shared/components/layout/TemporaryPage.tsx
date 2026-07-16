@@ -1,7 +1,10 @@
 import Link from "next/link";
 
+import { RevealOnScroll } from "@shared/components/ui/RevealOnScroll";
+
 type TemporaryPageProps = Readonly<{
   description: string;
+  reveal?: boolean;
   title: string;
   returnHref?: `/${string}` | "/";
   returnLabel?: string;
@@ -9,11 +12,12 @@ type TemporaryPageProps = Readonly<{
 
 export function TemporaryPage({
   description,
+  reveal = false,
   title,
   returnHref = "/",
   returnLabel = "Voltar para a página inicial",
 }: TemporaryPageProps) {
-  return (
+  const content = (
     <section aria-labelledby="temporary-page-title" className="temporary-page">
       <p className="status-label">Área em preparação</p>
       <h1 id="temporary-page-title">{title}</h1>
@@ -27,4 +31,6 @@ export function TemporaryPage({
       </Link>
     </section>
   );
+
+  return reveal ? <RevealOnScroll>{content}</RevealOnScroll> : content;
 }

@@ -1,14 +1,22 @@
 import { TrilhaCard } from "@features/trilhas/components/TrilhaCard";
 import { listarTrilhasPublicadas } from "@features/trilhas/data/trilhas";
 import { Button } from "@shared/components/ui/Button";
+import { Breadcrumbs } from "@shared/components/ui/Breadcrumbs";
 
 export default function TrilhasPage() {
   const trilhas = listarTrilhasPublicadas();
 
   return (
     <div className="learning-list-page">
+      <div className="learning-list-breadcrumbs">
+        <Breadcrumbs
+          items={[
+            { href: "/aprendizado", label: "Aprendizado" },
+            { label: "Trilhas" },
+          ]}
+        />
+      </div>
       <header className="page-heading">
-        <p className="status-label">Aprendizado / Trilhas</p>
         <h1>Trilhas de aprendizado</h1>
         <p>
           Percursos que combinam cursos e aulas diretas para orientar seu

@@ -1,65 +1,66 @@
 import MiniSearch from "minisearch";
 
+import { extrairTextoDoMdx } from "@shared/lib/texto-mdx";
+
 import { courses, lessons, trails } from "../../../../.velite";
 
 import type {
   DocumentoBusca,
   FiltroBusca,
   NomeFiltroBusca,
+  TipoBusca,
   TipoDocumentoBusca,
 } from "../types";
 import { opcoesDoIndice } from "./motor";
-
-function textoDoMdx(compilado: string) {
-  return compilado
-    .replace(/\\n/g, " ")
-    .replace(/[^\p{L}\p{N}\s-]+/gu, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
 
 export function criarDocumentosDeBusca(): Record<
   TipoDocumentoBusca,
   DocumentoBusca[]
 > {
   return {
-    trilha: trails.map((trilha) => ({
-      area: trilha.area,
-      conteudo: textoDoMdx(trilha.conteudo),
-      descricao: [trilha.descricaoCurta, trilha.descricaoLonga]
-        .filter(Boolean)
-        .join(" "),
-      href: `/aprendizado/trilhas/${trilha.slug}`,
-      id: `trilha:${trilha.slug}`,
-      slug: trilha.slug,
-      tags: [],
-      tipo: "trilha",
-      titulo: trilha.titulo,
-    })),
-    curso: courses.map((curso) => ({
-      categoria: curso.categoria,
-      conteudo: textoDoMdx(curso.conteudo),
-      descricao: curso.descricao,
-      dificuldade: curso.dificuldade,
-      href: `/aprendizado/cursos/${curso.slug}`,
-      id: `curso:${curso.slug}`,
-      slug: curso.slug,
-      tags: curso.tags ?? [],
-      tipo: "curso",
-      titulo: curso.titulo,
-    })),
-    aula: lessons.map((aula) => ({
-      categoria: aula.categoria,
-      conteudo: textoDoMdx(aula.conteudo),
-      descricao: aula.resumo,
-      dificuldade: aula.dificuldade,
-      href: `/aprendizado/aulas/${aula.slug}`,
-      id: `aula:${aula.slug}`,
-      slug: aula.slug,
-      tags: aula.tags ?? [],
-      tipo: "aula",
-      titulo: aula.titulo,
-    })),
+    trilha: trails
+      .filter((trilha) => trilha.status === "publicado")
+      .map((trilha) => ({
+        area: trilha.area,
+        conteudo: extrairTextoDoMdx(trilha.conteudo),
+        descricao: [trilha.descricaoCurta, trilha.descricaoLonga]
+          .filter(Boolean)
+          .join(" "),
+        href: `/aprendizado/trilhas/${trilha.slug}`,
+        id: `trilha:${trilha.slug}`,
+        slug: trilha.slug,
+        tags: [],
+        tipo: "trilha",
+        titulo: trilha.titulo,
+      })),
+    curso: courses
+      .filter((curso) => curso.status === "publicado")
+      .map((curso) => ({
+        categoria: curso.categoria,
+        conteudo: extrairTextoDoMdx(curso.conteudo),
+        descricao: curso.descricao,
+        dificuldade: curso.dificuldade,
+        href: `/aprendizado/cursos/${curso.slug}`,
+        id: `curso:${curso.slug}`,
+        slug: curso.slug,
+        tags: curso.tags ?? [],
+        tipo: "curso",
+        titulo: curso.titulo,
+      })),
+    aula: lessons
+      .filter((aula) => aula.status === "publicado")
+      .map((aula) => ({
+        categoria: aula.categoria,
+        conteudo: extrairTextoDoMdx(aula.conteudo),
+        descricao: aula.resumo,
+        dificuldade: aula.dificuldade,
+        href: `/aprendizado/aulas/${aula.slug}`,
+        id: `aula:${aula.slug}`,
+        slug: aula.slug,
+        tags: aula.tags ?? [],
+        tipo: "aula",
+        titulo: aula.titulo,
+      })),
   };
 }
 
@@ -82,17 +83,25 @@ function valoresUnicos(
 }
 
 export function criarFiltros(
-  tipo: TipoDocumentoBusca,
+  tipo: TipoBusca,
   documentos: readonly DocumentoBusca[],
 ): FiltroBusca[] {
   const campos: ReadonlyArray<Readonly<[NomeFiltroBusca, string]>> =
     tipo === "trilha"
       ? [["area", "Área"]]
-      : [
-          ["dificuldade", "Dificuldade"],
-          ["categoria", "Categoria"],
-          ["tag", "Tags"],
-        ];
+      : tipo === "geral"
+        ? [
+            ["tipo", "Tipo de conteúdo"],
+            ["dificuldade", "Dificuldade"],
+            ["categoria", "Categoria"],
+            ["tag", "Tags"],
+            ["area", "Área"],
+          ]
+        : [
+            ["dificuldade", "Dificuldade"],
+            ["categoria", "Categoria"],
+            ["tag", "Tags"],
+          ];
   return campos
     .map(([nome, rotulo]) => ({
       nome,
@@ -102,8 +111,12 @@ export function criarFiltros(
     .filter((filtro) => filtro.opcoes.length > 0);
 }
 
-export function prepararBusca(tipo: TipoDocumentoBusca) {
-  const documentos = criarDocumentosDeBusca()[tipo];
+export function prepararBusca(tipo: TipoBusca) {
+  const documentosPorTipo = criarDocumentosDeBusca();
+  const documentos =
+    tipo === "geral"
+      ? Object.values(documentosPorTipo).flat()
+      : documentosPorTipo[tipo];
   const indice = criarIndice(documentos);
   return {
     documentos,

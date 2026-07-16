@@ -1,14 +1,22 @@
 import { CursoCard } from "@features/cursos/components/CursoCard";
 import { listarCursosPublicados } from "@features/cursos/data/cursos";
 import { Button } from "@shared/components/ui/Button";
+import { Breadcrumbs } from "@shared/components/ui/Breadcrumbs";
 
 export default function CursosPage() {
   const cursos = listarCursosPublicados();
 
   return (
     <div className="learning-list-page">
+      <div className="learning-list-breadcrumbs">
+        <Breadcrumbs
+          items={[
+            { href: "/aprendizado", label: "Aprendizado" },
+            { label: "Cursos" },
+          ]}
+        />
+      </div>
       <header className="page-heading">
-        <p className="status-label">Aprendizado / Cursos</p>
         <h1>Cursos</h1>
         <p>
           Sequências ordenadas de aulas para desenvolver uma habilidade técnica

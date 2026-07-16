@@ -1,5 +1,6 @@
 import { ProjetoCard } from "@features/projetos/components/ProjetoCard";
 import { listarProjetos } from "@features/projetos/data/projetos";
+import { RevealOnScroll } from "@shared/components/ui/RevealOnScroll";
 
 export default function ProjetosPage() {
   const projetos = listarProjetos();
@@ -12,21 +13,23 @@ export default function ProjetosPage() {
         <p>Protótipos, pesquisas e soluções construídas pelo GEAR.</p>
       </header>
 
-      {projetos.length ? (
-        <div className="project-grid">
-          {projetos.map((projeto) => (
-            <ProjetoCard key={projeto.slug} projeto={projeto} />
-          ))}
-        </div>
-      ) : (
-        <div className="empty-state card">
-          <h2>Nenhum projeto publicado ainda</h2>
-          <p>
-            Os projetos aparecerão aqui quando estiverem prontos para
-            apresentação.
-          </p>
-        </div>
-      )}
+      <RevealOnScroll>
+        {projetos.length ? (
+          <div className="project-grid">
+            {projetos.map((projeto) => (
+              <ProjetoCard key={projeto.slug} projeto={projeto} />
+            ))}
+          </div>
+        ) : (
+          <div className="empty-state card">
+            <h2>Nenhum projeto publicado ainda</h2>
+            <p>
+              Os projetos aparecerão aqui quando estiverem prontos para
+              apresentação.
+            </p>
+          </div>
+        )}
+      </RevealOnScroll>
     </div>
   );
 }

@@ -13,6 +13,6 @@ Os apoiadores atuais são apresentados com o mesmo peso visual. O campo `order`
 serve somente para manter a exibição determinística e não representa uma
 hierarquia de importância.
 
-Para atualizar, altere a entrada existente sem mudar sua ordem casualmente. Para remover, apague a entrada e o arquivo de logo que não tiver outro uso. Uma lista vazia é válida e faz o `SponsorStrip` desaparecer por completo, sem deixar título ou espaço órfão.
+Para atualizar, altere a entrada existente sem mudar sua ordem casualmente. Para remover, apague a entrada e o arquivo de logo que não tiver outro uso. Uma lista vazia é válida e faz o `SponsorStrip` desaparecer por completo, sem deixar título ou espaço órfão. O `SponsorGrid` da página `/patrocinadores` consome a mesma função `getSponsors()`, portanto nome, logo, link, nível e ordem nunca devem ser duplicados na rota.
 
 Manutenção: responsabilidade atual de @Tiago1a2a3a; revise a Parte A antes de alterar.

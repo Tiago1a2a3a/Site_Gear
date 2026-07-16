@@ -1,6 +1,22 @@
 {
-  "generated_at": "2026-07-15T23:50:52.139196+00:00",
+  "generated_at": "2026-07-16T15:55:09.686546+00:00",
   "nodes": {
+    "content_schemas_projectfrontmatterschema": {
+      "code_fingerprint": "0c09af7693ac06ad2826b641013f276fda520df12b41c89fb94dc8730d399f93",
+      "label": "projectFrontmatterSchema",
+      "last": "2026-07-16T00:05:04.230164+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-16T00:05:04.230164+00:00",
+          "outcome": "useful",
+          "q": "Use o Graphify para entender a arquitetura e implemente a milestone 10 deste projeto."
+        }
+      ],
+      "score": 0.984871327,
+      "source_file": "content.schemas.ts",
+      "status": "tentative",
+      "uses": 1
+    },
     "package_scripts": {
       "code_fingerprint": "381feb9b26e4d958a654dea6866c2c904f02e0ce139155ebe8ace91a9b759c2d",
       "label": "scripts",
@@ -12,13 +28,13 @@
           "q": "Use o Graphify para entender a arquitetura e implemente a milestone 6 deste projeto. Consulte o grafo primeiro, faça as alterações necessárias e rode os testes."
         }
       ],
-      "score": 0.998376584,
+      "score": 0.983048444,
       "source_file": "package.json",
       "status": "tentative",
       "uses": 1
     },
     "src_app_site_page_home": {
-      "code_fingerprint": "78e7e1ae3b34b06cc2c641fbb2b098873198d14f0382c17ec9512f9701db5b34",
+      "code_fingerprint": "25d54da99ebd470190c1121c04c1c2829328b7f38e730d244615aed08ac5bc42",
       "label": "Home()",
       "last": "2026-07-15T21:33:38.851860+00:00",
       "provenance": [
@@ -28,7 +44,7 @@
           "q": "Atualizar a Home com a logo principal, mascote, apoiadores e redes sociais do GEAR antes da M6"
         }
       ],
-      "score": 0.997800694,
+      "score": 0.982481395,
       "source_file": "src/app/(site)/page.tsx",
       "status": "tentative",
       "uses": 1
@@ -44,7 +60,7 @@
           "q": "Implementar milestones 7 e 8 consultando o grafo primeiro"
         }
       ],
-      "score": 0.999261807,
+      "score": 0.983920076,
       "source_file": "src/features/aulas/components/AulaBreadcrumbs.tsx",
       "status": "tentative",
       "uses": 1
@@ -60,7 +76,7 @@
           "q": "Implementar milestones 7 e 8 consultando o grafo primeiro"
         }
       ],
-      "score": 0.999261807,
+      "score": 0.983920076,
       "source_file": "src/features/cursos/components/CursoAulas.tsx",
       "status": "tentative",
       "uses": 1
@@ -76,7 +92,7 @@
           "q": "Implementar milestones 7 e 8 consultando o grafo primeiro"
         }
       ],
-      "score": 0.999261807,
+      "score": 0.983920076,
       "source_file": "src/features/cursos/components/CursoDetalhe.tsx",
       "status": "tentative",
       "uses": 1
@@ -92,7 +108,7 @@
           "q": "Implementar milestones 7 e 8 consultando o grafo primeiro"
         }
       ],
-      "score": 0.999261807,
+      "score": 0.983920076,
       "source_file": "src/features/trilhas/components/TrilhaDetalhe.tsx",
       "status": "tentative",
       "uses": 1
@@ -108,7 +124,7 @@
           "q": "Implementar milestones 7 e 8 consultando o grafo primeiro"
         }
       ],
-      "score": 0.999261807,
+      "score": 0.983920076,
       "source_file": "src/features/trilhas/components/TrilhaPercurso.tsx",
       "status": "tentative",
       "uses": 1
@@ -124,13 +140,13 @@
           "q": "Atualizar a Home com a logo principal, mascote, apoiadores e redes sociais do GEAR antes da M6"
         }
       ],
-      "score": 0.997800694,
+      "score": 0.982481395,
       "source_file": "src/shared/components/layout/Footer.tsx",
       "status": "tentative",
       "uses": 1
     },
     "src_shared_components_layout_header_header": {
-      "code_fingerprint": "931be58f09ae0448d0450f49dc39ed0f854ae75a9a749972f3e1d2eadfccc7ea",
+      "code_fingerprint": "b6d0b295e320d984453a8a6d825b3a45f6232dfa51edcbcb60ed7daa85344a83",
       "label": "Header()",
       "last": "2026-07-15T21:33:38.851860+00:00",
       "provenance": [
@@ -140,13 +156,13 @@
           "q": "Atualizar a Home com a logo principal, mascote, apoiadores e redes sociais do GEAR antes da M6"
         }
       ],
-      "score": 0.997800694,
+      "score": 0.982481395,
       "source_file": "src/shared/components/layout/Header.tsx",
       "status": "tentative",
       "uses": 1
     },
     "src_shared_components_layout_temporarypage": {
-      "code_fingerprint": "6002e4c0bde9b4e03c5b660616fddd17c2643f965893d6bd7d7fef88140b9934",
+      "code_fingerprint": "56c62b18ab394fc218cbd82569e637d860c819b765a7a7b8d9783fdebfc36f7f",
       "label": "TemporaryPage.tsx",
       "last": "2026-07-15T22:09:36.497823+00:00",
       "provenance": [
@@ -156,7 +172,7 @@
           "q": "Use o Graphify para entender a arquitetura e implemente a milestone 6 deste projeto. Consulte o grafo primeiro, faça as alterações necessárias e rode os testes."
         }
       ],
-      "score": 0.998376584,
+      "score": 0.983048444,
       "source_file": "src/shared/components/layout/TemporaryPage.tsx",
       "status": "tentative",
       "uses": 1
@@ -172,7 +188,7 @@
           "q": "Atualizar a Home com a logo principal, mascote, apoiadores e redes sociais do GEAR antes da M6"
         }
       ],
-      "score": 0.997800694,
+      "score": 0.982481395,
       "source_file": "src/shared/config/site.ts",
       "status": "tentative",
       "uses": 1
@@ -188,7 +204,7 @@
           "q": "Use o Graphify para entender a arquitetura e implemente a milestone 6 deste projeto. Consulte o grafo primeiro, faça as alterações necessárias e rode os testes."
         }
       ],
-      "score": 0.998376584,
+      "score": 0.983048444,
       "source_file": "tests/e2e/responsive-navigation.spec.ts",
       "status": "tentative",
       "uses": 1
@@ -204,7 +220,7 @@
           "q": "Use o Graphify para entender a arquitetura e implemente a milestone 6 deste projeto. Consulte o grafo primeiro, faça as alterações necessárias e rode os testes."
         }
       ],
-      "score": 0.998376584,
+      "score": 0.983048444,
       "source_file": "tsconfig.json",
       "status": "tentative",
       "uses": 1

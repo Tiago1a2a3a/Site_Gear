@@ -48,26 +48,39 @@ export function Header() {
           />
         </Link>
 
-        <nav aria-label="Navegação principal" className="desktop-navigation">
-          <ul className="navigation-list">
-            {siteConfig.mainNavigation.map((item) => {
-              const isCurrent = isCurrentSection(pathname, item.href);
+        <div className="header-actions">
+          <nav aria-label="Navegação principal" className="desktop-navigation">
+            <ul className="navigation-list">
+              {siteConfig.mainNavigation.map((item) => {
+                const isCurrent = isCurrentSection(pathname, item.href);
 
-              return (
-                <li key={item.href}>
-                  <Link
-                    aria-current={pathname === item.href ? "page" : undefined}
-                    className="navigation-link"
-                    data-current={isCurrent || undefined}
-                    href={item.href}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
+                return (
+                  <li key={item.href}>
+                    <Link
+                      aria-current={pathname === item.href ? "page" : undefined}
+                      className="navigation-link"
+                      data-current={isCurrent || undefined}
+                      href={item.href}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+
+          <Link
+            className="navigation-link my-learning-link"
+            href="/meu-aprendizado"
+          >
+            Meu aprendizado
+          </Link>
+
+          <Link className="login-link" href="/login">
+            Login
+          </Link>
+        </div>
 
         <button
           aria-controls="mobile-navigation"
@@ -107,6 +120,15 @@ export function Header() {
                   </li>
                 );
               })}
+              <li>
+                <Link
+                  className="navigation-link mobile-navigation-link"
+                  href="/meu-aprendizado"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Meu aprendizado
+                </Link>
+              </li>
             </ul>
           </Container>
         </nav>

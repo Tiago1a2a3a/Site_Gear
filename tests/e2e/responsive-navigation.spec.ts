@@ -23,7 +23,7 @@ test("menu móvel abre e fecha por teclado sem prender o foco", async ({
 
   const firstLink = page
     .getByRole("navigation", { name: "Navegação principal móvel" })
-    .getByRole("link", { name: "Aprendizado" });
+    .getByRole("link", { name: "Aprendizado", exact: true });
   await expect(firstLink).toBeFocused();
 
   await page.keyboard.press("Escape");

@@ -2,6 +2,7 @@ import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
 
 import { SponsorStrip } from "@features/patrocinadores/components/SponsorStrip";
+import { SponsorGrid } from "@features/patrocinadores/components/SponsorGrid";
 import { getSponsors } from "@features/patrocinadores/data/sponsors";
 import type { Sponsor } from "@features/patrocinadores/types";
 
@@ -62,5 +63,20 @@ describe("patrocinadores", () => {
 
     expect(screen.getAllByRole("listitem")).toHaveLength(4);
     expect(screen.queryByText("Parceiro institucional")).toBeNull();
+  });
+
+  it("reutiliza os mesmos dados na faixa e na grade expandida", () => {
+    const { rerender } = render(<SponsorStrip sponsors={sponsors} />);
+    const linksDaFaixa = screen
+      .getAllByRole("link")
+      .map((link) => link.getAttribute("href"));
+
+    rerender(<SponsorGrid sponsors={sponsors} />);
+    const linksDaGrade = screen
+      .getAllByRole("link")
+      .map((link) => link.getAttribute("href"));
+
+    expect(linksDaGrade).toEqual(linksDaFaixa);
+    expect(screen.getByText("Institucional")).toBeDefined();
   });
 });

@@ -38,6 +38,7 @@ export const trailFrontmatterSchema = s.object({
   imagemCapa: publicPath(),
   area: nonEmptyText(),
   ordem: s.number().int().nonnegative(),
+  dataPublicacao: isoDate().optional(),
   itens: s.array(trailItem).min(1),
   status: publicationStatus,
 });
@@ -51,6 +52,8 @@ export const courseFrontmatterSchema = s.object({
   titulo: nonEmptyText(),
   descricao: nonEmptyText(),
   imagemCapa: publicPath(),
+  dataPublicacao: isoDate().optional(),
+  destaque: s.boolean().optional(),
   dificuldade: difficulty,
   categoria: nonEmptyText().optional(),
   tags: s.array(nonEmptyText()).optional(),

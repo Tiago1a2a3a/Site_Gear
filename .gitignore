@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Next.js output
+.next/
+out/
+
+# Test and coverage output
+coverage/
+playwright-report/
+test-results/
+
+# Generated content proof output
+.velite/
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Logs and local tooling
+*.log
+*.tsbuildinfo
+.DS_Store
+Thumbs.db

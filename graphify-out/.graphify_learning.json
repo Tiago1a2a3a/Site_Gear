@@ -1,0 +1,214 @@
+{
+  "generated_at": "2026-07-15T23:50:52.139196+00:00",
+  "nodes": {
+    "package_scripts": {
+      "code_fingerprint": "381feb9b26e4d958a654dea6866c2c904f02e0ce139155ebe8ace91a9b759c2d",
+      "label": "scripts",
+      "last": "2026-07-15T22:09:36.497823+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-15T22:09:36.497823+00:00",
+          "outcome": "useful",
+          "q": "Use o Graphify para entender a arquitetura e implemente a milestone 6 deste projeto. Consulte o grafo primeiro, faça as alterações necessárias e rode os testes."
+        }
+      ],
+      "score": 0.998376584,
+      "source_file": "package.json",
+      "status": "tentative",
+      "uses": 1
+    },
+    "src_app_site_page_home": {
+      "code_fingerprint": "78e7e1ae3b34b06cc2c641fbb2b098873198d14f0382c17ec9512f9701db5b34",
+      "label": "Home()",
+      "last": "2026-07-15T21:33:38.851860+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-15T21:33:38.851860+00:00",
+          "outcome": "useful",
+          "q": "Atualizar a Home com a logo principal, mascote, apoiadores e redes sociais do GEAR antes da M6"
+        }
+      ],
+      "score": 0.997800694,
+      "source_file": "src/app/(site)/page.tsx",
+      "status": "tentative",
+      "uses": 1
+    },
+    "src_features_aulas_components_aulabreadcrumbs_aulabreadcrumbs": {
+      "code_fingerprint": "92241e8d21d106f378e4f8aced7461df4bbfbbd005eee1238eeaa5697ea0156d",
+      "label": "AulaBreadcrumbs()",
+      "last": "2026-07-15T23:04:50.673729+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-15T23:04:50.673729+00:00",
+          "outcome": "useful",
+          "q": "Implementar milestones 7 e 8 consultando o grafo primeiro"
+        }
+      ],
+      "score": 0.999261807,
+      "source_file": "src/features/aulas/components/AulaBreadcrumbs.tsx",
+      "status": "tentative",
+      "uses": 1
+    },
+    "src_features_cursos_components_cursoaulas_cursoaulas": {
+      "code_fingerprint": "3583910517b53217f11bb47055220e7e338bd30501f0ae6e365ece7a88309919",
+      "label": "CursoAulas()",
+      "last": "2026-07-15T23:04:50.673729+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-15T23:04:50.673729+00:00",
+          "outcome": "useful",
+          "q": "Implementar milestones 7 e 8 consultando o grafo primeiro"
+        }
+      ],
+      "score": 0.999261807,
+      "source_file": "src/features/cursos/components/CursoAulas.tsx",
+      "status": "tentative",
+      "uses": 1
+    },
+    "src_features_cursos_components_cursodetalhe_cursodetalhe": {
+      "code_fingerprint": "8defd778a32b2fd60a148d8b28cffe001df0c1740581cb3fc2d0a6a4b95756dc",
+      "label": "CursoDetalhe()",
+      "last": "2026-07-15T23:04:50.673729+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-15T23:04:50.673729+00:00",
+          "outcome": "useful",
+          "q": "Implementar milestones 7 e 8 consultando o grafo primeiro"
+        }
+      ],
+      "score": 0.999261807,
+      "source_file": "src/features/cursos/components/CursoDetalhe.tsx",
+      "status": "tentative",
+      "uses": 1
+    },
+    "src_features_trilhas_components_trilhadetalhe_trilhadetalhe": {
+      "code_fingerprint": "0fcc58987e41392fbc4fb4cacd28058f0f14d64f931f313cbffa6695797b3f9c",
+      "label": "TrilhaDetalhe()",
+      "last": "2026-07-15T23:04:50.673729+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-15T23:04:50.673729+00:00",
+          "outcome": "useful",
+          "q": "Implementar milestones 7 e 8 consultando o grafo primeiro"
+        }
+      ],
+      "score": 0.999261807,
+      "source_file": "src/features/trilhas/components/TrilhaDetalhe.tsx",
+      "status": "tentative",
+      "uses": 1
+    },
+    "src_features_trilhas_components_trilhapercurso_trilhapercurso": {
+      "code_fingerprint": "ba6a1435e675b3e1f65947084ed4470b2249bfc79dc01286e0f8b0c0ed9fde6f",
+      "label": "TrilhaPercurso()",
+      "last": "2026-07-15T23:04:50.673729+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-15T23:04:50.673729+00:00",
+          "outcome": "useful",
+          "q": "Implementar milestones 7 e 8 consultando o grafo primeiro"
+        }
+      ],
+      "score": 0.999261807,
+      "source_file": "src/features/trilhas/components/TrilhaPercurso.tsx",
+      "status": "tentative",
+      "uses": 1
+    },
+    "src_shared_components_layout_footer_footer": {
+      "code_fingerprint": "4099e9c2b01a0830b196fc91941641256057eb8b82f9536800b865e1fb635085",
+      "label": "Footer()",
+      "last": "2026-07-15T21:33:38.851860+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-15T21:33:38.851860+00:00",
+          "outcome": "useful",
+          "q": "Atualizar a Home com a logo principal, mascote, apoiadores e redes sociais do GEAR antes da M6"
+        }
+      ],
+      "score": 0.997800694,
+      "source_file": "src/shared/components/layout/Footer.tsx",
+      "status": "tentative",
+      "uses": 1
+    },
+    "src_shared_components_layout_header_header": {
+      "code_fingerprint": "931be58f09ae0448d0450f49dc39ed0f854ae75a9a749972f3e1d2eadfccc7ea",
+      "label": "Header()",
+      "last": "2026-07-15T21:33:38.851860+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-15T21:33:38.851860+00:00",
+          "outcome": "useful",
+          "q": "Atualizar a Home com a logo principal, mascote, apoiadores e redes sociais do GEAR antes da M6"
+        }
+      ],
+      "score": 0.997800694,
+      "source_file": "src/shared/components/layout/Header.tsx",
+      "status": "tentative",
+      "uses": 1
+    },
+    "src_shared_components_layout_temporarypage": {
+      "code_fingerprint": "6002e4c0bde9b4e03c5b660616fddd17c2643f965893d6bd7d7fef88140b9934",
+      "label": "TemporaryPage.tsx",
+      "last": "2026-07-15T22:09:36.497823+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-15T22:09:36.497823+00:00",
+          "outcome": "useful",
+          "q": "Use o Graphify para entender a arquitetura e implemente a milestone 6 deste projeto. Consulte o grafo primeiro, faça as alterações necessárias e rode os testes."
+        }
+      ],
+      "score": 0.998376584,
+      "source_file": "src/shared/components/layout/TemporaryPage.tsx",
+      "status": "tentative",
+      "uses": 1
+    },
+    "src_shared_config_site": {
+      "code_fingerprint": "bebb2e7cb66bf1c17f7a5c6d984a12e39d451823e5136ed8b98737b2bd9b882e",
+      "label": "site.ts",
+      "last": "2026-07-15T21:33:38.851860+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-15T21:33:38.851860+00:00",
+          "outcome": "useful",
+          "q": "Atualizar a Home com a logo principal, mascote, apoiadores e redes sociais do GEAR antes da M6"
+        }
+      ],
+      "score": 0.997800694,
+      "source_file": "src/shared/config/site.ts",
+      "status": "tentative",
+      "uses": 1
+    },
+    "tests_e2e_responsive_navigation_spec": {
+      "code_fingerprint": "a60aa0f4a9d6b3d9d1939336d87f19f3dd447a0a58a09d6989b56918ee9cf17e",
+      "label": "responsive-navigation.spec.ts",
+      "last": "2026-07-15T22:09:36.497823+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-15T22:09:36.497823+00:00",
+          "outcome": "useful",
+          "q": "Use o Graphify para entender a arquitetura e implemente a milestone 6 deste projeto. Consulte o grafo primeiro, faça as alterações necessárias e rode os testes."
+        }
+      ],
+      "score": 0.998376584,
+      "source_file": "tests/e2e/responsive-navigation.spec.ts",
+      "status": "tentative",
+      "uses": 1
+    },
+    "tsconfig_paths_content": {
+      "code_fingerprint": "525d2545328c5ab856673f42e9e7e6a874effe9a11a6919213e5396a18fc0994",
+      "label": "@content/*",
+      "last": "2026-07-15T22:09:36.497823+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-15T22:09:36.497823+00:00",
+          "outcome": "useful",
+          "q": "Use o Graphify para entender a arquitetura e implemente a milestone 6 deste projeto. Consulte o grafo primeiro, faça as alterações necessárias e rode os testes."
+        }
+      ],
+      "score": 0.998376584,
+      "source_file": "tsconfig.json",
+      "status": "tentative",
+      "uses": 1
+    }
+  },
+  "version": 1
+}

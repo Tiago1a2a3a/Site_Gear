@@ -1,0 +1,11 @@
+.next
+.velite
+PARTE A
+agent.md
+coverage
+graphify-out
+node_modules
+package-lock.json
+playwright-report
+test-results
+src/features/*/README.md

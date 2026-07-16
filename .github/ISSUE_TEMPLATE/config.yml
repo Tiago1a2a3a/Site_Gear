@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentacao do projeto
+    url: https://github.com/Tiago1a2a3a/Site_Gear/tree/main/PARTE%20A
+    about: Consulte a arquitetura, as regras e o plano antes de abrir uma issue.

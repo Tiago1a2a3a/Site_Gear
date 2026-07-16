@@ -1,0 +1,47 @@
+name: Item do backlog
+description: Implementacao delimitada por um ID do development-plan.md.
+title: "[ID] "
+labels: []
+body:
+  - type: input
+    id: backlog-id
+    attributes:
+      label: ID do backlog
+      placeholder: M1-03
+    validations:
+      required: true
+  - type: textarea
+    id: objetivo
+    attributes:
+      label: Objetivo e valor
+      description: Explique o problema ou risco tratado.
+    validations:
+      required: true
+  - type: textarea
+    id: dependencias
+    attributes:
+      label: Dependencias concluidas
+      description: Liste os IDs que bloqueiam este item.
+    validations:
+      required: true
+  - type: textarea
+    id: aceite
+    attributes:
+      label: Criterios de aceite
+      description: Liste resultados observaveis e como demonstra-los.
+    validations:
+      required: true
+  - type: textarea
+    id: escopo
+    attributes:
+      label: Dentro e fora do escopo
+      description: Identifique arquivos, modulos e limites da mudanca.
+    validations:
+      required: true
+  - type: textarea
+    id: validacao
+    attributes:
+      label: Plano de validacao
+      description: Informe comandos, testes e evidencias esperadas.
+    validations:
+      required: true

@@ -149,7 +149,18 @@ Parar antes de editar quando:
 O agente deve explicar o bloqueio com evidência concreta e pedir somente a
 decisão necessária.
 
-## Objetivo
+## 9. Documento de continuidade
+
+Antes de retomar o trabalho após uma pausa, ler `PARTE A/produtacao ate 1 pausa.md`.
+Esse documento registra o estado do Portal até 15 de julho de 2026, o histórico
+das decisões, o que foi implementado nas Milestones 0 a 5, o código que já
+avança sobre esse marco e as pendências que ainda precisam de aceite formal.
+
+Ele é um registro operacional de continuidade, não substitui a hierarquia das
+fontes oficiais acima. Quando o documento de continuidade divergir do código ou
+das fontes oficiais, confirmar no código e atualizar o documento após a decisão.
+
+## 10. Objetivo
 
 Garantir que cada mudança do Portal GEAR seja pequena, rastreável, testável e
 consistente com a arquitetura, usando o Graphify para reduzir leitura repetida

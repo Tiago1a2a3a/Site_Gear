@@ -10,8 +10,8 @@
     "semantic_hash": "c19cd6fbb8f121207afc1b8916664f09"
   },
   "next-env.d.ts": {
-    "mtime": 1784238402.7404027,
-    "ast_hash": "d0f8375ae1199dc7acd3977fc33b78b8",
+    "mtime": 1784263959.966416,
+    "ast_hash": "2a74d3909800ca5467fa83b0ab4a4890",
     "semantic_hash": ""
   },
   "next.config.ts": {
@@ -95,13 +95,13 @@
     "semantic_hash": ""
   },
   "src/app/(site)/noticias/page.tsx": {
-    "mtime": 1784218609.701954,
-    "ast_hash": "8b794a0eaaa42a523ceb4229228d4f13",
+    "mtime": 1784263871.9095194,
+    "ast_hash": "6b49bf88756dcf81775fac0cf4de1963",
     "semantic_hash": ""
   },
   "src/app/(site)/page.tsx": {
-    "mtime": 1784218804.273003,
-    "ast_hash": "055fcf56bff02299d64100ec45e15276",
+    "mtime": 1784261725.6898346,
+    "ast_hash": "e7045c1d1b8a800b6818d5241dbbaeea",
     "semantic_hash": ""
   },
   "src/app/(site)/patrocinadores/page.tsx": {
@@ -120,8 +120,8 @@
     "semantic_hash": ""
   },
   "src/app/(site)/projetos/page.tsx": {
-    "mtime": 1784218917.2200131,
-    "ast_hash": "8cd324652d24be31409b5dbb67b6500e",
+    "mtime": 1784263434.9606361,
+    "ast_hash": "107d7bad5ba111ec797e4ea18f7b95c3",
     "semantic_hash": ""
   },
   "src/app/(site)/sobre/page.tsx": {
@@ -180,8 +180,8 @@
     "semantic_hash": ""
   },
   "src/shared/components/layout/Header.tsx": {
-    "mtime": 1784237558.5536096,
-    "ast_hash": "6d3a3a0e653f389cad14ce306bb8cb05",
+    "mtime": 1784261358.4884672,
+    "ast_hash": "a78dfd061a6ca63302447c2449634ac0",
     "semantic_hash": ""
   },
   "src/shared/components/layout/TemporaryPage.tsx": {
@@ -965,8 +965,8 @@
     "semantic_hash": ""
   },
   "src/features/noticias/components/NoticiasBusca.tsx": {
-    "mtime": 1784218609.6979547,
-    "ast_hash": "08a33b6345962d16ecd3ee5b84f24d2a",
+    "mtime": 1784263871.912872,
+    "ast_hash": "1973bb24a25b4858db5bd7a0b6b18753",
     "semantic_hash": ""
   },
   "src/features/noticias/data/busca-noticias.ts": {
@@ -1025,8 +1025,8 @@
     "semantic_hash": ""
   },
   "tests/unit/noticias.test.tsx": {
-    "mtime": 1784218804.4163954,
-    "ast_hash": "a69082725bd6d32eea7878ee4e9a7515",
+    "mtime": 1784264001.718073,
+    "ast_hash": "488df673c7560f4bc35c94b5ec34acf6",
     "semantic_hash": ""
   },
   "graphify-out/memory/query_20260716_163732_use_o_graphify_para_entender_a_arquitetura_e_imple.md": {
@@ -1075,8 +1075,8 @@
     "semantic_hash": ""
   },
   "src/features/autenticacao/components/AccountAccess.tsx": {
-    "mtime": 1784236538.296485,
-    "ast_hash": "26143cf7d29d5354f634f8545103c4e9",
+    "mtime": 1784253934.8701167,
+    "ast_hash": "901703a8069163a787ec7279a89f4a82",
     "semantic_hash": ""
   },
   "src/features/autenticacao/components/GitHubLoginButton.tsx": {
@@ -1085,8 +1085,8 @@
     "semantic_hash": ""
   },
   "src/features/meu-aprendizado/components/AccountDeletionButton.tsx": {
-    "mtime": 1784237151.4599676,
-    "ast_hash": "6529d959a9553c930bd826ab8d060d1e",
+    "mtime": 1784261263.6882577,
+    "ast_hash": "60a47ceb94d6c151d3a0b620956cc365",
     "semantic_hash": ""
   },
   "src/features/meu-aprendizado/components/EnrollmentButton.tsx": {
@@ -1100,8 +1100,8 @@
     "semantic_hash": ""
   },
   "src/features/meu-aprendizado/components/PersonalLearningDashboard.tsx": {
-    "mtime": 1784237943.7188735,
-    "ast_hash": "10c75d69d216f4c0d407c80186a2ae0d",
+    "mtime": 1784263504.0118105,
+    "ast_hash": "80e87c705a0b90e39e14ac99d91fbbe6",
     "semantic_hash": ""
   },
   "src/features/meu-aprendizado/data/catalogo.ts": {
@@ -1207,6 +1207,76 @@
   "src/shared/lib/internal-redirect.ts": {
     "mtime": 1784237903.9291365,
     "ast_hash": "1dbe8b1ea2cc5e344c4a0b6ce10b1719",
+    "semantic_hash": ""
+  },
+  "src/features/noticias/components/FeaturedNewsCarousel.tsx": {
+    "mtime": 1784263871.9065256,
+    "ast_hash": "f926077e087cbe0509901eabaec85841",
+    "semantic_hash": ""
+  },
+  "src/features/projetos/components/FeaturedProjectsCarousel.tsx": {
+    "mtime": 1784262475.8248782,
+    "ast_hash": "6496ac21ef8d31a32e1e39bac144f5f0",
+    "semantic_hash": ""
+  },
+  "graphify-out/memory/query_20260716_215542_configurar_projeto_supabase__oauth_app_github__cal.md": {
+    "mtime": 1784238942.1393127,
+    "ast_hash": "d978667f3e53fbdf0b4743165a92ee09",
+    "semantic_hash": ""
+  },
+  "src/content/noticias/encontro-discute-ros-sistemas-autonomos.mdx": {
+    "mtime": 1784261476.9105854,
+    "ast_hash": "82a46831b50047cf0c9f56ef2150b3d7",
+    "semantic_hash": ""
+  },
+  "src/content/noticias/equipe-apresenta-projetos-mostra-engenharia.mdx": {
+    "mtime": 1784261476.9151244,
+    "ast_hash": "1f9e7e29cdb3318161596e0dcf79f0f5",
+    "semantic_hash": ""
+  },
+  "src/content/noticias/gear-abre-ciclo-estudos-visao-computacional.mdx": {
+    "mtime": 1784261476.9075859,
+    "ast_hash": "5987c597bdf50e3d86faa6a95cb80abf",
+    "semantic_hash": ""
+  },
+  "src/content/noticias/grupo-publica-guia-seguranca-laboratorio.mdx": {
+    "mtime": 1784261476.9201243,
+    "ast_hash": "30984244141d592fa94a674d25aea3fc",
+    "semantic_hash": ""
+  },
+  "src/content/noticias/laboratorio-recebe-componentes-prototipagem.mdx": {
+    "mtime": 1784261476.909583,
+    "ast_hash": "dcfdb7cc615a1a1ca3d859ee164dae26",
+    "semantic_hash": ""
+  },
+  "src/content/noticias/mini-curso-impressao-3d-inscricoes.mdx": {
+    "mtime": 1784261476.9131122,
+    "ast_hash": "36be8ecd94a26823231aa22bdbb047b8",
+    "semantic_hash": ""
+  },
+  "src/content/noticias/oficina-robotica-recebe-novos-estudantes.mdx": {
+    "mtime": 1784261476.903513,
+    "ast_hash": "5369a590049fdbe9f93a4e91ec335452",
+    "semantic_hash": ""
+  },
+  "src/content/noticias/prototipo-seguidor-linha-conclui-testes.mdx": {
+    "mtime": 1784261476.9055705,
+    "ast_hash": "71169fed4a51bf00850e6cd6c9d12a32",
+    "semantic_hash": ""
+  },
+  "src/content/projetos/braco-robotico-educacional.mdx": {
+    "mtime": 1784261476.8989654,
+    "ast_hash": "fe35714274a32d73f251881406c5730f",
+    "semantic_hash": ""
+  },
+  "src/content/projetos/estacao-monitoramento-ambiental.mdx": {
+    "mtime": 1784261476.9015143,
+    "ast_hash": "203782415eb8f6ec289327b0629747b1",
+    "semantic_hash": ""
+  },
+  "src/content/projetos/robo-seguidor-de-linha.mdx": {
+    "mtime": 1784261476.8979554,
+    "ast_hash": "77c0211579b1ed2df339e5cb0ce873fa",
     "semantic_hash": ""
   }
 }

@@ -1592,8 +1592,7 @@ a {
   align-items: end;
   gap: var(--space-8);
   padding-bottom: var(--space-8);
-  border-bottom: 2px solid
-    color-mix(in srgb, var(--color-gear-red) 40%, transparent);
+  border-bottom: 2px solid color-mix(in srgb, var(--color-gear-red) 40%, transparent);
 }
 
 .other-projects-heading h2 {
@@ -2546,6 +2545,37 @@ a {
   padding: var(--space-6);
 }
 
+.learning-path-item--completed {
+  border-color: #3f8f5f;
+  background: #eaf7ee;
+  box-shadow: 0 0 0 1px color-mix(in srgb, #3f8f5f 20%, transparent);
+}
+
+.learning-path-item--completed .path-index,
+.learning-path-item--completed .trail-path-item__index {
+  color: #25633d;
+}
+
+.learning-path-item__badges {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.learning-completed-badge {
+  border: 1px solid #3f8f5f;
+  border-radius: 999px;
+  padding: 0.2rem 0.55rem;
+  background: #d5efdd;
+  color: #194d2e;
+  font-family: var(--font-utility), Consolas, monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .site-footer {
   border-top: 1px solid var(--color-border);
   padding-block: var(--space-12);
@@ -2893,7 +2923,8 @@ a {
   gap: var(--space-6);
   margin-bottom: var(--space-6);
   padding-bottom: var(--space-4);
-  border-bottom: 2px solid color-mix(in srgb, var(--color-gear-red) 40%, transparent);
+  border-bottom: 2px solid
+    color-mix(in srgb, var(--color-gear-red) 40%, transparent);
 }
 
 .personal-learning-section-heading h2,

@@ -1,8 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import { Suspense } from "react";
 
 import { Badge } from "@shared/components/ui/Badge";
 import { Card } from "@shared/components/ui/Card";
+import { useLessonCompletions } from "@shared/lib/supabase/useLessonCompletions";
 
 import { CursoAulaLink } from "./CursoAulaLink";
 import type { AulaDoCurso, ContextoCurso, Curso } from "../types";
@@ -16,6 +19,7 @@ export function CursoAulas({
   curso: Curso;
   contextos: readonly ContextoCurso[];
 }>) {
+  const completedLessonIds = useLessonCompletions();
   const trilhasValidas = contextos.flatMap((item) =>
     item.trilha ? [item.trilha.slug] : [],
   );
@@ -32,15 +36,26 @@ export function CursoAulas({
       <ol className="course-lesson-list">
         {aulas.map((aula, index) => {
           const hrefCanonico = `/aprendizado/aulas/${aula.slug}?curso=${curso.slug}`;
+          const completed = completedLessonIds.has(aula.slug);
 
           return (
             <li key={aula.slug}>
-              <Card className="course-lesson-item">
+              <Card
+                className={`course-lesson-item${completed ? " learning-path-item--completed" : ""}`}
+                data-completed={completed || undefined}
+              >
                 <span aria-hidden="true" className="path-index">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <div>
-                  <Badge>Aula</Badge>
+                  <div className="learning-path-item__badges">
+                    <Badge>Aula</Badge>
+                    {completed ? (
+                      <span className="learning-completed-badge">
+                        Concluída
+                      </span>
+                    ) : null}
+                  </div>
                   <h3>{aula.titulo}</h3>
                   <p>{aula.resumo}</p>
                 </div>

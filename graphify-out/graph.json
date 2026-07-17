@@ -43,8 +43,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "content_schemas_slug",
-      "community": 18,
-      "community_name": "types.ts",
+      "community": 5,
+      "community_name": "paths",
       "norm_label": "slug()"
     },
     {
@@ -428,8 +428,8 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "content_validation_assertnoprerequisitecycle",
-      "community": 18,
-      "community_name": "types.ts",
+      "community": 5,
+      "community_name": "paths",
       "norm_label": "assertnoprerequisitecycle()"
     },
     {
@@ -2012,7 +2012,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_app_site_page",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "page.tsx"
     },
@@ -2023,7 +2023,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_app_site_page_home",
-      "community": 21,
+      "community": 19,
       "community_name": "types.ts",
       "norm_label": "home()"
     },
@@ -2177,7 +2177,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_app_site_sobre_page",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "page.tsx"
     },
@@ -2188,7 +2188,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_app_site_sobre_page_metadata",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "metadata"
     },
@@ -2199,7 +2199,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "src_app_site_sobre_page_sobrepage",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "sobrepage()"
     },
@@ -2518,7 +2518,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_features_aulas_components_aulacard",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "aulacard.tsx"
     },
@@ -2540,8 +2540,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_features_aulas_components_aulaconteudomdx",
-      "community": 48,
-      "community_name": "0. Como usar este plano",
+      "community": 17,
+      "community_name": "types.ts",
       "norm_label": "aulaconteudomdx.tsx"
     },
     {
@@ -2551,8 +2551,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_features_aulas_components_aulaconteudomdx_aulaconteudomdx",
-      "community": 48,
-      "community_name": "0. Como usar este plano",
+      "community": 17,
+      "community_name": "types.ts",
       "norm_label": "aulaconteudomdx()"
     },
     {
@@ -2925,7 +2925,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_features_busca_components_resultlist",
-      "community": 21,
+      "community": 20,
       "community_name": "types.ts",
       "norm_label": "resultlist.tsx"
     },
@@ -2936,7 +2936,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_features_busca_components_resultlist_resultlist",
-      "community": 21,
+      "community": 20,
       "community_name": "types.ts",
       "norm_label": "resultlist()"
     },
@@ -2947,7 +2947,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_features_busca_components_searchbar",
-      "community": 19,
+      "community": 20,
       "community_name": "types.ts",
       "norm_label": "searchbar.tsx"
     },
@@ -2958,7 +2958,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_features_busca_components_searchbar_searchbar",
-      "community": 19,
+      "community": 20,
       "community_name": "types.ts",
       "norm_label": "searchbar()"
     },
@@ -2980,7 +2980,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "src_features_busca_data_indices_criardocumentosdebusca",
-      "community": 19,
+      "community": 20,
       "community_name": "types.ts",
       "norm_label": "criardocumentosdebusca()"
     },
@@ -3208,7 +3208,7 @@
       "label": "CursoAulas()",
       "file_type": "code",
       "source_file": "src/features/cursos/components/CursoAulas.tsx",
-      "source_location": "L10",
+      "source_location": "L13",
       "_origin": "ast",
       "id": "src_features_cursos_components_cursoaulas_cursoaulas",
       "community": 18,
@@ -3222,7 +3222,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_features_cursos_components_cursobreadcrumbs",
-      "community": 18,
+      "community": 17,
       "community_name": "types.ts",
       "norm_label": "cursobreadcrumbs.tsx"
     },
@@ -3233,7 +3233,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_features_cursos_components_cursobreadcrumbs_cursobreadcrumbs",
-      "community": 18,
+      "community": 17,
       "community_name": "types.ts",
       "norm_label": "cursobreadcrumbs()"
     },
@@ -3244,7 +3244,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_features_cursos_components_cursocard",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "cursocard.tsx"
     },
@@ -3442,7 +3442,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_features_home_components_herocarousel",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "herocarousel.tsx"
     },
@@ -3453,7 +3453,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_features_home_components_herocarousel_slides",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "slides"
     },
@@ -3464,7 +3464,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "src_features_home_components_herocarousel_herocarousel",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "herocarousel()"
     },
@@ -3475,7 +3475,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_features_institucional_components_membergrid",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "membergrid.tsx"
     },
@@ -3486,7 +3486,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_features_institucional_components_membergrid_iniciaisdonome",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "iniciaisdonome()"
     },
@@ -3497,7 +3497,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_features_institucional_components_membergrid_membergrid",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "membergrid()"
     },
@@ -3508,7 +3508,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_features_institucional_components_researchareagrid",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "researchareagrid.tsx"
     },
@@ -3519,7 +3519,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_features_institucional_components_researchareagrid_researchareagrid",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "researchareagrid()"
     },
@@ -3684,8 +3684,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "src_features_meu_aprendizado_data_catalogo_getrelatedenrollmentsforlesson",
-      "community": 17,
-      "community_name": "types.ts",
+      "community": 47,
+      "community_name": "9. Organiza\u00e7\u00e3o dos Componentes",
       "norm_label": "getrelatedenrollmentsforlesson()"
     },
     {
@@ -4344,8 +4344,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_features_projetos_components_projetoconteudomdx",
-      "community": 48,
-      "community_name": "0. Como usar este plano",
+      "community": 17,
+      "community_name": "types.ts",
       "norm_label": "projetoconteudomdx.tsx"
     },
     {
@@ -4355,8 +4355,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_features_projetos_components_projetoconteudomdx_projetoconteudomdx",
-      "community": 48,
-      "community_name": "0. Como usar este plano",
+      "community": 17,
+      "community_name": "types.ts",
       "norm_label": "projetoconteudomdx()"
     },
     {
@@ -4531,7 +4531,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_features_trilhas_components_trilhacard",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "trilhacard.tsx"
     },
@@ -4575,7 +4575,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_features_trilhas_components_trilhapercurso",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "trilhapercurso.tsx"
     },
@@ -4583,11 +4583,11 @@
       "label": "TrilhaPercurso()",
       "file_type": "code",
       "source_file": "src/features/trilhas/components/TrilhaPercurso.tsx",
-      "source_location": "L8",
+      "source_location": "L11",
       "_origin": "ast",
       "id": "src_features_trilhas_components_trilhapercurso_trilhapercurso",
-      "community": 21,
-      "community_name": "types.ts",
+      "community": 5,
+      "community_name": "paths",
       "norm_label": "trilhapercurso()"
     },
     {
@@ -4773,7 +4773,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_shared_components_layout_temporarypage",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "temporarypage.tsx"
     },
@@ -4784,7 +4784,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_shared_components_layout_temporarypage_temporarypageprops",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "temporarypageprops"
     },
@@ -4795,7 +4795,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "src_shared_components_layout_temporarypage_temporarypage",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "temporarypage()"
     },
@@ -4806,7 +4806,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_shared_components_ui_badge",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "badge.tsx"
     },
@@ -4817,7 +4817,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_shared_components_ui_badge_badgeprops",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "badgeprops"
     },
@@ -4828,7 +4828,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_shared_components_ui_badge_badge",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "badge()"
     },
@@ -4872,7 +4872,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_shared_components_ui_button",
-      "community": 20,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "button.tsx"
     },
@@ -4883,7 +4883,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "src_shared_components_ui_button_buttonvariant",
-      "community": 20,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "buttonvariant"
     },
@@ -4894,7 +4894,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_shared_components_ui_button_sharedbuttonprops",
-      "community": 20,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "sharedbuttonprops"
     },
@@ -4905,7 +4905,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_shared_components_ui_button_buttonlinkprops",
-      "community": 20,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "buttonlinkprops"
     },
@@ -4916,7 +4916,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_shared_components_ui_button_nativebuttonprops",
-      "community": 20,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "nativebuttonprops"
     },
@@ -4927,7 +4927,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "src_shared_components_ui_button_buttonprops",
-      "community": 20,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "buttonprops"
     },
@@ -4938,7 +4938,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "src_shared_components_ui_button_button",
-      "community": 20,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "button()"
     },
@@ -4949,7 +4949,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_shared_components_ui_card",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "card.tsx"
     },
@@ -4960,7 +4960,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_shared_components_ui_card_cardprops",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "cardprops"
     },
@@ -4971,7 +4971,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_shared_components_ui_card_card",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "card()"
     },
@@ -4982,8 +4982,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_shared_components_ui_conteudomdx",
-      "community": 48,
-      "community_name": "0. Como usar este plano",
+      "community": 17,
+      "community_name": "types.ts",
       "norm_label": "conteudomdx.tsx"
     },
     {
@@ -4993,8 +4993,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_shared_components_ui_conteudomdx_modulomdx",
-      "community": 48,
-      "community_name": "0. Como usar este plano",
+      "community": 17,
+      "community_name": "types.ts",
       "norm_label": "modulomdx"
     },
     {
@@ -5004,8 +5004,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_shared_components_ui_conteudomdx_linkmdx",
-      "community": 48,
-      "community_name": "0. Como usar este plano",
+      "community": 17,
+      "community_name": "types.ts",
       "norm_label": "linkmdx()"
     },
     {
@@ -5015,8 +5015,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "src_shared_components_ui_conteudomdx_imagemmdx",
-      "community": 48,
-      "community_name": "0. Como usar este plano",
+      "community": 17,
+      "community_name": "types.ts",
       "norm_label": "imagemmdx()"
     },
     {
@@ -5026,8 +5026,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "src_shared_components_ui_conteudomdx_conteudomdx",
-      "community": 48,
-      "community_name": "0. Como usar este plano",
+      "community": 17,
+      "community_name": "types.ts",
       "norm_label": "conteudomdx()"
     },
     {
@@ -5037,7 +5037,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_shared_components_ui_revealonscroll",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "revealonscroll.tsx"
     },
@@ -5048,7 +5048,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_shared_components_ui_revealonscroll_revealonscrollprops",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "revealonscrollprops"
     },
@@ -5059,7 +5059,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_shared_components_ui_revealonscroll_revealonscroll",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "revealonscroll()"
     },
@@ -5070,7 +5070,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_shared_components_ui_searchinput",
-      "community": 19,
+      "community": 20,
       "community_name": "types.ts",
       "norm_label": "searchinput.tsx"
     },
@@ -5081,7 +5081,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_shared_components_ui_searchinput_searchinputprops",
-      "community": 19,
+      "community": 20,
       "community_name": "types.ts",
       "norm_label": "searchinputprops"
     },
@@ -5092,7 +5092,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_shared_components_ui_searchinput_searchinput",
-      "community": 19,
+      "community": 20,
       "community_name": "types.ts",
       "norm_label": "searchinput()"
     },
@@ -5136,7 +5136,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_shared_config_institutional",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "institutional.ts"
     },
@@ -5147,7 +5147,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_shared_config_institutional_researcharea",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "researcharea"
     },
@@ -5158,7 +5158,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_shared_config_institutional_institutionalmember",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "institutionalmember"
     },
@@ -5392,6 +5392,28 @@
       "community": 47,
       "community_name": "9. Organiza\u00e7\u00e3o dos Componentes",
       "norm_label": "createadminsupabaseclient()"
+    },
+    {
+      "label": "useLessonCompletions.ts",
+      "file_type": "code",
+      "source_file": "src/shared/lib/supabase/useLessonCompletions.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_shared_lib_supabase_uselessoncompletions",
+      "community": 18,
+      "community_name": "types.ts",
+      "norm_label": "uselessoncompletions.ts"
+    },
+    {
+      "label": "useLessonCompletions()",
+      "file_type": "code",
+      "source_file": "src/shared/lib/supabase/useLessonCompletions.ts",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "src_shared_lib_supabase_uselessoncompletions_uselessoncompletions",
+      "community": 18,
+      "community_name": "types.ts",
+      "norm_label": "uselessoncompletions()"
     },
     {
       "label": "texto-mdx.ts",
@@ -5730,7 +5752,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_unit_design_system_test",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "design-system.test.tsx"
     },
@@ -5741,7 +5763,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_unit_home_test",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "home.test.tsx"
     },
@@ -5752,7 +5774,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_unit_institucional_test",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "institucional.test.tsx"
     },
@@ -6445,8 +6467,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "contributing",
-      "community": 136,
-      "community_name": "README.md",
+      "community": 7,
+      "community_name": "dependencies",
       "norm_label": "contributing.md"
     },
     {
@@ -6456,8 +6478,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "contributing_como_contribuir",
-      "community": 138,
-      "community_name": "Como contribuir",
+      "community": 7,
+      "community_name": "dependencies",
       "norm_label": "como contribuir"
     },
     {
@@ -6467,8 +6489,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "contributing_branches_e_commits",
-      "community": 138,
-      "community_name": "Como contribuir",
+      "community": 7,
+      "community_name": "dependencies",
       "norm_label": "branches e commits"
     },
     {
@@ -6478,8 +6500,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "contributing_pull_requests",
-      "community": 138,
-      "community_name": "Como contribuir",
+      "community": 7,
+      "community_name": "dependencies",
       "norm_label": "pull requests"
     },
     {
@@ -6489,8 +6511,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "contributing_verificacoes_locais",
-      "community": 138,
-      "community_name": "Como contribuir",
+      "community": 7,
+      "community_name": "dependencies",
       "norm_label": "verificacoes locais"
     },
     {
@@ -6500,8 +6522,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "contributing_conteudo",
-      "community": 138,
-      "community_name": "Como contribuir",
+      "community": 7,
+      "community_name": "dependencies",
       "norm_label": "conteudo"
     },
     {
@@ -6511,8 +6533,8 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "contributing_uso_responsavel_de_ia",
-      "community": 138,
-      "community_name": "Como contribuir",
+      "community": 7,
+      "community_name": "dependencies",
       "norm_label": "uso responsavel de ia"
     },
     {
@@ -9613,8 +9635,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "parte_a_produtacao_ate_1_pausa",
-      "community": 136,
-      "community_name": "README.md",
+      "community": 7,
+      "community_name": "dependencies",
       "norm_label": "produtacao ate 1 pausa.md"
     },
     {
@@ -9646,8 +9668,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "parte_a_produtacao_ate_1_pausa_2_como_o_projeto_mudou_desde_o_come\u00e7o_da_implementa\u00e7\u00e3o",
-      "community": 142,
-      "community_name": "2. Como o projeto mudou desde o come\u00e7o da implementa\u00e7\u00e3o",
+      "community": 56,
+      "community_name": "m5-content.md",
       "norm_label": "2. como o projeto mudou desde o comeco da implementacao"
     },
     {
@@ -9657,8 +9679,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "parte_a_produtacao_ate_1_pausa_2_1_o_planejamento_foi_refeito",
-      "community": 142,
-      "community_name": "2. Como o projeto mudou desde o come\u00e7o da implementa\u00e7\u00e3o",
+      "community": 56,
+      "community_name": "m5-content.md",
       "norm_label": "2.1 o planejamento foi refeito"
     },
     {
@@ -9668,8 +9690,8 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "parte_a_produtacao_ate_1_pausa_2_2_a_prioridade_de_produto_ficou_expl\u00edcita",
-      "community": 142,
-      "community_name": "2. Como o projeto mudou desde o come\u00e7o da implementa\u00e7\u00e3o",
+      "community": 56,
+      "community_name": "m5-content.md",
       "norm_label": "2.2 a prioridade de produto ficou explicita"
     },
     {
@@ -9679,8 +9701,8 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "parte_a_produtacao_ate_1_pausa_2_3_a_arquitetura_deixou_de_ser_s\u00f3_inten\u00e7\u00e3o",
-      "community": 142,
-      "community_name": "2. Como o projeto mudou desde o come\u00e7o da implementa\u00e7\u00e3o",
+      "community": 56,
+      "community_name": "m5-content.md",
       "norm_label": "2.3 a arquitetura deixou de ser so intencao"
     },
     {
@@ -9690,8 +9712,8 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "parte_a_produtacao_ate_1_pausa_2_4_a_identidade_visual_foi_materializada",
-      "community": 142,
-      "community_name": "2. Como o projeto mudou desde o come\u00e7o da implementa\u00e7\u00e3o",
+      "community": 56,
+      "community_name": "m5-content.md",
       "norm_label": "2.4 a identidade visual foi materializada"
     },
     {
@@ -9800,8 +9822,8 @@
       "source_location": "L211",
       "_origin": "ast",
       "id": "parte_a_produtacao_ate_1_pausa_10_adendo_visual_e_de_navega\u00e7\u00e3o_16_de_julho_de_2026",
-      "community": 135,
-      "community_name": "10. Adendo visual e de navega\u00e7\u00e3o \u2014 16 de julho de 2026",
+      "community": 56,
+      "community_name": "m5-content.md",
       "norm_label": "10. adendo visual e de navegacao \u2014 16 de julho de 2026"
     },
     {
@@ -9811,8 +9833,8 @@
       "source_location": "L215",
       "_origin": "ast",
       "id": "parte_a_produtacao_ate_1_pausa_10_1_dire\u00e7\u00e3o_visual_aprovada",
-      "community": 135,
-      "community_name": "10. Adendo visual e de navega\u00e7\u00e3o \u2014 16 de julho de 2026",
+      "community": 56,
+      "community_name": "m5-content.md",
       "norm_label": "10.1 direcao visual aprovada"
     },
     {
@@ -9822,8 +9844,8 @@
       "source_location": "L223",
       "_origin": "ast",
       "id": "parte_a_produtacao_ate_1_pausa_10_2_home_landing_page",
-      "community": 135,
-      "community_name": "10. Adendo visual e de navega\u00e7\u00e3o \u2014 16 de julho de 2026",
+      "community": 56,
+      "community_name": "m5-content.md",
       "norm_label": "10.2 home / landing page"
     },
     {
@@ -9833,8 +9855,8 @@
       "source_location": "L232",
       "_origin": "ast",
       "id": "parte_a_produtacao_ate_1_pausa_10_3_patrocinadores_e_rodap\u00e9",
-      "community": 135,
-      "community_name": "10. Adendo visual e de navega\u00e7\u00e3o \u2014 16 de julho de 2026",
+      "community": 56,
+      "community_name": "m5-content.md",
       "norm_label": "10.3 patrocinadores e rodape"
     },
     {
@@ -9844,8 +9866,8 @@
       "source_location": "L238",
       "_origin": "ast",
       "id": "parte_a_produtacao_ate_1_pausa_10_4_header_e_acessos_provis\u00f3rios",
-      "community": 135,
-      "community_name": "10. Adendo visual e de navega\u00e7\u00e3o \u2014 16 de julho de 2026",
+      "community": 56,
+      "community_name": "m5-content.md",
       "norm_label": "10.4 header e acessos provisorios"
     },
     {
@@ -9855,8 +9877,8 @@
       "source_location": "L246",
       "_origin": "ast",
       "id": "parte_a_produtacao_ate_1_pausa_10_5_p\u00e1gina_principal_de_aprendizado",
-      "community": 135,
-      "community_name": "10. Adendo visual e de navega\u00e7\u00e3o \u2014 16 de julho de 2026",
+      "community": 56,
+      "community_name": "m5-content.md",
       "norm_label": "10.5 pagina principal de aprendizado"
     },
     {
@@ -9866,8 +9888,8 @@
       "source_location": "L263",
       "_origin": "ast",
       "id": "parte_a_produtacao_ate_1_pausa_10_6_busca_unificada_e_breadcrumbs",
-      "community": 135,
-      "community_name": "10. Adendo visual e de navega\u00e7\u00e3o \u2014 16 de julho de 2026",
+      "community": 56,
+      "community_name": "m5-content.md",
       "norm_label": "10.6 busca unificada e breadcrumbs"
     },
     {
@@ -9877,8 +9899,8 @@
       "source_location": "L271",
       "_origin": "ast",
       "id": "parte_a_produtacao_ate_1_pausa_10_7_orienta\u00e7\u00e3o_para_mudan\u00e7as_futuras",
-      "community": 135,
-      "community_name": "10. Adendo visual e de navega\u00e7\u00e3o \u2014 16 de julho de 2026",
+      "community": 56,
+      "community_name": "m5-content.md",
       "norm_label": "10.7 orientacao para mudancas futuras"
     },
     {
@@ -9899,8 +9921,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "readme",
-      "community": 136,
-      "community_name": "README.md",
+      "community": 7,
+      "community_name": "dependencies",
       "norm_label": "readme.md"
     },
     {
@@ -10152,8 +10174,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "docs_adr_0001_supabase_auth_learning",
-      "community": 136,
-      "community_name": "README.md",
+      "community": 7,
+      "community_name": "dependencies",
       "norm_label": "0001-supabase-auth-learning.md"
     },
     {
@@ -10163,8 +10185,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "docs_adr_0001_supabase_auth_learning_adr_0001_supabase_para_login_e_meu_aprendizado",
-      "community": 139,
-      "community_name": "ADR 0001 - Supabase para login e Meu aprendizado",
+      "community": 7,
+      "community_name": "dependencies",
       "norm_label": "adr 0001 - supabase para login e meu aprendizado"
     },
     {
@@ -10174,8 +10196,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "docs_adr_0001_supabase_auth_learning_contexto",
-      "community": 139,
-      "community_name": "ADR 0001 - Supabase para login e Meu aprendizado",
+      "community": 7,
+      "community_name": "dependencies",
       "norm_label": "contexto"
     },
     {
@@ -10185,8 +10207,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "docs_adr_0001_supabase_auth_learning_decisao",
-      "community": 139,
-      "community_name": "ADR 0001 - Supabase para login e Meu aprendizado",
+      "community": 7,
+      "community_name": "dependencies",
       "norm_label": "decisao"
     },
     {
@@ -10196,8 +10218,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "docs_adr_0001_supabase_auth_learning_avaliacao_das_dependencias",
-      "community": 139,
-      "community_name": "ADR 0001 - Supabase para login e Meu aprendizado",
+      "community": 7,
+      "community_name": "dependencies",
       "norm_label": "avaliacao das dependencias"
     },
     {
@@ -10207,8 +10229,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "docs_adr_0001_supabase_auth_learning_consequencias_e_limites",
-      "community": 139,
-      "community_name": "ADR 0001 - Supabase para login e Meu aprendizado",
+      "community": 7,
+      "community_name": "dependencies",
       "norm_label": "consequencias e limites"
     },
     {
@@ -10218,8 +10240,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "docs_baselines_m5_content",
-      "community": 136,
-      "community_name": "README.md",
+      "community": 7,
+      "community_name": "dependencies",
       "norm_label": "m5-content.md"
     },
     {
@@ -10229,8 +10251,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "docs_baselines_m5_content_baseline_do_pipeline_de_conte\u00fado_m5",
-      "community": 136,
-      "community_name": "README.md",
+      "community": 7,
+      "community_name": "dependencies",
       "norm_label": "baseline do pipeline de conteudo \u2014 m5"
     },
     {
@@ -10240,8 +10262,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "docs_content_editorial",
-      "community": 136,
-      "community_name": "README.md",
+      "community": 7,
+      "community_name": "dependencies",
       "norm_label": "content-editorial.md"
     },
     {
@@ -10251,8 +10273,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "docs_content_editorial_guia_editorial_de_conte\u00fado",
-      "community": 140,
-      "community_name": "Guia editorial de conte\u00fado",
+      "community": 7,
+      "community_name": "dependencies",
       "norm_label": "guia editorial de conteudo"
     },
     {
@@ -10262,8 +10284,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "docs_content_editorial_fluxo_de_publica\u00e7\u00e3o",
-      "community": 140,
-      "community_name": "Guia editorial de conte\u00fado",
+      "community": 7,
+      "community_name": "dependencies",
       "norm_label": "fluxo de publicacao"
     },
     {
@@ -10273,8 +10295,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "docs_content_editorial_entidades_e_rela\u00e7\u00f5es",
-      "community": 140,
-      "community_name": "Guia editorial de conte\u00fado",
+      "community": 7,
+      "community_name": "dependencies",
       "norm_label": "entidades e relacoes"
     },
     {
@@ -10284,8 +10306,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "docs_content_editorial_campos_e_formatos",
-      "community": 140,
-      "community_name": "Guia editorial de conte\u00fado",
+      "community": 7,
+      "community_name": "dependencies",
       "norm_label": "campos e formatos"
     },
     {
@@ -10295,8 +10317,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "docs_content_editorial_diagn\u00f3stico",
-      "community": 140,
-      "community_name": "Guia editorial de conte\u00fado",
+      "community": 7,
+      "community_name": "dependencies",
       "norm_label": "diagnostico"
     },
     {
@@ -10328,8 +10350,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "docs_supabase_setup",
-      "community": 137,
-      "community_name": "Configura\u00e7\u00e3o do Supabase",
+      "community": 7,
+      "community_name": "dependencies",
       "norm_label": "supabase-setup.md"
     },
     {
@@ -10339,8 +10361,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "docs_supabase_setup_configura\u00e7\u00e3o_do_supabase",
-      "community": 137,
-      "community_name": "Configura\u00e7\u00e3o do Supabase",
+      "community": 7,
+      "community_name": "dependencies",
       "norm_label": "configuracao do supabase"
     },
     {
@@ -10350,8 +10372,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "docs_supabase_setup_projetos_e_ambientes",
-      "community": 137,
-      "community_name": "Configura\u00e7\u00e3o do Supabase",
+      "community": 7,
+      "community_name": "dependencies",
       "norm_label": "projetos e ambientes"
     },
     {
@@ -10361,8 +10383,8 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "docs_supabase_setup_ambiente_local_de_banco",
-      "community": 137,
-      "community_name": "Configura\u00e7\u00e3o do Supabase",
+      "community": 7,
+      "community_name": "dependencies",
       "norm_label": "ambiente local de banco"
     },
     {
@@ -10372,8 +10394,8 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "docs_supabase_setup_github_oauth",
-      "community": 137,
-      "community_name": "Configura\u00e7\u00e3o do Supabase",
+      "community": 7,
+      "community_name": "dependencies",
       "norm_label": "github oauth"
     },
     {
@@ -10383,8 +10405,8 @@
       "source_location": "L84",
       "_origin": "ast",
       "id": "docs_supabase_setup_valida\u00e7\u00e3o_antes_de_produ\u00e7\u00e3o",
-      "community": 137,
-      "community_name": "Configura\u00e7\u00e3o do Supabase",
+      "community": 7,
+      "community_name": "dependencies",
       "norm_label": "validacao antes de producao"
     },
     {
@@ -10394,8 +10416,8 @@
       "source_location": "L93",
       "_origin": "ast",
       "id": "docs_supabase_setup_registro_obrigat\u00f3rio_de_backups",
-      "community": 137,
-      "community_name": "Configura\u00e7\u00e3o do Supabase",
+      "community": 7,
+      "community_name": "dependencies",
       "norm_label": "registro obrigatorio de backups"
     },
     {
@@ -12475,6 +12497,18 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_meu_aprendizado_services_progresso_calculatecourseprogress",
+      "target": "content_schemas_slug"
+    },
+    {
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/features/trilhas/components/TrilhaPercurso.tsx",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_trilhas_components_trilhapercurso_trilhapercurso",
       "target": "content_schemas_slug"
     },
     {
@@ -19375,7 +19409,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/cursos/components/CursoAulas.tsx",
-      "source_location": "L7",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_cursos_components_cursoaulas",
@@ -19387,7 +19421,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/cursos/components/CursoAulas.tsx",
-      "source_location": "L7",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_cursos_components_cursoaulas",
@@ -19398,7 +19432,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/features/cursos/components/CursoAulas.tsx",
-      "source_location": "L10",
+      "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_cursos_components_cursoaulas",
@@ -19410,7 +19444,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/cursos/components/CursoAulas.tsx",
-      "source_location": "L8",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_cursos_components_cursoaulas",
@@ -19422,7 +19456,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/cursos/components/CursoAulas.tsx",
-      "source_location": "L8",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_cursos_components_cursoaulas",
@@ -19434,7 +19468,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/cursos/components/CursoAulas.tsx",
-      "source_location": "L8",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_cursos_components_cursoaulas",
@@ -19446,7 +19480,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/cursos/components/CursoAulas.tsx",
-      "source_location": "L8",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_cursos_components_cursoaulas",
@@ -19458,7 +19492,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/cursos/components/CursoAulas.tsx",
-      "source_location": "L4",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_cursos_components_cursoaulas",
@@ -19470,7 +19504,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/cursos/components/CursoAulas.tsx",
-      "source_location": "L4",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_cursos_components_cursoaulas",
@@ -19482,7 +19516,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/cursos/components/CursoAulas.tsx",
-      "source_location": "L5",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_cursos_components_cursoaulas",
@@ -19494,11 +19528,35 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/cursos/components/CursoAulas.tsx",
-      "source_location": "L5",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_cursos_components_cursoaulas",
       "target": "src_shared_components_ui_card_card",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/cursos/components/CursoAulas.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_cursos_components_cursoaulas",
+      "target": "src_shared_lib_supabase_uselessoncompletions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/cursos/components/CursoAulas.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_cursos_components_cursoaulas",
+      "target": "src_shared_lib_supabase_uselessoncompletions_uselessoncompletions",
       "confidence_score": 1.0
     },
     {
@@ -19512,6 +19570,18 @@
       "source": "src_features_cursos_components_cursodetalhe",
       "target": "src_features_cursos_components_cursoaulas",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/cursos/components/CursoAulas.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_cursos_components_cursoaulas_cursoaulas",
+      "target": "src_shared_lib_supabase_uselessoncompletions_uselessoncompletions"
     },
     {
       "relation": "imports",
@@ -23967,7 +24037,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/features/trilhas/components/TrilhaPercurso.tsx",
-      "source_location": "L8",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_trilhas_components_trilhapercurso",
@@ -23979,7 +24049,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/trilhas/components/TrilhaPercurso.tsx",
-      "source_location": "L6",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_trilhas_components_trilhapercurso",
@@ -23991,7 +24061,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/trilhas/components/TrilhaPercurso.tsx",
-      "source_location": "L6",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_trilhas_components_trilhapercurso",
@@ -24003,7 +24073,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/trilhas/components/TrilhaPercurso.tsx",
-      "source_location": "L3",
+      "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_trilhas_components_trilhapercurso",
@@ -24015,7 +24085,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/trilhas/components/TrilhaPercurso.tsx",
-      "source_location": "L3",
+      "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_trilhas_components_trilhapercurso",
@@ -24027,7 +24097,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/trilhas/components/TrilhaPercurso.tsx",
-      "source_location": "L4",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_trilhas_components_trilhapercurso",
@@ -24039,12 +24109,48 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/trilhas/components/TrilhaPercurso.tsx",
-      "source_location": "L4",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_trilhas_components_trilhapercurso",
       "target": "src_shared_components_ui_card_card",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/trilhas/components/TrilhaPercurso.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_trilhas_components_trilhapercurso",
+      "target": "src_shared_lib_supabase_uselessoncompletions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/trilhas/components/TrilhaPercurso.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_trilhas_components_trilhapercurso",
+      "target": "src_shared_lib_supabase_uselessoncompletions_uselessoncompletions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/trilhas/components/TrilhaPercurso.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_trilhas_components_trilhapercurso_trilhapercurso",
+      "target": "src_shared_lib_supabase_uselessoncompletions_uselessoncompletions"
     },
     {
       "relation": "contains",
@@ -24352,7 +24458,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/shared/components/layout/Header.tsx",
-      "source_location": "L63",
+      "source_location": "L71",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_shared_components_layout_header_header",
@@ -24974,6 +25080,18 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/shared/lib/supabase/useLessonCompletions.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_shared_lib_supabase_uselessoncompletions",
+      "target": "src_shared_lib_supabase_client",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -24984,6 +25102,30 @@
       "_origin": "ast",
       "source": "src_shared_lib_supabase_client_createbrowsersupabaseclient",
       "target": "src_shared_lib_supabase_config_getpublicsupabaseconfig"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/shared/lib/supabase/useLessonCompletions.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_shared_lib_supabase_uselessoncompletions",
+      "target": "src_shared_lib_supabase_client_createbrowsersupabaseclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/lib/supabase/useLessonCompletions.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_shared_lib_supabase_uselessoncompletions_uselessoncompletions",
+      "target": "src_shared_lib_supabase_client_createbrowsersupabaseclient"
     },
     {
       "relation": "contains",
@@ -25134,6 +25276,17 @@
       "_origin": "ast",
       "source": "src_shared_lib_supabase_server",
       "target": "src_shared_lib_supabase_server_createserversupabaseclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/shared/lib/supabase/useLessonCompletions.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_shared_lib_supabase_uselessoncompletions",
+      "target": "src_shared_lib_supabase_uselessoncompletions_uselessoncompletions",
       "confidence_score": 1.0
     },
     {
@@ -30693,5 +30846,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "e43688d2772dfeec4c805d1b51ba496d097da706"
+  "built_at_commit": "be2d06e8905adecdf8a40e3477abfe42e5fa7383"
 }

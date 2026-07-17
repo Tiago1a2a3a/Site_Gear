@@ -10,7 +10,7 @@
     "semantic_hash": "c19cd6fbb8f121207afc1b8916664f09"
   },
   "next-env.d.ts": {
-    "mtime": 1784263959.966416,
+    "mtime": 1784265187.4319117,
     "ast_hash": "2a74d3909800ca5467fa83b0ab4a4890",
     "semantic_hash": ""
   },
@@ -95,8 +95,8 @@
     "semantic_hash": ""
   },
   "src/app/(site)/noticias/page.tsx": {
-    "mtime": 1784263871.9095194,
-    "ast_hash": "6b49bf88756dcf81775fac0cf4de1963",
+    "mtime": 1784264268.3563771,
+    "ast_hash": "4277c49ff0547e58a92629ead91a4ec2",
     "semantic_hash": ""
   },
   "src/app/(site)/page.tsx": {
@@ -120,8 +120,8 @@
     "semantic_hash": ""
   },
   "src/app/(site)/projetos/page.tsx": {
-    "mtime": 1784263434.9606361,
-    "ast_hash": "107d7bad5ba111ec797e4ea18f7b95c3",
+    "mtime": 1784264318.1227436,
+    "ast_hash": "e9c68401975c4c81f3d17e91ad860b44",
     "semantic_hash": ""
   },
   "src/app/(site)/sobre/page.tsx": {
@@ -180,8 +180,8 @@
     "semantic_hash": ""
   },
   "src/shared/components/layout/Header.tsx": {
-    "mtime": 1784261358.4884672,
-    "ast_hash": "a78dfd061a6ca63302447c2449634ac0",
+    "mtime": 1784264739.9996042,
+    "ast_hash": "5d4a5bc142cf861bbca1af4373aca161",
     "semantic_hash": ""
   },
   "src/shared/components/layout/TemporaryPage.tsx": {
@@ -300,8 +300,8 @@
     "semantic_hash": ""
   },
   "src/features/cursos/components/CursoAulas.tsx": {
-    "mtime": 1784156529.0719557,
-    "ast_hash": "7e71256abe6008be3458bcde1fba7338",
+    "mtime": 1784301014.6085744,
+    "ast_hash": "632168bec9f30ca54e04f92ad89b0c5c",
     "semantic_hash": ""
   },
   "src/features/cursos/components/CursoBreadcrumbs.tsx": {
@@ -350,8 +350,8 @@
     "semantic_hash": ""
   },
   "src/features/trilhas/components/TrilhaPercurso.tsx": {
-    "mtime": 1784155637.0637074,
-    "ast_hash": "b8f98d656578cc5703f262ed1ff42e0b",
+    "mtime": 1784301014.639826,
+    "ast_hash": "69611370a6efde69d11ff3b03db3bb4d",
     "semantic_hash": ""
   },
   "src/features/trilhas/data/trilhas.ts": {
@@ -1075,8 +1075,8 @@
     "semantic_hash": ""
   },
   "src/features/autenticacao/components/AccountAccess.tsx": {
-    "mtime": 1784253934.8701167,
-    "ast_hash": "901703a8069163a787ec7279a89f4a82",
+    "mtime": 1784264739.9996042,
+    "ast_hash": "74f58a78ca2d05456753e338f9c9dcc4",
     "semantic_hash": ""
   },
   "src/features/autenticacao/components/GitHubLoginButton.tsx": {
@@ -1095,13 +1095,13 @@
     "semantic_hash": ""
   },
   "src/features/meu-aprendizado/components/LessonCompletionButton.tsx": {
-    "mtime": 1784237903.9405687,
-    "ast_hash": "536a8a6342baadd4b94e8de3ce1d7d3e",
+    "mtime": 1784264100.6693642,
+    "ast_hash": "c8e4f87f027bd8eef972c0a717176c57",
     "semantic_hash": ""
   },
   "src/features/meu-aprendizado/components/PersonalLearningDashboard.tsx": {
-    "mtime": 1784263504.0118105,
-    "ast_hash": "80e87c705a0b90e39e14ac99d91fbbe6",
+    "mtime": 1784264481.2728765,
+    "ast_hash": "f9579ac21453b42c0cd0bce0c9627080",
     "semantic_hash": ""
   },
   "src/features/meu-aprendizado/data/catalogo.ts": {
@@ -1277,6 +1277,11 @@
   "src/content/projetos/robo-seguidor-de-linha.mdx": {
     "mtime": 1784261476.8979554,
     "ast_hash": "77c0211579b1ed2df339e5cb0ce873fa",
+    "semantic_hash": ""
+  },
+  "src/shared/lib/supabase/useLessonCompletions.ts": {
+    "mtime": 1784300987.1387463,
+    "ast_hash": "9d76fae5d28b133a0a0a05376f9db702",
     "semantic_hash": ""
   }
 }

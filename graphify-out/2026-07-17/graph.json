@@ -43,8 +43,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "content_schemas_slug",
-      "community": 5,
-      "community_name": "paths",
+      "community": 18,
+      "community_name": "types.ts",
       "norm_label": "slug()"
     },
     {
@@ -428,8 +428,8 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "content_validation_assertnoprerequisitecycle",
-      "community": 5,
-      "community_name": "paths",
+      "community": 18,
+      "community_name": "types.ts",
       "norm_label": "assertnoprerequisitecycle()"
     },
     {
@@ -879,7 +879,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "package_dependencies_minisearch",
-      "community": 20,
+      "community": 19,
       "community_name": "types.ts",
       "norm_label": "minisearch"
     },
@@ -890,7 +890,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "minisearch",
-      "community": 20,
+      "community": 19,
       "community_name": "types.ts",
       "norm_label": "minisearch"
     },
@@ -1671,7 +1671,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_app_site_aprendizado_page",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "page.tsx"
     },
@@ -1682,7 +1682,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_app_site_aprendizado_page_areas",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "areas"
     },
@@ -1693,7 +1693,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "src_app_site_aprendizado_page_aprendizadopage",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "aprendizadopage()"
     },
@@ -1987,7 +1987,7 @@
       "label": "metadata",
       "file_type": "code",
       "source_file": "src/app/(site)/noticias/page.tsx",
-      "source_location": "L7",
+      "source_location": "L9",
       "_origin": "ast",
       "id": "src_app_site_noticias_page_metadata",
       "community": 19,
@@ -1998,7 +1998,7 @@
       "label": "NoticiasPage()",
       "file_type": "code",
       "source_file": "src/app/(site)/noticias/page.tsx",
-      "source_location": "L16",
+      "source_location": "L18",
       "_origin": "ast",
       "id": "src_app_site_noticias_page_noticiaspage",
       "community": 19,
@@ -2023,8 +2023,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_app_site_page_home",
-      "community": 48,
-      "community_name": "0. Como usar este plano",
+      "community": 21,
+      "community_name": "types.ts",
       "norm_label": "home()"
     },
     {
@@ -2163,7 +2163,7 @@
       "label": "ProjetosPage()",
       "file_type": "code",
       "source_file": "src/app/(site)/projetos/page.tsx",
-      "source_location": "L5",
+      "source_location": "L11",
       "_origin": "ast",
       "id": "src_app_site_projetos_page_projetospage",
       "community": 48,
@@ -2408,7 +2408,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_features_aprendizado_components_featuredcoursescarousel",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "featuredcoursescarousel.tsx"
     },
@@ -2419,7 +2419,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_features_aprendizado_components_featuredcoursescarousel_featuredcoursescarouselprops",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "featuredcoursescarouselprops"
     },
@@ -2430,7 +2430,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "src_features_aprendizado_components_featuredcoursescarousel_featuredcoursescarousel",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "featuredcoursescarousel()"
     },
@@ -2441,7 +2441,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_features_aprendizado_data_conteudosrecentes",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "conteudosrecentes.ts"
     },
@@ -2452,7 +2452,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_features_aprendizado_data_conteudosrecentes_conteudorecente",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "conteudorecente"
     },
@@ -2463,7 +2463,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_features_aprendizado_data_conteudosrecentes_listarconteudosrecentes",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "listarconteudosrecentes()"
     },
@@ -2518,7 +2518,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_features_aulas_components_aulacard",
-      "community": 17,
+      "community": 21,
       "community_name": "types.ts",
       "norm_label": "aulacard.tsx"
     },
@@ -2925,7 +2925,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_features_busca_components_resultlist",
-      "community": 20,
+      "community": 21,
       "community_name": "types.ts",
       "norm_label": "resultlist.tsx"
     },
@@ -2936,7 +2936,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_features_busca_components_resultlist_resultlist",
-      "community": 20,
+      "community": 21,
       "community_name": "types.ts",
       "norm_label": "resultlist()"
     },
@@ -2980,7 +2980,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "src_features_busca_data_indices_criardocumentosdebusca",
-      "community": 20,
+      "community": 19,
       "community_name": "types.ts",
       "norm_label": "criardocumentosdebusca()"
     },
@@ -3244,7 +3244,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_features_cursos_components_cursocard",
-      "community": 18,
+      "community": 21,
       "community_name": "types.ts",
       "norm_label": "cursocard.tsx"
     },
@@ -3321,7 +3321,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "src_features_cursos_data_cursos_listarcursosemdestaque",
-      "community": 21,
+      "community": 18,
       "community_name": "types.ts",
       "norm_label": "listarcursosemdestaque()"
     },
@@ -3648,7 +3648,7 @@
       "label": "PersonalLearningDashboard()",
       "file_type": "code",
       "source_file": "src/features/meu-aprendizado/components/PersonalLearningDashboard.tsx",
-      "source_location": "L114",
+      "source_location": "L121",
       "_origin": "ast",
       "id": "src_features_meu_aprendizado_components_personallearningdashboard_personallearningdashboard",
       "community": 47,
@@ -3684,8 +3684,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "src_features_meu_aprendizado_data_catalogo_getrelatedenrollmentsforlesson",
-      "community": 47,
-      "community_name": "9. Organiza\u00e7\u00e3o dos Componentes",
+      "community": 17,
+      "community_name": "types.ts",
       "norm_label": "getrelatedenrollmentsforlesson()"
     },
     {
@@ -3931,6 +3931,28 @@
       "norm_label": "completedlessonsummary"
     },
     {
+      "label": "FeaturedNewsCarousel.tsx",
+      "file_type": "code",
+      "source_file": "src/features/noticias/components/FeaturedNewsCarousel.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_features_noticias_components_featurednewscarousel",
+      "community": 19,
+      "community_name": "types.ts",
+      "norm_label": "featurednewscarousel.tsx"
+    },
+    {
+      "label": "FeaturedNewsCarousel()",
+      "file_type": "code",
+      "source_file": "src/features/noticias/components/FeaturedNewsCarousel.tsx",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "src_features_noticias_components_featurednewscarousel_featurednewscarousel",
+      "community": 19,
+      "community_name": "types.ts",
+      "norm_label": "featurednewscarousel()"
+    },
+    {
       "label": "NoticiaCard.tsx",
       "file_type": "code",
       "source_file": "src/features/noticias/components/NoticiaCard.tsx",
@@ -4011,7 +4033,7 @@
       "label": "NoticiasBusca()",
       "file_type": "code",
       "source_file": "src/features/noticias/components/NoticiasBusca.tsx",
-      "source_location": "L12",
+      "source_location": "L14",
       "_origin": "ast",
       "id": "src_features_noticias_components_noticiasbusca_noticiasbusca",
       "community": 19,
@@ -4248,6 +4270,39 @@
       "community": 3,
       "community_name": "layout.tsx",
       "norm_label": "sponsor"
+    },
+    {
+      "label": "FeaturedProjectsCarousel.tsx",
+      "file_type": "code",
+      "source_file": "src/features/projetos/components/FeaturedProjectsCarousel.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_features_projetos_components_featuredprojectscarousel",
+      "community": 48,
+      "community_name": "0. Como usar este plano",
+      "norm_label": "featuredprojectscarousel.tsx"
+    },
+    {
+      "label": "FeaturedProjectsCarouselProps",
+      "file_type": "code",
+      "source_file": "src/features/projetos/components/FeaturedProjectsCarousel.tsx",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "src_features_projetos_components_featuredprojectscarousel_featuredprojectscarouselprops",
+      "community": 48,
+      "community_name": "0. Como usar este plano",
+      "norm_label": "featuredprojectscarouselprops"
+    },
+    {
+      "label": "FeaturedProjectsCarousel()",
+      "file_type": "code",
+      "source_file": "src/features/projetos/components/FeaturedProjectsCarousel.tsx",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "src_features_projetos_components_featuredprojectscarousel_featuredprojectscarousel",
+      "community": 48,
+      "community_name": "0. Como usar este plano",
+      "norm_label": "featuredprojectscarousel()"
     },
     {
       "label": "ProjetoCard.tsx",
@@ -4817,7 +4872,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_shared_components_ui_button",
-      "community": 21,
+      "community": 20,
       "community_name": "types.ts",
       "norm_label": "button.tsx"
     },
@@ -4828,7 +4883,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "src_shared_components_ui_button_buttonvariant",
-      "community": 21,
+      "community": 20,
       "community_name": "types.ts",
       "norm_label": "buttonvariant"
     },
@@ -4839,7 +4894,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_shared_components_ui_button_sharedbuttonprops",
-      "community": 21,
+      "community": 20,
       "community_name": "types.ts",
       "norm_label": "sharedbuttonprops"
     },
@@ -4850,7 +4905,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_shared_components_ui_button_buttonlinkprops",
-      "community": 21,
+      "community": 20,
       "community_name": "types.ts",
       "norm_label": "buttonlinkprops"
     },
@@ -4861,7 +4916,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_shared_components_ui_button_nativebuttonprops",
-      "community": 21,
+      "community": 20,
       "community_name": "types.ts",
       "norm_label": "nativebuttonprops"
     },
@@ -4872,7 +4927,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "src_shared_components_ui_button_buttonprops",
-      "community": 21,
+      "community": 20,
       "community_name": "types.ts",
       "norm_label": "buttonprops"
     },
@@ -6390,8 +6445,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "contributing",
-      "community": 7,
-      "community_name": "dependencies",
+      "community": 136,
+      "community_name": "README.md",
       "norm_label": "contributing.md"
     },
     {
@@ -6401,8 +6456,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "contributing_como_contribuir",
-      "community": 7,
-      "community_name": "dependencies",
+      "community": 138,
+      "community_name": "Como contribuir",
       "norm_label": "como contribuir"
     },
     {
@@ -6412,8 +6467,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "contributing_branches_e_commits",
-      "community": 7,
-      "community_name": "dependencies",
+      "community": 138,
+      "community_name": "Como contribuir",
       "norm_label": "branches e commits"
     },
     {
@@ -6423,8 +6478,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "contributing_pull_requests",
-      "community": 7,
-      "community_name": "dependencies",
+      "community": 138,
+      "community_name": "Como contribuir",
       "norm_label": "pull requests"
     },
     {
@@ -6434,8 +6489,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "contributing_verificacoes_locais",
-      "community": 7,
-      "community_name": "dependencies",
+      "community": 138,
+      "community_name": "Como contribuir",
       "norm_label": "verificacoes locais"
     },
     {
@@ -6445,8 +6500,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "contributing_conteudo",
-      "community": 7,
-      "community_name": "dependencies",
+      "community": 138,
+      "community_name": "Como contribuir",
       "norm_label": "conteudo"
     },
     {
@@ -6456,8 +6511,8 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "contributing_uso_responsavel_de_ia",
-      "community": 7,
-      "community_name": "dependencies",
+      "community": 138,
+      "community_name": "Como contribuir",
       "norm_label": "uso responsavel de ia"
     },
     {
@@ -9558,8 +9613,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "parte_a_produtacao_ate_1_pausa",
-      "community": 7,
-      "community_name": "dependencies",
+      "community": 136,
+      "community_name": "README.md",
       "norm_label": "produtacao ate 1 pausa.md"
     },
     {
@@ -9591,8 +9646,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "parte_a_produtacao_ate_1_pausa_2_como_o_projeto_mudou_desde_o_come\u00e7o_da_implementa\u00e7\u00e3o",
-      "community": 56,
-      "community_name": "m5-content.md",
+      "community": 142,
+      "community_name": "2. Como o projeto mudou desde o come\u00e7o da implementa\u00e7\u00e3o",
       "norm_label": "2. como o projeto mudou desde o comeco da implementacao"
     },
     {
@@ -9602,8 +9657,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "parte_a_produtacao_ate_1_pausa_2_1_o_planejamento_foi_refeito",
-      "community": 56,
-      "community_name": "m5-content.md",
+      "community": 142,
+      "community_name": "2. Como o projeto mudou desde o come\u00e7o da implementa\u00e7\u00e3o",
       "norm_label": "2.1 o planejamento foi refeito"
     },
     {
@@ -9613,8 +9668,8 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "parte_a_produtacao_ate_1_pausa_2_2_a_prioridade_de_produto_ficou_expl\u00edcita",
-      "community": 56,
-      "community_name": "m5-content.md",
+      "community": 142,
+      "community_name": "2. Como o projeto mudou desde o come\u00e7o da implementa\u00e7\u00e3o",
       "norm_label": "2.2 a prioridade de produto ficou explicita"
     },
     {
@@ -9624,8 +9679,8 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "parte_a_produtacao_ate_1_pausa_2_3_a_arquitetura_deixou_de_ser_s\u00f3_inten\u00e7\u00e3o",
-      "community": 56,
-      "community_name": "m5-content.md",
+      "community": 142,
+      "community_name": "2. Como o projeto mudou desde o come\u00e7o da implementa\u00e7\u00e3o",
       "norm_label": "2.3 a arquitetura deixou de ser so intencao"
     },
     {
@@ -9635,8 +9690,8 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "parte_a_produtacao_ate_1_pausa_2_4_a_identidade_visual_foi_materializada",
-      "community": 56,
-      "community_name": "m5-content.md",
+      "community": 142,
+      "community_name": "2. Como o projeto mudou desde o come\u00e7o da implementa\u00e7\u00e3o",
       "norm_label": "2.4 a identidade visual foi materializada"
     },
     {
@@ -9745,8 +9800,8 @@
       "source_location": "L211",
       "_origin": "ast",
       "id": "parte_a_produtacao_ate_1_pausa_10_adendo_visual_e_de_navega\u00e7\u00e3o_16_de_julho_de_2026",
-      "community": 56,
-      "community_name": "m5-content.md",
+      "community": 135,
+      "community_name": "10. Adendo visual e de navega\u00e7\u00e3o \u2014 16 de julho de 2026",
       "norm_label": "10. adendo visual e de navegacao \u2014 16 de julho de 2026"
     },
     {
@@ -9756,8 +9811,8 @@
       "source_location": "L215",
       "_origin": "ast",
       "id": "parte_a_produtacao_ate_1_pausa_10_1_dire\u00e7\u00e3o_visual_aprovada",
-      "community": 56,
-      "community_name": "m5-content.md",
+      "community": 135,
+      "community_name": "10. Adendo visual e de navega\u00e7\u00e3o \u2014 16 de julho de 2026",
       "norm_label": "10.1 direcao visual aprovada"
     },
     {
@@ -9767,8 +9822,8 @@
       "source_location": "L223",
       "_origin": "ast",
       "id": "parte_a_produtacao_ate_1_pausa_10_2_home_landing_page",
-      "community": 56,
-      "community_name": "m5-content.md",
+      "community": 135,
+      "community_name": "10. Adendo visual e de navega\u00e7\u00e3o \u2014 16 de julho de 2026",
       "norm_label": "10.2 home / landing page"
     },
     {
@@ -9778,8 +9833,8 @@
       "source_location": "L232",
       "_origin": "ast",
       "id": "parte_a_produtacao_ate_1_pausa_10_3_patrocinadores_e_rodap\u00e9",
-      "community": 56,
-      "community_name": "m5-content.md",
+      "community": 135,
+      "community_name": "10. Adendo visual e de navega\u00e7\u00e3o \u2014 16 de julho de 2026",
       "norm_label": "10.3 patrocinadores e rodape"
     },
     {
@@ -9789,8 +9844,8 @@
       "source_location": "L238",
       "_origin": "ast",
       "id": "parte_a_produtacao_ate_1_pausa_10_4_header_e_acessos_provis\u00f3rios",
-      "community": 56,
-      "community_name": "m5-content.md",
+      "community": 135,
+      "community_name": "10. Adendo visual e de navega\u00e7\u00e3o \u2014 16 de julho de 2026",
       "norm_label": "10.4 header e acessos provisorios"
     },
     {
@@ -9800,8 +9855,8 @@
       "source_location": "L246",
       "_origin": "ast",
       "id": "parte_a_produtacao_ate_1_pausa_10_5_p\u00e1gina_principal_de_aprendizado",
-      "community": 56,
-      "community_name": "m5-content.md",
+      "community": 135,
+      "community_name": "10. Adendo visual e de navega\u00e7\u00e3o \u2014 16 de julho de 2026",
       "norm_label": "10.5 pagina principal de aprendizado"
     },
     {
@@ -9811,8 +9866,8 @@
       "source_location": "L263",
       "_origin": "ast",
       "id": "parte_a_produtacao_ate_1_pausa_10_6_busca_unificada_e_breadcrumbs",
-      "community": 56,
-      "community_name": "m5-content.md",
+      "community": 135,
+      "community_name": "10. Adendo visual e de navega\u00e7\u00e3o \u2014 16 de julho de 2026",
       "norm_label": "10.6 busca unificada e breadcrumbs"
     },
     {
@@ -9822,8 +9877,8 @@
       "source_location": "L271",
       "_origin": "ast",
       "id": "parte_a_produtacao_ate_1_pausa_10_7_orienta\u00e7\u00e3o_para_mudan\u00e7as_futuras",
-      "community": 56,
-      "community_name": "m5-content.md",
+      "community": 135,
+      "community_name": "10. Adendo visual e de navega\u00e7\u00e3o \u2014 16 de julho de 2026",
       "norm_label": "10.7 orientacao para mudancas futuras"
     },
     {
@@ -9844,8 +9899,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "readme",
-      "community": 7,
-      "community_name": "dependencies",
+      "community": 136,
+      "community_name": "README.md",
       "norm_label": "readme.md"
     },
     {
@@ -10097,8 +10152,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "docs_adr_0001_supabase_auth_learning",
-      "community": 7,
-      "community_name": "dependencies",
+      "community": 136,
+      "community_name": "README.md",
       "norm_label": "0001-supabase-auth-learning.md"
     },
     {
@@ -10108,8 +10163,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "docs_adr_0001_supabase_auth_learning_adr_0001_supabase_para_login_e_meu_aprendizado",
-      "community": 7,
-      "community_name": "dependencies",
+      "community": 139,
+      "community_name": "ADR 0001 - Supabase para login e Meu aprendizado",
       "norm_label": "adr 0001 - supabase para login e meu aprendizado"
     },
     {
@@ -10119,8 +10174,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "docs_adr_0001_supabase_auth_learning_contexto",
-      "community": 7,
-      "community_name": "dependencies",
+      "community": 139,
+      "community_name": "ADR 0001 - Supabase para login e Meu aprendizado",
       "norm_label": "contexto"
     },
     {
@@ -10130,8 +10185,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "docs_adr_0001_supabase_auth_learning_decisao",
-      "community": 7,
-      "community_name": "dependencies",
+      "community": 139,
+      "community_name": "ADR 0001 - Supabase para login e Meu aprendizado",
       "norm_label": "decisao"
     },
     {
@@ -10141,8 +10196,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "docs_adr_0001_supabase_auth_learning_avaliacao_das_dependencias",
-      "community": 7,
-      "community_name": "dependencies",
+      "community": 139,
+      "community_name": "ADR 0001 - Supabase para login e Meu aprendizado",
       "norm_label": "avaliacao das dependencias"
     },
     {
@@ -10152,8 +10207,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "docs_adr_0001_supabase_auth_learning_consequencias_e_limites",
-      "community": 7,
-      "community_name": "dependencies",
+      "community": 139,
+      "community_name": "ADR 0001 - Supabase para login e Meu aprendizado",
       "norm_label": "consequencias e limites"
     },
     {
@@ -10163,8 +10218,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "docs_baselines_m5_content",
-      "community": 7,
-      "community_name": "dependencies",
+      "community": 136,
+      "community_name": "README.md",
       "norm_label": "m5-content.md"
     },
     {
@@ -10174,8 +10229,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "docs_baselines_m5_content_baseline_do_pipeline_de_conte\u00fado_m5",
-      "community": 7,
-      "community_name": "dependencies",
+      "community": 136,
+      "community_name": "README.md",
       "norm_label": "baseline do pipeline de conteudo \u2014 m5"
     },
     {
@@ -10185,8 +10240,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "docs_content_editorial",
-      "community": 7,
-      "community_name": "dependencies",
+      "community": 136,
+      "community_name": "README.md",
       "norm_label": "content-editorial.md"
     },
     {
@@ -10196,8 +10251,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "docs_content_editorial_guia_editorial_de_conte\u00fado",
-      "community": 7,
-      "community_name": "dependencies",
+      "community": 140,
+      "community_name": "Guia editorial de conte\u00fado",
       "norm_label": "guia editorial de conteudo"
     },
     {
@@ -10207,8 +10262,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "docs_content_editorial_fluxo_de_publica\u00e7\u00e3o",
-      "community": 7,
-      "community_name": "dependencies",
+      "community": 140,
+      "community_name": "Guia editorial de conte\u00fado",
       "norm_label": "fluxo de publicacao"
     },
     {
@@ -10218,8 +10273,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "docs_content_editorial_entidades_e_rela\u00e7\u00f5es",
-      "community": 7,
-      "community_name": "dependencies",
+      "community": 140,
+      "community_name": "Guia editorial de conte\u00fado",
       "norm_label": "entidades e relacoes"
     },
     {
@@ -10229,8 +10284,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "docs_content_editorial_campos_e_formatos",
-      "community": 7,
-      "community_name": "dependencies",
+      "community": 140,
+      "community_name": "Guia editorial de conte\u00fado",
       "norm_label": "campos e formatos"
     },
     {
@@ -10240,8 +10295,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "docs_content_editorial_diagn\u00f3stico",
-      "community": 7,
-      "community_name": "dependencies",
+      "community": 140,
+      "community_name": "Guia editorial de conte\u00fado",
       "norm_label": "diagnostico"
     },
     {
@@ -10273,8 +10328,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "docs_supabase_setup",
-      "community": 7,
-      "community_name": "dependencies",
+      "community": 137,
+      "community_name": "Configura\u00e7\u00e3o do Supabase",
       "norm_label": "supabase-setup.md"
     },
     {
@@ -10284,8 +10339,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "docs_supabase_setup_configura\u00e7\u00e3o_do_supabase",
-      "community": 7,
-      "community_name": "dependencies",
+      "community": 137,
+      "community_name": "Configura\u00e7\u00e3o do Supabase",
       "norm_label": "configuracao do supabase"
     },
     {
@@ -10295,8 +10350,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "docs_supabase_setup_projetos_e_ambientes",
-      "community": 7,
-      "community_name": "dependencies",
+      "community": 137,
+      "community_name": "Configura\u00e7\u00e3o do Supabase",
       "norm_label": "projetos e ambientes"
     },
     {
@@ -10306,8 +10361,8 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "docs_supabase_setup_ambiente_local_de_banco",
-      "community": 7,
-      "community_name": "dependencies",
+      "community": 137,
+      "community_name": "Configura\u00e7\u00e3o do Supabase",
       "norm_label": "ambiente local de banco"
     },
     {
@@ -10317,8 +10372,8 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "docs_supabase_setup_github_oauth",
-      "community": 7,
-      "community_name": "dependencies",
+      "community": 137,
+      "community_name": "Configura\u00e7\u00e3o do Supabase",
       "norm_label": "github oauth"
     },
     {
@@ -10328,8 +10383,8 @@
       "source_location": "L84",
       "_origin": "ast",
       "id": "docs_supabase_setup_valida\u00e7\u00e3o_antes_de_produ\u00e7\u00e3o",
-      "community": 7,
-      "community_name": "dependencies",
+      "community": 137,
+      "community_name": "Configura\u00e7\u00e3o do Supabase",
       "norm_label": "validacao antes de producao"
     },
     {
@@ -10339,8 +10394,8 @@
       "source_location": "L93",
       "_origin": "ast",
       "id": "docs_supabase_setup_registro_obrigat\u00f3rio_de_backups",
-      "community": 7,
-      "community_name": "dependencies",
+      "community": 137,
+      "community_name": "Configura\u00e7\u00e3o do Supabase",
       "norm_label": "registro obrigatorio de backups"
     },
     {
@@ -10726,6 +10781,61 @@
       "id": "graphify_out_memory_query_20260716_213203_use_o_graphify_para_entender_a_arquitetura_e_imple_source_nodes",
       "community": 133,
       "community_name": "Q: Use o Graphify para entender a arquitetura e implemente ADENDO MILESTONE_LOGIN deste projeto. Consulte o grafo primeiro, fa\u00e7a as altera\u00e7\u00f5es necess\u00e1rias e rode os testes.",
+      "norm_label": "source nodes"
+    },
+    {
+      "label": "query_20260716_215542_configurar_projeto_supabase__oauth_app_github__cal.md",
+      "file_type": "document",
+      "source_file": "graphify-out/memory/query_20260716_215542_configurar_projeto_supabase__oauth_app_github__cal.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "graphify_out_memory_query_20260716_215542_configurar_projeto_supabase_oauth_app_github_cal",
+      "community": 141,
+      "community_name": "Q: Configurar projeto Supabase, OAuth App GitHub, callbacks e vari\u00e1veis por ambiente. como faco isso Aprovar Privacidade/Termos e verificar reten\u00e7\u00e3o de backups antes de produ\u00e7\u00e3o. aprovo",
+      "norm_label": "query_20260716_215542_configurar_projeto_supabase__oauth_app_github__cal.md"
+    },
+    {
+      "label": "Q: Configurar projeto Supabase, OAuth App GitHub, callbacks e vari\u00e1veis por ambiente. como faco isso Aprovar Privacidade/Termos e verificar reten\u00e7\u00e3o de backups antes de produ\u00e7\u00e3o. aprovo",
+      "file_type": "document",
+      "source_file": "graphify-out/memory/query_20260716_215542_configurar_projeto_supabase__oauth_app_github__cal.md",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "graphify_out_memory_query_20260716_215542_configurar_projeto_supabase_oauth_app_github_cal_q_configurar_projeto_supabase_oauth_app_github_callbacks_e_vari\u00e1veis_por_ambiente_como_faco_isso_aprovar_privacidade_termos_e_verificar_reten\u00e7\u00e3o_de_backups_antes_de_produ\u00e7\u00e3o_aprovo",
+      "community": 141,
+      "community_name": "Q: Configurar projeto Supabase, OAuth App GitHub, callbacks e vari\u00e1veis por ambiente. como faco isso Aprovar Privacidade/Termos e verificar reten\u00e7\u00e3o de backups antes de produ\u00e7\u00e3o. aprovo",
+      "norm_label": "q: configurar projeto supabase, oauth app github, callbacks e variaveis por ambiente. como faco isso aprovar privacidade/termos e verificar retencao de backups antes de producao. aprovo"
+    },
+    {
+      "label": "Answer",
+      "file_type": "document",
+      "source_file": "graphify-out/memory/query_20260716_215542_configurar_projeto_supabase__oauth_app_github__cal.md",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "graphify_out_memory_query_20260716_215542_configurar_projeto_supabase_oauth_app_github_cal_answer",
+      "community": 141,
+      "community_name": "Q: Configurar projeto Supabase, OAuth App GitHub, callbacks e vari\u00e1veis por ambiente. como faco isso Aprovar Privacidade/Termos e verificar reten\u00e7\u00e3o de backups antes de produ\u00e7\u00e3o. aprovo",
+      "norm_label": "answer"
+    },
+    {
+      "label": "Outcome",
+      "file_type": "document",
+      "source_file": "graphify-out/memory/query_20260716_215542_configurar_projeto_supabase__oauth_app_github__cal.md",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "graphify_out_memory_query_20260716_215542_configurar_projeto_supabase_oauth_app_github_cal_outcome",
+      "community": 141,
+      "community_name": "Q: Configurar projeto Supabase, OAuth App GitHub, callbacks e vari\u00e1veis por ambiente. como faco isso Aprovar Privacidade/Termos e verificar reten\u00e7\u00e3o de backups antes de produ\u00e7\u00e3o. aprovo",
+      "norm_label": "outcome"
+    },
+    {
+      "label": "Source Nodes",
+      "file_type": "document",
+      "source_file": "graphify-out/memory/query_20260716_215542_configurar_projeto_supabase__oauth_app_github__cal.md",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "graphify_out_memory_query_20260716_215542_configurar_projeto_supabase_oauth_app_github_cal_source_nodes",
+      "community": 141,
+      "community_name": "Q: Configurar projeto Supabase, OAuth App GitHub, callbacks e vari\u00e1veis por ambiente. como faco isso Aprovar Privacidade/Termos e verificar reten\u00e7\u00e3o de backups antes de produ\u00e7\u00e3o. aprovo",
       "norm_label": "source nodes"
     },
     {
@@ -11356,6 +11466,28 @@
       "norm_label": "trilha-interna.mdx"
     },
     {
+      "label": "encontro-discute-ros-sistemas-autonomos.mdx",
+      "file_type": "document",
+      "source_file": "src/content/noticias/encontro-discute-ros-sistemas-autonomos.mdx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_content_noticias_encontro_discute_ros_sistemas_autonomos",
+      "community": 146,
+      "community_name": "encontro-discute-ros-sistemas-autonomos.mdx",
+      "norm_label": "encontro-discute-ros-sistemas-autonomos.mdx"
+    },
+    {
+      "label": "equipe-apresenta-projetos-mostra-engenharia.mdx",
+      "file_type": "document",
+      "source_file": "src/content/noticias/equipe-apresenta-projetos-mostra-engenharia.mdx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_content_noticias_equipe_apresenta_projetos_mostra_engenharia",
+      "community": 147,
+      "community_name": "equipe-apresenta-projetos-mostra-engenharia.mdx",
+      "norm_label": "equipe-apresenta-projetos-mostra-engenharia.mdx"
+    },
+    {
       "label": "fundacao-mdx.mdx",
       "file_type": "document",
       "source_file": "src/content/noticias/fundacao-mdx.mdx",
@@ -11367,6 +11499,138 @@
       "norm_label": "fundacao-mdx.mdx"
     },
     {
+      "label": "gear-abre-ciclo-estudos-visao-computacional.mdx",
+      "file_type": "document",
+      "source_file": "src/content/noticias/gear-abre-ciclo-estudos-visao-computacional.mdx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_content_noticias_gear_abre_ciclo_estudos_visao_computacional",
+      "community": 148,
+      "community_name": "gear-abre-ciclo-estudos-visao-computacional.mdx",
+      "norm_label": "gear-abre-ciclo-estudos-visao-computacional.mdx"
+    },
+    {
+      "label": "grupo-publica-guia-seguranca-laboratorio.mdx",
+      "file_type": "document",
+      "source_file": "src/content/noticias/grupo-publica-guia-seguranca-laboratorio.mdx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_content_noticias_grupo_publica_guia_seguranca_laboratorio",
+      "community": 149,
+      "community_name": "grupo-publica-guia-seguranca-laboratorio.mdx",
+      "norm_label": "grupo-publica-guia-seguranca-laboratorio.mdx"
+    },
+    {
+      "label": "laboratorio-recebe-componentes-prototipagem.mdx",
+      "file_type": "document",
+      "source_file": "src/content/noticias/laboratorio-recebe-componentes-prototipagem.mdx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_content_noticias_laboratorio_recebe_componentes_prototipagem",
+      "community": 150,
+      "community_name": "laboratorio-recebe-componentes-prototipagem.mdx",
+      "norm_label": "laboratorio-recebe-componentes-prototipagem.mdx"
+    },
+    {
+      "label": "mini-curso-impressao-3d-inscricoes.mdx",
+      "file_type": "document",
+      "source_file": "src/content/noticias/mini-curso-impressao-3d-inscricoes.mdx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_content_noticias_mini_curso_impressao_3d_inscricoes",
+      "community": 151,
+      "community_name": "mini-curso-impressao-3d-inscricoes.mdx",
+      "norm_label": "mini-curso-impressao-3d-inscricoes.mdx"
+    },
+    {
+      "label": "oficina-robotica-recebe-novos-estudantes.mdx",
+      "file_type": "document",
+      "source_file": "src/content/noticias/oficina-robotica-recebe-novos-estudantes.mdx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_content_noticias_oficina_robotica_recebe_novos_estudantes",
+      "community": 152,
+      "community_name": "oficina-robotica-recebe-novos-estudantes.mdx",
+      "norm_label": "oficina-robotica-recebe-novos-estudantes.mdx"
+    },
+    {
+      "label": "prototipo-seguidor-linha-conclui-testes.mdx",
+      "file_type": "document",
+      "source_file": "src/content/noticias/prototipo-seguidor-linha-conclui-testes.mdx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_content_noticias_prototipo_seguidor_linha_conclui_testes",
+      "community": 153,
+      "community_name": "prototipo-seguidor-linha-conclui-testes.mdx",
+      "norm_label": "prototipo-seguidor-linha-conclui-testes.mdx"
+    },
+    {
+      "label": "braco-robotico-educacional.mdx",
+      "file_type": "document",
+      "source_file": "src/content/projetos/braco-robotico-educacional.mdx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_content_projetos_braco_robotico_educacional",
+      "community": 143,
+      "community_name": "braco-robotico-educacional.mdx",
+      "norm_label": "braco-robotico-educacional.mdx"
+    },
+    {
+      "label": "Desenvolvimento",
+      "file_type": "document",
+      "source_file": "src/content/projetos/braco-robotico-educacional.mdx",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "src_content_projetos_braco_robotico_educacional_desenvolvimento",
+      "community": 143,
+      "community_name": "braco-robotico-educacional.mdx",
+      "norm_label": "desenvolvimento"
+    },
+    {
+      "label": "Pr\u00f3ximos passos",
+      "file_type": "document",
+      "source_file": "src/content/projetos/braco-robotico-educacional.mdx",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "src_content_projetos_braco_robotico_educacional_pr\u00f3ximos_passos",
+      "community": 143,
+      "community_name": "braco-robotico-educacional.mdx",
+      "norm_label": "proximos passos"
+    },
+    {
+      "label": "estacao-monitoramento-ambiental.mdx",
+      "file_type": "document",
+      "source_file": "src/content/projetos/estacao-monitoramento-ambiental.mdx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_content_projetos_estacao_monitoramento_ambiental",
+      "community": 144,
+      "community_name": "estacao-monitoramento-ambiental.mdx",
+      "norm_label": "estacao-monitoramento-ambiental.mdx"
+    },
+    {
+      "label": "Aplica\u00e7\u00e3o",
+      "file_type": "document",
+      "source_file": "src/content/projetos/estacao-monitoramento-ambiental.mdx",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "src_content_projetos_estacao_monitoramento_ambiental_aplica\u00e7\u00e3o",
+      "community": 144,
+      "community_name": "estacao-monitoramento-ambiental.mdx",
+      "norm_label": "aplicacao"
+    },
+    {
+      "label": "Estado atual",
+      "file_type": "document",
+      "source_file": "src/content/projetos/estacao-monitoramento-ambiental.mdx",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "src_content_projetos_estacao_monitoramento_ambiental_estado_atual",
+      "community": 144,
+      "community_name": "estacao-monitoramento-ambiental.mdx",
+      "norm_label": "estado atual"
+    },
+    {
       "label": "robo-exemplo.mdx",
       "file_type": "document",
       "source_file": "src/content/projetos/robo-exemplo.mdx",
@@ -11376,6 +11640,39 @@
       "community": 101,
       "community_name": "robo-exemplo.mdx",
       "norm_label": "robo-exemplo.mdx"
+    },
+    {
+      "label": "robo-seguidor-de-linha.mdx",
+      "file_type": "document",
+      "source_file": "src/content/projetos/robo-seguidor-de-linha.mdx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_content_projetos_robo_seguidor_de_linha",
+      "community": 145,
+      "community_name": "robo-seguidor-de-linha.mdx",
+      "norm_label": "robo-seguidor-de-linha.mdx"
+    },
+    {
+      "label": "Objetivo",
+      "file_type": "document",
+      "source_file": "src/content/projetos/robo-seguidor-de-linha.mdx",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "src_content_projetos_robo_seguidor_de_linha_objetivo",
+      "community": 145,
+      "community_name": "robo-seguidor-de-linha.mdx",
+      "norm_label": "objetivo"
+    },
+    {
+      "label": "Resultados",
+      "file_type": "document",
+      "source_file": "src/content/projetos/robo-seguidor-de-linha.mdx",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "src_content_projetos_robo_seguidor_de_linha_resultados",
+      "community": 145,
+      "community_name": "robo-seguidor-de-linha.mdx",
+      "norm_label": "resultados"
     },
     {
       "label": "README.md",
@@ -13030,7 +13327,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/noticias/components/NoticiasBusca.tsx",
-      "source_location": "L23",
+      "source_location": "L35",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_noticias_components_noticiasbusca_noticiasbusca",
@@ -15745,7 +16042,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/(site)/noticias/page.tsx",
-      "source_location": "L7",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_site_noticias_page",
@@ -15756,7 +16053,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/(site)/noticias/page.tsx",
-      "source_location": "L16",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_site_noticias_page",
@@ -15772,7 +16069,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_site_noticias_page",
-      "target": "src_features_noticias_components_noticiasbusca",
+      "target": "src_features_noticias_components_featurednewscarousel",
       "confidence_score": 1.0
     },
     {
@@ -15784,7 +16081,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_site_noticias_page",
-      "target": "src_features_noticias_components_noticiasbusca_noticiasbusca",
+      "target": "src_features_noticias_components_featurednewscarousel_featurednewscarousel",
       "confidence_score": 1.0
     },
     {
@@ -15793,6 +16090,30 @@
       "confidence": "EXTRACTED",
       "source_file": "src/app/(site)/noticias/page.tsx",
       "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_site_noticias_page",
+      "target": "src_features_noticias_components_noticiasbusca",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(site)/noticias/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_site_noticias_page",
+      "target": "src_features_noticias_components_noticiasbusca_noticiasbusca",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(site)/noticias/page.tsx",
+      "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_site_noticias_page",
@@ -15804,7 +16125,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/app/(site)/noticias/page.tsx",
-      "source_location": "L4",
+      "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_site_noticias_page",
@@ -15816,7 +16137,31 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/app/(site)/noticias/page.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_site_noticias_page",
+      "target": "src_features_noticias_data_noticias",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(site)/noticias/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_site_noticias_page",
+      "target": "src_features_noticias_data_noticias_listarnoticiaspublicadas",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(site)/noticias/page.tsx",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_site_noticias_page",
@@ -15828,7 +16173,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/app/(site)/noticias/page.tsx",
-      "source_location": "L5",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_site_noticias_page",
@@ -15841,11 +16186,23 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/app/(site)/noticias/page.tsx",
-      "source_location": "L17",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_site_noticias_page_noticiaspage",
       "target": "src_features_noticias_data_busca_noticias_prepararbuscanoticias"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/(site)/noticias/page.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_site_noticias_page_noticiaspage",
+      "target": "src_features_noticias_data_noticias_listarnoticiaspublicadas"
     },
     {
       "relation": "contains",
@@ -15939,7 +16296,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_site_page",
-      "target": "src_features_projetos_components_projetocard",
+      "target": "src_features_noticias_components_noticiacard",
       "confidence_score": 1.0
     },
     {
@@ -15951,7 +16308,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_site_page",
-      "target": "src_features_projetos_components_projetocard_projetocard",
+      "target": "src_features_noticias_components_noticiacard_noticiacard",
       "confidence_score": 1.0
     },
     {
@@ -15963,7 +16320,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_site_page",
-      "target": "src_features_projetos_data_projetos",
+      "target": "src_features_noticias_data_noticias",
       "confidence_score": 1.0
     },
     {
@@ -15975,7 +16332,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_site_page",
-      "target": "src_features_projetos_data_projetos_listarprojetosemdestaque",
+      "target": "src_features_noticias_data_noticias_listarnoticiaspublicadas",
       "confidence_score": 1.0
     },
     {
@@ -16108,7 +16465,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_site_page_home",
-      "target": "src_features_projetos_data_projetos_listarprojetosemdestaque"
+      "target": "src_features_noticias_data_noticias_listarnoticiaspublicadas"
     },
     {
       "relation": "contains",
@@ -16382,7 +16739,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/(site)/projetos/page.tsx",
-      "source_location": "L5",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_site_projetos_page",
@@ -16394,11 +16751,11 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/app/(site)/projetos/page.tsx",
-      "source_location": "L1",
+      "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_site_projetos_page",
-      "target": "src_features_projetos_components_projetocard",
+      "target": "src_features_projetos_components_featuredprojectscarousel",
       "confidence_score": 1.0
     },
     {
@@ -16406,11 +16763,11 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/app/(site)/projetos/page.tsx",
-      "source_location": "L1",
+      "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_site_projetos_page",
-      "target": "src_features_projetos_components_projetocard_projetocard",
+      "target": "src_features_projetos_components_featuredprojectscarousel_featuredprojectscarousel",
       "confidence_score": 1.0
     },
     {
@@ -16418,7 +16775,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/app/(site)/projetos/page.tsx",
-      "source_location": "L2",
+      "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_site_projetos_page",
@@ -16430,7 +16787,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/app/(site)/projetos/page.tsx",
-      "source_location": "L2",
+      "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_site_projetos_page",
@@ -16438,11 +16795,47 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(site)/projetos/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_site_projetos_page",
+      "target": "src_features_projetos_data_projetos_listarprojetosemdestaque",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/app/(site)/projetos/page.tsx",
-      "source_location": "L3",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_site_projetos_page",
+      "target": "src_shared_components_ui_button",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(site)/projetos/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_site_projetos_page",
+      "target": "src_shared_components_ui_button_button",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(site)/projetos/page.tsx",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_site_projetos_page",
@@ -16454,7 +16847,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/app/(site)/projetos/page.tsx",
-      "source_location": "L3",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_site_projetos_page",
@@ -16467,11 +16860,23 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/app/(site)/projetos/page.tsx",
-      "source_location": "L6",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_app_site_projetos_page_projetospage",
       "target": "src_features_projetos_data_projetos_listarprojetos"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/(site)/projetos/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_site_projetos_page_projetospage",
+      "target": "src_features_projetos_data_projetos_listarprojetosemdestaque"
     },
     {
       "relation": "contains",
@@ -20467,7 +20872,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/features/meu-aprendizado/components/PersonalLearningDashboard.tsx",
-      "source_location": "L114",
+      "source_location": "L121",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_meu_aprendizado_components_personallearningdashboard",
@@ -20681,7 +21086,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/features/meu-aprendizado/components/PersonalLearningDashboard.tsx",
-      "source_location": "L296",
+      "source_location": "L327",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_meu_aprendizado_components_personallearningdashboard_personallearningdashboard",
@@ -20693,7 +21098,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/features/meu-aprendizado/components/PersonalLearningDashboard.tsx",
-      "source_location": "L89",
+      "source_location": "L96",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_meu_aprendizado_components_personallearningdashboard_studylist",
@@ -20706,7 +21111,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/meu-aprendizado/components/PersonalLearningDashboard.tsx",
-      "source_location": "L213",
+      "source_location": "L220",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_meu_aprendizado_components_personallearningdashboard_personallearningdashboard",
@@ -20718,7 +21123,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/meu-aprendizado/components/PersonalLearningDashboard.tsx",
-      "source_location": "L212",
+      "source_location": "L219",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_meu_aprendizado_components_personallearningdashboard_personallearningdashboard",
@@ -20730,7 +21135,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/meu-aprendizado/components/PersonalLearningDashboard.tsx",
-      "source_location": "L153",
+      "source_location": "L160",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_meu_aprendizado_components_personallearningdashboard_personallearningdashboard",
@@ -20742,7 +21147,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/meu-aprendizado/components/PersonalLearningDashboard.tsx",
-      "source_location": "L132",
+      "source_location": "L139",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_meu_aprendizado_components_personallearningdashboard_personallearningdashboard",
@@ -20754,7 +21159,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/meu-aprendizado/components/PersonalLearningDashboard.tsx",
-      "source_location": "L124",
+      "source_location": "L131",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_meu_aprendizado_components_personallearningdashboard_personallearningdashboard",
@@ -21390,6 +21795,77 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/features/noticias/components/FeaturedNewsCarousel.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_noticias_components_featurednewscarousel",
+      "target": "src_features_noticias_components_featurednewscarousel_featurednewscarousel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/noticias/components/FeaturedNewsCarousel.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_noticias_components_featurednewscarousel",
+      "target": "src_features_noticias_types",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/noticias/components/FeaturedNewsCarousel.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_noticias_components_featurednewscarousel",
+      "target": "src_features_noticias_types_noticia",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/noticias/components/FeaturedNewsCarousel.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_noticias_components_featurednewscarousel",
+      "target": "src_shared_lib_formatar_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/noticias/components/FeaturedNewsCarousel.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_noticias_components_featurednewscarousel",
+      "target": "src_shared_lib_formatar_data_formatardatalonga",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/noticias/components/FeaturedNewsCarousel.tsx",
+      "source_location": "L70",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_noticias_components_featurednewscarousel_featurednewscarousel",
+      "target": "src_shared_lib_formatar_data_formatardatalonga"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/features/noticias/components/NoticiaCard.tsx",
       "source_location": "L9",
       "weight": 1.0,
@@ -21505,18 +21981,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/features/noticias/components/NoticiasBusca.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_features_noticias_components_noticiasbusca",
-      "target": "src_features_noticias_components_noticiacard",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -21539,18 +22003,6 @@
       "_origin": "ast",
       "source": "src_features_noticias_components_noticiacard_noticiacard",
       "target": "src_shared_lib_formatar_data_formatardatalonga"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/features/noticias/components/NoticiasBusca.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_features_noticias_components_noticiasbusca",
-      "target": "src_features_noticias_components_noticiacard_noticiacard",
-      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -21699,7 +22151,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/features/noticias/components/NoticiasBusca.tsx",
-      "source_location": "L12",
+      "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_noticias_components_noticiasbusca",
@@ -21711,7 +22163,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/noticias/components/NoticiasBusca.tsx",
-      "source_location": "L9",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_noticias_components_noticiasbusca",
@@ -21723,7 +22175,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/noticias/components/NoticiasBusca.tsx",
-      "source_location": "L9",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_noticias_components_noticiasbusca",
@@ -21735,7 +22187,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/noticias/components/NoticiasBusca.tsx",
-      "source_location": "L10",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_noticias_components_noticiasbusca",
@@ -21747,7 +22199,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/noticias/components/NoticiasBusca.tsx",
-      "source_location": "L10",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_noticias_components_noticiasbusca",
@@ -21759,7 +22211,31 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/noticias/components/NoticiasBusca.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_noticias_components_noticiasbusca",
+      "target": "src_shared_components_ui_button",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/noticias/components/NoticiasBusca.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_noticias_components_noticiasbusca",
+      "target": "src_shared_components_ui_button_button",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/noticias/components/NoticiasBusca.tsx",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_noticias_components_noticiasbusca",
@@ -21771,11 +22247,35 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/features/noticias/components/NoticiasBusca.tsx",
-      "source_location": "L6",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_noticias_components_noticiasbusca",
       "target": "src_shared_components_ui_searchinput_searchinput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/noticias/components/NoticiasBusca.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_noticias_components_noticiasbusca",
+      "target": "src_shared_lib_formatar_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/noticias/components/NoticiasBusca.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_noticias_components_noticiasbusca",
+      "target": "src_shared_lib_formatar_data_formatardatalonga",
       "confidence_score": 1.0
     },
     {
@@ -21796,11 +22296,23 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/noticias/components/NoticiasBusca.tsx",
-      "source_location": "L25",
+      "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_features_noticias_components_noticiasbusca_noticiasbusca",
       "target": "src_features_noticias_data_busca_noticias_opcoesdoindicenoticias"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/noticias/components/NoticiasBusca.tsx",
+      "source_location": "L85",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_noticias_components_noticiasbusca_noticiasbusca",
+      "target": "src_shared_lib_formatar_data_formatardatalonga"
     },
     {
       "relation": "imports",
@@ -22566,6 +23078,52 @@
       "_origin": "ast",
       "source": "tests_unit_sponsors_test",
       "target": "src_features_patrocinadores_types_sponsor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/projetos/components/FeaturedProjectsCarousel.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_projetos_components_featuredprojectscarousel",
+      "target": "src_features_projetos_components_featuredprojectscarousel_featuredprojectscarousel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/projetos/components/FeaturedProjectsCarousel.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_projetos_components_featuredprojectscarousel",
+      "target": "src_features_projetos_components_featuredprojectscarousel_featuredprojectscarouselprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/projetos/components/FeaturedProjectsCarousel.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_projetos_components_featuredprojectscarousel",
+      "target": "src_features_projetos_types",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/features/projetos/components/FeaturedProjectsCarousel.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_features_projetos_components_featuredprojectscarousel",
+      "target": "src_features_projetos_types_projeto",
       "confidence_score": 1.0
     },
     {
@@ -29597,6 +30155,50 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "graphify-out/memory/query_20260716_215542_configurar_projeto_supabase__oauth_app_github__cal.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "graphify_out_memory_query_20260716_215542_configurar_projeto_supabase_oauth_app_github_cal",
+      "target": "graphify_out_memory_query_20260716_215542_configurar_projeto_supabase_oauth_app_github_cal_q_configurar_projeto_supabase_oauth_app_github_callbacks_e_vari\u00e1veis_por_ambiente_como_faco_isso_aprovar_privacidade_termos_e_verificar_reten\u00e7\u00e3o_de_backups_antes_de_produ\u00e7\u00e3o_aprovo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "graphify-out/memory/query_20260716_215542_configurar_projeto_supabase__oauth_app_github__cal.md",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "graphify_out_memory_query_20260716_215542_configurar_projeto_supabase_oauth_app_github_cal_q_configurar_projeto_supabase_oauth_app_github_callbacks_e_vari\u00e1veis_por_ambiente_como_faco_isso_aprovar_privacidade_termos_e_verificar_reten\u00e7\u00e3o_de_backups_antes_de_produ\u00e7\u00e3o_aprovo",
+      "target": "graphify_out_memory_query_20260716_215542_configurar_projeto_supabase_oauth_app_github_cal_answer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "graphify-out/memory/query_20260716_215542_configurar_projeto_supabase__oauth_app_github__cal.md",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "graphify_out_memory_query_20260716_215542_configurar_projeto_supabase_oauth_app_github_cal_q_configurar_projeto_supabase_oauth_app_github_callbacks_e_vari\u00e1veis_por_ambiente_como_faco_isso_aprovar_privacidade_termos_e_verificar_reten\u00e7\u00e3o_de_backups_antes_de_produ\u00e7\u00e3o_aprovo",
+      "target": "graphify_out_memory_query_20260716_215542_configurar_projeto_supabase_oauth_app_github_cal_outcome",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "graphify-out/memory/query_20260716_215542_configurar_projeto_supabase__oauth_app_github__cal.md",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "graphify_out_memory_query_20260716_215542_configurar_projeto_supabase_oauth_app_github_cal_q_configurar_projeto_supabase_oauth_app_github_callbacks_e_vari\u00e1veis_por_ambiente_como_faco_isso_aprovar_privacidade_termos_e_verificar_reten\u00e7\u00e3o_de_backups_antes_de_produ\u00e7\u00e3o_aprovo",
+      "target": "graphify_out_memory_query_20260716_215542_configurar_projeto_supabase_oauth_app_github_cal_source_nodes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/content/aprendizado/aulas/comunicacao-serial.mdx",
       "source_location": "L24",
       "weight": 1.0,
@@ -29823,6 +30425,72 @@
       "_origin": "ast",
       "source": "src_content_aprendizado_aulas_visao_computacional_basica",
       "target": "src_content_aprendizado_aulas_visao_computacional_basica_processamento_de_imagem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/projetos/braco-robotico-educacional.mdx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_content_projetos_braco_robotico_educacional",
+      "target": "src_content_projetos_braco_robotico_educacional_desenvolvimento",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/projetos/braco-robotico-educacional.mdx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_content_projetos_braco_robotico_educacional",
+      "target": "src_content_projetos_braco_robotico_educacional_pr\u00f3ximos_passos",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/projetos/estacao-monitoramento-ambiental.mdx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_content_projetos_estacao_monitoramento_ambiental",
+      "target": "src_content_projetos_estacao_monitoramento_ambiental_aplica\u00e7\u00e3o",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/projetos/estacao-monitoramento-ambiental.mdx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_content_projetos_estacao_monitoramento_ambiental",
+      "target": "src_content_projetos_estacao_monitoramento_ambiental_estado_atual",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/projetos/robo-seguidor-de-linha.mdx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_content_projetos_robo_seguidor_de_linha",
+      "target": "src_content_projetos_robo_seguidor_de_linha_objetivo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/content/projetos/robo-seguidor-de-linha.mdx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_content_projetos_robo_seguidor_de_linha",
+      "target": "src_content_projetos_robo_seguidor_de_linha_resultados",
       "confidence_score": 1.0
     },
     {

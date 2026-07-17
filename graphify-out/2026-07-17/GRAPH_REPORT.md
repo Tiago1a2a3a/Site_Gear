@@ -1,11 +1,11 @@
-# Graph Report - GEAR_SITE  (2026-07-16)
+# Graph Report - GEAR_SITE  (2026-07-17)
 
 ## Corpus Check
-- 226 files · ~84,650 words
+- 240 files · ~86,467 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1066 nodes · 1592 edges · 135 communities (91 shown, 44 thin omitted)
+- 1093 nodes · 1624 edges · 154 communities (106 shown, 48 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 11 edges (avg confidence: 0.75)
 - Token cost: 0 input · 0 output
 
@@ -120,6 +120,17 @@
 - 20260716000100_create_personal_learning.sql
 - Q: Use o Graphify para entender a arquitetura e implemente ADENDO MILESTONE_LOGIN deste projeto. Consulte o grafo primeiro, faça as alterações necessárias e rode os testes.
 - 0. Como usar este plano
+- 10. Adendo visual e de navegação — 16 de julho de 2026
+- README.md
+- Configuração do Supabase
+- Como contribuir
+- ADR 0001 - Supabase para login e Meu aprendizado
+- Guia editorial de conteúdo
+- Q: Configurar projeto Supabase, OAuth App GitHub, callbacks e variáveis por ambiente. como faco isso Aprovar Privacidade/Termos e verificar retenção de backups antes de produção. aprovo
+- 2. Como o projeto mudou desde o começo da implementação
+- braco-robotico-educacional.mdx
+- estacao-monitoramento-ambiental.mdx
+- robo-seguidor-de-linha.mdx
 
 ## God Nodes (most connected - your core abstractions)
 1. `Milestone extra — Login, inscrições e Meu aprendizado` - 24 edges
@@ -136,19 +147,19 @@
 ## Surprising Connections (you probably didn't know these)
 - `AulaPreRequisitos()` --indirect_call--> `slug()`  [INFERRED]
   src/features/aulas/components/AulaPreRequisitos.tsx → content.schemas.ts
-- `resolverAulasDoCurso()` --indirect_call--> `slug()`  [INFERRED]
-  src/features/cursos/data/cursos.ts → content.schemas.ts
 - `getLearningCatalog()` --indirect_call--> `slug()`  [INFERRED]
   src/features/meu-aprendizado/data/catalogo.ts → content.schemas.ts
 - `calculateCourseProgress()` --indirect_call--> `slug()`  [INFERRED]
   src/features/meu-aprendizado/services/progresso.ts → content.schemas.ts
 - `calculateTrailProgress()` --indirect_call--> `course()`  [INFERRED]
   src/features/meu-aprendizado/services/progresso.ts → tests/unit/content-validation.test.ts
+- `buildCompletedLessonSummaries()` --indirect_call--> `lesson()`  [INFERRED]
+  src/features/meu-aprendizado/services/progresso.ts → tests/unit/content-validation.test.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (135 total, 44 thin omitted)
+## Communities (154 total, 48 thin omitted)
 
 ### Community 1 - "devDependencies"
 Cohesion: 0.05
@@ -167,36 +178,36 @@ Cohesion: 0.05
 Nodes (38): dom, dom.iterable, esnext, **/*.mts, .next/dev/types/**/*.ts, next-env.d.ts, .next/types/**/*.ts, node_modules (+30 more)
 
 ### Community 5 - "paths"
-Cohesion: 0.06
-Nodes (41): ContentCollections, Course, courseFrontmatterSchema, courses, courseSchema, difficulty, download, Lesson (+33 more)
+Cohesion: 0.07
+Nodes (39): ContentCollections, Course, courseFrontmatterSchema, courses, courseSchema, difficulty, download, Lesson (+31 more)
 
 ### Community 6 - "include"
 Cohesion: 0.06
 Nodes (28): **10\. Controle de Acesso**, **11\. Desenvolvimento**, **12\. Escalabilidade**, **13\. Dependências**, **14\. Convenções**, **15\. Documentação**, **16\. Alterações na Arquitetura**, **17\. Diretrizes para IA** (+20 more)
 
 ### Community 7 - "dependencies"
-Cohesion: 0.05
-Nodes (31): Branches e commits, Como contribuir, Conteudo, Pull Requests, Uso responsavel de IA, Verificacoes locais, ADR 0001 - Supabase para login e Meu aprendizado, Avaliacao das dependencias (+23 more)
+Cohesion: 0.25
+Nodes (8): Arquitetura, Comandos, Documentacao do projeto, Estado atual, Instalacao, Login e Meu aprendizado, Portal GEAR, Pre-requisitos
 
 ### Community 17 - "types.ts"
-Cohesion: 0.13
-Nodes (23): AulaPage(), AulaPageProps, generateMetadata(), generateStaticParams(), AulasPage(), AulasPageProps, AulaBanner(), AulaBreadcrumbs() (+15 more)
+Cohesion: 0.12
+Nodes (24): AulaPage(), AulaPageProps, generateMetadata(), generateStaticParams(), AulasPage(), AulasPageProps, AulaBanner(), AulaBreadcrumbs() (+16 more)
 
 ### Community 18 - "types.ts"
-Cohesion: 0.15
-Nodes (21): CursoPage(), CursoPageProps, generateMetadata(), generateStaticParams(), CursosPage(), CursoAulaLink(), CursoAulas(), CursoBreadcrumbs() (+13 more)
+Cohesion: 0.10
+Nodes (30): slug(), assertNoPrerequisiteCycle(), CursoPage(), CursoPageProps, generateMetadata(), generateStaticParams(), CursosPage(), AprendizadoPage() (+22 more)
 
 ### Community 19 - "types.ts"
-Cohesion: 0.11
-Nodes (28): generateMetadata(), generateStaticParams(), NoticiaPage(), NoticiaPageProps, metadata, NoticiasPage(), AulaMetadados(), SearchBar() (+20 more)
+Cohesion: 0.10
+Nodes (32): minisearch, minisearch, generateMetadata(), generateStaticParams(), NoticiaPage(), NoticiaPageProps, metadata, NoticiasPage() (+24 more)
 
 ### Community 20 - "types.ts"
-Cohesion: 0.11
-Nodes (32): minisearch, minisearch, BuscaDeAulasPage(), BuscaDeConteudosPage(), BuscaDeCursosPage(), BuscaDeTrilhasPage(), BuscaLocal(), BuscaLocalProps (+24 more)
+Cohesion: 0.10
+Nodes (33): BuscaDeAulasPage(), BuscaDeConteudosPage(), BuscaDeCursosPage(), BuscaDeTrilhasPage(), BuscaLocal(), BuscaLocalProps, rotulos, FilterDrawer() (+25 more)
 
 ### Community 21 - "types.ts"
-Cohesion: 0.06
-Nodes (41): AprendizadoPage(), areas, TrilhasPage(), generateMetadata(), generateStaticParams(), TrilhaPage(), TrilhaPageProps, metadata (+33 more)
+Cohesion: 0.08
+Nodes (31): TrilhasPage(), generateMetadata(), generateStaticParams(), TrilhaPage(), TrilhaPageProps, Home(), metadata, ResultList() (+23 more)
 
 ### Community 24 - "4. Backlog completo"
 Cohesion: 0.11
@@ -292,11 +303,11 @@ Nodes (5): 8.1 Convenção de nomenclatura e ordenação, 8.2 Exemplos de combin
 
 ### Community 47 - "9. Organização dos Componentes"
 Cohesion: 0.07
-Nodes (52): config, proxy(), DELETE(), GET(), LoginPage(), LoginPageProps, metadata, metadata (+44 more)
+Nodes (51): config, proxy(), DELETE(), GET(), LoginPage(), LoginPageProps, metadata, metadata (+43 more)
 
 ### Community 48 - "0. Como usar este plano"
 Cohesion: 0.10
-Nodes (26): Home(), ProjetosPage(), generateMetadata(), generateStaticParams(), ProjetoPage(), ProjetoPageProps, AulaConteudoMDX(), ProjetoCard() (+18 more)
+Nodes (27): ProjetosPage(), generateMetadata(), generateStaticParams(), ProjetoPage(), ProjetoPageProps, AulaConteudoMDX(), FeaturedProjectsCarousel(), FeaturedProjectsCarouselProps (+19 more)
 
 ### Community 49 - "16. Cadência e governança"
 Cohesion: 0.50
@@ -323,8 +334,8 @@ Cohesion: 0.50
 Nodes (3): Camada compartilhada, Primitivos disponíveis, Tokens visuais
 
 ### Community 56 - "m5-content.md"
-Cohesion: 0.08
-Nodes (25): 10.1 Direção visual aprovada, 10.2 Home / landing page, 10.3 Patrocinadores e rodapé, 10.4 Header e acessos provisórios, 10.5 Página principal de Aprendizado, 10.6 Busca unificada e breadcrumbs, 10.7 Orientação para mudanças futuras, 10. Adendo visual e de navegação — 16 de julho de 2026 (+17 more)
+Cohesion: 0.17
+Nodes (12): 11. M13 extra — Login e Meu aprendizado — 16 de julho de 2026, 1. Resumo executivo, 3. Estado das Milestones, 4. Base técnica atual, 5. Modelo editorial e conteúdo atual, 6. O que ainda não deve ser presumido como pronto, 7. Próximo passo recomendado, 8. Procedimento para uma nova pessoa ou IA (+4 more)
 
 ### Community 79 - "README.md"
 Cohesion: 0.50
@@ -394,22 +405,50 @@ Nodes (4): Answer, Outcome, Q: Use o Graphify para entender a arquitetura e impl
 Cohesion: 0.50
 Nodes (4): 0.1 Restrições invariáveis, 0.2 Decisões operacionais complementares, 0.3 Unidade de trabalho e estados, 0. Como usar este plano
 
+### Community 135 - "10. Adendo visual e de navegação — 16 de julho de 2026"
+Cohesion: 0.25
+Nodes (8): 10.1 Direção visual aprovada, 10.2 Home / landing page, 10.3 Patrocinadores e rodapé, 10.4 Header e acessos provisórios, 10.5 Página principal de Aprendizado, 10.6 Busca unificada e breadcrumbs, 10.7 Orientação para mudanças futuras, 10. Adendo visual e de navegação — 16 de julho de 2026
+
+### Community 137 - "Configuração do Supabase"
+Cohesion: 0.29
+Nodes (6): Ambiente local de banco, Configuração do Supabase, GitHub OAuth, Projetos e ambientes, Registro obrigatório de backups, Validação antes de produção
+
+### Community 138 - "Como contribuir"
+Cohesion: 0.33
+Nodes (6): Branches e commits, Como contribuir, Conteudo, Pull Requests, Uso responsavel de IA, Verificacoes locais
+
+### Community 139 - "ADR 0001 - Supabase para login e Meu aprendizado"
+Cohesion: 0.40
+Nodes (5): ADR 0001 - Supabase para login e Meu aprendizado, Avaliacao das dependencias, Consequencias e limites, Contexto, Decisao
+
+### Community 140 - "Guia editorial de conteúdo"
+Cohesion: 0.40
+Nodes (5): Campos e formatos, Diagnóstico, Entidades e relações, Fluxo de publicação, Guia editorial de conteúdo
+
+### Community 141 - "Q: Configurar projeto Supabase, OAuth App GitHub, callbacks e variáveis por ambiente. como faco isso Aprovar Privacidade/Termos e verificar retenção de backups antes de produção. aprovo"
+Cohesion: 0.40
+Nodes (4): Answer, Outcome, Q: Configurar projeto Supabase, OAuth App GitHub, callbacks e variáveis por ambiente. como faco isso Aprovar Privacidade/Termos e verificar retenção de backups antes de produção. aprovo, Source Nodes
+
+### Community 142 - "2. Como o projeto mudou desde o começo da implementação"
+Cohesion: 0.40
+Nodes (5): 2.1 O planejamento foi refeito, 2.2 A prioridade de produto ficou explícita, 2.3 A arquitetura deixou de ser só intenção, 2.4 A identidade visual foi materializada, 2. Como o projeto mudou desde o começo da implementação
+
 ## Knowledge Gaps
-- **512 isolated node(s):** `plugins`, `publicationStatus`, `difficulty`, `trailItem`, `titledUrl` (+507 more)
+- **522 isolated node(s):** `plugins`, `publicationStatus`, `difficulty`, `trailItem`, `titledUrl` (+517 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **44 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **48 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `minisearch` connect `types.ts` to `scripts`, `types.ts`?**
-  _High betweenness centrality (0.063) - this node is a cross-community bridge._
+  _High betweenness centrality (0.060) - this node is a cross-community bridge._
 - **Why does `dependencies` connect `scripts` to `types.ts`?**
-  _High betweenness centrality (0.063) - this node is a cross-community bridge._
+  _High betweenness centrality (0.060) - this node is a cross-community bridge._
 - **Why does `Documentação de Arquitetura — Portal GEAR` connect `Documentação de Arquitetura — Portal GEAR` to `11. Design System`, `13. Checklist Técnico`, `10. Wireframes ASCII`, `include`, `1. Visão Geral`, `4. Fluxos dos Usuários`, `8. Organização das Trilhas/Cursos/Aulas`, `5. Papéis e permissões`, `12. Estratégia de Escalabilidade`, `14. Roadmap do Projeto`, `2.4 Decisões adotadas e recomendações técnicas`, `7. Organização dos Dados`?**
-  _High betweenness centrality (0.054) - this node is a cross-community bridge._
+  _High betweenness centrality (0.055) - this node is a cross-community bridge._
 - **What connects `plugins`, `publicationStatus`, `difficulty` to the rest of the system?**
-  _512 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _522 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `devDependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.05405405405405406 - nodes in this community are weakly interconnected._
 - **Should `scripts` be split into smaller, more focused modules?**

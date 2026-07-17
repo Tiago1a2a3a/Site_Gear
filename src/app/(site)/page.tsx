@@ -1,8 +1,8 @@
 import { HeroCarousel } from "@features/home/components/HeroCarousel";
 import { MemberGrid } from "@features/institucional/components/MemberGrid";
 import { ResearchAreaGrid } from "@features/institucional/components/ResearchAreaGrid";
-import { ProjetoCard } from "@features/projetos/components/ProjetoCard";
-import { listarProjetosEmDestaque } from "@features/projetos/data/projetos";
+import { NoticiaCard } from "@features/noticias/components/NoticiaCard";
+import { listarNoticiasPublicadas } from "@features/noticias/data/noticias";
 import { Badge } from "@shared/components/ui/Badge";
 import { Button } from "@shared/components/ui/Button";
 import { Card } from "@shared/components/ui/Card";
@@ -10,7 +10,7 @@ import { RevealOnScroll } from "@shared/components/ui/RevealOnScroll";
 import { institutionalContent } from "@shared/config/institutional";
 
 export default function Home() {
-  const projetosEmDestaque = listarProjetosEmDestaque(3);
+  const noticiaRecente = listarNoticiasPublicadas()[0];
 
   return (
     <div className="home-page">
@@ -91,21 +91,15 @@ export default function Home() {
                 Ver área de aprendizado
               </Button>
             </Card>
-            {projetosEmDestaque.length ? (
-              projetosEmDestaque.map((projeto) => (
-                <ProjetoCard
-                  headingLevel={3}
-                  key={projeto.slug}
-                  projeto={projeto}
-                />
-              ))
+            {noticiaRecente ? (
+              <NoticiaCard noticia={noticiaRecente} />
             ) : (
               <Card className="empty-state empty-state--accent">
-                <Badge>Projetos</Badge>
-                <h3>Projetos em organização</h3>
-                <p>A vitrine de protótipos e pesquisas está sendo preparada.</p>
-                <Button href="/projetos" variant="secondary">
-                  Visitar projetos
+                <Badge>Notícias</Badge>
+                <h3>Novidades em preparação</h3>
+                <p>As próximas atualizações do GEAR aparecerão aqui.</p>
+                <Button href="/noticias" variant="secondary">
+                  Visitar notícias
                 </Button>
               </Card>
             )}

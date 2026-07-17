@@ -13,6 +13,8 @@ import {
   listarContextosDaAula,
   listarAulasPublicadas,
 } from "@features/aulas/data/aulas";
+import { LessonCompletionButton } from "@features/meu-aprendizado/components/LessonCompletionButton";
+import { getRelatedEnrollmentsForLesson } from "@features/meu-aprendizado/data/catalogo";
 
 type AulaPageProps = Readonly<{
   params: Promise<{ aula: string }>;
@@ -81,6 +83,10 @@ export default async function AulaPage({ params }: AulaPageProps) {
         </aside>
       </div>
       <AulaRecursos aula={aula} />
+      <LessonCompletionButton
+        lessonIdentifier={aula.slug}
+        relatedEnrollments={getRelatedEnrollmentsForLesson(aula.slug)}
+      />
     </article>
   );
 }

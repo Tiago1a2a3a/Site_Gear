@@ -1,0 +1,1212 @@
+{
+  ".prettierrc.json": {
+    "mtime": 1784132110.7385807,
+    "ast_hash": "3dcead3bf756afd71709d00f8ff77c9b",
+    "semantic_hash": "3dcead3bf756afd71709d00f8ff77c9b"
+  },
+  "eslint.config.mjs": {
+    "mtime": 1784132110.7369301,
+    "ast_hash": "c19cd6fbb8f121207afc1b8916664f09",
+    "semantic_hash": "c19cd6fbb8f121207afc1b8916664f09"
+  },
+  "next-env.d.ts": {
+    "mtime": 1784238402.7404027,
+    "ast_hash": "d0f8375ae1199dc7acd3977fc33b78b8",
+    "semantic_hash": ""
+  },
+  "next.config.ts": {
+    "mtime": 1784236855.07835,
+    "ast_hash": "daad32b4de0b92afe04301ebf0a6cc76",
+    "semantic_hash": ""
+  },
+  "package.json": {
+    "mtime": 1784236780.005126,
+    "ast_hash": "0244ffd6ecc2dc1ac70698a58591a1bb",
+    "semantic_hash": ""
+  },
+  "playwright.config.ts": {
+    "mtime": 1784219623.4353597,
+    "ast_hash": "cf508063eb31a4550419f162e2d0be50",
+    "semantic_hash": ""
+  },
+  "postcss.config.mjs": {
+    "mtime": 1784131411.8671513,
+    "ast_hash": "239f3ebf717465dc636818a1a619398d",
+    "semantic_hash": "239f3ebf717465dc636818a1a619398d"
+  },
+  "src/app/(site)/aprendizado/aulas/[aula]/page.tsx": {
+    "mtime": 1784236122.183003,
+    "ast_hash": "1febe87874a3f9dc74de2b38d4952667",
+    "semantic_hash": ""
+  },
+  "src/app/(site)/aprendizado/aulas/busca/page.tsx": {
+    "mtime": 1784158563.1136048,
+    "ast_hash": "d568a2fe64c3b5e2e88b262d11e526df",
+    "semantic_hash": ""
+  },
+  "src/app/(site)/aprendizado/aulas/page.tsx": {
+    "mtime": 1784216020.434039,
+    "ast_hash": "bc105e080a5455cea50b12b5da179512",
+    "semantic_hash": ""
+  },
+  "src/app/(site)/aprendizado/cursos/[curso]/page.tsx": {
+    "mtime": 1784236122.1728566,
+    "ast_hash": "8df6712eb674facf8d8394c280dc6a86",
+    "semantic_hash": ""
+  },
+  "src/app/(site)/aprendizado/cursos/busca/page.tsx": {
+    "mtime": 1784158563.0933082,
+    "ast_hash": "228a9e388f6f5b4272b8e2b823491e1d",
+    "semantic_hash": ""
+  },
+  "src/app/(site)/aprendizado/cursos/page.tsx": {
+    "mtime": 1784216020.4405477,
+    "ast_hash": "c259771d43e9637e58f9ae998df3fc82",
+    "semantic_hash": ""
+  },
+  "src/app/(site)/aprendizado/page.tsx": {
+    "mtime": 1784218917.1989841,
+    "ast_hash": "be277c202dc3eaa11be34b13f7b7fc75",
+    "semantic_hash": ""
+  },
+  "src/app/(site)/aprendizado/trilhas/[trilha]/page.tsx": {
+    "mtime": 1784236456.9741414,
+    "ast_hash": "03b60c221cc9800144a1dafb38ae4157",
+    "semantic_hash": ""
+  },
+  "src/app/(site)/aprendizado/trilhas/busca/page.tsx": {
+    "mtime": 1784158563.0813167,
+    "ast_hash": "1bb7d1d8c1b893f00713416db71faa13",
+    "semantic_hash": ""
+  },
+  "src/app/(site)/aprendizado/trilhas/page.tsx": {
+    "mtime": 1784216020.4412775,
+    "ast_hash": "d424cf83121f1e4cf58d9e967667cb1e",
+    "semantic_hash": ""
+  },
+  "src/app/(site)/layout.tsx": {
+    "mtime": 1784236442.717557,
+    "ast_hash": "81e90b604cb13fec8269208c387dfd8d",
+    "semantic_hash": ""
+  },
+  "src/app/(site)/noticias/[noticia]/page.tsx": {
+    "mtime": 1784218609.7049563,
+    "ast_hash": "c095a6d4c84b08feadc0dbdc200ea41a",
+    "semantic_hash": ""
+  },
+  "src/app/(site)/noticias/page.tsx": {
+    "mtime": 1784218609.701954,
+    "ast_hash": "8b794a0eaaa42a523ceb4229228d4f13",
+    "semantic_hash": ""
+  },
+  "src/app/(site)/page.tsx": {
+    "mtime": 1784218804.273003,
+    "ast_hash": "055fcf56bff02299d64100ec45e15276",
+    "semantic_hash": ""
+  },
+  "src/app/(site)/patrocinadores/page.tsx": {
+    "mtime": 1784218804.3048203,
+    "ast_hash": "70c470210390b72b3cbb6bf1d07f375a",
+    "semantic_hash": ""
+  },
+  "src/app/(site)/privacidade/page.tsx": {
+    "mtime": 1784238732.4107714,
+    "ast_hash": "f3ec207fd80f1ba9c8031c73a15d27c8",
+    "semantic_hash": ""
+  },
+  "src/app/(site)/projetos/[projeto]/page.tsx": {
+    "mtime": 1784159769.2444153,
+    "ast_hash": "bb44a20f7afa9df12c26ff183bae2265",
+    "semantic_hash": ""
+  },
+  "src/app/(site)/projetos/page.tsx": {
+    "mtime": 1784218917.2200131,
+    "ast_hash": "8cd324652d24be31409b5dbb67b6500e",
+    "semantic_hash": ""
+  },
+  "src/app/(site)/sobre/page.tsx": {
+    "mtime": 1784218804.2890482,
+    "ast_hash": "6d04f05622ac432f0ee2d6960d992c05",
+    "semantic_hash": ""
+  },
+  "src/app/(site)/termos/page.tsx": {
+    "mtime": 1784238732.415212,
+    "ast_hash": "dc44148f4d6eab9f7f0f7c577bafee00",
+    "semantic_hash": ""
+  },
+  "src/app/layout.tsx": {
+    "mtime": 1784153203.5513823,
+    "ast_hash": "f832f701a440f203451bac56f3fe9846",
+    "semantic_hash": ""
+  },
+  "src/app/not-found.tsx": {
+    "mtime": 1784134010.649833,
+    "ast_hash": "dfe71d5e46fc61e6585e1a2afaaf828f",
+    "semantic_hash": "dfe71d5e46fc61e6585e1a2afaaf828f"
+  },
+  "src/features/aulas/types.ts": {
+    "mtime": 1784155515.5809915,
+    "ast_hash": "f1256c9ce40c85e8c2c20f7dc4f62b88",
+    "semantic_hash": ""
+  },
+  "src/features/cursos/types.ts": {
+    "mtime": 1784155562.971973,
+    "ast_hash": "c623db55b7f34fc324c17935db9b47d8",
+    "semantic_hash": ""
+  },
+  "src/features/noticias/types.ts": {
+    "mtime": 1784218609.6884491,
+    "ast_hash": "41c52667354fe0ca2c8a23b64681473e",
+    "semantic_hash": ""
+  },
+  "src/features/projetos/types.ts": {
+    "mtime": 1784159583.2334797,
+    "ast_hash": "4ba3ca6205279d8f6e3ab66a8464810d",
+    "semantic_hash": ""
+  },
+  "src/features/trilhas/types.ts": {
+    "mtime": 1784155637.058667,
+    "ast_hash": "c5956b97ea91e6c4e068304194808b1f",
+    "semantic_hash": ""
+  },
+  "src/shared/components/layout/Container.tsx": {
+    "mtime": 1784133922.0809896,
+    "ast_hash": "72eeb57e92034df9e90ffd147f0a72ee",
+    "semantic_hash": "72eeb57e92034df9e90ffd147f0a72ee"
+  },
+  "src/shared/components/layout/Footer.tsx": {
+    "mtime": 1784150715.7141545,
+    "ast_hash": "2a7225ac7acf6b2cd25c74778a327b9b",
+    "semantic_hash": ""
+  },
+  "src/shared/components/layout/Header.tsx": {
+    "mtime": 1784237558.5536096,
+    "ast_hash": "6d3a3a0e653f389cad14ce306bb8cb05",
+    "semantic_hash": ""
+  },
+  "src/shared/components/layout/TemporaryPage.tsx": {
+    "mtime": 1784212453.830181,
+    "ast_hash": "f8130714ab5807a150b305fe62b9d96a",
+    "semantic_hash": ""
+  },
+  "src/shared/config/site.ts": {
+    "mtime": 1784151206.3835156,
+    "ast_hash": "0b1b08abe4cbf04c4c28ac104d184784",
+    "semantic_hash": ""
+  },
+  "tests/e2e/home.spec.ts": {
+    "mtime": 1784159913.5740142,
+    "ast_hash": "e94b26759a53049435483f87bf0ea161",
+    "semantic_hash": ""
+  },
+  "tests/e2e/responsive-navigation.spec.ts": {
+    "mtime": 1784219232.709167,
+    "ast_hash": "4f67b142fccf4958bc649c85180bb3d6",
+    "semantic_hash": ""
+  },
+  "tests/e2e/site-map.spec.ts": {
+    "mtime": 1784237550.3036516,
+    "ast_hash": "2fefe67e6a4117702123468246cd87c0",
+    "semantic_hash": ""
+  },
+  "tests/unit/home.test.tsx": {
+    "mtime": 1784218804.3651555,
+    "ast_hash": "a0c8bc06c348f68798633d89275c297d",
+    "semantic_hash": ""
+  },
+  "tests/unit/site-navigation.test.ts": {
+    "mtime": 1784150654.2013054,
+    "ast_hash": "20384a0b27632334550aca3baf7d3409",
+    "semantic_hash": ""
+  },
+  "tests/velite/schema.ts": {
+    "mtime": 1784132308.9060142,
+    "ast_hash": "a0a44c57e560dc6dce27f70a403e193e",
+    "semantic_hash": "a0a44c57e560dc6dce27f70a403e193e"
+  },
+  "tests/velite/velite.invalid.config.mts": {
+    "mtime": 1784132347.4231005,
+    "ast_hash": "0d982ff1dee335acf66699feb4172a7c",
+    "semantic_hash": "0d982ff1dee335acf66699feb4172a7c"
+  },
+  "tsconfig.json": {
+    "mtime": 1784132031.40878,
+    "ast_hash": "72ec6c4e28add005f538cbff0fb22141",
+    "semantic_hash": "72ec6c4e28add005f538cbff0fb22141"
+  },
+  "velite.config.mts": {
+    "mtime": 1784138932.2219532,
+    "ast_hash": "74bd8d639d545dc715fbba2b488d673b",
+    "semantic_hash": ""
+  },
+  "vitest.config.mts": {
+    "mtime": 1784132588.073459,
+    "ast_hash": "b57a32a0e81cf81267b712b2587c07d6",
+    "semantic_hash": "b57a32a0e81cf81267b712b2587c07d6"
+  },
+  "content.schemas.ts": {
+    "mtime": 1784214867.9089496,
+    "ast_hash": "237ed0c896fb2324b961a7cdbe097764",
+    "semantic_hash": ""
+  },
+  "content.validation.ts": {
+    "mtime": 1784139476.1097798,
+    "ast_hash": "51839a623de94ce2711a6d7cac817364",
+    "semantic_hash": ""
+  },
+  "src/features/aulas/components/AulaBanner.tsx": {
+    "mtime": 1784152967.491048,
+    "ast_hash": "adbf5ab3d2102cad69247a3420a4e32d",
+    "semantic_hash": ""
+  },
+  "src/features/aulas/components/AulaBreadcrumbs.tsx": {
+    "mtime": 1784156529.0719557,
+    "ast_hash": "d82732918bff01c6668482653e461c68",
+    "semantic_hash": ""
+  },
+  "src/features/aulas/components/AulaCard.tsx": {
+    "mtime": 1784152967.4885285,
+    "ast_hash": "954c2ba0a06ad8020738a0c159958859",
+    "semantic_hash": ""
+  },
+  "src/features/aulas/components/AulaConteudoMDX.tsx": {
+    "mtime": 1784218443.2266605,
+    "ast_hash": "fcba8cbce36b8b475a284000658a62fa",
+    "semantic_hash": ""
+  },
+  "src/features/aulas/components/AulaMetadados.tsx": {
+    "mtime": 1784218443.2306862,
+    "ast_hash": "c17792f7a530f38c76da48f30a31ddfc",
+    "semantic_hash": ""
+  },
+  "src/features/aulas/components/AulaPreRequisitos.tsx": {
+    "mtime": 1784153109.4130237,
+    "ast_hash": "530ea983a8ee1c13d3b7a794a17b6089",
+    "semantic_hash": ""
+  },
+  "src/features/aulas/components/AulaRecursos.tsx": {
+    "mtime": 1784153109.4393194,
+    "ast_hash": "a8814594857a1f6004894c48027dc837",
+    "semantic_hash": ""
+  },
+  "src/features/aulas/data/aulas.ts": {
+    "mtime": 1784214867.913949,
+    "ast_hash": "d31a89c96c61021fb439815216ec50aa",
+    "semantic_hash": ""
+  },
+  "src/features/cursos/components/CursoAulaLink.tsx": {
+    "mtime": 1784156529.082421,
+    "ast_hash": "229d2d04ccb90f191de0796e0ad44551",
+    "semantic_hash": ""
+  },
+  "src/features/cursos/components/CursoAulas.tsx": {
+    "mtime": 1784156529.0719557,
+    "ast_hash": "7e71256abe6008be3458bcde1fba7338",
+    "semantic_hash": ""
+  },
+  "src/features/cursos/components/CursoBreadcrumbs.tsx": {
+    "mtime": 1784156529.0719557,
+    "ast_hash": "5fef854e243f3dd0f8f10152c870f8bd",
+    "semantic_hash": ""
+  },
+  "src/features/cursos/components/CursoCard.tsx": {
+    "mtime": 1784155946.7958562,
+    "ast_hash": "515be01ce12b4959baa1413075fdcafe",
+    "semantic_hash": ""
+  },
+  "src/features/cursos/components/CursoDetalhe.tsx": {
+    "mtime": 1784236122.1728566,
+    "ast_hash": "5211c3eeb75c283493b80a723cc7757c",
+    "semantic_hash": ""
+  },
+  "src/features/cursos/data/cursos.ts": {
+    "mtime": 1784214867.90995,
+    "ast_hash": "40e54596ebdeff66f32950e66e62b77c",
+    "semantic_hash": ""
+  },
+  "src/features/patrocinadores/components/SponsorStrip.tsx": {
+    "mtime": 1784151110.8576696,
+    "ast_hash": "06b4ffd396ece75afdbbde60b335a462",
+    "semantic_hash": ""
+  },
+  "src/features/patrocinadores/data/sponsors.ts": {
+    "mtime": 1784150654.1867704,
+    "ast_hash": "158d5031b211fda797b5b6906b02ab77",
+    "semantic_hash": ""
+  },
+  "src/features/patrocinadores/types.ts": {
+    "mtime": 1784138395.826608,
+    "ast_hash": "0978a5b1d992baecc843d155103f83e7",
+    "semantic_hash": ""
+  },
+  "src/features/trilhas/components/TrilhaCard.tsx": {
+    "mtime": 1784155637.0617068,
+    "ast_hash": "0c910b1104df5971946f4850b342b341",
+    "semantic_hash": ""
+  },
+  "src/features/trilhas/components/TrilhaDetalhe.tsx": {
+    "mtime": 1784236122.1728566,
+    "ast_hash": "eb9b54da5443add97c84ae80c5e9294b",
+    "semantic_hash": ""
+  },
+  "src/features/trilhas/components/TrilhaPercurso.tsx": {
+    "mtime": 1784155637.0637074,
+    "ast_hash": "b8f98d656578cc5703f262ed1ff42e0b",
+    "semantic_hash": ""
+  },
+  "src/features/trilhas/data/trilhas.ts": {
+    "mtime": 1784218917.292382,
+    "ast_hash": "f2421ef37d5c4791282c304df27df826",
+    "semantic_hash": ""
+  },
+  "src/shared/components/ui/Badge.tsx": {
+    "mtime": 1784136706.8221147,
+    "ast_hash": "9376d988736225067ed017bf3936474e",
+    "semantic_hash": ""
+  },
+  "src/shared/components/ui/Breadcrumbs.tsx": {
+    "mtime": 1784155947.072091,
+    "ast_hash": "ab9d30e564a7754ff2ce5def6538d972",
+    "semantic_hash": ""
+  },
+  "src/shared/components/ui/Button.tsx": {
+    "mtime": 1784136706.8243396,
+    "ast_hash": "7ff8ac571ba2d2cee6572d4618583d23",
+    "semantic_hash": ""
+  },
+  "src/shared/components/ui/Card.tsx": {
+    "mtime": 1784136706.8272414,
+    "ast_hash": "87d963def673bb65ce75132428096a21",
+    "semantic_hash": ""
+  },
+  "src/shared/config/institutional.ts": {
+    "mtime": 1784218522.1634667,
+    "ast_hash": "84f9abb95b6121b3724e1256550a4ed5",
+    "semantic_hash": ""
+  },
+  "tests/e2e/aulas.spec.ts": {
+    "mtime": 1784237184.48743,
+    "ast_hash": "3e8204798d26d9cb9c53ccdc5bbc26ee",
+    "semantic_hash": ""
+  },
+  "tests/e2e/cursos-trilhas.spec.ts": {
+    "mtime": 1784237090.2777479,
+    "ast_hash": "77652bacf9c9b4271751841201402da9",
+    "semantic_hash": ""
+  },
+  "tests/unit/aulas.test.ts": {
+    "mtime": 1784155932.9025967,
+    "ast_hash": "14c8e363316fe8754984eac7a57b784f",
+    "semantic_hash": ""
+  },
+  "tests/unit/content-schemas.test.ts": {
+    "mtime": 1784139477.4010093,
+    "ast_hash": "c302ab25166a41962f57dde3f07ab0e5",
+    "semantic_hash": ""
+  },
+  "tests/unit/content-validation.test.ts": {
+    "mtime": 1784139477.4423466,
+    "ast_hash": "9272f220dce2fd507b47196472249450",
+    "semantic_hash": ""
+  },
+  "tests/unit/cursos.test.ts": {
+    "mtime": 1784156379.8500988,
+    "ast_hash": "24d373026db487019971119c3383fe7f",
+    "semantic_hash": ""
+  },
+  "tests/unit/design-system.test.tsx": {
+    "mtime": 1784137563.0742364,
+    "ast_hash": "320617c939c9d83e10cc00dcd4f26ee3",
+    "semantic_hash": ""
+  },
+  "tests/unit/sponsors.test.tsx": {
+    "mtime": 1784218786.3978248,
+    "ast_hash": "c8889fea7ec1f0048403044d1e5deffa",
+    "semantic_hash": ""
+  },
+  "tests/unit/trilhas.test.ts": {
+    "mtime": 1784155947.8728573,
+    "ast_hash": "e2d9a539991fd57f6b8ed2c57bf1dcaf",
+    "semantic_hash": ""
+  },
+  "tests/velite/velite.valid.config.mts": {
+    "mtime": 1784138932.2219532,
+    "ast_hash": "2cbde62df2b6935c9be725ecb4bae15a",
+    "semantic_hash": ""
+  },
+  ".github/ISSUE_TEMPLATE/config.yml": {
+    "mtime": 1784132513.5533557,
+    "ast_hash": "560f7c9b8afe4ac4ec773f925bde485b",
+    "semantic_hash": ""
+  },
+  ".github/ISSUE_TEMPLATE/item-do-backlog.yml": {
+    "mtime": 1784132513.5553644,
+    "ast_hash": "e3534ac60c67bf1d1f1053f058df78d5",
+    "semantic_hash": ""
+  },
+  ".github/pull_request_template.md": {
+    "mtime": 1784132513.5574005,
+    "ast_hash": "7f7a362afa80a7c199e49f900346bc4f",
+    "semantic_hash": ""
+  },
+  "CONTRIBUTING.md": {
+    "mtime": 1784132547.0400743,
+    "ast_hash": "cd3e994bfdeb8705b8cdf3f572f3aa87",
+    "semantic_hash": ""
+  },
+  "PARTE A/GEAR Website \u2014 Project Rules.md": {
+    "mtime": 1784233774.2668207,
+    "ast_hash": "2c02d9e84d658d4ba3481d5c70838eff",
+    "semantic_hash": ""
+  },
+  "PARTE A/development-plan.md": {
+    "mtime": 1784238803.5000362,
+    "ast_hash": "ba5e4112e1eab5de87c70ea7b80d7dec",
+    "semantic_hash": ""
+  },
+  "PARTE A/gear-documentacao-arquitetura (2).md": {
+    "mtime": 1784233774.2604895,
+    "ast_hash": "705fc1a9e1f6fc14d027c488ddbe60a8",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1784236459.063625,
+    "ast_hash": "92345d2d4d08b3e1157f64421eb4e615",
+    "semantic_hash": ""
+  },
+  "agent.md": {
+    "mtime": 1784161005.7220347,
+    "ast_hash": "d1357664e2b7ddceb824fac11f732fa0",
+    "semantic_hash": ""
+  },
+  "docs/baselines/m5-content.md": {
+    "mtime": 1784139476.1720488,
+    "ast_hash": "0b527ae02028d610e36ae03fbdd1d3ef",
+    "semantic_hash": ""
+  },
+  "docs/content-editorial.md": {
+    "mtime": 1784139376.9963932,
+    "ast_hash": "d5318f16338a68f65dd3bf255bb61da8",
+    "semantic_hash": ""
+  },
+  "graphify-out/memory/query_20260715_213338_atualizar_a_home_com_a_logo_principal__mascote__ap.md": {
+    "mtime": 1784151218.8521924,
+    "ast_hash": "afb81b86f714a30ba20bb1f440436627",
+    "semantic_hash": ""
+  },
+  "graphify-out/memory/query_20260715_220936_use_o_graphify_para_entender_a_arquitetura_e_imple.md": {
+    "mtime": 1784153376.497255,
+    "ast_hash": "9a91fcd9e9ae0d142c0c479f529fd5aa",
+    "semantic_hash": ""
+  },
+  "public/downloads/guia-exemplo.txt": {
+    "mtime": 1784138971.6448872,
+    "ast_hash": "5d366acd1c2058ace509ad3fa2e6ab09",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/aulas/comunicacao-serial.mdx": {
+    "mtime": 1784155729.3972013,
+    "ast_hash": "fefea19b50e20f6d41010efad1532fc4",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/aulas/controle-motores-dc.mdx": {
+    "mtime": 1784155729.3868544,
+    "ast_hash": "c5e202bf859dfd53cef34201594c8817",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/aulas/controle-pid.mdx": {
+    "mtime": 1784155782.2623963,
+    "ast_hash": "aad8f7ece2529daba83c83a4dddda6d3",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/aulas/documentacao-projetos.mdx": {
+    "mtime": 1784155782.2763126,
+    "ast_hash": "a609962b58241acbe8a06fa62b84fece",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/aulas/fundamentos-eletronica.mdx": {
+    "mtime": 1784155729.3868544,
+    "ast_hash": "61cda8b398c9049d4632a0603d395ef3",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/aulas/git-branches.mdx": {
+    "mtime": 1784138971.6469908,
+    "ast_hash": "7bc28959e7fc39fd53f22f13d5b20db6",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/aulas/git-repositorio.mdx": {
+    "mtime": 1784138971.6469908,
+    "ast_hash": "d4b0acc0789d602a298f2db742bb2576",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/aulas/impressao-3d-pecas.mdx": {
+    "mtime": 1784155729.4141498,
+    "ast_hash": "1d6c549ddef488fc86eaba2e00a18af3",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/aulas/integracao-sensores.mdx": {
+    "mtime": 1784155782.2623963,
+    "ast_hash": "145da2778eaf4f2777de990d1a813a5d",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/aulas/introducao-arduino.mdx": {
+    "mtime": 1784155729.3868544,
+    "ast_hash": "46036db33bee10f2d927a14ab73f3f6a",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/aulas/introducao-robotica.mdx": {
+    "mtime": 1784138971.6469908,
+    "ast_hash": "88a6a3806cd73b41d18b730b8854740c",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/aulas/modelagem-3d-robotica.mdx": {
+    "mtime": 1784155729.4101224,
+    "ast_hash": "31bd1c7f274b81fcf27bc270feeb51c5",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/aulas/planejamento-trajetoria.mdx": {
+    "mtime": 1784155782.2623963,
+    "ast_hash": "cbcec0e128b99641ce714f0571491154",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/aulas/programacao-c-microcontroladores.mdx": {
+    "mtime": 1784155729.3951862,
+    "ast_hash": "b3939123281e0876a70d29e3b7699762",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/aulas/prototipagem-breadboard.mdx": {
+    "mtime": 1784155782.2686684,
+    "ast_hash": "5e9cc386ad2e9dc3be45eed51db5052c",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/aulas/pwm-na-pratica.mdx": {
+    "mtime": 1784155729.4012234,
+    "ast_hash": "7be7a8d78f9f638aa3afcf4245cde0d9",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/aulas/python-para-robotica.mdx": {
+    "mtime": 1784155782.2521446,
+    "ast_hash": "b0f2b4db18d8ffbe66e8954404dc1aa0",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/aulas/rascunho-interno.mdx": {
+    "mtime": 1784138971.653056,
+    "ast_hash": "0dcaab1d5420c0e7b77a4675b23bd07b",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/aulas/ros-primeiros-passos.mdx": {
+    "mtime": 1784156033.4219437,
+    "ast_hash": "e69ce8aa703119db902a5e89e55c7ee4",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/aulas/seguranca-laboratorio.mdx": {
+    "mtime": 1784155782.272284,
+    "ast_hash": "db4b9e7d0b5f0b40cef57cffffb9e106",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/aulas/sensores-digitais-analogicos.mdx": {
+    "mtime": 1784155729.3868544,
+    "ast_hash": "01b01d41bd18c574ee63fde9d41f4d4a",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/aulas/servo-motores.mdx": {
+    "mtime": 1784155729.4060993,
+    "ast_hash": "37a863b736eb57dacccfa22a1e6d7e1b",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/aulas/testes-sistemas-roboticos.mdx": {
+    "mtime": 1784155782.281613,
+    "ast_hash": "8add956ddf634aa92d0534f4fae68d85",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/aulas/visao-computacional-basica.mdx": {
+    "mtime": 1784155782.2591372,
+    "ast_hash": "1c80fc29630041687df51d872f30881c",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/cursos/curso-interno.mdx": {
+    "mtime": 1784155825.9600215,
+    "ast_hash": "a0a6e1fdbf06d2c373c1221ce8a569af",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/cursos/eletronica-aplicada.mdx": {
+    "mtime": 1784214867.9162066,
+    "ast_hash": "f9d9cfc3cacf09c3c8f7db7b6534f5a5",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/cursos/fabricacao-digital.mdx": {
+    "mtime": 1784214867.922006,
+    "ast_hash": "2e1e8ba3798154753879251e72e1691d",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/cursos/fundamentos-arduino.mdx": {
+    "mtime": 1784214867.9184973,
+    "ast_hash": "3de6c228c5e55825aecc3ef13fbc26bf",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/cursos/git-para-robotica.mdx": {
+    "mtime": 1784138971.6550646,
+    "ast_hash": "fbdcab607afd56dbf1571b2e9d683ba6",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/cursos/programacao-robotica.mdx": {
+    "mtime": 1784214867.924023,
+    "ast_hash": "a0a20dbb8cbbc4d32bc322998d7ac0bd",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/cursos/sistemas-autonomos.mdx": {
+    "mtime": 1784155825.9520934,
+    "ast_hash": "9105361dc03e66f2b9acdb2f598cd95a",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/trilhas/construcao-robos.mdx": {
+    "mtime": 1784214867.9310203,
+    "ast_hash": "19f1dd2aa758f66c9e0e64b23396b683",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/trilhas/robos-autonomos.mdx": {
+    "mtime": 1784155825.964492,
+    "ast_hash": "d65c8f4c94db888a4eb0f232493dff43",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/trilhas/robotica-do-zero.mdx": {
+    "mtime": 1784214867.9270215,
+    "ast_hash": "a127d171beff0efb9f9fc0fef8df0420",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/trilhas/robotica-inicial.mdx": {
+    "mtime": 1784138971.6550646,
+    "ast_hash": "73349085fb7243e56f6fa322dcc2ebce",
+    "semantic_hash": ""
+  },
+  "src/content/aprendizado/trilhas/trilha-interna.mdx": {
+    "mtime": 1784155825.966508,
+    "ast_hash": "2d409b6056694cbfff98a46e8d8265fb",
+    "semantic_hash": ""
+  },
+  "src/content/noticias/fundacao-mdx.mdx": {
+    "mtime": 1784138971.6591065,
+    "ast_hash": "166a2373dddcaf356dbaed032205bb6e",
+    "semantic_hash": ""
+  },
+  "src/content/projetos/robo-exemplo.mdx": {
+    "mtime": 1784160011.4848232,
+    "ast_hash": "061e9fe6bd5acc7c24a66e0a4792d095",
+    "semantic_hash": ""
+  },
+  "src/features/aulas/README.md": {
+    "mtime": 1784133305.192787,
+    "ast_hash": "d62ea24f06cbe95b7ae716bd55113fbf",
+    "semantic_hash": ""
+  },
+  "src/features/busca/README.md": {
+    "mtime": 1784158480.9036872,
+    "ast_hash": "358018ba4013fb48418e72c008ed7867",
+    "semantic_hash": ""
+  },
+  "src/features/cursos/README.md": {
+    "mtime": 1784133305.1968133,
+    "ast_hash": "015cfcbd8e9a15fc362d4534b87d1a0a",
+    "semantic_hash": ""
+  },
+  "src/features/giscus/README.md": {
+    "mtime": 1784133305.2008374,
+    "ast_hash": "f7cc69dde184230a76f859f154dd505b",
+    "semantic_hash": ""
+  },
+  "src/features/noticias/README.md": {
+    "mtime": 1784218609.709488,
+    "ast_hash": "e08ac31b778c285329d520532cf805ce",
+    "semantic_hash": ""
+  },
+  "src/features/patrocinadores/README.md": {
+    "mtime": 1784218718.7523336,
+    "ast_hash": "f4ed47f1482fcc0aad3576c2090c0cb4",
+    "semantic_hash": ""
+  },
+  "src/features/projetos/README.md": {
+    "mtime": 1784159652.6968234,
+    "ast_hash": "fee9bd6f82da8835da893a524b63bc61",
+    "semantic_hash": ""
+  },
+  "src/features/trilhas/README.md": {
+    "mtime": 1784133305.2336624,
+    "ast_hash": "6e81905db0450cc67af51d052f813163",
+    "semantic_hash": ""
+  },
+  "src/shared/README.md": {
+    "mtime": 1784136706.8293226,
+    "ast_hash": "0619e64718419d04fbb9c5df1fa68525",
+    "semantic_hash": ""
+  },
+  "tests/velite/fixtures/invalid/exemplo.mdx": {
+    "mtime": 1784132328.4728372,
+    "ast_hash": "0c3becbfb374002cb0e2be0927c0ddcb",
+    "semantic_hash": ""
+  },
+  "tests/velite/fixtures/valid/exemplo.mdx": {
+    "mtime": 1784132308.9101827,
+    "ast_hash": "0700556e2d8ce58994968ea9e995e578",
+    "semantic_hash": ""
+  },
+  "public/images/brand/gear-logo-compact.png": {
+    "mtime": 1784141042.1039822,
+    "ast_hash": "f42d49595d10567a0c068a4fe1f48b43",
+    "semantic_hash": ""
+  },
+  "public/images/brand/gear-logo.png": {
+    "mtime": 1784141042.1177225,
+    "ast_hash": "a164199bd77feaa30585be658600f4b1",
+    "semantic_hash": ""
+  },
+  "public/images/brand/gear-mascot-poses.png": {
+    "mtime": 1784141042.144502,
+    "ast_hash": "4c1875add6a952387f73c184006a76e3",
+    "semantic_hash": ""
+  },
+  "public/images/content/demo/emoji-coracao.jpg": {
+    "mtime": 1784154078.4123127,
+    "ast_hash": "b2cb1e0977834d8cea272d4ae9c544a7",
+    "semantic_hash": ""
+  },
+  "public/images/content/demo/emoji-positivo.jpg": {
+    "mtime": 1784154082.7595406,
+    "ast_hash": "3e2656ce3c3d996ef1df2a6de613db44",
+    "semantic_hash": ""
+  },
+  "public/images/content/demo/naruto-sasuke-manga.jpg": {
+    "mtime": 1784154135.1122308,
+    "ast_hash": "210ee32aaee67cb5c1466af416029168",
+    "semantic_hash": ""
+  },
+  "public/images/content/demo/naruto-sasuke.webp": {
+    "mtime": 1784154128.5467763,
+    "ast_hash": "614623d1e96c590abeec533bb072127b",
+    "semantic_hash": ""
+  },
+  "public/images/content/placeholder.svg": {
+    "mtime": 1784138971.6429617,
+    "ast_hash": "ddadc3409777464c07dc6e994fa33d8e",
+    "semantic_hash": ""
+  },
+  "public/images/sponsors/dcc-ufmg.png": {
+    "mtime": 1784151579.3362455,
+    "ast_hash": "4f5506010e8555419dda816e9cb6598d",
+    "semantic_hash": ""
+  },
+  "public/images/sponsors/escola-engenharia-ufmg.png": {
+    "mtime": 1784141042.073213,
+    "ast_hash": "a3d4dac8603f68bb5233066ed43b647f",
+    "semantic_hash": ""
+  },
+  "public/images/sponsors/ufmg.png": {
+    "mtime": 1784141239.7429411,
+    "ast_hash": "2c19bf7c81fcff95ff1d3391f4aa729f",
+    "semantic_hash": ""
+  },
+  "public/images/sponsors/verlab.png": {
+    "mtime": 1784141042.1780636,
+    "ast_hash": "112c67978ca5ce1715349d34f77c1d68",
+    "semantic_hash": ""
+  },
+  "graphify-out/memory/query_20260715_230450_implementar_milestones_7_e_8_consultando_o_grafo_p.md": {
+    "mtime": 1784156690.671847,
+    "ast_hash": "e5718c8054f235dfcfc734aa3d5b94ab",
+    "semantic_hash": ""
+  },
+  "src/features/busca/components/BuscaLocal.tsx": {
+    "mtime": 1784216236.2383325,
+    "ast_hash": "45d97bcd1656a63f6441486395ff1cf5",
+    "semantic_hash": ""
+  },
+  "src/features/busca/components/FilterDrawer.tsx": {
+    "mtime": 1784158621.7103329,
+    "ast_hash": "cb321a225c4894313ee0e6384991e782",
+    "semantic_hash": ""
+  },
+  "src/features/busca/components/FilterPanel.tsx": {
+    "mtime": 1784158527.9033706,
+    "ast_hash": "bef0584aed8ce200cd778b4664fc0697",
+    "semantic_hash": ""
+  },
+  "src/features/busca/components/ResultList.tsx": {
+    "mtime": 1784158527.9265988,
+    "ast_hash": "bc19c4042a8137e8ac20bc28642a6c90",
+    "semantic_hash": ""
+  },
+  "src/features/busca/components/SearchBar.tsx": {
+    "mtime": 1784218443.196493,
+    "ast_hash": "95745248dc78adf5e1d73c706678227e",
+    "semantic_hash": ""
+  },
+  "src/features/busca/data/indices.ts": {
+    "mtime": 1784218804.2297647,
+    "ast_hash": "8a36d1f3b3ea485870b0d0f7a88991e2",
+    "semantic_hash": ""
+  },
+  "src/features/busca/data/motor.ts": {
+    "mtime": 1784218443.20303,
+    "ast_hash": "ee973da0528b75debe680da2d99dc175",
+    "semantic_hash": ""
+  },
+  "src/features/busca/types.ts": {
+    "mtime": 1784218917.2481773,
+    "ast_hash": "9fdeb05976c469096679b70c7800a1ef",
+    "semantic_hash": ""
+  },
+  "src/features/projetos/components/ProjetoCard.tsx": {
+    "mtime": 1784159701.646592,
+    "ast_hash": "5a4b680dd44be130fbd640a2b6b98143",
+    "semantic_hash": ""
+  },
+  "src/features/projetos/components/ProjetoConteudoMDX.tsx": {
+    "mtime": 1784218443.2286847,
+    "ast_hash": "9d8be1d65eb7585500f5b730fc6b283b",
+    "semantic_hash": ""
+  },
+  "src/features/projetos/components/ProjetoDetalhe.tsx": {
+    "mtime": 1784160011.4951253,
+    "ast_hash": "11aa1ce91425e24de8b193c1dc5e8b02",
+    "semantic_hash": ""
+  },
+  "src/features/projetos/components/ProjetoGaleria.tsx": {
+    "mtime": 1784159701.7486808,
+    "ast_hash": "04020757aab78fadc80805e10b1a6060",
+    "semantic_hash": ""
+  },
+  "src/features/projetos/components/ProjetoTecnologias.tsx": {
+    "mtime": 1784159583.243513,
+    "ast_hash": "008b0504f774851d0d25634a4da82769",
+    "semantic_hash": ""
+  },
+  "src/features/projetos/data/projetos.ts": {
+    "mtime": 1784159583.243513,
+    "ast_hash": "cfe342cb451e727dfb5948cf7359dd74",
+    "semantic_hash": ""
+  },
+  "src/shared/components/ui/VideoEmbed.tsx": {
+    "mtime": 1784159701.8240037,
+    "ast_hash": "99602354f86879f2fd3b655bb9ec3c91",
+    "semantic_hash": ""
+  },
+  "tests/e2e/busca.spec.ts": {
+    "mtime": 1784158794.1784701,
+    "ast_hash": "9cfb1f65a8261386b190c28195f09410",
+    "semantic_hash": ""
+  },
+  "tests/e2e/projetos.spec.ts": {
+    "mtime": 1784160020.5183215,
+    "ast_hash": "e7418b6280c885d8d06dd6525462fbd6",
+    "semantic_hash": ""
+  },
+  "tests/unit/busca.test.ts": {
+    "mtime": 1784158860.8186214,
+    "ast_hash": "637284b254806353241e4f8e179b52fa",
+    "semantic_hash": ""
+  },
+  "tests/unit/projetos.test.tsx": {
+    "mtime": 1784160200.632295,
+    "ast_hash": "3c582e7e3a5a45a58049dcd835d17c1c",
+    "semantic_hash": ""
+  },
+  "PARTE A/produtacao ate 1 pausa.md": {
+    "mtime": 1784238732.423494,
+    "ast_hash": "ff07611b077111f083dc002ade720775",
+    "semantic_hash": ""
+  },
+  "graphify-out/memory/query_20260715_234330_use_o_graphify_para_entender_a_arquitetura_e_imple.md": {
+    "mtime": 1784159010.1380944,
+    "ast_hash": "31e5b4d7bdc7543f76568a89fd4e4d2c",
+    "semantic_hash": ""
+  },
+  "graphify-out/memory/query_20260716_000504_use_o_graphify_para_entender_a_arquitetura_e_imple.md": {
+    "mtime": 1784160304.2253206,
+    "ast_hash": "866cbbb9c43998052309138389280d53",
+    "semantic_hash": ""
+  },
+  "src/app/(site)/aprendizado/busca/page.tsx": {
+    "mtime": 1784215665.3675826,
+    "ast_hash": "22649ce28f733b653a3bb3c231dc2667",
+    "semantic_hash": ""
+  },
+  "src/features/aprendizado/components/FeaturedCoursesCarousel.tsx": {
+    "mtime": 1784219763.1531992,
+    "ast_hash": "38d21ec73be82b4f6fbcb75d53220933",
+    "semantic_hash": ""
+  },
+  "src/features/aprendizado/data/conteudosRecentes.ts": {
+    "mtime": 1784215021.216381,
+    "ast_hash": "f6f00bdca535a2791aa7c59de860c061",
+    "semantic_hash": ""
+  },
+  "src/features/home/components/HeroCarousel.tsx": {
+    "mtime": 1784211189.7481508,
+    "ast_hash": "690e333040e6a66154d0afbe9ad2eaf4",
+    "semantic_hash": ""
+  },
+  "src/features/institucional/components/MemberGrid.tsx": {
+    "mtime": 1784218522.169985,
+    "ast_hash": "8405766607d495994027db418296f314",
+    "semantic_hash": ""
+  },
+  "src/features/institucional/components/ResearchAreaGrid.tsx": {
+    "mtime": 1784218804.0103662,
+    "ast_hash": "131955bc1d2f9eb8b73ae0cb03ede0c3",
+    "semantic_hash": ""
+  },
+  "src/features/noticias/components/NoticiaCard.tsx": {
+    "mtime": 1784218804.0616882,
+    "ast_hash": "25d6a4c72218102b33b5448a1f49439b",
+    "semantic_hash": ""
+  },
+  "src/features/noticias/components/NoticiaDetalhe.tsx": {
+    "mtime": 1784218609.698953,
+    "ast_hash": "4f3fac904a376206c8a012ccb291f0d4",
+    "semantic_hash": ""
+  },
+  "src/features/noticias/components/NoticiasBusca.tsx": {
+    "mtime": 1784218609.6979547,
+    "ast_hash": "08a33b6345962d16ecd3ee5b84f24d2a",
+    "semantic_hash": ""
+  },
+  "src/features/noticias/data/busca-noticias.ts": {
+    "mtime": 1784218804.123213,
+    "ast_hash": "609979323171b7f579a3ea357355f555",
+    "semantic_hash": ""
+  },
+  "src/features/noticias/data/noticias.ts": {
+    "mtime": 1784218609.6914175,
+    "ast_hash": "ed086852781d760e0ee8ab8113ff90f8",
+    "semantic_hash": ""
+  },
+  "src/features/patrocinadores/components/SponsorGrid.tsx": {
+    "mtime": 1784218522.1736302,
+    "ast_hash": "5f67987e6fc6804906444c3dcd25ef98",
+    "semantic_hash": ""
+  },
+  "src/shared/components/ui/ConteudoMDX.tsx": {
+    "mtime": 1784218443.1934943,
+    "ast_hash": "551dc31a40c0a2c6f8d529ae4225c64e",
+    "semantic_hash": ""
+  },
+  "src/shared/components/ui/RevealOnScroll.tsx": {
+    "mtime": 1784218893.194496,
+    "ast_hash": "944d35955428806397adb5fc252265f5",
+    "semantic_hash": ""
+  },
+  "src/shared/components/ui/SearchInput.tsx": {
+    "mtime": 1784218443.1914914,
+    "ast_hash": "32b56b9edb6296d31090d6405bf72a1a",
+    "semantic_hash": ""
+  },
+  "src/shared/lib/busca.ts": {
+    "mtime": 1784218443.1809452,
+    "ast_hash": "6259858ec6db1778d8099187ee940245",
+    "semantic_hash": ""
+  },
+  "src/shared/lib/formatar-data.ts": {
+    "mtime": 1784218443.1744137,
+    "ast_hash": "39a632bdc156d4113e89a4c39df93075",
+    "semantic_hash": ""
+  },
+  "src/shared/lib/texto-mdx.ts": {
+    "mtime": 1784218443.1769192,
+    "ast_hash": "99231c3cd8155fb82ca39bf2037d7d05",
+    "semantic_hash": ""
+  },
+  "tests/e2e/institucional-noticias.spec.ts": {
+    "mtime": 1784218804.444059,
+    "ast_hash": "8e410991b6819e54cba57d8835224c8c",
+    "semantic_hash": ""
+  },
+  "tests/unit/institucional.test.tsx": {
+    "mtime": 1784218804.394896,
+    "ast_hash": "a13dcdbb6fbc75284d04424c8a0ce369",
+    "semantic_hash": ""
+  },
+  "tests/unit/noticias.test.tsx": {
+    "mtime": 1784218804.4163954,
+    "ast_hash": "a69082725bd6d32eea7878ee4e9a7515",
+    "semantic_hash": ""
+  },
+  "graphify-out/memory/query_20260716_163732_use_o_graphify_para_entender_a_arquitetura_e_imple.md": {
+    "mtime": 1784219852.5425467,
+    "ast_hash": "919400086489fc15841505fc992f6f79",
+    "semantic_hash": ""
+  },
+  "src/features/institucional/README.md": {
+    "mtime": 1784218522.1709845,
+    "ast_hash": "6f02565cd2e759a169faa1386962082b",
+    "semantic_hash": ""
+  },
+  "PARTE A/milestone_login.md": {
+    "mtime": 1784238732.4175906,
+    "ast_hash": "70010bd52d65b98f428a480f75bb41df",
+    "semantic_hash": ""
+  },
+  "proxy.ts": {
+    "mtime": 1784235825.5952609,
+    "ast_hash": "a657a63cef303672865920b370f72f98",
+    "semantic_hash": ""
+  },
+  "src/app/(site)/login/page.tsx": {
+    "mtime": 1784237903.9430885,
+    "ast_hash": "5edbfd3a970726f14cfdc6a3b976fc23",
+    "semantic_hash": ""
+  },
+  "src/app/(site)/meu-aprendizado/page.tsx": {
+    "mtime": 1784237923.0719752,
+    "ast_hash": "cc9fb4303a0921156da6c5a04c75710a",
+    "semantic_hash": ""
+  },
+  "src/app/api/conta/route.ts": {
+    "mtime": 1784236098.4908903,
+    "ast_hash": "272905a2f17dc6e9bd132202845f3b14",
+    "semantic_hash": ""
+  },
+  "src/app/auth/callback/route.ts": {
+    "mtime": 1784237903.9450996,
+    "ast_hash": "14e89c2376116c8738e9d49ad996ea6e",
+    "semantic_hash": ""
+  },
+  "src/app/sitemap.ts": {
+    "mtime": 1784236566.3275502,
+    "ast_hash": "579eb1b1d4cc3be3a4fa62f148feb4ac",
+    "semantic_hash": ""
+  },
+  "src/features/autenticacao/components/AccountAccess.tsx": {
+    "mtime": 1784236538.296485,
+    "ast_hash": "26143cf7d29d5354f634f8545103c4e9",
+    "semantic_hash": ""
+  },
+  "src/features/autenticacao/components/GitHubLoginButton.tsx": {
+    "mtime": 1784237903.9353316,
+    "ast_hash": "bca499aa677f400b67a3ea802c727265",
+    "semantic_hash": ""
+  },
+  "src/features/meu-aprendizado/components/AccountDeletionButton.tsx": {
+    "mtime": 1784237151.4599676,
+    "ast_hash": "6529d959a9553c930bd826ab8d060d1e",
+    "semantic_hash": ""
+  },
+  "src/features/meu-aprendizado/components/EnrollmentButton.tsx": {
+    "mtime": 1784237903.9385583,
+    "ast_hash": "5b170532d46a1f96da2201ddcd8ec2d2",
+    "semantic_hash": ""
+  },
+  "src/features/meu-aprendizado/components/LessonCompletionButton.tsx": {
+    "mtime": 1784237903.9405687,
+    "ast_hash": "536a8a6342baadd4b94e8de3ce1d7d3e",
+    "semantic_hash": ""
+  },
+  "src/features/meu-aprendizado/components/PersonalLearningDashboard.tsx": {
+    "mtime": 1784237943.7188735,
+    "ast_hash": "10c75d69d216f4c0d407c80186a2ae0d",
+    "semantic_hash": ""
+  },
+  "src/features/meu-aprendizado/data/catalogo.ts": {
+    "mtime": 1784236457.8803113,
+    "ast_hash": "d056e710a18b86b8ff09dc250a852886",
+    "semantic_hash": ""
+  },
+  "src/features/meu-aprendizado/services/progresso.ts": {
+    "mtime": 1784236566.3275502,
+    "ast_hash": "8b1aaca604336dc5e7078b292ea4494d",
+    "semantic_hash": ""
+  },
+  "src/features/meu-aprendizado/services/repository.ts": {
+    "mtime": 1784236457.9303958,
+    "ast_hash": "fc3543d977d2851e241769fb29545586",
+    "semantic_hash": ""
+  },
+  "src/features/meu-aprendizado/types.ts": {
+    "mtime": 1784235950.8036969,
+    "ast_hash": "7143c1b6d5d2d5a3580a67561b552fc8",
+    "semantic_hash": ""
+  },
+  "src/shared/lib/supabase/client.ts": {
+    "mtime": 1784235825.5894043,
+    "ast_hash": "9b642a1bc9a280ca967342c0fe5335e7",
+    "semantic_hash": ""
+  },
+  "src/shared/lib/supabase/config.ts": {
+    "mtime": 1784235825.5791252,
+    "ast_hash": "29ee713474f2261d3ec150c8b2bef049",
+    "semantic_hash": ""
+  },
+  "src/shared/lib/supabase/proxy.ts": {
+    "mtime": 1784235825.5932481,
+    "ast_hash": "f13500e053d83c953a124c1421f9f0ac",
+    "semantic_hash": ""
+  },
+  "src/shared/lib/supabase/server.ts": {
+    "mtime": 1784235825.5894043,
+    "ast_hash": "c6eb065a92dbfbaa2dda89f85cc4cfcc",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20260716000100_create_personal_learning.sql": {
+    "mtime": 1784236288.529855,
+    "ast_hash": "54d0795e27ab8a76367ce80174d82974",
+    "semantic_hash": ""
+  },
+  "supabase/seed.sql": {
+    "mtime": 1784236288.529855,
+    "ast_hash": "8521509ecdc424680e24f51a3bcc5c29",
+    "semantic_hash": ""
+  },
+  "supabase/tests/database/learning_rls.test.sql": {
+    "mtime": 1784236288.5364652,
+    "ast_hash": "10192b6be8890518b8bf357751b2f5e4",
+    "semantic_hash": ""
+  },
+  "tests/unit/autenticacao.test.ts": {
+    "mtime": 1784237923.0688784,
+    "ast_hash": "b40c4c0acc57d4441bc812b78dba417f",
+    "semantic_hash": ""
+  },
+  "tests/unit/meu-aprendizado.test.tsx": {
+    "mtime": 1784237943.8431225,
+    "ast_hash": "f9a9554338075d3e7bd4fdd7efd81601",
+    "semantic_hash": ""
+  },
+  ".github/workflows/database-tests.yml": {
+    "mtime": 1784236288.5402327,
+    "ast_hash": "b82ccac9d0c7d8cd4f4ff512c1479205",
+    "semantic_hash": ""
+  },
+  "docs/adr/0001-supabase-auth-learning.md": {
+    "mtime": 1784236459.0802658,
+    "ast_hash": "8acbb505aad7e6edd443263ef2878901",
+    "semantic_hash": ""
+  },
+  "docs/supabase-rollback.md": {
+    "mtime": 1784236288.5402327,
+    "ast_hash": "472bbc0bcfceafd71db964a603d2cb83",
+    "semantic_hash": ""
+  },
+  "docs/supabase-setup.md": {
+    "mtime": 1784238814.545918,
+    "ast_hash": "a018a11645df5b1d1c7a41278327edbc",
+    "semantic_hash": ""
+  },
+  "src/features/autenticacao/README.md": {
+    "mtime": 1784235875.017094,
+    "ast_hash": "80e50eafb3c6c03a95495f1c304564fa",
+    "semantic_hash": ""
+  },
+  "src/features/meu-aprendizado/README.md": {
+    "mtime": 1784236098.4835746,
+    "ast_hash": "302b89e35d01fbfb7e3d4dedd298fdfd",
+    "semantic_hash": ""
+  },
+  "graphify-out/memory/query_20260716_213203_use_o_graphify_para_entender_a_arquitetura_e_imple.md": {
+    "mtime": 1784237523.7430477,
+    "ast_hash": "b3e7bc8f9bf8ca07b1bc7418d824b45a",
+    "semantic_hash": ""
+  },
+  "src/shared/lib/internal-redirect.ts": {
+    "mtime": 1784237903.9291365,
+    "ast_hash": "1dbe8b1ea2cc5e344c4a0b6ce10b1719",
+    "semantic_hash": ""
+  }
+}

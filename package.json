@@ -20,9 +20,15 @@
     "velite:proof:invalid": "velite build --config tests/velite/velite.invalid.config.mts --clean --strict",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "supabase:start": "supabase start",
+    "supabase:stop": "supabase stop",
+    "supabase:reset": "supabase db reset",
+    "test:db": "supabase test db"
   },
   "dependencies": {
+    "@supabase/ssr": "0.12.3",
+    "@supabase/supabase-js": "2.110.7",
     "minisearch": "^7.2.0",
     "next": "16.2.10",
     "react": "19.2.4",
@@ -42,6 +48,7 @@
     "eslint-config-prettier": "^10.1.8",
     "jsdom": "^29.1.1",
     "prettier": "^3.9.5",
+    "supabase": "2.109.1",
     "tailwindcss": "^4",
     "typescript": "^5",
     "velite": "^0.4.0",

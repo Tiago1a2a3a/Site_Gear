@@ -1,0 +1,2 @@
+-- O ambiente local nao cria usuarios ou dados pessoais automaticamente.
+-- Testes isolados criam seus proprios registros dentro de transacoes com rollback.

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T15:55:09.686546+00:00",
+  "generated_at": "2026-07-16T21:50:27.293386+00:00",
   "nodes": {
     "content_schemas_projectfrontmatterschema": {
       "code_fingerprint": "0c09af7693ac06ad2826b641013f276fda520df12b41c89fb94dc8730d399f93",
@@ -12,13 +12,13 @@
           "q": "Use o Graphify para entender a arquitetura e implemente a milestone 10 deste projeto."
         }
       ],
-      "score": 0.984871327,
+      "score": 0.979272834,
       "source_file": "content.schemas.ts",
       "status": "tentative",
       "uses": 1
     },
     "package_scripts": {
-      "code_fingerprint": "381feb9b26e4d958a654dea6866c2c904f02e0ce139155ebe8ace91a9b759c2d",
+      "code_fingerprint": "ad3b9089efdd745eaff3b436f4db1cb2e9f47fb275fc6c7cb19108b498a17239",
       "label": "scripts",
       "last": "2026-07-15T22:09:36.497823+00:00",
       "provenance": [
@@ -28,13 +28,45 @@
           "q": "Use o Graphify para entender a arquitetura e implemente a milestone 6 deste projeto. Consulte o grafo primeiro, faça as alterações necessárias e rode os testes."
         }
       ],
-      "score": 0.983048444,
+      "score": 0.977460313,
       "source_file": "package.json",
       "status": "tentative",
       "uses": 1
     },
+    "parte_a_milestone_login_milestone_extra_login_inscrições_e_meu_aprendizado": {
+      "code_fingerprint": "adedc838265129a2784cfc10891103da54b3d1ad61c92d9cb3896287a0a7c7fa",
+      "label": "Milestone extra — Login, inscrições e Meu aprendizado",
+      "last": "2026-07-16T21:32:03.746019+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-16T21:32:03.746019+00:00",
+          "outcome": "useful",
+          "q": "Use o Graphify para entender a arquitetura e implemente ADENDO MILESTONE_LOGIN deste projeto. Consulte o grafo primeiro, faça as alterações necessárias e rode os testes."
+        }
+      ],
+      "score": 0.999704935,
+      "source_file": "PARTE A/milestone_login.md",
+      "status": "tentative",
+      "uses": 1
+    },
+    "src_app_site_noticias_page_noticiaspage": {
+      "code_fingerprint": "d2866967a335fc92d2756b20fb5405d8acd22694bd9689b458926f6d75912022",
+      "label": "NoticiasPage()",
+      "last": "2026-07-16T16:37:32.541643+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-16T16:37:32.541643+00:00",
+          "outcome": "useful",
+          "q": "Use o Graphify para entender a arquitetura e implemente a milestone 11 e 12 deste projeto. Reveja o codigo para analisar reutilizacao entre as partes 11, 12 e aprendizado."
+        }
+      ],
+      "score": 0.994991878,
+      "source_file": "src/app/(site)/noticias/page.tsx",
+      "status": "tentative",
+      "uses": 1
+    },
     "src_app_site_page_home": {
-      "code_fingerprint": "25d54da99ebd470190c1121c04c1c2829328b7f38e730d244615aed08ac5bc42",
+      "code_fingerprint": "e92b5f03a14d7798c191e835ea0ac03c47a4d900fdfeb7ccee9514dfb11d6a73",
       "label": "Home()",
       "last": "2026-07-15T21:33:38.851860+00:00",
       "provenance": [
@@ -44,7 +76,7 @@
           "q": "Atualizar a Home com a logo principal, mascote, apoiadores e redes sociais do GEAR antes da M6"
         }
       ],
-      "score": 0.982481395,
+      "score": 0.976896488,
       "source_file": "src/app/(site)/page.tsx",
       "status": "tentative",
       "uses": 1
@@ -60,8 +92,40 @@
           "q": "Implementar milestones 7 e 8 consultando o grafo primeiro"
         }
       ],
-      "score": 0.983920076,
+      "score": 0.978326991,
       "source_file": "src/features/aulas/components/AulaBreadcrumbs.tsx",
+      "status": "tentative",
+      "uses": 1
+    },
+    "src_features_aulas_components_aulaconteudomdx": {
+      "code_fingerprint": "ec01ef55c97e5132a4550c31401b708f339117f937d7f4a781dae7d8022fa922",
+      "label": "AulaConteudoMDX.tsx",
+      "last": "2026-07-16T16:37:32.541643+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-16T16:37:32.541643+00:00",
+          "outcome": "useful",
+          "q": "Use o Graphify para entender a arquitetura e implemente a milestone 11 e 12 deste projeto. Reveja o codigo para analisar reutilizacao entre as partes 11, 12 e aprendizado."
+        }
+      ],
+      "score": 0.994991878,
+      "source_file": "src/features/aulas/components/AulaConteudoMDX.tsx",
+      "status": "tentative",
+      "uses": 1
+    },
+    "src_features_busca_components_searchbar": {
+      "code_fingerprint": "168a2678d54015e4ac8052eb836842272357358e7720275fdde5484213a16bda",
+      "label": "SearchBar.tsx",
+      "last": "2026-07-16T16:37:32.541643+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-16T16:37:32.541643+00:00",
+          "outcome": "useful",
+          "q": "Use o Graphify para entender a arquitetura e implemente a milestone 11 e 12 deste projeto. Reveja o codigo para analisar reutilizacao entre as partes 11, 12 e aprendizado."
+        }
+      ],
+      "score": 0.994991878,
+      "source_file": "src/features/busca/components/SearchBar.tsx",
       "status": "tentative",
       "uses": 1
     },
@@ -76,13 +140,13 @@
           "q": "Implementar milestones 7 e 8 consultando o grafo primeiro"
         }
       ],
-      "score": 0.983920076,
+      "score": 0.978326991,
       "source_file": "src/features/cursos/components/CursoAulas.tsx",
       "status": "tentative",
       "uses": 1
     },
     "src_features_cursos_components_cursodetalhe_cursodetalhe": {
-      "code_fingerprint": "8defd778a32b2fd60a148d8b28cffe001df0c1740581cb3fc2d0a6a4b95756dc",
+      "code_fingerprint": "d850624053d3ade4194167b0640a535cea9296161a36152faafce5797bbe01c1",
       "label": "CursoDetalhe()",
       "last": "2026-07-15T23:04:50.673729+00:00",
       "provenance": [
@@ -92,13 +156,77 @@
           "q": "Implementar milestones 7 e 8 consultando o grafo primeiro"
         }
       ],
-      "score": 0.983920076,
+      "score": 0.978326991,
       "source_file": "src/features/cursos/components/CursoDetalhe.tsx",
       "status": "tentative",
       "uses": 1
     },
+    "src_features_meu_aprendizado_components_personallearningdashboard_personallearningdashboard": {
+      "code_fingerprint": "e5b32d0936698a77d62cab54854199761927fcf57ecca174188b1217e1d0c39b",
+      "label": "PersonalLearningDashboard()",
+      "last": "2026-07-16T21:32:03.746019+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-16T21:32:03.746019+00:00",
+          "outcome": "useful",
+          "q": "Use o Graphify para entender a arquitetura e implemente ADENDO MILESTONE_LOGIN deste projeto. Consulte o grafo primeiro, faça as alterações necessárias e rode os testes."
+        }
+      ],
+      "score": 0.999704935,
+      "source_file": "src/features/meu-aprendizado/components/PersonalLearningDashboard.tsx",
+      "status": "tentative",
+      "uses": 1
+    },
+    "src_features_meu_aprendizado_services_progresso_buildstudysummaries": {
+      "code_fingerprint": "d9b8f4a74267ca0cb401f4d416181b7b18cc0598a42d8a176e04a85d63fe37c5",
+      "label": "buildStudySummaries()",
+      "last": "2026-07-16T21:32:03.746019+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-16T21:32:03.746019+00:00",
+          "outcome": "useful",
+          "q": "Use o Graphify para entender a arquitetura e implemente ADENDO MILESTONE_LOGIN deste projeto. Consulte o grafo primeiro, faça as alterações necessárias e rode os testes."
+        }
+      ],
+      "score": 0.999704935,
+      "source_file": "src/features/meu-aprendizado/services/progresso.ts",
+      "status": "tentative",
+      "uses": 1
+    },
+    "src_features_meu_aprendizado_services_progresso_calculatetrailprogress": {
+      "code_fingerprint": "d9b8f4a74267ca0cb401f4d416181b7b18cc0598a42d8a176e04a85d63fe37c5",
+      "label": "calculateTrailProgress()",
+      "last": "2026-07-16T21:32:03.746019+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-16T21:32:03.746019+00:00",
+          "outcome": "useful",
+          "q": "Use o Graphify para entender a arquitetura e implemente ADENDO MILESTONE_LOGIN deste projeto. Consulte o grafo primeiro, faça as alterações necessárias e rode os testes."
+        }
+      ],
+      "score": 0.999704935,
+      "source_file": "src/features/meu-aprendizado/services/progresso.ts",
+      "status": "tentative",
+      "uses": 1
+    },
+    "src_features_patrocinadores_components_sponsorstrip": {
+      "code_fingerprint": "607ab4ee80ace69e6761a75292c87448ed812dac67a4c3e4bed7de094f3d4bb1",
+      "label": "SponsorStrip.tsx",
+      "last": "2026-07-16T16:37:32.541643+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-16T16:37:32.541643+00:00",
+          "outcome": "useful",
+          "q": "Use o Graphify para entender a arquitetura e implemente a milestone 11 e 12 deste projeto. Reveja o codigo para analisar reutilizacao entre as partes 11, 12 e aprendizado."
+        }
+      ],
+      "score": 0.994991878,
+      "source_file": "src/features/patrocinadores/components/SponsorStrip.tsx",
+      "status": "tentative",
+      "uses": 1
+    },
     "src_features_trilhas_components_trilhadetalhe_trilhadetalhe": {
-      "code_fingerprint": "0fcc58987e41392fbc4fb4cacd28058f0f14d64f931f313cbffa6695797b3f9c",
+      "code_fingerprint": "d17fba9b3185ba6fcdf145e772294c0a368ef5ca212baa6f59c7224df72fb7bd",
       "label": "TrilhaDetalhe()",
       "last": "2026-07-15T23:04:50.673729+00:00",
       "provenance": [
@@ -108,7 +236,7 @@
           "q": "Implementar milestones 7 e 8 consultando o grafo primeiro"
         }
       ],
-      "score": 0.983920076,
+      "score": 0.978326991,
       "source_file": "src/features/trilhas/components/TrilhaDetalhe.tsx",
       "status": "tentative",
       "uses": 1
@@ -124,7 +252,7 @@
           "q": "Implementar milestones 7 e 8 consultando o grafo primeiro"
         }
       ],
-      "score": 0.983920076,
+      "score": 0.978326991,
       "source_file": "src/features/trilhas/components/TrilhaPercurso.tsx",
       "status": "tentative",
       "uses": 1
@@ -140,13 +268,13 @@
           "q": "Atualizar a Home com a logo principal, mascote, apoiadores e redes sociais do GEAR antes da M6"
         }
       ],
-      "score": 0.982481395,
+      "score": 0.976896488,
       "source_file": "src/shared/components/layout/Footer.tsx",
       "status": "tentative",
       "uses": 1
     },
     "src_shared_components_layout_header_header": {
-      "code_fingerprint": "b6d0b295e320d984453a8a6d825b3a45f6232dfa51edcbcb60ed7daa85344a83",
+      "code_fingerprint": "83d45fb3e623f69fbfaf2fd1bc0c0de6c13e8759068d2c12e2d4f2aff153ec26",
       "label": "Header()",
       "last": "2026-07-15T21:33:38.851860+00:00",
       "provenance": [
@@ -156,7 +284,7 @@
           "q": "Atualizar a Home com a logo principal, mascote, apoiadores e redes sociais do GEAR antes da M6"
         }
       ],
-      "score": 0.982481395,
+      "score": 0.976896488,
       "source_file": "src/shared/components/layout/Header.tsx",
       "status": "tentative",
       "uses": 1
@@ -172,8 +300,24 @@
           "q": "Use o Graphify para entender a arquitetura e implemente a milestone 6 deste projeto. Consulte o grafo primeiro, faça as alterações necessárias e rode os testes."
         }
       ],
-      "score": 0.983048444,
+      "score": 0.977460313,
       "source_file": "src/shared/components/layout/TemporaryPage.tsx",
+      "status": "tentative",
+      "uses": 1
+    },
+    "src_shared_config_institutional": {
+      "code_fingerprint": "6e508f999f25c5e849896fafb755b1c35a51d1a3dc28328f4b2f8885591b853e",
+      "label": "institutional.ts",
+      "last": "2026-07-16T16:37:32.541643+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-16T16:37:32.541643+00:00",
+          "outcome": "useful",
+          "q": "Use o Graphify para entender a arquitetura e implemente a milestone 11 e 12 deste projeto. Reveja o codigo para analisar reutilizacao entre as partes 11, 12 e aprendizado."
+        }
+      ],
+      "score": 0.994991878,
+      "source_file": "src/shared/config/institutional.ts",
       "status": "tentative",
       "uses": 1
     },
@@ -188,13 +332,45 @@
           "q": "Atualizar a Home com a logo principal, mascote, apoiadores e redes sociais do GEAR antes da M6"
         }
       ],
-      "score": 0.982481395,
+      "score": 0.976896488,
       "source_file": "src/shared/config/site.ts",
       "status": "tentative",
       "uses": 1
     },
+    "src_shared_lib_supabase_client_createbrowsersupabaseclient": {
+      "code_fingerprint": "7271b91d14d87a473578e8c8a3a93927ee3b83de36b0117651d2045bf00f988c",
+      "label": "createBrowserSupabaseClient()",
+      "last": "2026-07-16T21:32:03.746019+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-16T21:32:03.746019+00:00",
+          "outcome": "useful",
+          "q": "Use o Graphify para entender a arquitetura e implemente ADENDO MILESTONE_LOGIN deste projeto. Consulte o grafo primeiro, faça as alterações necessárias e rode os testes."
+        }
+      ],
+      "score": 0.999704935,
+      "source_file": "src/shared/lib/supabase/client.ts",
+      "status": "tentative",
+      "uses": 1
+    },
+    "src_shared_lib_supabase_server_createserversupabaseclient": {
+      "code_fingerprint": "6ceeabfd88ee80ed5a06f05abec2c30e4aae151970d10c80a7d3ea365d3a9a9e",
+      "label": "createServerSupabaseClient()",
+      "last": "2026-07-16T21:32:03.746019+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-16T21:32:03.746019+00:00",
+          "outcome": "useful",
+          "q": "Use o Graphify para entender a arquitetura e implemente ADENDO MILESTONE_LOGIN deste projeto. Consulte o grafo primeiro, faça as alterações necessárias e rode os testes."
+        }
+      ],
+      "score": 0.999704935,
+      "source_file": "src/shared/lib/supabase/server.ts",
+      "status": "tentative",
+      "uses": 1
+    },
     "tests_e2e_responsive_navigation_spec": {
-      "code_fingerprint": "a60aa0f4a9d6b3d9d1939336d87f19f3dd447a0a58a09d6989b56918ee9cf17e",
+      "code_fingerprint": "78702b4f4784cb4720a655fe70c63cade154cde4a1621c8719cdd6ca6ca900aa",
       "label": "responsive-navigation.spec.ts",
       "last": "2026-07-15T22:09:36.497823+00:00",
       "provenance": [
@@ -204,7 +380,7 @@
           "q": "Use o Graphify para entender a arquitetura e implemente a milestone 6 deste projeto. Consulte o grafo primeiro, faça as alterações necessárias e rode os testes."
         }
       ],
-      "score": 0.983048444,
+      "score": 0.977460313,
       "source_file": "tests/e2e/responsive-navigation.spec.ts",
       "status": "tentative",
       "uses": 1
@@ -220,7 +396,7 @@
           "q": "Use o Graphify para entender a arquitetura e implemente a milestone 6 deste projeto. Consulte o grafo primeiro, faça as alterações necessárias e rode os testes."
         }
       ],
-      "score": 0.983048444,
+      "score": 0.977460313,
       "source_file": "tsconfig.json",
       "status": "tentative",
       "uses": 1

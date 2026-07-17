@@ -8,9 +8,11 @@ import type { ItemTrilhaResolvido, Trilha } from "../types";
 
 export function TrilhaDetalhe({
   itens,
+  personalAction,
   trilha,
 }: Readonly<{
   itens: readonly ItemTrilhaResolvido[];
+  personalAction?: React.ReactNode;
   trilha: Trilha;
 }>) {
   return (
@@ -32,6 +34,7 @@ export function TrilhaDetalhe({
             <span>{itens.length} etapas</span>
             <span>Cursos e aulas diretas</span>
           </div>
+          {personalAction}
         </div>
         <div className="learning-detail-cover">
           <Image

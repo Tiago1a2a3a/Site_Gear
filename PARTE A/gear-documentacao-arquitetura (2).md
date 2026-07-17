@@ -171,11 +171,15 @@ Editores também usam GitHub, mas em outro contexto: criação, revisão e publi
 
 Auth.js, Clerk ou Supabase Auth só devem ser avaliados no futuro se surgir uma funcionalidade interna que realmente exija conta no Portal, como progresso individual ou área restrita. Não devem ser instalados apenas para viabilizar comentários.
 
+**Exceção aprovada para progresso individual:** a proposta de login, inscrições e progresso descrita em [`milestone_login.md`](milestone_login.md) foi autorizada por **Tiago Lopes** para execução antes da M13. A exceção usa Supabase Auth com login GitHub e Supabase Database para dados pessoais de aprendizado. Ela não autoriza comentários próprios, sincronização de progresso com o GitHub ou outras funcionalidades de conta fora do documento detalhado.
+
 #### 2.4.3 Banco de dados
 
 **Decisão para a v1:** não provisionar banco de dados próprio. O conteúdo editorial vive em MDX; comentários e seus autores vivem no GitHub Discussions por meio do Giscus; as permissões de Editor vivem no repositório GitHub.
 
 Um banco só deve ser introduzido quando houver um requisito concreto de dados internos, como progresso do aluno, favoritos ou analytics próprios. A tecnologia deverá ser escolhida nesse momento, evitando infraestrutura sem uso no MVP.
+
+**Exceção aprovada:** o progresso individual do aluno é o requisito concreto que autoriza introduzir o Supabase Database nesta Milestone extra. O banco deve armazenar somente identidade de sessão, inscrições e conclusões necessárias ao `Meu aprendizado`, mantendo Cursos, Trilhas e Aulas em MDX como fonte editorial.
 
 #### 2.4.4 Hospedagem
 

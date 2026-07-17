@@ -17,11 +17,13 @@ export function CursoDetalhe({
   aulas,
   contextos,
   curso,
+  personalAction,
   preRequisitos,
 }: Readonly<{
   aulas: readonly AulaDoCurso[];
   contextos: readonly ContextoCurso[];
   curso: Curso;
+  personalAction?: React.ReactNode;
   preRequisitos: readonly PreRequisitoCurso[];
 }>) {
   return (
@@ -46,6 +48,7 @@ export function CursoDetalhe({
               ))}
             </ul>
           ) : null}
+          {personalAction}
         </div>
         <div className="learning-detail-cover">
           <Image

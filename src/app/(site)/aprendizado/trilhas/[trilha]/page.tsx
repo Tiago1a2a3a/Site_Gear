@@ -7,6 +7,7 @@ import {
   listarTrilhasPublicadas,
   resolverItensDaTrilha,
 } from "@features/trilhas/data/trilhas";
+import { EnrollmentButton } from "@features/meu-aprendizado/components/EnrollmentButton";
 
 type TrilhaPageProps = Readonly<{
   params: Promise<{ trilha: string }>;
@@ -44,6 +45,15 @@ export default async function TrilhaPage({ params }: TrilhaPageProps) {
   if (!trilha) notFound();
 
   return (
-    <TrilhaDetalhe itens={resolverItensDaTrilha(trilha)} trilha={trilha} />
+    <TrilhaDetalhe
+      itens={resolverItensDaTrilha(trilha)}
+      personalAction={
+        <EnrollmentButton
+          contentIdentifier={trilha.slug}
+          contentType="trilha"
+        />
+      }
+      trilha={trilha}
+    />
   );
 }

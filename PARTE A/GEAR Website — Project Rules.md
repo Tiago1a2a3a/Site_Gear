@@ -312,6 +312,12 @@ Editores publicam conteúdo via GitHub, Pull Request e revisão por outro Editor
 
 Visitantes que comentarem futuramente pelo Giscus continuam sendo Visitantes no Portal; a autenticação GitHub usada pelo Giscus não cria conta, perfil ou papel interno no site.
 
+### Exceção aprovada — progresso individual
+
+Tiago Lopes autorizou a execução, antes da M13, da Milestone extra de login, inscrições e progresso individual descrita em [`milestone_login.md`](milestone_login.md). Para essa Milestone, o Portal poderá usar Supabase Auth com login GitHub e Supabase Database para manter inscrições, conclusões de Aulas e dados necessários ao `Meu aprendizado`.
+
+Essa exceção não altera o restante da regra da v1: não haverá senha própria, comentários próprios, sincronização de progresso com o GitHub, acesso a repositórios ou outras funcionalidades de conta fora do escopo aprovado. O documento `milestone_login.md` é a especificação detalhada e seus gates continuam obrigatórios.
+
 ## **19.6 Design visual**
 
 A identidade visual deve se inspirar nos materiais gráficos do GEAR.

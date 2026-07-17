@@ -12,6 +12,8 @@ test-results/
 
 # Generated content proof output
 .velite/
+supabase/.temp/
+supabase/.branches/
 
 # Local environment files
 .env

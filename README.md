@@ -6,6 +6,7 @@ Portal do Grupo de Estudos Avancados em Robotica da UFMG, criado com foco princi
 
 - Node.js 24.18.0 LTS, conforme `.nvmrc`.
 - npm 11.x.
+- Docker Desktop ou runtime compativel para o Supabase local e testes RLS.
 
 ## Instalacao
 
@@ -31,6 +32,9 @@ O servidor local fica disponivel em `http://localhost:3000`.
 | `npm test`                 | Executa o smoke test unitario.                |
 | `npm run test:e2e`         | Executa o smoke test no navegador.            |
 | `npm run velite:proof`     | Valida o schema minimo com Velite.            |
+| `npm run supabase:start`   | Inicia Auth e banco locais via Docker.        |
+| `npm run supabase:reset`   | Reaplica migrations e seed locais.            |
+| `npm run test:db`          | Executa os testes pgTAP de schema e RLS.      |
 
 ## Arquitetura
 
@@ -49,3 +53,10 @@ As Milestones 4 e 5 estão concluídas: o layout global exibe a faixa de parceir
 - [Guia editorial de conteúdo](./docs/content-editorial.md)
 
 O comando `npm run velite:proof:invalid` e uma demonstracao negativa: ele deve terminar com erro porque o fixture nao possui o campo obrigatorio `titulo`.
+
+## Login e Meu aprendizado
+
+A M13 extra usa GitHub via Supabase Auth e duas tabelas protegidas por RLS para
+inscricoes e aulas concluidas. Veja [a configuracao do Supabase](./docs/supabase-setup.md)
+e o [ADR da integracao](./docs/adr/0001-supabase-auth-learning.md). Credenciais e
+service role nunca devem ser versionadas nem expostas ao navegador.

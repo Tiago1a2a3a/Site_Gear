@@ -38,7 +38,14 @@ describe("Notícias", () => {
       "nova",
       "antiga",
     ]);
-    expect(listarNoticiasPublicadas()[0]?.slug).toBe("fundacao-mdx");
+    const publicadas = listarNoticiasPublicadas();
+    expect(
+      publicadas.every(
+        (noticia, index) =>
+          index === 0 ||
+          publicadas[index - 1].dataPublicacao >= noticia.dataPublicacao,
+      ),
+    ).toBe(true);
   });
 
   it("exclui rascunhos do índice próprio", () => {

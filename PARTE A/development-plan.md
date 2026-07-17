@@ -571,7 +571,7 @@ Não se antecipa uma feature de Milestone posterior. É permitido preparar apena
 - [ ] Preview e deploy de produção seguem branches corretas.
 - [ ] Rollback foi ensaiado.
 - [ ] Sitemap, robots, canonical e OpenGraph foram verificados.
-- [ ] Privacidade e termos refletem apenas o tratamento real de dados.
+- [x] Privacidade e termos refletem apenas o tratamento real de dados; conteúdo aprovado por Tiago Lopes em 16 de julho de 2026.
 - [ ] Auditorias de acessibilidade, performance, SEO e segurança não têm bloqueadores.
 - [ ] Rascunhos e segredos não vazam.
 - [ ] Camadas arquiteturais permanecem íntegras.
@@ -608,15 +608,31 @@ Não se antecipa uma feature de Milestone posterior. É permitido preparar apena
 - [ ] Responsáveis e canal de incidente estão registrados.
 - [ ] Retrospectiva e backlog pós-lançamento existem.
 
+### Milestone extra — Login, inscrições e Meu aprendizado (execução autorizada antes da M13)
+
+Esta Milestone extra foi autorizada por **Tiago Lopes** para execução antes da M13, apesar de o planejamento original tratar progresso individual como backlog futuro. A especificação detalhada, os critérios de aceite e os gates estão em [`milestone_login.md`](milestone_login.md).
+
+O escopo autorizado inclui:
+
+- login GitHub por Supabase Auth;
+- inscrições em Cursos e Trilhas;
+- conclusão e reversão de conclusão de Aulas;
+- progresso derivado do conteúdo MDX publicado;
+- página `/meu-aprendizado` com dashboard e listas pessoais;
+- RLS para impedir acesso aos dados de outro usuário;
+- testes de autenticação, isolamento, progresso, acessibilidade e E2E.
+
+O escopo não inclui senha própria, comentários próprios, sincronização de progresso com o GitHub, acesso a repositórios ou outras funcionalidades de conta. A implementação só começa depois dos gates definidos no documento detalhado e da revisão dos critérios de aceite.
+
 ### Backlog futuro — fora do MVP
 
-Estes itens não podem ser puxados antes de M14. Cada um exige uma nova decisão de produto e uma Milestone própria.
+Estes itens não podem ser puxados antes de M14, salvo autorização explícita e documentada em uma exceção arquitetural própria. Cada um exige uma nova decisão de produto e uma Milestone própria.
 
 | ID   | Item                                 | Gatilho de entrada                                                                   | Restrições preservadas                                                                                                     |
 | ---- | ------------------------------------ | ------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------- |
 | F-01 | Integrar Giscus em Aulas             | MVP estável e decisão explícita de ativar comentários                                | Login, persistência, threads, reações e moderação continuam nativos do Giscus/GitHub; nenhuma API, conta ou banco próprio. |
 | F-02 | Dark mode                            | demanda comprovada e capacidade de manter dois temas                                 | Derivar dos mesmos tokens; vermelho GEAR permanece assinatura; light continua plenamente suportado.                        |
-| F-03 | Progresso individual em Trilha/Curso | requisito de produto validado                                                        | Exige decisão arquitetural prévia sobre autenticação e armazenamento; não reutilizar login do Giscus.                      |
+| F-03 | Progresso individual em Trilha/Curso | substituído pela Milestone extra autorizada antes da M13 | Implementar somente conforme `milestone_login.md`; Supabase Auth/Database, RLS e escopo aprovado; não reutilizar login do Giscus. |
 | F-04 | Favoritos/perfis                     | requisito de usuário validado                                                        | Exige revisão arquitetural e LGPD antes de implementar.                                                                    |
 | F-05 | Feed RSS de Notícias                 | demanda editorial                                                                    | Deve consumir a coleção existente, sem duplicar conteúdo.                                                                  |
 | F-06 | CDN de mídia                         | repositório começando a pesar por imagens/vídeos ou operação editorial ficando lenta | Avaliar Cloudinary/Vercel Blob conforme arquitetura e manter URLs/migração documentadas.                                   |
@@ -1182,3 +1198,253 @@ Estas referências não substituem a Parte A; apenas sustentam as escolhas de fe
 - [MiniSearch — repositório e documentação oficial](https://github.com/lucaong/minisearch)
 - [GitHub — proteção de branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches)
 - [GitHub — revisão de Pull Requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews)
+
+---
+
+## ADENDO MILESTONE_LOGIN
+
+**Data:** 16 de julho de 2026
+
+**Status:** planejamento validado; implementação não iniciada
+
+**Especificação detalhada:** [`milestone_login.md`](milestone_login.md)
+
+### Compatibilidade e precedência limitada
+
+A Milestone extra é **compatível de forma condicionada** com o Portal GEAR porque as seções 2.4.2 e 2.4.3 da arquitetura e a seção 19.5 do Project Rules registram uma exceção explícita para Supabase Auth, Supabase Database, inscrições e progresso individual. A exceção não altera o modelo editorial: Aulas, Cursos e Trilhas continuam em MDX/Velite, e o banco guarda somente relações pessoais com identificadores canônicos de conteúdo.
+
+Este adendo prevalece apenas sobre as afirmações do plano original que colocam autenticação, banco e progresso individual fora de qualquer execução anterior à M14. Permanecem válidas todas as demais restrições: Feature-First, `app` somente para rota e composição, direção `app` → `features` → `shared`, ausência de importação direta entre features, Server Components como padrão, conteúdo editorial em MDX, dependências justificadas e desenvolvimento incremental.
+
+A Milestone não duplica outra entrega. Ela substitui operacionalmente o item futuro F-03 e não inclui comentários, favoritos, perfil social, CMS, painel administrativo ou analytics.
+
+### Conflitos identificados e resolução adotada no planejamento
+
+| Fonte | Conflito | Alternativas | Recomendação deste adendo |
+| --- | --- | --- | --- |
+| Seções 0.1, 1.1, 1.4, R18 e 16.3 deste plano | O texto original proíbe autenticação, banco, progresso e trabalho fora do MVP. | Rejeitar a Milestone; reescrever o plano original; ou registrar exceção delimitada. | Manter o plano histórico e aplicar esta exceção somente ao escopo de `milestone_login.md`. |
+| Project Rules 19.5 e 19.7 | A seção 19.5 autoriza a exceção antes da M13, enquanto 19.7 mantém progresso fora do MVP inicial. | Tratar a exceção como redefinição total do MVP; ou como incremento extraordinário fora do baseline original. | Tratar como incremento extraordinário aprovado, sem liberar os demais itens fora do MVP. |
+| Regra de desenvolvimento incremental e ordem M0–M14 | “Antes da M13” não define uma posição exata nem o número definitivo da entrega. | Manter uma Milestone sem número; inserir após qualquer Milestone; ou renumerar as etapas finais. | Aprovado: **M12 → M13 Login e Meu aprendizado → M14 Qualidade e publicação → M15 Conteúdo real e lançamento**. O roadmap passa a ter 16 Milestones, de M0 a M15. |
+| Regra de não importar features entre si | O cálculo de progresso precisa das relações de Aulas, Cursos e Trilhas. | Importar as features educacionais; mover o domínio para `shared`; ou consumir diretamente as coleções geradas. | A feature pessoal consome as coleções tipadas geradas pelo Velite e contém seus próprios seletores de progresso; não importa `features/aulas`, `features/cursos` ou `features/trilhas`. |
+| `milestone_login.md`, integração “somente no navegador” | OAuth no App Router pode exigir callback, troca de código e renovação segura de cookies no servidor. | Cliente puro; integração híbrida oficial; ou backend próprio. | Usar integração híbrida mínima do SDK oficial: clientes browser/server e Route Handler de callback, sem API de domínio própria. A exceção prevista no próprio documento fica acionada por necessidade concreta de autenticação. |
+| `milestone_login.md`, histórico de conteúdo removido | Um trecho diz que Aula removida desaparece do histórico; outros critérios exigem indicação de conteúdo indisponível. | Excluir o registro; manter snapshot; ou preservar só identificador e data. | Aprovado: remover também os registros de conclusão daquele slug. A Aula some do histórico, nada editorial ou pessoal é preservado e o progresso é recalculado com o conteúdo publicado restante. |
+
+### Numeração oficial após o adendo
+
+| Sequência | Milestone válida após este adendo | Observação |
+| ---: | --- | --- |
+| 12 | M12 — Notícias | Mantém número e escopo atuais. |
+| 13 | M13 — Login, inscrições e Meu aprendizado | Nova Milestone deste adendo. |
+| 14 | M14 — Qualidade e publicação | Corresponde à antiga M13 do corpo original do plano. |
+| 15 | M15 — Conteúdo real e lançamento | Corresponde à antiga M14 do corpo original do plano. |
+
+Nas seções anteriores a este adendo, toda referência à antiga M13 deve ser lida como M14, e toda referência à antiga M14 deve ser lida como M15. O conteúdo e os gates dessas duas Milestones não mudam; somente seus números e dependências finais são deslocados em uma posição.
+
+### Objetivo
+
+Permitir login com GitHub e oferecer uma área pessoal `/meu-aprendizado` na qual a pessoa possa administrar inscrições em Cursos e Trilhas, marcar ou desmarcar Aulas concluídas e acompanhar progresso calculado sobre o conteúdo MDX publicado.
+
+### Escopo incluído
+
+- autenticação e logout por GitHub via Supabase Auth;
+- sessão válida em desenvolvimento, preview e produção;
+- preservação segura da rota de origem no fluxo de login;
+- inscrições idempotentes em Cursos e Trilhas e remoção explícita de inscrição;
+- conclusão e reversão idempotentes de Aulas;
+- cálculo derivado de progresso de Curso e Trilha;
+- dashboard e listas pessoais em `/meu-aprendizado`;
+- estados de visitante, carregamento, vazio, sucesso, erro e sessão expirada;
+- banco mínimo, migrations versionadas, constraints, índices, grants e RLS por usuário;
+- metadata, `noindex`, exclusão de `/meu-aprendizado` do sitemap e atualização das rotas antes provisórias;
+- atualização de `/privacidade` e `/termos` antes de ativar login em produção;
+- documentação de configuração, operação, exclusão de dados pessoais e aceite explícito do risco de não haver recuperação;
+- categoria `Configurações` na navegação esquerda de `/meu-aprendizado`, contendo inicialmente apenas a exclusão permanente da conta;
+- testes unitários, de componente, banco/RLS, integração, acessibilidade e E2E.
+
+### Escopo explicitamente excluído
+
+- senha própria, cadastro manual ou recuperação de senha pelo Portal;
+- tabela de perfil social ou perfil público elaborado;
+- comentários, curtidas, seguidores, feed, ranking ou competição;
+- favoritos, certificados e recomendações personalizadas;
+- acesso a repositórios, organizações, Issues, Gists ou progresso do GitHub;
+- painel administrativo ou CMS visual;
+- analytics próprios;
+- progresso parcial de vídeo/leitura ou estado persistido de Aula “em andamento”;
+- snapshots de títulos, descrições ou corpos MDX no Supabase;
+- sincronização entre o login do Portal e o login futuro do Giscus;
+- migração do Supabase para propriedade institucional ou criação de segundo mantenedor/plano de recuperação nesta fase.
+
+### Pré-requisitos e dependências
+
+1. A nova M13 pode começar sobre o estado atual do projeto sem comprovação formal dos gates M6–M12, por decisão explícita de Tiago Lopes. Isso não declara essas Milestones concluídas; lacunas técnicas encontradas que bloqueiem Login, Cursos, Trilhas, Aulas ou progresso devem ser corrigidas dentro da M13.
+2. Conteúdo publicado de Aulas, Cursos e Trilhas validado, com slugs canônicos estáveis.
+3. Tiago Lopes é o único responsável humano, proprietário temporário do Supabase e responsável final pelo aceite. Não haverá segundo mantenedor nem plano de recuperação nesta fase; revisões técnicas de segurança, banco, RLS e exclusão serão feitas por IAs.
+4. Projeto Supabase e OAuth App do GitHub configurados sem credenciais no repositório.
+5. URLs de site, callback e retorno serão preenchidas durante a configuração de desenvolvimento, previews e produção; não são decisão pendente de arquitetura.
+6. Modelo físico mínimo, RLS, exclusão de conteúdo, arredondamento por piso e exclusão de conta conforme as decisões aprovadas neste adendo.
+7. `/privacidade` e `/termos` foram aprovados por Tiago Lopes em 16 de julho de 2026. A verificação da retenção técnica de backups permanece obrigatória antes de ativar Login em produção.
+8. Testes de banco e RLS usarão Supabase local no CI, sem contas ou dados pessoais reais.
+
+### Áreas e arquivos provavelmente afetados
+
+- `package.json` e `package-lock.json`: SDKs oficiais estritamente necessários e comandos de teste/migration;
+- `.env.example` e documentação de ambiente: URL, chave publicável e callbacks, nunca service role no cliente;
+- `supabase/config.toml`, `supabase/migrations/*` e testes SQL/RLS: infraestrutura versionada;
+- `src/shared/lib/supabase/client.ts` e `src/shared/lib/supabase/server.ts`: fronteira técnica genérica;
+- `src/features/autenticacao/*`: login, logout, sessão e ações de conta no Header;
+- `src/features/meu-aprendizado/components/*`, `data/*`, `services/*`, `types.ts` e `README.md`: domínio pessoal e progresso;
+- `src/app/(site)/login/page.tsx` e `src/app/(site)/meu-aprendizado/page.tsx`: rotas e composição;
+- `src/app/auth/callback/route.ts`: troca do código OAuth e retorno validado;
+- `src/app/api/conta/route.ts`: exclusão autenticada da conta por operação privilegiada exclusivamente no servidor;
+- `src/app/(site)/layout.tsx`, `src/shared/components/layout/Header.tsx` e `src/shared/config/site.ts`: composição do acesso de conta sem tornar o layout público dependente do banco;
+- páginas/componentes de Curso, Trilha e Aula: slots de composição para inscrição e conclusão, sem imports cruzados entre features;
+- geração de sitemap/robots/metadata quando existente e testes que hoje esperam 404 em `/login` ou `/meu-aprendizado`;
+- `src/app/(site)/privacidade/page.tsx` e `src/app/(site)/termos/page.tsx`;
+- `tests/unit/*`, `tests/e2e/*` e nova suíte de integração/RLS;
+- README, documentação operacional e documento de continuidade.
+
+### Plano executável
+
+| ID | Pri. | Tam. | Etapa e critério específico de aceite | Dependência |
+| --- | --- | ---: | --- | --- |
+| ML-01 | P0 | P | Registrar o ADR da exceção e as decisões aprovadas neste adendo; aceito com nova numeração M13–M15, modelo mínimo, `floor`, remoção definitiva de conteúdo, exclusão de conta e fronteira OAuth documentados. | M12 |
+| ML-02 | P0 | M | Avaliar e registrar os cinco critérios das dependências Supabase; aceito com versão fixada, licença, impacto, manutenção e estratégia de saída documentados. | ML-01 |
+| ML-03 | P0 | M | Configurar projeto Supabase, GitHub OAuth e ambientes sob propriedade exclusiva de Tiago Lopes; aceito com callback e retorno funcionando em desenvolvimento, preview e produção, sem segredo no Git. | ML-02 |
+| ML-04 | P0 | M | Versionar o schema mínimo de duas tabelas descrito neste adendo; aceito com chaves compostas, unicidade, `on delete cascade`, timestamps, check de tipo e índices de consultas recentes. | ML-03 |
+| ML-05 | P0 | G | Aplicar grants mínimos e RLS para SELECT/INSERT/UPDATE/DELETE; aceito quando usuário A não lê nem altera dados de B, visitante não acessa dados pessoais e `user_id` não pode ser forjado. | ML-04 |
+| ML-06 | P0 | G | Implementar fronteiras browser/server e callback OAuth; aceito com login, cancelamento, erro, logout, renovação/expiração de sessão e retorno seguro à origem. | ML-03, ML-05 |
+| ML-07 | P0 | M | Implementar contratos e seletores puros de conteúdo/progresso dentro de `meu-aprendizado`; aceito sem imports entre features e sem copiar conteúdo para o banco. | ML-01 |
+| ML-08 | P0 | G | Implementar inscrição, remoção e reinscrição de Curso/Trilha; aceito com operações idempotentes, confirmação quando houver progresso e preservação das conclusões. | ML-05 a ML-07 |
+| ML-09 | P0 | G | Implementar conclusão e reversão de Aula; aceito somente após confirmação do Supabase, incluindo Aula avulsa e atualização coerente da atividade relacionada. | ML-05 a ML-07 |
+| ML-10 | P0 | G | Implementar `/meu-aprendizado` com resumo, filtros por query string, listas, estados completos e categoria `Configurações` na navegação esquerda; aceito em mobile, desktop, teclado e leitor de tela. | ML-08, ML-09 |
+| ML-11 | P1 | M | Integrar controles pessoais em Header, Curso, Trilha e Aula por composição/slots; aceito sem consulta obrigatória ao banco para renderizar o conteúdo público e sem importação direta entre features. | ML-06, ML-08, ML-09 |
+| ML-12 | P0 | M | Implementar metadata, `noindex`, sitemap e comportamento de rotas; aceito com páginas pessoais fora do sitemap e conteúdo público inalterado para visitantes. | ML-10 |
+| ML-13 | P0 | M | Implementar em `Configurações` o botão `Excluir minha conta`, confirmação explícita e Route Handler server-only que exclui o usuário do Supabase Auth; aceito quando o cascade apaga inscrições/conclusões, encerra a sessão e nenhum segredo privilegiado chega ao navegador. | ML-05, ML-06, ML-10 |
+| ML-14 | P0 | M | Privacidade e termos foram atualizados e aprovados por Tiago Lopes em 16 de julho de 2026; concluir verificando e registrando a retenção técnica de backups do plano Supabase usado antes de habilitar Login em produção. | ML-03, ML-13 |
+| ML-15 | P0 | G | Criar suíte automatizada com Supabase local no CI e executar validação completa; aceito com isolamento, idempotência, progresso, exclusão de conta, OAuth simulado, acessibilidade e jornadas E2E cobertos sem API externa real nem dados reais. | ML-05 a ML-14 |
+| ML-16 | P0 | M | Auditar preview e fechar a M13; aceito com demonstração, revisões independentes por IA nas áreas de segurança/dados, aceite final de Tiago Lopes, CI verde, rollback documentado e riscos Altos mitigados ou explicitamente aceitos pelo proprietário. | ML-15 |
+
+### Modelo físico mínimo aprovado
+
+O modelo mais simples usa somente duas tabelas públicas. Não haverá tabela própria de perfil.
+
+```text
+learning_enrollments
+- user_id uuid not null references auth.users(id) on delete cascade
+- content_type text not null check (content_type in ('curso', 'trilha'))
+- content_identifier text not null
+- enrolled_at timestamptz not null default now()
+- last_activity_at timestamptz not null default now()
+- primary key (user_id, content_type, content_identifier)
+
+lesson_completions
+- user_id uuid not null references auth.users(id) on delete cascade
+- lesson_identifier text not null
+- completed_at timestamptz not null default now()
+- primary key (user_id, lesson_identifier)
+```
+
+Índices adicionais ficam limitados às consultas reais do dashboard:
+
+- `learning_enrollments (user_id, last_activity_at desc)`;
+- `lesson_completions (user_id, completed_at desc)`.
+
+As migrations devem:
+
+1. criar as duas tabelas, checks, chaves e índices;
+2. revogar acesso de `anon`;
+3. conceder a `authenticated` somente `select`, `insert`, `update` e `delete` necessários;
+4. habilitar RLS nas duas tabelas;
+5. criar políticas para leitura, inserção, atualização e exclusão usando o usuário autenticado da sessão: `auth.uid() = user_id`;
+6. impedir troca de proprietário com `with check` nas operações de escrita;
+7. ser versionadas em `supabase/migrations/` e possuir rollback ou procedimento de reversão documentado.
+
+Esse modelo é suficiente porque Cursos, Trilhas, Aulas, títulos e relações continuam no MDX. O banco registra apenas quem se inscreveu e quais Aulas concluiu.
+
+### Regras objetivas de domínio
+
+- `user_id` é sempre o ID de `auth.users`; identidade do GitHub nunca é chave primária das tabelas pessoais.
+- Inscrição é única por `(user_id, content_type, content_identifier)`.
+- Conclusão é única por `(user_id, lesson_identifier)`.
+- Inserir estado já existente e remover estado ausente são operações idempotentes.
+- O banco não valida nem replica títulos ou relações MDX; a aplicação valida o identificador contra as coleções publicadas antes da mutação.
+- Curso usa somente Aulas publicadas de `aulaSlugs`; rascunhos e referências inválidas não entram no denominador. O percentual inteiro usa `Math.floor`, portanto `2 / 3 = 66%`.
+- Trilha conta cada Curso como um item e cada Aula direta como um item; Curso só conclui o item em 100%.
+- Mudança de ordem, título ou descrição não altera conclusão; novo slug é nova identidade até existir migração aprovada.
+- A remoção ou despublicação definitiva de uma Aula exige, no mesmo conjunto de mudanças, uma migration que apague de `lesson_completions` todos os registros daquele `lesson_identifier`. A Aula desaparece do histórico e o progresso é recalculado sem ela; nenhum snapshot ou marcador de indisponibilidade é mantido.
+- A ação de abandonar uma inscrição usa texto específico por contexto: `Sair do curso` ou `Sair da trilha`. Essa ação remove somente a inscrição e não exclui a conta nem as conclusões de outras Aulas.
+- `Excluir minha conta` fica em `Configurações`, exige confirmação explícita, exclui o usuário do Supabase Auth no servidor e usa `on delete cascade` para remover imediatamente os dados da aplicação.
+- A confirmação visual de exclusão usa um modal com aviso de irreversibilidade e botão final `Excluir permanentemente`.
+- O Header público deve continuar renderizável sem leitura obrigatória das tabelas pessoais; estado de conta fica em ilha pequena e tolerante a falha.
+- Nenhuma chave service role ou segredo do GitHub é enviado ao navegador.
+
+### Critérios objetivos de conclusão
+
+- Login e logout GitHub funcionam nos três ambientes e tratam cancelamento/erro sem sessão falsa.
+- Retorno à origem aceita apenas destinos internos válidos e a ação original não é duplicada.
+- Visitantes continuam lendo e pesquisando todo conteúdo público sem conta.
+- Inscrição, remoção, conclusão e reversão são idempotentes e exibem feedback acessível.
+- Progresso de Curso e Trilha corresponde às regras aprovadas e não duplica Aulas.
+- `/meu-aprendizado` cobre resumo, andamento, concluídos, Aulas concluídas, `Configurações`, estados vazios, erro, lista longa e sessão expirada.
+- Usuário A não lê, cria, altera ou remove dados do usuário B em nenhuma operação coberta.
+- Conteúdo editorial permanece exclusivamente em MDX/Velite; Aula removida não deixa conclusão ou snapshot persistido.
+- `/login` e `/meu-aprendizado` usam `noindex`; `/meu-aprendizado` não entra no sitemap.
+- Privacidade e termos foram aprovados; a retenção de backups ainda precisa ser conferida no plano de produção e registrada como evidência.
+- Testes não dependem de serviço externo real nem de conta/dado pessoal real.
+- Lint, tipos, testes, conteúdo, build e E2E passam; preview mobile/desktop e teclado foram verificados.
+
+### Testes e validações obrigatórios
+
+- **Unidade:** progresso 0/100, `floor` incluindo 2/3 = 66%, Curso sem Aula válida, rascunhos, Trilha mista, Aula avulsa, remoção de conteúdo e identificadores estáveis.
+- **Componente:** estados de botões, confirmação de remoção, feedback assíncrono, foco, nomes acessíveis, gráfico com equivalente textual e tabs por links.
+- **Banco/RLS:** matriz anon/A/B para select, insert, update e delete; tentativa de forjar `user_id`; duplicatas; grants; índices; cascade de exclusão de conta; limpeza de Aula removida; rollback de migration.
+- **Integração:** sessão válida/expirada, indisponibilidade do Supabase, mutações idempotentes e composição com coleções Velite.
+- **E2E:** login simulado e retorno, acesso anônimo, inscrição/remoção, conclusão/reversão, dashboard, query string, `Configurações`, confirmação/exclusão de conta, mobile e teclado.
+- **Segurança:** redirect interno permitido, segredo ausente do bundle/Git, service role ausente do cliente, RLS habilitada em toda tabela exposta e menor privilégio.
+- **Projeto:** `npm run format:check`, `npm run lint`, `npm run typecheck`, `npm test`, `npm run content:validate`, `npm run build` e `npm run test:e2e`.
+
+### Riscos
+
+| ID | Risco | Prob. | Impacto | Mitigação / gate |
+| --- | --- | :---: | :---: | --- |
+| ML-R01 | RLS incorreta expor dados entre usuários | Média | Alto | migrations revisadas por duas pessoas e testes negativos A/B bloqueantes |
+| ML-R02 | OAuth/cookies quebrarem em preview ou produção | Média | Alto | callbacks por ambiente, integração híbrida oficial e E2E de retorno/expiração |
+| ML-R03 | Serviço externo degradar páginas públicas | Média | Alto | conteúdo público independente da sessão, ilhas pequenas e fallbacks |
+| ML-R04 | Importação cruzada quebrar Feature-First | Média | Alto | coleções geradas como contrato, composição em `app` e auditoria de imports |
+| ML-R05 | Mudança de slug invalidar histórico | Média | Alto | política de slug imutável e migration explícita antes de renomear |
+| ML-R06 | Escopo crescer para perfil/social/admin | Alta | Alto | critérios fora do escopo bloqueantes e issues futuras separadas |
+| ML-R07 | Conta Supabase pessoal ficar inacessível | Média | Alto | risco aceito temporariamente por Tiago Lopes; não haverá segundo mantenedor nem recuperação nesta fase |
+| ML-R08 | LGPD/retenção/exclusão ficarem indefinidas | Média | Alto | aprovação de privacidade, termos e fluxo de exclusão antes de produção |
+| ML-R09 | Dashboard adicionar JS excessivo | Média | Médio | Server-first, gráfico simples sem biblioteca quando possível e medição de bundle |
+
+### Decisões aprovadas nesta revisão
+
+1. O roadmap passa a ser **M12 → M13 Login e Meu aprendizado → M14 Qualidade e publicação → M15 Conteúdo real e lançamento**.
+2. A integração será híbrida para App Router, com cliente browser, cliente server e Route Handler de callback.
+3. O banco usará somente `learning_enrollments` e `lesson_completions`, com chaves compostas, índices mínimos, grants para `authenticated`, RLS por `auth.uid()` e migrations versionadas.
+4. O progresso inteiro usa arredondamento por piso (`floor`).
+5. Aula removida/despublicada some do histórico; suas conclusões são apagadas e o progresso é recalculado sem guardar snapshot.
+6. A navegação esquerda terá `Configurações`, inicialmente apenas com o botão `Excluir minha conta`.
+7. A exclusão da conta ocorre no servidor e remove inscrições e conclusões por cascade.
+
+### Decisões operacionais aprovadas nesta revisão
+
+1. Tiago Lopes será o proprietário temporário e único responsável geral pelo projeto, Supabase e GitHub OAuth App.
+2. Não haverá segundo mantenedor nem mecanismo de recuperação nesta fase. O risco de indisponibilidade da conta fica explicitamente aceito por Tiago Lopes.
+3. Revisões de banco, RLS, exclusão de conta e segurança serão realizadas por IAs; Tiago Lopes fará o aceite humano final. Não se alegará revisão humana independente.
+4. A M13 pode começar sem comprovação formal dos gates M6–M12. Isso não muda retroativamente o status dessas Milestones.
+5. Licença institucional e onboarding em clone limpo não bloqueiam a M13 e permanecem como dívida operacional do plano geral.
+6. A numeração M13–M15 permanecerá harmonizada somente por este adendo nesta fase; arquitetura e `milestone_login.md` não serão reescritos agora.
+7. Testes de banco e RLS usarão Supabase local no CI, sem dados reais.
+8. Exclusão de conta usará modal com aviso permanente e botão `Excluir permanentemente`.
+9. `/privacidade` e `/termos` foram aprovados por Tiago Lopes em 16 de julho de 2026; a retenção técnica de backups será verificada obrigatoriamente antes de ativar Login em produção.
+
+### Pendências que não bloqueiam o início da implementação
+
+- preencher as URLs reais de callback e retorno conforme cada ambiente for configurado;
+- ~~redigir e aprovar `/privacidade` e `/termos` antes da produção;~~ concluído em 16 de julho de 2026, com aceite de Tiago Lopes;
+- verificar a retenção técnica do plano Supabase efetivamente contratado antes da produção.
+
+### Gate de saída
+
+A nova M13 só está concluída quando todos os itens ML-01 a ML-16 e os critérios objetivos acima possuem evidência, o isolamento e a exclusão de dados foram provados, as pendências legais pré-produção foram resolvidas, o preview recebeu revisões por IA e aceite final de Tiago Lopes, e a M14 pode começar já considerando autenticação, banco e dados pessoais em suas auditorias.

@@ -10,18 +10,18 @@
     "semantic_hash": "c19cd6fbb8f121207afc1b8916664f09"
   },
   "next-env.d.ts": {
-    "mtime": 1784219824.814607,
+    "mtime": 1784263959.966416,
     "ast_hash": "2a74d3909800ca5467fa83b0ab4a4890",
     "semantic_hash": ""
   },
   "next.config.ts": {
-    "mtime": 1784131411.8671513,
+    "mtime": 1784236855.07835,
     "ast_hash": "daad32b4de0b92afe04301ebf0a6cc76",
-    "semantic_hash": "daad32b4de0b92afe04301ebf0a6cc76"
+    "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1784158192.0023954,
-    "ast_hash": "2934cfeadee5bb8d0a853978616d42c8",
+    "mtime": 1784236780.005126,
+    "ast_hash": "0244ffd6ecc2dc1ac70698a58591a1bb",
     "semantic_hash": ""
   },
   "playwright.config.ts": {
@@ -35,8 +35,8 @@
     "semantic_hash": "239f3ebf717465dc636818a1a619398d"
   },
   "src/app/(site)/aprendizado/aulas/[aula]/page.tsx": {
-    "mtime": 1784156529.0884578,
-    "ast_hash": "f718076ca2ba6711c928f89d18d9db86",
+    "mtime": 1784236122.183003,
+    "ast_hash": "1febe87874a3f9dc74de2b38d4952667",
     "semantic_hash": ""
   },
   "src/app/(site)/aprendizado/aulas/busca/page.tsx": {
@@ -50,8 +50,8 @@
     "semantic_hash": ""
   },
   "src/app/(site)/aprendizado/cursos/[curso]/page.tsx": {
-    "mtime": 1784156325.3105712,
-    "ast_hash": "7622b19b9c2f98776d333209821cc978",
+    "mtime": 1784236122.1728566,
+    "ast_hash": "8df6712eb674facf8d8394c280dc6a86",
     "semantic_hash": ""
   },
   "src/app/(site)/aprendizado/cursos/busca/page.tsx": {
@@ -70,8 +70,8 @@
     "semantic_hash": ""
   },
   "src/app/(site)/aprendizado/trilhas/[trilha]/page.tsx": {
-    "mtime": 1784155950.3395555,
-    "ast_hash": "082f9bc1a7b19fa8321d401ac4c9a8f4",
+    "mtime": 1784236456.9741414,
+    "ast_hash": "03b60c221cc9800144a1dafb38ae4157",
     "semantic_hash": ""
   },
   "src/app/(site)/aprendizado/trilhas/busca/page.tsx": {
@@ -85,8 +85,8 @@
     "semantic_hash": ""
   },
   "src/app/(site)/layout.tsx": {
-    "mtime": 1784138395.839028,
-    "ast_hash": "821144b8ab203c658f90cde92829f66f",
+    "mtime": 1784236442.717557,
+    "ast_hash": "81e90b604cb13fec8269208c387dfd8d",
     "semantic_hash": ""
   },
   "src/app/(site)/noticias/[noticia]/page.tsx": {
@@ -95,13 +95,13 @@
     "semantic_hash": ""
   },
   "src/app/(site)/noticias/page.tsx": {
-    "mtime": 1784218609.701954,
-    "ast_hash": "8b794a0eaaa42a523ceb4229228d4f13",
+    "mtime": 1784263871.9095194,
+    "ast_hash": "6b49bf88756dcf81775fac0cf4de1963",
     "semantic_hash": ""
   },
   "src/app/(site)/page.tsx": {
-    "mtime": 1784218804.273003,
-    "ast_hash": "055fcf56bff02299d64100ec45e15276",
+    "mtime": 1784261725.6898346,
+    "ast_hash": "e7045c1d1b8a800b6818d5241dbbaeea",
     "semantic_hash": ""
   },
   "src/app/(site)/patrocinadores/page.tsx": {
@@ -110,9 +110,9 @@
     "semantic_hash": ""
   },
   "src/app/(site)/privacidade/page.tsx": {
-    "mtime": 1784134010.639767,
-    "ast_hash": "7bcf99a3d449b057c866b23879679a47",
-    "semantic_hash": "7bcf99a3d449b057c866b23879679a47"
+    "mtime": 1784238732.4107714,
+    "ast_hash": "f3ec207fd80f1ba9c8031c73a15d27c8",
+    "semantic_hash": ""
   },
   "src/app/(site)/projetos/[projeto]/page.tsx": {
     "mtime": 1784159769.2444153,
@@ -120,8 +120,8 @@
     "semantic_hash": ""
   },
   "src/app/(site)/projetos/page.tsx": {
-    "mtime": 1784218917.2200131,
-    "ast_hash": "8cd324652d24be31409b5dbb67b6500e",
+    "mtime": 1784263434.9606361,
+    "ast_hash": "107d7bad5ba111ec797e4ea18f7b95c3",
     "semantic_hash": ""
   },
   "src/app/(site)/sobre/page.tsx": {
@@ -130,9 +130,9 @@
     "semantic_hash": ""
   },
   "src/app/(site)/termos/page.tsx": {
-    "mtime": 1784134010.6437922,
-    "ast_hash": "69268a6493e3de3bceef164969ad1f0a",
-    "semantic_hash": "69268a6493e3de3bceef164969ad1f0a"
+    "mtime": 1784238732.415212,
+    "ast_hash": "dc44148f4d6eab9f7f0f7c577bafee00",
+    "semantic_hash": ""
   },
   "src/app/layout.tsx": {
     "mtime": 1784153203.5513823,
@@ -180,8 +180,8 @@
     "semantic_hash": ""
   },
   "src/shared/components/layout/Header.tsx": {
-    "mtime": 1784218917.3466995,
-    "ast_hash": "bba9e3cd36af06c6895efd3b0746643c",
+    "mtime": 1784261358.4884672,
+    "ast_hash": "a78dfd061a6ca63302447c2449634ac0",
     "semantic_hash": ""
   },
   "src/shared/components/layout/TemporaryPage.tsx": {
@@ -205,8 +205,8 @@
     "semantic_hash": ""
   },
   "tests/e2e/site-map.spec.ts": {
-    "mtime": 1784219241.5592048,
-    "ast_hash": "05a16d97f348869312c69f5e14936294",
+    "mtime": 1784237550.3036516,
+    "ast_hash": "2fefe67e6a4117702123468246cd87c0",
     "semantic_hash": ""
   },
   "tests/unit/home.test.tsx": {
@@ -315,8 +315,8 @@
     "semantic_hash": ""
   },
   "src/features/cursos/components/CursoDetalhe.tsx": {
-    "mtime": 1784156529.084435,
-    "ast_hash": "2c32396818b8c179601c3dd967146412",
+    "mtime": 1784236122.1728566,
+    "ast_hash": "5211c3eeb75c283493b80a723cc7757c",
     "semantic_hash": ""
   },
   "src/features/cursos/data/cursos.ts": {
@@ -345,8 +345,8 @@
     "semantic_hash": ""
   },
   "src/features/trilhas/components/TrilhaDetalhe.tsx": {
-    "mtime": 1784155667.8720767,
-    "ast_hash": "7945142fab157c2533aab15520880a8a",
+    "mtime": 1784236122.1728566,
+    "ast_hash": "eb9b54da5443add97c84ae80c5e9294b",
     "semantic_hash": ""
   },
   "src/features/trilhas/components/TrilhaPercurso.tsx": {
@@ -385,13 +385,13 @@
     "semantic_hash": ""
   },
   "tests/e2e/aulas.spec.ts": {
-    "mtime": 1784153302.4146497,
-    "ast_hash": "b2f86c5631d03a6ce1b5d740fe36e047",
+    "mtime": 1784237184.48743,
+    "ast_hash": "3e8204798d26d9cb9c53ccdc5bbc26ee",
     "semantic_hash": ""
   },
   "tests/e2e/cursos-trilhas.spec.ts": {
-    "mtime": 1784156388.8220425,
-    "ast_hash": "f86eb4ec156403e0ff23031731e3f708",
+    "mtime": 1784237090.2777479,
+    "ast_hash": "77652bacf9c9b4271751841201402da9",
     "semantic_hash": ""
   },
   "tests/unit/aulas.test.ts": {
@@ -455,23 +455,23 @@
     "semantic_hash": ""
   },
   "PARTE A/GEAR Website \u2014 Project Rules.md": {
-    "mtime": 1784132161.555801,
-    "ast_hash": "8fac500758135a05fd5383ecbf331f1f",
+    "mtime": 1784233774.2668207,
+    "ast_hash": "2c02d9e84d658d4ba3481d5c70838eff",
     "semantic_hash": ""
   },
   "PARTE A/development-plan.md": {
-    "mtime": 1784132161.448941,
-    "ast_hash": "598c4274913bab143710f257a6317feb",
+    "mtime": 1784238803.5000362,
+    "ast_hash": "ba5e4112e1eab5de87c70ea7b80d7dec",
     "semantic_hash": ""
   },
   "PARTE A/gear-documentacao-arquitetura (2).md": {
-    "mtime": 1784132161.876548,
-    "ast_hash": "81ac857af68862ab7afa9258685d39b9",
+    "mtime": 1784233774.2604895,
+    "ast_hash": "705fc1a9e1f6fc14d027c488ddbe60a8",
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1784139476.3709273,
-    "ast_hash": "7390ef41b7daaa401a69cab7e8212038",
+    "mtime": 1784236459.063625,
+    "ast_hash": "92345d2d4d08b3e1157f64421eb4e615",
     "semantic_hash": ""
   },
   "agent.md": {
@@ -910,8 +910,8 @@
     "semantic_hash": ""
   },
   "PARTE A/produtacao ate 1 pausa.md": {
-    "mtime": 1784216891.2132027,
-    "ast_hash": "cfcae66095f0adb1c4e45978fa2461b9",
+    "mtime": 1784238732.423494,
+    "ast_hash": "ff07611b077111f083dc002ade720775",
     "semantic_hash": ""
   },
   "graphify-out/memory/query_20260715_234330_use_o_graphify_para_entender_a_arquitetura_e_imple.md": {
@@ -965,8 +965,8 @@
     "semantic_hash": ""
   },
   "src/features/noticias/components/NoticiasBusca.tsx": {
-    "mtime": 1784218609.6979547,
-    "ast_hash": "08a33b6345962d16ecd3ee5b84f24d2a",
+    "mtime": 1784263871.912872,
+    "ast_hash": "1973bb24a25b4858db5bd7a0b6b18753",
     "semantic_hash": ""
   },
   "src/features/noticias/data/busca-noticias.ts": {
@@ -1025,8 +1025,8 @@
     "semantic_hash": ""
   },
   "tests/unit/noticias.test.tsx": {
-    "mtime": 1784218804.4163954,
-    "ast_hash": "a69082725bd6d32eea7878ee4e9a7515",
+    "mtime": 1784264001.718073,
+    "ast_hash": "488df673c7560f4bc35c94b5ec34acf6",
     "semantic_hash": ""
   },
   "graphify-out/memory/query_20260716_163732_use_o_graphify_para_entender_a_arquitetura_e_imple.md": {
@@ -1037,6 +1037,246 @@
   "src/features/institucional/README.md": {
     "mtime": 1784218522.1709845,
     "ast_hash": "6f02565cd2e759a169faa1386962082b",
+    "semantic_hash": ""
+  },
+  "PARTE A/milestone_login.md": {
+    "mtime": 1784238732.4175906,
+    "ast_hash": "70010bd52d65b98f428a480f75bb41df",
+    "semantic_hash": ""
+  },
+  "proxy.ts": {
+    "mtime": 1784235825.5952609,
+    "ast_hash": "a657a63cef303672865920b370f72f98",
+    "semantic_hash": ""
+  },
+  "src/app/(site)/login/page.tsx": {
+    "mtime": 1784237903.9430885,
+    "ast_hash": "5edbfd3a970726f14cfdc6a3b976fc23",
+    "semantic_hash": ""
+  },
+  "src/app/(site)/meu-aprendizado/page.tsx": {
+    "mtime": 1784237923.0719752,
+    "ast_hash": "cc9fb4303a0921156da6c5a04c75710a",
+    "semantic_hash": ""
+  },
+  "src/app/api/conta/route.ts": {
+    "mtime": 1784236098.4908903,
+    "ast_hash": "272905a2f17dc6e9bd132202845f3b14",
+    "semantic_hash": ""
+  },
+  "src/app/auth/callback/route.ts": {
+    "mtime": 1784237903.9450996,
+    "ast_hash": "14e89c2376116c8738e9d49ad996ea6e",
+    "semantic_hash": ""
+  },
+  "src/app/sitemap.ts": {
+    "mtime": 1784236566.3275502,
+    "ast_hash": "579eb1b1d4cc3be3a4fa62f148feb4ac",
+    "semantic_hash": ""
+  },
+  "src/features/autenticacao/components/AccountAccess.tsx": {
+    "mtime": 1784253934.8701167,
+    "ast_hash": "901703a8069163a787ec7279a89f4a82",
+    "semantic_hash": ""
+  },
+  "src/features/autenticacao/components/GitHubLoginButton.tsx": {
+    "mtime": 1784237903.9353316,
+    "ast_hash": "bca499aa677f400b67a3ea802c727265",
+    "semantic_hash": ""
+  },
+  "src/features/meu-aprendizado/components/AccountDeletionButton.tsx": {
+    "mtime": 1784261263.6882577,
+    "ast_hash": "60a47ceb94d6c151d3a0b620956cc365",
+    "semantic_hash": ""
+  },
+  "src/features/meu-aprendizado/components/EnrollmentButton.tsx": {
+    "mtime": 1784237903.9385583,
+    "ast_hash": "5b170532d46a1f96da2201ddcd8ec2d2",
+    "semantic_hash": ""
+  },
+  "src/features/meu-aprendizado/components/LessonCompletionButton.tsx": {
+    "mtime": 1784237903.9405687,
+    "ast_hash": "536a8a6342baadd4b94e8de3ce1d7d3e",
+    "semantic_hash": ""
+  },
+  "src/features/meu-aprendizado/components/PersonalLearningDashboard.tsx": {
+    "mtime": 1784263504.0118105,
+    "ast_hash": "80e87c705a0b90e39e14ac99d91fbbe6",
+    "semantic_hash": ""
+  },
+  "src/features/meu-aprendizado/data/catalogo.ts": {
+    "mtime": 1784236457.8803113,
+    "ast_hash": "d056e710a18b86b8ff09dc250a852886",
+    "semantic_hash": ""
+  },
+  "src/features/meu-aprendizado/services/progresso.ts": {
+    "mtime": 1784236566.3275502,
+    "ast_hash": "8b1aaca604336dc5e7078b292ea4494d",
+    "semantic_hash": ""
+  },
+  "src/features/meu-aprendizado/services/repository.ts": {
+    "mtime": 1784236457.9303958,
+    "ast_hash": "fc3543d977d2851e241769fb29545586",
+    "semantic_hash": ""
+  },
+  "src/features/meu-aprendizado/types.ts": {
+    "mtime": 1784235950.8036969,
+    "ast_hash": "7143c1b6d5d2d5a3580a67561b552fc8",
+    "semantic_hash": ""
+  },
+  "src/shared/lib/supabase/client.ts": {
+    "mtime": 1784235825.5894043,
+    "ast_hash": "9b642a1bc9a280ca967342c0fe5335e7",
+    "semantic_hash": ""
+  },
+  "src/shared/lib/supabase/config.ts": {
+    "mtime": 1784235825.5791252,
+    "ast_hash": "29ee713474f2261d3ec150c8b2bef049",
+    "semantic_hash": ""
+  },
+  "src/shared/lib/supabase/proxy.ts": {
+    "mtime": 1784235825.5932481,
+    "ast_hash": "f13500e053d83c953a124c1421f9f0ac",
+    "semantic_hash": ""
+  },
+  "src/shared/lib/supabase/server.ts": {
+    "mtime": 1784235825.5894043,
+    "ast_hash": "c6eb065a92dbfbaa2dda89f85cc4cfcc",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20260716000100_create_personal_learning.sql": {
+    "mtime": 1784236288.529855,
+    "ast_hash": "54d0795e27ab8a76367ce80174d82974",
+    "semantic_hash": ""
+  },
+  "supabase/seed.sql": {
+    "mtime": 1784236288.529855,
+    "ast_hash": "8521509ecdc424680e24f51a3bcc5c29",
+    "semantic_hash": ""
+  },
+  "supabase/tests/database/learning_rls.test.sql": {
+    "mtime": 1784236288.5364652,
+    "ast_hash": "10192b6be8890518b8bf357751b2f5e4",
+    "semantic_hash": ""
+  },
+  "tests/unit/autenticacao.test.ts": {
+    "mtime": 1784237923.0688784,
+    "ast_hash": "b40c4c0acc57d4441bc812b78dba417f",
+    "semantic_hash": ""
+  },
+  "tests/unit/meu-aprendizado.test.tsx": {
+    "mtime": 1784237943.8431225,
+    "ast_hash": "f9a9554338075d3e7bd4fdd7efd81601",
+    "semantic_hash": ""
+  },
+  ".github/workflows/database-tests.yml": {
+    "mtime": 1784236288.5402327,
+    "ast_hash": "b82ccac9d0c7d8cd4f4ff512c1479205",
+    "semantic_hash": ""
+  },
+  "docs/adr/0001-supabase-auth-learning.md": {
+    "mtime": 1784236459.0802658,
+    "ast_hash": "8acbb505aad7e6edd443263ef2878901",
+    "semantic_hash": ""
+  },
+  "docs/supabase-rollback.md": {
+    "mtime": 1784236288.5402327,
+    "ast_hash": "472bbc0bcfceafd71db964a603d2cb83",
+    "semantic_hash": ""
+  },
+  "docs/supabase-setup.md": {
+    "mtime": 1784238814.545918,
+    "ast_hash": "a018a11645df5b1d1c7a41278327edbc",
+    "semantic_hash": ""
+  },
+  "src/features/autenticacao/README.md": {
+    "mtime": 1784235875.017094,
+    "ast_hash": "80e50eafb3c6c03a95495f1c304564fa",
+    "semantic_hash": ""
+  },
+  "src/features/meu-aprendizado/README.md": {
+    "mtime": 1784236098.4835746,
+    "ast_hash": "302b89e35d01fbfb7e3d4dedd298fdfd",
+    "semantic_hash": ""
+  },
+  "graphify-out/memory/query_20260716_213203_use_o_graphify_para_entender_a_arquitetura_e_imple.md": {
+    "mtime": 1784237523.7430477,
+    "ast_hash": "b3e7bc8f9bf8ca07b1bc7418d824b45a",
+    "semantic_hash": ""
+  },
+  "src/shared/lib/internal-redirect.ts": {
+    "mtime": 1784237903.9291365,
+    "ast_hash": "1dbe8b1ea2cc5e344c4a0b6ce10b1719",
+    "semantic_hash": ""
+  },
+  "src/features/noticias/components/FeaturedNewsCarousel.tsx": {
+    "mtime": 1784263871.9065256,
+    "ast_hash": "f926077e087cbe0509901eabaec85841",
+    "semantic_hash": ""
+  },
+  "src/features/projetos/components/FeaturedProjectsCarousel.tsx": {
+    "mtime": 1784262475.8248782,
+    "ast_hash": "6496ac21ef8d31a32e1e39bac144f5f0",
+    "semantic_hash": ""
+  },
+  "graphify-out/memory/query_20260716_215542_configurar_projeto_supabase__oauth_app_github__cal.md": {
+    "mtime": 1784238942.1393127,
+    "ast_hash": "d978667f3e53fbdf0b4743165a92ee09",
+    "semantic_hash": ""
+  },
+  "src/content/noticias/encontro-discute-ros-sistemas-autonomos.mdx": {
+    "mtime": 1784261476.9105854,
+    "ast_hash": "82a46831b50047cf0c9f56ef2150b3d7",
+    "semantic_hash": ""
+  },
+  "src/content/noticias/equipe-apresenta-projetos-mostra-engenharia.mdx": {
+    "mtime": 1784261476.9151244,
+    "ast_hash": "1f9e7e29cdb3318161596e0dcf79f0f5",
+    "semantic_hash": ""
+  },
+  "src/content/noticias/gear-abre-ciclo-estudos-visao-computacional.mdx": {
+    "mtime": 1784261476.9075859,
+    "ast_hash": "5987c597bdf50e3d86faa6a95cb80abf",
+    "semantic_hash": ""
+  },
+  "src/content/noticias/grupo-publica-guia-seguranca-laboratorio.mdx": {
+    "mtime": 1784261476.9201243,
+    "ast_hash": "30984244141d592fa94a674d25aea3fc",
+    "semantic_hash": ""
+  },
+  "src/content/noticias/laboratorio-recebe-componentes-prototipagem.mdx": {
+    "mtime": 1784261476.909583,
+    "ast_hash": "dcfdb7cc615a1a1ca3d859ee164dae26",
+    "semantic_hash": ""
+  },
+  "src/content/noticias/mini-curso-impressao-3d-inscricoes.mdx": {
+    "mtime": 1784261476.9131122,
+    "ast_hash": "36be8ecd94a26823231aa22bdbb047b8",
+    "semantic_hash": ""
+  },
+  "src/content/noticias/oficina-robotica-recebe-novos-estudantes.mdx": {
+    "mtime": 1784261476.903513,
+    "ast_hash": "5369a590049fdbe9f93a4e91ec335452",
+    "semantic_hash": ""
+  },
+  "src/content/noticias/prototipo-seguidor-linha-conclui-testes.mdx": {
+    "mtime": 1784261476.9055705,
+    "ast_hash": "71169fed4a51bf00850e6cd6c9d12a32",
+    "semantic_hash": ""
+  },
+  "src/content/projetos/braco-robotico-educacional.mdx": {
+    "mtime": 1784261476.8989654,
+    "ast_hash": "fe35714274a32d73f251881406c5730f",
+    "semantic_hash": ""
+  },
+  "src/content/projetos/estacao-monitoramento-ambiental.mdx": {
+    "mtime": 1784261476.9015143,
+    "ast_hash": "203782415eb8f6ec289327b0629747b1",
+    "semantic_hash": ""
+  },
+  "src/content/projetos/robo-seguidor-de-linha.mdx": {
+    "mtime": 1784261476.8979554,
+    "ast_hash": "77c0211579b1ed2df339e5cb0ce873fa",
     "semantic_hash": ""
   }
 }

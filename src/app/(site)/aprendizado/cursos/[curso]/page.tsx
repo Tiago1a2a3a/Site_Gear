@@ -9,6 +9,7 @@ import {
   resolverAulasDoCurso,
   resolverPreRequisitosDoCurso,
 } from "@features/cursos/data/cursos";
+import { EnrollmentButton } from "@features/meu-aprendizado/components/EnrollmentButton";
 
 type CursoPageProps = Readonly<{
   params: Promise<{ curso: string }>;
@@ -50,6 +51,9 @@ export default async function CursoPage({ params }: CursoPageProps) {
       aulas={resolverAulasDoCurso(curso)}
       contextos={listarContextosDoCurso(curso.slug)}
       curso={curso}
+      personalAction={
+        <EnrollmentButton contentIdentifier={curso.slug} contentType="curso" />
+      }
       preRequisitos={resolverPreRequisitosDoCurso(curso)}
     />
   );

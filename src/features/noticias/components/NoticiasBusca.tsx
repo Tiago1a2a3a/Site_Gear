@@ -1,25 +1,37 @@
 "use client";
 
 import MiniSearch from "minisearch";
+import Link from "next/link";
 import { useMemo, useState } from "react";
 
+import { Button } from "@shared/components/ui/Button";
 import { SearchInput } from "@shared/components/ui/SearchInput";
+import { formatarDataLonga } from "@shared/lib/formatar-data";
 
-import { NoticiaCard } from "./NoticiaCard";
 import { opcoesDoIndiceNoticias } from "../data/busca-noticias";
 import type { DocumentoBuscaNoticia } from "../types";
 
 export function NoticiasBusca({
   documentos,
+  excludedSlugs = [],
   indiceSerializado,
 }: Readonly<{
   documentos: readonly DocumentoBuscaNoticia[];
+  excludedSlugs?: readonly string[];
   indiceSerializado: string;
 }>) {
   const [termo, setTermo] = useState("");
   const estado = useMemo(() => {
     try {
-      if (!termo.trim()) return { erro: false, resultados: documentos };
+      if (!termo.trim()) {
+        const excluded = new Set(excludedSlugs);
+        return {
+          erro: false,
+          resultados: documentos.filter(
+            (documento) => !excluded.has(documento.slug),
+          ),
+        };
+      }
       const indice = MiniSearch.loadJSON<DocumentoBuscaNoticia>(
         indiceSerializado,
         opcoesDoIndiceNoticias(),
@@ -41,7 +53,7 @@ export function NoticiasBusca({
     } catch {
       return { erro: true, resultados: [] };
     }
-  }, [documentos, indiceSerializado, termo]);
+  }, [documentos, excludedSlugs, indiceSerializado, termo]);
 
   return (
     <div className="news-search">
@@ -66,11 +78,26 @@ export function NoticiasBusca({
           <p>Atualize a página e tente novamente.</p>
         </div>
       ) : estado.resultados.length ? (
-        <div className="news-grid">
+        <ul className="news-history-list">
           {estado.resultados.map((noticia) => (
-            <NoticiaCard key={noticia.id} noticia={noticia} />
+            <li key={noticia.id}>
+              <time dateTime={noticia.dataPublicacao}>
+                {formatarDataLonga(noticia.dataPublicacao)}
+              </time>
+              <div>
+                <h3>
+                  <Link href={`/noticias/${noticia.slug}`}>
+                    {noticia.titulo}
+                  </Link>
+                </h3>
+                <p>{noticia.resumo}</p>
+              </div>
+              <Button href={`/noticias/${noticia.slug}`} variant="secondary">
+                Ler notícia
+              </Button>
+            </li>
           ))}
-        </div>
+        </ul>
       ) : (
         <div className="search-state card">
           <h2>Nenhuma notícia encontrada</h2>

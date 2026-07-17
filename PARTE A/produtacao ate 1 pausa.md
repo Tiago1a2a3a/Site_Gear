@@ -274,3 +274,28 @@ Regras específicas:
 - Reutilizar os componentes de carrossel, busca, breadcrumbs e revelação no scroll já criados; não duplicar a fonte de conteúdo em componentes visuais.
 - Quando uma capa real de Curso for aprovada, substituir o arquivo/caminho de `imagemCapa` no MDX correspondente. Não editar o carrossel para trocar apenas a imagem.
 - Manter a verificação proporcional após mudanças: `npm run build` e `npm test` passaram após este conjunto de ajustes visuais e de navegação.
+
+## 11. M13 extra — Login e Meu aprendizado — 16 de julho de 2026
+
+O adendo `ADENDO MILESTONE_LOGIN` foi implementado no código local com a
+fronteira híbrida oficial do Supabase:
+
+- `@supabase/ssr`, `@supabase/supabase-js` e Supabase CLI em versões fixadas;
+- clientes browser/server, proxy de renovação e callback OAuth PKCE;
+- rotas `/login`, `/meu-aprendizado`, `/auth/callback` e `/api/conta`;
+- migrations para `learning_enrollments` e `lesson_completions`, grants mínimos,
+  RLS por `auth.uid()`, índices e cascade de exclusão;
+- feature `meu-aprendizado` com seletores puros de progresso, dashboard, listas,
+  inscrições, conclusão de Aulas e Configurações;
+- controles pessoais compostos pelas páginas de Curso, Trilha e Aula sem imports
+  diretos entre features;
+- sitemap sem rotas pessoais, `noindex`, textos legais, ADR, configuração,
+  rollback, testes unitários, E2E e pgTAP/CI.
+
+O código funciona em modo visitante sem variáveis Supabase e preserva as páginas
+públicas. A ativação real ainda depende de ações externas do proprietário:
+configurar o projeto Supabase e o OAuth App GitHub, preencher URLs/segredos por
+ambiente, executar a suíte pgTAP com Docker/Supabase local e verificar a retenção
+de backups antes de produção. Privacidade e Termos foram aprovados por Tiago
+Lopes em 16 de julho de 2026. As pendências restantes não
+devem ser confundidas com falha do build local nem com login já ativo.

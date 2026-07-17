@@ -13,16 +13,26 @@ function isCurrentSection(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
-export function Header() {
+export function Header({
+  accountAccess,
+  mobileAccountAccess,
+}: Readonly<{
+  accountAccess?: React.ReactNode;
+  mobileAccountAccess?: React.ReactNode;
+}>) {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isAboutMenuOpen, setIsAboutMenuOpen] = useState(false);
+  const [isLearningMenuOpen, setIsLearningMenuOpen] = useState(false);
+  const [isMobileAboutOpen, setIsMobileAboutOpen] = useState(false);
+  const [isMobileLearningOpen, setIsMobileLearningOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
-  const firstMobileLinkRef = useRef<HTMLAnchorElement>(null);
+  const firstMobileItemRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     if (!isMenuOpen) return;
 
-    firstMobileLinkRef.current?.focus();
+    firstMobileItemRef.current?.focus();
 
     function closeOnEscape(event: KeyboardEvent) {
       if (event.key !== "Escape") return;
@@ -34,6 +44,12 @@ export function Header() {
     document.addEventListener("keydown", closeOnEscape);
     return () => document.removeEventListener("keydown", closeOnEscape);
   }, [isMenuOpen]);
+
+  function closeMobileMenu() {
+    setIsMenuOpen(false);
+    setIsMobileAboutOpen(false);
+    setIsMobileLearningOpen(false);
+  }
 
   return (
     <header className="site-header">
@@ -54,6 +70,135 @@ export function Header() {
               {siteConfig.mainNavigation.map((item) => {
                 const isCurrent = isCurrentSection(pathname, item.href);
 
+                if (item.href === "/aprendizado") {
+                  return (
+                    <li
+                      className="navigation-dropdown"
+                      key={item.href}
+                      onBlur={(event) => {
+                        if (
+                          !event.currentTarget.contains(event.relatedTarget)
+                        ) {
+                          setIsLearningMenuOpen(false);
+                        }
+                      }}
+                      onFocus={() => setIsLearningMenuOpen(true)}
+                      onMouseEnter={() => setIsLearningMenuOpen(true)}
+                      onMouseLeave={() => setIsLearningMenuOpen(false)}
+                    >
+                      <Link
+                        aria-current={
+                          pathname === item.href ? "page" : undefined
+                        }
+                        className="navigation-link"
+                        data-current={isCurrent || undefined}
+                        href={item.href}
+                      >
+                        {item.label}
+                        <span aria-hidden="true">⌄</span>
+                      </Link>
+                      {isLearningMenuOpen ? (
+                        <ul className="navigation-dropdown-menu navigation-dropdown-menu--learning">
+                          <li className="navigation-nested-dropdown">
+                            <Link
+                              className="navigation-dropdown-link"
+                              href="/aprendizado"
+                            >
+                              Aprendizado <span aria-hidden="true">›</span>
+                            </Link>
+                            <ul className="navigation-nested-menu">
+                              <li>
+                                <Link
+                                  className="navigation-dropdown-link"
+                                  href="/aprendizado/aulas"
+                                >
+                                  Explorar aulas
+                                </Link>
+                              </li>
+                              <li>
+                                <Link
+                                  className="navigation-dropdown-link"
+                                  href="/aprendizado/cursos"
+                                >
+                                  Explorar cursos
+                                </Link>
+                              </li>
+                              <li>
+                                <Link
+                                  className="navigation-dropdown-link"
+                                  href="/aprendizado/trilhas"
+                                >
+                                  Explorar trilhas
+                                </Link>
+                              </li>
+                              <li>
+                                <Link
+                                  className="navigation-dropdown-link"
+                                  href="/aprendizado/busca"
+                                >
+                                  Explorar geral
+                                </Link>
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <Link
+                              className="navigation-dropdown-link"
+                              href="/meu-aprendizado"
+                            >
+                              Meu aprendizado
+                            </Link>
+                          </li>
+                        </ul>
+                      ) : null}
+                    </li>
+                  );
+                }
+
+                if (item.href === "/sobre") {
+                  return (
+                    <li
+                      className="navigation-dropdown"
+                      key={item.href}
+                      onMouseEnter={() => setIsAboutMenuOpen(true)}
+                      onMouseLeave={() => setIsAboutMenuOpen(false)}
+                    >
+                      <button
+                        aria-expanded={isAboutMenuOpen}
+                        aria-haspopup="true"
+                        className="navigation-link navigation-dropdown-trigger"
+                        onClick={() =>
+                          setIsAboutMenuOpen((current) => !current)
+                        }
+                        type="button"
+                      >
+                        {item.label}
+                        <span aria-hidden="true">⌄</span>
+                      </button>
+                      {isAboutMenuOpen ? (
+                        <ul className="navigation-dropdown-menu">
+                          {siteConfig.institutionalNavigation.map((subItem) => (
+                            <li key={subItem.href}>
+                              <Link
+                                aria-current={
+                                  pathname === subItem.href ? "page" : undefined
+                                }
+                                className="navigation-dropdown-link"
+                                href={subItem.href}
+                                onClick={() => setIsAboutMenuOpen(false)}
+                              >
+                                {subItem.href === "/sobre"
+                                  ? "O que é o GEAR?"
+                                  : "Nossos patrocinadores"}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : null}
+                    </li>
+                  );
+                }
+
                 return (
                   <li key={item.href}>
                     <Link
@@ -70,23 +215,26 @@ export function Header() {
             </ul>
           </nav>
 
-          <Link
-            className="navigation-link my-learning-link"
-            href="/meu-aprendizado"
-          >
-            Meu aprendizado
-          </Link>
-
-          <Link className="login-link" href="/login">
-            Login
-          </Link>
+          {accountAccess ?? (
+            <Link className="login-link" href="/login">
+              Login
+            </Link>
+          )}
         </div>
 
         <button
           aria-controls="mobile-navigation"
           aria-expanded={isMenuOpen}
           className="menu-button"
-          onClick={() => setIsMenuOpen((current) => !current)}
+          onClick={() => {
+            setIsMenuOpen((current) => {
+              if (current) {
+                setIsMobileAboutOpen(false);
+                setIsMobileLearningOpen(false);
+              }
+              return !current;
+            });
+          }}
           ref={menuButtonRef}
           type="button"
         >
@@ -102,32 +250,165 @@ export function Header() {
         >
           <Container>
             <ul className="mobile-navigation-list">
-              {siteConfig.mainNavigation.map((item, index) => {
-                const isCurrent = isCurrentSection(pathname, item.href);
-
-                return (
-                  <li key={item.href}>
-                    <Link
-                      aria-current={pathname === item.href ? "page" : undefined}
-                      className="navigation-link mobile-navigation-link"
-                      data-current={isCurrent || undefined}
-                      href={item.href}
-                      onClick={() => setIsMenuOpen(false)}
-                      ref={index === 0 ? firstMobileLinkRef : undefined}
-                    >
-                      {item.label}
-                    </Link>
-                  </li>
-                );
-              })}
-              <li>
-                <Link
-                  className="navigation-link mobile-navigation-link"
-                  href="/meu-aprendizado"
-                  onClick={() => setIsMenuOpen(false)}
+              <li className="mobile-navigation-section">
+                <button
+                  aria-controls="mobile-learning-navigation"
+                  aria-expanded={isMobileLearningOpen}
+                  className="mobile-navigation-trigger"
+                  onClick={() =>
+                    setIsMobileLearningOpen((current) => !current)
+                  }
+                  ref={firstMobileItemRef}
+                  type="button"
                 >
-                  Meu aprendizado
-                </Link>
+                  <span>Aprendizado</span>
+                  <span
+                    aria-hidden="true"
+                    className="mobile-navigation-trigger__icon"
+                  >
+                    +
+                  </span>
+                </button>
+                {isMobileLearningOpen ? (
+                  <ul
+                    className="mobile-navigation-submenu"
+                    id="mobile-learning-navigation"
+                  >
+                    <li>
+                      <Link
+                        className="mobile-navigation-sublink"
+                        href="/aprendizado"
+                        onClick={closeMobileMenu}
+                      >
+                        Visão geral
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="mobile-navigation-sublink"
+                        href="/aprendizado/aulas"
+                        onClick={closeMobileMenu}
+                      >
+                        Explorar aulas
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="mobile-navigation-sublink"
+                        href="/aprendizado/cursos"
+                        onClick={closeMobileMenu}
+                      >
+                        Explorar cursos
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="mobile-navigation-sublink"
+                        href="/aprendizado/trilhas"
+                        onClick={closeMobileMenu}
+                      >
+                        Explorar trilhas
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="mobile-navigation-sublink"
+                        href="/aprendizado/busca"
+                        onClick={closeMobileMenu}
+                      >
+                        Explorar tudo
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="mobile-navigation-sublink mobile-navigation-sublink--personal"
+                        href="/meu-aprendizado"
+                        onClick={closeMobileMenu}
+                      >
+                        Meu aprendizado
+                      </Link>
+                    </li>
+                  </ul>
+                ) : null}
+              </li>
+
+              {siteConfig.mainNavigation
+                .filter(
+                  (item) =>
+                    item.href !== "/aprendizado" && item.href !== "/sobre",
+                )
+                .map((item) => {
+                  const isCurrent = isCurrentSection(pathname, item.href);
+                  return (
+                    <li className="mobile-navigation-section" key={item.href}>
+                      <Link
+                        aria-current={
+                          pathname === item.href ? "page" : undefined
+                        }
+                        className="navigation-link mobile-navigation-link"
+                        data-current={isCurrent || undefined}
+                        href={item.href}
+                        onClick={closeMobileMenu}
+                      >
+                        {item.label}
+                      </Link>
+                    </li>
+                  );
+                })}
+
+              <li className="mobile-navigation-section">
+                <button
+                  aria-controls="mobile-about-navigation"
+                  aria-expanded={isMobileAboutOpen}
+                  className="mobile-navigation-trigger"
+                  onClick={() => setIsMobileAboutOpen((current) => !current)}
+                  type="button"
+                >
+                  <span>Sobre</span>
+                  <span
+                    aria-hidden="true"
+                    className="mobile-navigation-trigger__icon"
+                  >
+                    +
+                  </span>
+                </button>
+                {isMobileAboutOpen ? (
+                  <ul
+                    className="mobile-navigation-submenu"
+                    id="mobile-about-navigation"
+                  >
+                    <li>
+                      <Link
+                        className="mobile-navigation-sublink"
+                        href="/sobre"
+                        onClick={closeMobileMenu}
+                      >
+                        O que é o GEAR?
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="mobile-navigation-sublink"
+                        href="/patrocinadores"
+                        onClick={closeMobileMenu}
+                      >
+                        Nossos patrocinadores
+                      </Link>
+                    </li>
+                  </ul>
+                ) : null}
+              </li>
+
+              <li className="mobile-navigation-account">
+                {mobileAccountAccess ?? (
+                    <Link
+                      className="navigation-link mobile-navigation-link"
+                      href="/login"
+                      onClick={closeMobileMenu}
+                    >
+                      Login
+                    </Link>
+                )}
               </li>
             </ul>
           </Container>

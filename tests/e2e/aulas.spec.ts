@@ -25,6 +25,9 @@ test("visitante lista, abre e consome uma Aula completa", async ({ page }) => {
   ).toHaveAttribute("download", "");
   await expect(page.locator("iframe[loading='lazy']")).toHaveCount(1);
   await expect(page.locator("text=Giscus")).toHaveCount(0);
+  await expect(
+    page.getByRole("button", { name: "Marcar como concluída" }),
+  ).toBeVisible();
 });
 
 test("pré-requisito usa a URL canônica da Aula", async ({ page }) => {

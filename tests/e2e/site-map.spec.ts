@@ -118,21 +118,47 @@ test("grupo de avisos usa a 404 enquanto o link oficial não existe", async ({
   ).toBeVisible();
 });
 
-test("acessos pessoais provisórios usam a 404 até entrarem no roadmap", async ({
+test("rotas pessoais existem e preservam o acesso publico", async ({
   page,
   request,
 }) => {
   for (const rota of ["/meu-aprendizado", "/login"]) {
-    expect((await request.get(rota)).status()).toBe(404);
+    expect((await request.get(rota)).status()).toBe(200);
   }
 
   await page.goto("/");
+  await page
+    .getByRole("link", { exact: true, name: "Aprendizado" })
+    .first()
+    .focus();
   await expect(
     page.getByRole("link", { name: "Meu aprendizado" }).first(),
   ).toHaveAttribute("href", "/meu-aprendizado");
   await expect(
     page.getByRole("link", { name: "Login" }).first(),
   ).toHaveAttribute("href", "/login");
+
+  await page.goto("/meu-aprendizado");
+  await expect(
+    page.getByRole("heading", { name: /acompanhe cursos, trilhas/i }),
+  ).toBeVisible();
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
+    "content",
+    /noindex/,
+  );
+
+  await page.goto("/login");
+  await expect(
+    page.getByRole("heading", { name: /entre para acompanhar/i }),
+  ).toBeVisible();
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
+    "content",
+    /noindex/,
+  );
+
+  const sitemap = await (await request.get("/sitemap.xml")).text();
+  expect(sitemap).not.toContain("/login");
+  expect(sitemap).not.toContain("/meu-aprendizado");
 });
 
 test("Aprendizado apresenta as três formas de explorar conteúdo", async ({

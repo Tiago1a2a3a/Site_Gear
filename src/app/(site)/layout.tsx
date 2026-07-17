@@ -1,3 +1,4 @@
+import { AccountAccess } from "@features/autenticacao/components/AccountAccess";
 import { SponsorStrip } from "@features/patrocinadores/components/SponsorStrip";
 import { Footer } from "@shared/components/layout/Footer";
 import { Header } from "@shared/components/layout/Header";
@@ -13,7 +14,10 @@ export default function SiteLayout({
       <a className="skip-link" href="#conteudo-principal">
         Pular para o conteúdo
       </a>
-      <Header />
+      <Header
+        accountAccess={<AccountAccess />}
+        mobileAccountAccess={<AccountAccess mobile />}
+      />
       <main className="site-main" id="conteudo-principal" tabIndex={-1}>
         <Container>{children}</Container>
       </main>

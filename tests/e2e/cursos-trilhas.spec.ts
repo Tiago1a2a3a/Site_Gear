@@ -8,6 +8,9 @@ test("Curso preserva a ordem e aponta para URLs canônicas das Aulas", async ({
   await expect(
     page.getByRole("heading", { level: 1, name: "Fundamentos de Arduino" }),
   ).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: "Inscrever-se" }),
+  ).toBeVisible();
   const aulas = page.locator(".course-lesson-list > li");
   await expect(aulas).toHaveCount(4);
   await expect(aulas.nth(0)).toContainText("Fundamentos de eletrônica");
@@ -26,6 +29,9 @@ test("Trilha mistura Curso e Aula direta na ordem e preserva contexto", async ({
   page,
 }) => {
   await page.goto("/aprendizado/trilhas/robotica-do-zero");
+  await expect(
+    page.getByRole("button", { name: "Inscrever-se" }),
+  ).toBeVisible();
 
   const percurso = page.locator(".trail-path-list > li");
   await expect(percurso).toHaveCount(3);

@@ -1,34 +1,87 @@
-import { ProjetoCard } from "@features/projetos/components/ProjetoCard";
-import { listarProjetos } from "@features/projetos/data/projetos";
+import Link from "next/link";
+
+import { FeaturedProjectsCarousel } from "@features/projetos/components/FeaturedProjectsCarousel";
+import {
+  listarProjetos,
+  listarProjetosEmDestaque,
+} from "@features/projetos/data/projetos";
+import { Button } from "@shared/components/ui/Button";
 import { RevealOnScroll } from "@shared/components/ui/RevealOnScroll";
 
 export default function ProjetosPage() {
   const projetos = listarProjetos();
+  const projetosEmDestaque = listarProjetosEmDestaque(3);
+  const slugsEmDestaque = new Set(
+    projetosEmDestaque.map((projeto) => projeto.slug),
+  );
+  const outrosProjetos = projetos.filter(
+    (projeto) => !slugsEmDestaque.has(projeto.slug),
+  );
 
   return (
     <div className="projects-page">
-      <header className="page-heading">
-        <p className="status-label">Pesquisa e desenvolvimento</p>
-        <h1>Projetos</h1>
-        <p>Protótipos, pesquisas e soluções construídas pelo GEAR.</p>
-      </header>
+      <FeaturedProjectsCarousel projects={projetosEmDestaque} />
 
       <RevealOnScroll>
-        {projetos.length ? (
-          <div className="project-grid">
-            {projetos.map((projeto) => (
-              <ProjetoCard key={projeto.slug} projeto={projeto} />
-            ))}
-          </div>
-        ) : (
-          <div className="empty-state card">
-            <h2>Nenhum projeto publicado ainda</h2>
+        <section
+          aria-labelledby="other-projects-title"
+          className="other-projects"
+        >
+          <header className="other-projects-heading">
+            <div>
+              <p className="section-index">OUTROS PROJETOS</p>
+              <h2 id="other-projects-title">Conheça outros projetos.</h2>
+            </div>
             <p>
-              Os projetos aparecerão aqui quando estiverem prontos para
-              apresentação.
+              Explore outras ideias, pesquisas e protótipos desenvolvidos pelo
+              grupo.
             </p>
-          </div>
-        )}
+          </header>
+
+          {outrosProjetos.length ? (
+            <ul className="other-projects-list">
+              {outrosProjetos.map((projeto) => (
+                <li key={projeto.slug}>
+                  <div className="other-projects-content">
+                    <p className="status-label">
+                      Projeto · {projeto.status}
+                    </p>
+                    <h3>
+                      <Link href={`/projetos/${projeto.slug}`}>
+                        {projeto.titulo}
+                      </Link>
+                    </h3>
+                    <p>{projeto.descricaoCurta}</p>
+                    <div
+                      aria-label={`Status do projeto: ${projeto.status}`}
+                      className="other-projects-progress"
+                      role="img"
+                    >
+                      <span
+                        className={
+                          projeto.status === "concluído"
+                            ? "other-projects-progress__bar other-projects-progress__bar--complete"
+                            : "other-projects-progress__bar"
+                        }
+                      />
+                    </div>
+                  </div>
+                  <Button
+                    className="other-projects-action"
+                    href={`/projetos/${projeto.slug}`}
+                    variant="secondary"
+                  >
+                    Ver projeto
+                  </Button>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="other-projects-empty">
+              Novos projetos serão adicionados em breve.
+            </p>
+          )}
+        </section>
       </RevealOnScroll>
     </div>
   );

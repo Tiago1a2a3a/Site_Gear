@@ -151,14 +151,22 @@ decisão necessária.
 
 ## 9. Documento de continuidade
 
-Antes de retomar o trabalho após uma pausa, ler `PARTE A/produtacao ate 1 pausa.md`.
-Esse documento registra o estado do Portal até 15 de julho de 2026, o histórico
-das decisões, o que foi implementado nas Milestones 0 a 5, o código que já
-avança sobre esse marco e as pendências que ainda precisam de aceite formal.
+Antes de iniciar ou retomar trabalho, ler
+`PARTE A/produtacao ate 1 deploy.md`. Esse documento registra o estado do Portal
+até 17 de julho de 2026 e o primeiro ciclo real de deploy: evolução das
+Milestones, decisões visuais, M11/M12, M13 extra com Supabase, histórico recente
+do Git, diagnóstico do Cloudflare, tentativa de correção de imagens já revertida,
+pendências externas e o ponto seguro de retomada.
+
+Usar esse handoff para evitar repetir investigações e para distinguir código
+implementado, validação conhecida e aceite formal. Antes de declarar produção
+atualizada, confirmar no provedor a URL pública, o commit implantado, bindings e
+smoke tests; a URL exata não deve ser inferida ou inventada.
 
 Ele é um registro operacional de continuidade, não substitui a hierarquia das
-fontes oficiais acima. Quando o documento de continuidade divergir do código ou
-das fontes oficiais, confirmar no código e atualizar o documento após a decisão.
+fontes oficiais acima. Quando o documento de continuidade divergir do código,
+do estado do deploy ou das fontes oficiais, confirmar na fonte correspondente e
+atualizar o documento após a decisão.
 
 ## 10. Objetivo
 

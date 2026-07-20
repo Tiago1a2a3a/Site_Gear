@@ -10,16 +10,16 @@ select has_pk('public', 'learning_enrollments', 'inscricoes usam chave composta'
 select has_pk('public', 'lesson_completions', 'conclusoes usam chave composta');
 select results_eq($$select count(*)::bigint from pg_policies where schemaname = 'public' and tablename = 'learning_enrollments'$$, array[4::bigint], 'inscricoes possuem quatro politicas RLS');
 select results_eq($$select count(*)::bigint from pg_policies where schemaname = 'public' and tablename = 'lesson_completions'$$, array[4::bigint], 'conclusoes possuem quatro politicas RLS');
-select has_table_privilege('authenticated', 'public.learning_enrollments', 'select', 'authenticated pode ler inscricoes');
-select has_table_privilege('authenticated', 'public.learning_enrollments', 'insert', 'authenticated pode inserir inscricoes');
-select has_table_privilege('authenticated', 'public.learning_enrollments', 'update', 'authenticated pode atualizar inscricoes');
-select has_table_privilege('authenticated', 'public.learning_enrollments', 'delete', 'authenticated pode remover inscricoes');
-select has_table_privilege('authenticated', 'public.lesson_completions', 'select', 'authenticated pode ler conclusoes');
-select has_table_privilege('authenticated', 'public.lesson_completions', 'insert', 'authenticated pode inserir conclusoes');
-select has_table_privilege('authenticated', 'public.lesson_completions', 'update', 'authenticated pode atualizar conclusoes');
-select has_table_privilege('authenticated', 'public.lesson_completions', 'delete', 'authenticated pode remover conclusoes');
-select hasnt_table_privilege('anon', 'public.learning_enrollments', 'select', 'anon nao le inscricoes');
-select hasnt_table_privilege('anon', 'public.lesson_completions', 'select', 'anon nao le conclusoes');
+select ok(has_table_privilege('authenticated', 'public.learning_enrollments', 'select'), 'authenticated pode ler inscricoes');
+select ok(has_table_privilege('authenticated', 'public.learning_enrollments', 'insert'), 'authenticated pode inserir inscricoes');
+select ok(has_table_privilege('authenticated', 'public.learning_enrollments', 'update'), 'authenticated pode atualizar inscricoes');
+select ok(has_table_privilege('authenticated', 'public.learning_enrollments', 'delete'), 'authenticated pode remover inscricoes');
+select ok(has_table_privilege('authenticated', 'public.lesson_completions', 'select'), 'authenticated pode ler conclusoes');
+select ok(has_table_privilege('authenticated', 'public.lesson_completions', 'insert'), 'authenticated pode inserir conclusoes');
+select ok(has_table_privilege('authenticated', 'public.lesson_completions', 'update'), 'authenticated pode atualizar conclusoes');
+select ok(has_table_privilege('authenticated', 'public.lesson_completions', 'delete'), 'authenticated pode remover conclusoes');
+select ok(not has_table_privilege('anon', 'public.learning_enrollments', 'select'), 'anon nao le inscricoes');
+select ok(not has_table_privilege('anon', 'public.lesson_completions', 'select'), 'anon nao le conclusoes');
 
 insert into auth.users (id, email) values
   ('11111111-1111-4111-8111-111111111111', 'user-a@example.test'),

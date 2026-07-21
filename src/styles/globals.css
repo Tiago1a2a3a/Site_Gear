@@ -1842,12 +1842,6 @@ a {
   font-size: 1.75rem;
 }
 
-.project-videos {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-4);
-}
-
 .video-embed {
   position: relative;
   aspect-ratio: 16 / 9;
@@ -3490,7 +3484,6 @@ a {
 
   .project-grid,
   .project-detail-header,
-  .project-videos,
   .member-grid,
   .sponsor-grid,
   .news-grid,

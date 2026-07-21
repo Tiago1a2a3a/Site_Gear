@@ -6,6 +6,8 @@ import type {
 } from "react";
 import * as runtime from "react/jsx-runtime";
 
+import { VideoEmbed } from "./VideoEmbed";
+
 type ModuloMDX = Readonly<{
   default: ComponentType<
     Readonly<{ components?: Record<string, ElementType> }>
@@ -49,7 +51,7 @@ export function ConteudoMDX({
 
   return (
     <div className={className}>
-      <Conteudo components={{ a: LinkMDX, img: ImagemMDX }} />
+      <Conteudo components={{ a: LinkMDX, img: ImagemMDX, VideoEmbed }} />
     </div>
   );
 }

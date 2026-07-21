@@ -14,7 +14,6 @@ const validLesson = {
   dificuldade: "iniciante",
   dataPublicacao: "2026-07-15",
   autores: ["Equipe GEAR"],
-  videos: ["https://example.com/video"],
   status: "publicado",
   permiteComentarios: false,
 };
@@ -29,7 +28,6 @@ describe("schemas editoriais", () => {
       { ...validLesson, titulo: undefined },
       { ...validLesson, dificuldade: "especialista" },
       { ...validLesson, dataPublicacao: "15/07/2026" },
-      { ...validLesson, videos: ["http://example.com/video"] },
       { ...validLesson, slug: "Aula Com Espaços" },
     ];
 

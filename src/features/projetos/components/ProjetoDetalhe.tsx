@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 import { Badge } from "@shared/components/ui/Badge";
-import { VideoEmbed } from "@shared/components/ui/VideoEmbed";
 
 import { ProjetoConteudoMDX } from "./ProjetoConteudoMDX";
 import { ProjetoGaleria } from "./ProjetoGaleria";
@@ -52,29 +51,8 @@ export function ProjetoDetalhe({ projeto }: Readonly<{ projeto: Projeto }>) {
 
       <ProjetoConteudoMDX codigo={projeto.conteudo} />
 
-      {projeto.videos?.length ? (
-        <section
-          aria-labelledby="project-videos-title"
-          className="project-media-section"
-        >
-          <h2 id="project-videos-title">Vídeos do projeto</h2>
-          <div className="project-videos">
-            {projeto.videos.map((video, index) => (
-              <VideoEmbed
-                key={video}
-                titulo={`Vídeo ${index + 1} do projeto ${projeto.titulo}`}
-                url={video}
-              />
-            ))}
-          </div>
-        </section>
-      ) : null}
-
       {projeto.repositorioGithub || projeto.documentacao ? (
-        <section
-          aria-labelledby="project-links-title"
-          className="project-links"
-        >
+        <section aria-labelledby="project-links-title" className="project-links">
           <h2 id="project-links-title">Recursos do projeto</h2>
           <div>
             {projeto.repositorioGithub ? (

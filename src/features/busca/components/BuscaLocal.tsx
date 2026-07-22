@@ -262,6 +262,37 @@ export function BuscaLocal({
       </div>
 
       <div className="search-layout">
+        <div aria-hidden="true" className="search-layout__heading-spacer" />
+        <div className="search-content__heading">
+          <div>
+            <p className="status-label" id="search-results-title">
+              Resultados
+            </p>
+            <p aria-live="polite" className="search-result-count">
+              {`${estado.resultados.length} resultado${estado.resultados.length === 1 ? "" : "s"}`}
+            </p>
+          </div>
+          <div className="search-content__actions">
+            <label>
+              <span>Ordenar por</span>
+              <select
+                onChange={(event) =>
+                  atualizarOrdem(event.target.value as OrdemResultados)
+                }
+                value={ordem}
+              >
+                <option value="alfabetica">A–Z</option>
+                <option value="recentes">Mais recentes</option>
+                <option value="antigas">Mais antigas</option>
+              </select>
+            </label>
+            {termo || haFiltros ? (
+              <Button onClick={limparTudo} variant="secondary">
+                Limpar busca e filtros
+              </Button>
+            ) : null}
+          </div>
+        </div>
         <aside aria-label="Filtros da busca" className="search-sidebar">
           <h2>Filtros</h2>
           <FilterPanel
@@ -275,37 +306,6 @@ export function BuscaLocal({
           aria-labelledby="search-results-title"
           className="search-content"
         >
-          <div className="search-content__heading">
-            <div>
-              <p className="status-label" id="search-results-title">
-                Resultados
-              </p>
-              <p aria-live="polite" className="search-result-count">
-                {`${estado.resultados.length} resultado${estado.resultados.length === 1 ? "" : "s"}`}
-              </p>
-            </div>
-            <div className="search-content__actions">
-              <label>
-                <span>Ordenar por</span>
-                <select
-                  onChange={(event) =>
-                    atualizarOrdem(event.target.value as OrdemResultados)
-                  }
-                  value={ordem}
-                >
-                  <option value="alfabetica">A–Z</option>
-                  <option value="recentes">Mais recentes</option>
-                  <option value="antigas">Mais antigas</option>
-                </select>
-              </label>
-              {termo || haFiltros ? (
-                <Button onClick={limparTudo} variant="secondary">
-                  Limpar busca e filtros
-                </Button>
-              ) : null}
-            </div>
-          </div>
-
           {estado.erro ? (
             <div className="search-state card" role="alert">
               <h2>Não foi possível carregar o índice</h2>

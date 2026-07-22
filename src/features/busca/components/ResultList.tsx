@@ -6,6 +6,23 @@ import { formatarDataLonga } from "@shared/lib/formatar-data";
 
 import type { DocumentoBusca } from "../types";
 
+function classeDaDificuldade(valor?: string) {
+  const nivel = valor
+    ?.normalize("NFD")
+    .replaceAll(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+
+  if (
+    nivel === "iniciante" ||
+    nivel === "intermediario" ||
+    nivel === "avancado"
+  ) {
+    return `search-result-card__difficulty--${nivel}`;
+  }
+
+  return "search-result-card__difficulty--padrao";
+}
+
 export function ResultList({
   documentos,
 }: Readonly<{ documentos: readonly DocumentoBusca[] }>) {
@@ -15,9 +32,15 @@ export function ResultList({
         <li key={documento.id}>
           <Card className="search-result-card">
             <div className="search-result-card__meta">
-              <Badge>{documento.dificuldade ?? documento.tipo}</Badge>
+              <Badge
+                className={`search-result-card__difficulty ${classeDaDificuldade(documento.dificuldade)}`}
+              >
+                {documento.dificuldade ?? documento.tipo}
+              </Badge>
               {(documento.area ?? documento.categoria) ? (
-                <span>{documento.area ?? documento.categoria}</span>
+                <span className="search-result-card__area">
+                  {documento.area ?? documento.categoria}
+                </span>
               ) : null}
               {documento.dataPublicacao ? (
                 <time dateTime={documento.dataPublicacao}>

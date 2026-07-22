@@ -70,16 +70,29 @@ export function criarIndice(documentos: readonly DocumentoBusca[]) {
   return indice;
 }
 
-function valoresUnicos(
+function opcoesComContagem(
   documentos: readonly DocumentoBusca[],
   campo: NomeFiltroBusca,
 ) {
-  const valores = documentos.flatMap((documento) => {
-    if (campo === "tag") return [...documento.tags];
-    const valor = documento[campo];
-    return valor ? [valor] : [];
-  });
-  return [...new Set(valores)].sort((a, b) => a.localeCompare(b, "pt-BR"));
+  const contagens: Record<string, number> = {};
+
+  for (const documento of documentos) {
+    const valores = (() => {
+      if (campo === "tag") return [...new Set(documento.tags)];
+      const valor = documento[campo];
+      return valor ? [valor] : [];
+    })();
+
+    for (const valor of valores) {
+      contagens[valor] = (contagens[valor] ?? 0) + 1;
+    }
+  }
+
+  const opcoes = Object.keys(contagens).sort(
+    (a, b) => contagens[b] - contagens[a] || a.localeCompare(b, "pt-BR"),
+  );
+
+  return { contagens, opcoes };
 }
 
 export function criarFiltros(
@@ -103,11 +116,10 @@ export function criarFiltros(
             ["tag", "Tags"],
           ];
   return campos
-    .map(([nome, rotulo]) => ({
-      nome,
-      opcoes: valoresUnicos(documentos, nome),
-      rotulo,
-    }))
+    .map(([nome, rotulo]) => {
+      const { contagens, opcoes } = opcoesComContagem(documentos, nome);
+      return { contagens, nome, opcoes, rotulo };
+    })
     .filter((filtro) => filtro.opcoes.length > 0);
 }
 

@@ -78,6 +78,35 @@ describe("índices da busca educacional", () => {
     ).toEqual(["area"]);
   });
 
+  it("ordena opções de filtro pela quantidade de usos", () => {
+    const filtros = criarFiltros("aula", [
+      {
+        conteudo: "",
+        descricao: "",
+        href: "/a",
+        id: "aula:a",
+        slug: "a",
+        tags: ["robotica", "sensores"],
+        tipo: "aula",
+        titulo: "A",
+      },
+      {
+        conteudo: "",
+        descricao: "",
+        href: "/b",
+        id: "aula:b",
+        slug: "b",
+        tags: ["robotica"],
+        tipo: "aula",
+        titulo: "B",
+      },
+    ]);
+    const tags = filtros.find((filtro) => filtro.nome === "tag");
+
+    expect(tags?.opcoes).toEqual(["robotica", "sensores"]);
+    expect(tags?.contagens).toEqual({ robotica: 2, sensores: 1 });
+  });
+
   it("mantém índices pequenos e resposta local abaixo da baseline", () => {
     for (const documentos of Object.values(criarDocumentosDeBusca())) {
       const indice = criarIndice(documentos);

@@ -1075,9 +1075,9 @@ a {
 
 .lesson-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(14rem, 0.32fr);
+  grid-template-columns: minmax(0, 1fr);
   align-items: start;
-  gap: clamp(var(--space-8), 6vw, var(--space-16));
+  gap: var(--space-8);
 }
 
 .lesson-content {
@@ -1118,8 +1118,8 @@ a {
 }
 
 .lesson-sidebar {
-  position: sticky;
-  top: 6rem;
+  position: static;
+  width: 100%;
 }
 
 .lesson-support-card,
@@ -1592,7 +1592,8 @@ a {
   align-items: end;
   gap: var(--space-8);
   padding-bottom: var(--space-8);
-  border-bottom: 2px solid color-mix(in srgb, var(--color-gear-red) 40%, transparent);
+  border-bottom: 2px solid
+    color-mix(in srgb, var(--color-gear-red) 40%, transparent);
 }
 
 .other-projects-heading h2 {
@@ -2341,6 +2342,34 @@ a {
   border: 0;
 }
 
+.filter-panel__tools {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.filter-panel__tools input,
+.filter-panel__tools select {
+  width: 100%;
+  min-height: 2.25rem;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  font: inherit;
+  font-size: 0.875rem;
+}
+
+.filter-panel__tools input:focus,
+.filter-panel__tools select:focus {
+  border-color: var(--color-signal-blue);
+  outline: 2px solid
+    color-mix(in srgb, var(--color-signal-blue) 25%, transparent);
+  outline-offset: 1px;
+}
+
 .filter-panel__options {
   display: grid;
   gap: var(--space-1);
@@ -2369,6 +2398,29 @@ a {
   padding: 0 var(--space-1);
   border-radius: var(--radius-small);
   cursor: pointer;
+}
+
+.filter-panel label > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.filter-panel__usage {
+  min-width: 1.5rem;
+  margin-left: auto;
+  padding: 0.125rem 0.35rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-border) 45%, var(--color-surface));
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.filter-panel__empty {
+  margin: var(--space-2) 0;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
 }
 
 .filter-panel label:hover {
@@ -3058,7 +3110,11 @@ a {
 }
 
 .learning-stat-card:hover {
-  border-color: color-mix(in srgb, var(--color-gear-red) 45%, var(--color-border));
+  border-color: color-mix(
+    in srgb,
+    var(--color-gear-red) 45%,
+    var(--color-border)
+  );
   transform: translateY(-2px);
 }
 
@@ -3221,7 +3277,8 @@ a {
 .personal-learning-section > h2 {
   margin-bottom: var(--space-4);
   padding-bottom: var(--space-3);
-  border-bottom: 2px solid color-mix(in srgb, var(--color-gear-red) 35%, transparent);
+  border-bottom: 2px solid
+    color-mix(in srgb, var(--color-gear-red) 35%, transparent);
 }
 
 .personal-learning-list progress {

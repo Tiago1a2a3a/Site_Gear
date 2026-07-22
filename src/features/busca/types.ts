@@ -18,6 +18,7 @@ export type DocumentoBusca = Readonly<{
 export type NomeFiltroBusca =
   "area" | "categoria" | "dificuldade" | "tag" | "tipo";
 export type FiltroBusca = Readonly<{
+  contagens: Readonly<Record<string, number>>;
   nome: NomeFiltroBusca;
   opcoes: readonly string[];
   rotulo: string;

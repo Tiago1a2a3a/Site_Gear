@@ -39,7 +39,8 @@ function FilterGroup({ filtro, onChange, selecionados }: FilterGroupProps) {
   const [aberto, setAberto] = useState(selecionados.length > 0);
   const [consulta, setConsulta] = useState("");
   const [ordem, setOrdem] = useState<"relevancia" | "alfabetica">("relevancia");
-  const mostrarFerramentas = filtro.opcoes.length > 6;
+  const mostrarFerramentas =
+    filtro.nome === "categoria" || filtro.opcoes.length > 6;
   const opcoesVisiveis = useMemo(() => {
     const termo = normalizarTermoBusca(consulta);
     return filtro.opcoes

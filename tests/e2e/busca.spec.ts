@@ -47,6 +47,17 @@ test("termo e filtro ficam na URL e usam interseção", async ({ page }) => {
   await expect(page.getByText("2 resultados", { exact: true })).toBeVisible();
 });
 
+test("categoria permite buscar e ordenar opções", async ({ page }) => {
+  await page.goto("/aprendizado/cursos");
+  await page
+    .locator("details", { hasText: "Categoria" })
+    .locator("summary")
+    .click();
+
+  await expect(page.getByLabel("Buscar em Categoria")).toBeVisible();
+  await expect(page.getByLabel("Ordenar Categoria")).toBeVisible();
+});
+
 test("resultados são limitados a 12 itens por página", async ({ page }) => {
   await page.goto("/aprendizado/aulas");
 

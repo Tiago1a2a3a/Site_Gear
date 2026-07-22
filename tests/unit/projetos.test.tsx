@@ -6,6 +6,7 @@ import { LinkExterno } from "@features/projetos/components/ProjetoDetalhe";
 import { ProjetoGaleria } from "@features/projetos/components/ProjetoGaleria";
 import {
   encontrarProjetoPorSlug,
+  listarProjetosAleatorios,
   listarProjetos,
   listarProjetosEmDestaque,
   ordenarProjetos,
@@ -23,6 +24,17 @@ describe("Projetos", () => {
     expect(encontrarProjetoPorSlug("robo-exemplo")?.titulo).toBe(
       "Robô móvel de demonstração",
     );
+  });
+
+  it("sorteia uma seleção limitada de projetos", () => {
+    const projetos = listarProjetosAleatorios(2);
+
+    expect(projetos).toHaveLength(2);
+    expect(
+      projetos.every((projeto) =>
+        listarProjetos().some((item) => item.slug === projeto.slug),
+      ),
+    ).toBe(true);
   });
 
   it("usa fallback e omite tecnologias ausentes no card", () => {

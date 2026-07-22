@@ -1,3 +1,6 @@
+import Link from "next/link";
+
+import { listarDestaquesAleatorios } from "@features/aprendizado/data/conteudosRecentes";
 import { HeroCarousel } from "@features/home/components/HeroCarousel";
 import { MemberGrid } from "@features/institucional/components/MemberGrid";
 import { ResearchAreaGrid } from "@features/institucional/components/ResearchAreaGrid";
@@ -9,8 +12,11 @@ import { Card } from "@shared/components/ui/Card";
 import { RevealOnScroll } from "@shared/components/ui/RevealOnScroll";
 import { institutionalContent } from "@shared/config/institutional";
 
+export const dynamic = "force-dynamic";
+
 export default function Home() {
   const noticiaRecente = listarNoticiasPublicadas()[0];
+  const destaquesAleatorios = listarDestaquesAleatorios(2);
 
   return (
     <div className="home-page">
@@ -80,17 +86,49 @@ export default function Home() {
             </div>
           </div>
           <div className="empty-state-grid">
-            <Card className="empty-state">
-              <Badge>Aprendizado</Badge>
-              <h3>Trilhas em preparação</h3>
-              <p>
-                Os primeiros percursos de aprendizado serão publicados nas
-                próximas etapas do portal.
-              </p>
-              <Button href="/aprendizado" variant="secondary">
-                Ver área de aprendizado
-              </Button>
-            </Card>
+            {destaquesAleatorios.length ? (
+              <Card className="learning-suggestions">
+                <div className="learning-suggestions__heading">
+                  <div>
+                    <Badge>Para explorar</Badge>
+                    <h3>Escolhas para você</h3>
+                  </div>
+                  <Link className="text-link" href="/aprendizado">
+                    Explorar
+                  </Link>
+                </div>
+                <ol>
+                  {destaquesAleatorios.map((item, indice) => (
+                    <li key={item.href}>
+                      <Link
+                        aria-label={`Abrir ${item.tipo.toLocaleLowerCase("pt-BR")}: ${item.titulo}`}
+                        href={item.href}
+                      >
+                        <span aria-hidden="true" className="learning-suggestions__number">
+                          {String(indice + 1).padStart(2, "0")}
+                        </span>
+                        <span>
+                          <small>{item.tipo}</small>
+                          <strong>{item.titulo}</strong>
+                        </span>
+                        <span aria-hidden="true" className="learning-suggestions__arrow">
+                          →
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ol>
+              </Card>
+            ) : (
+              <Card className="empty-state">
+                <Badge>Aprendizado</Badge>
+                <h3>Aulas em preparação</h3>
+                <p>As próximas aulas do GEAR aparecerão aqui.</p>
+                <Button href="/aprendizado" variant="secondary">
+                  Ver área de aprendizado
+                </Button>
+              </Card>
+            )}
             {noticiaRecente ? (
               <NoticiaCard noticia={noticiaRecente} />
             ) : (

@@ -2,11 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { FeaturedCoursesCarousel } from "@features/aprendizado/components/FeaturedCoursesCarousel";
-import { listarConteudosRecentes } from "@features/aprendizado/data/conteudosRecentes";
-import { listarCursosEmDestaque } from "@features/cursos/data/cursos";
+import {
+  listarConteudosRecentes,
+  listarDestaquesAleatorios,
+} from "@features/aprendizado/data/conteudosRecentes";
 import { Button } from "@shared/components/ui/Button";
 import { Card } from "@shared/components/ui/Card";
 import { RevealOnScroll } from "@shared/components/ui/RevealOnScroll";
+
+export const dynamic = "force-dynamic";
 
 const areas = [
   {
@@ -29,7 +33,7 @@ const areas = [
 ] as const;
 
 export default function AprendizadoPage() {
-  const cursosEmDestaque = listarCursosEmDestaque();
+  const destaquesAleatorios = listarDestaquesAleatorios();
   const conteudosRecentes = listarConteudosRecentes();
 
   return (
@@ -44,7 +48,7 @@ export default function AprendizadoPage() {
       </header>
 
       <RevealOnScroll>
-        <FeaturedCoursesCarousel courses={cursosEmDestaque} />
+        <FeaturedCoursesCarousel items={destaquesAleatorios} />
       </RevealOnScroll>
 
       <RevealOnScroll>

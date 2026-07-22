@@ -3,34 +3,30 @@ import Link from "next/link";
 import { FeaturedProjectsCarousel } from "@features/projetos/components/FeaturedProjectsCarousel";
 import {
   listarProjetos,
-  listarProjetosEmDestaque,
+  listarProjetosAleatorios,
 } from "@features/projetos/data/projetos";
 import { Button } from "@shared/components/ui/Button";
 import { RevealOnScroll } from "@shared/components/ui/RevealOnScroll";
 
+export const dynamic = "force-dynamic";
+
 export default function ProjetosPage() {
   const projetos = listarProjetos();
-  const projetosEmDestaque = listarProjetosEmDestaque(3);
-  const slugsEmDestaque = new Set(
-    projetosEmDestaque.map((projeto) => projeto.slug),
-  );
-  const outrosProjetos = projetos.filter(
-    (projeto) => !slugsEmDestaque.has(projeto.slug),
-  );
+  const projetosAleatorios = listarProjetosAleatorios(3);
 
   return (
     <div className="projects-page">
-      <FeaturedProjectsCarousel projects={projetosEmDestaque} />
+      <FeaturedProjectsCarousel projects={projetosAleatorios} />
 
       <RevealOnScroll>
         <section
-          aria-labelledby="other-projects-title"
+          aria-labelledby="all-projects-title"
           className="other-projects"
         >
           <header className="other-projects-heading">
             <div>
-              <p className="section-index">OUTROS PROJETOS</p>
-              <h2 id="other-projects-title">Conheça outros projetos.</h2>
+              <p className="section-index">TODOS OS PROJETOS</p>
+              <h2 id="all-projects-title">Conheça todos os projetos.</h2>
             </div>
             <p>
               Explore outras ideias, pesquisas e protótipos desenvolvidos pelo
@@ -38,9 +34,9 @@ export default function ProjetosPage() {
             </p>
           </header>
 
-          {outrosProjetos.length ? (
+          {projetos.length ? (
             <ul className="other-projects-list">
-              {outrosProjetos.map((projeto) => (
+              {projetos.map((projeto) => (
                 <li key={projeto.slug}>
                   <div className="other-projects-content">
                     <p className="status-label">

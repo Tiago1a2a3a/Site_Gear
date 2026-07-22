@@ -39,11 +39,10 @@ describe("Home", () => {
       }),
     ).toBeDefined();
     expect(screen.getByText("Equipe em atualização")).toBeDefined();
-    expect(screen.getByText("Trilhas em preparação")).toBeDefined();
-    expect(screen.getByText("Robô móvel de demonstração")).toBeDefined();
-    expect(screen.getByRole("link", { name: "Ver projeto" })).toHaveProperty(
+    expect(screen.getByText("Escolhas para você")).toBeDefined();
+    expect(screen.getByRole("link", { name: "Explorar" })).toHaveProperty(
       "pathname",
-      "/projetos/robo-exemplo",
+      "/aprendizado",
     );
   });
 });

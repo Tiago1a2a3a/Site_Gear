@@ -7,6 +7,62 @@ export type ConteudoRecente = Readonly<{
   titulo: string;
 }>;
 
+export type DestaqueAprendizado = Readonly<{
+  href: string;
+  imagemCapa: string;
+  tipo: "Curso" | "Trilha";
+  titulo: string;
+}>;
+
+function embaralhar<T>(itens: readonly T[]) {
+  const resultado = [...itens];
+
+  for (let indice = resultado.length - 1; indice > 0; indice -= 1) {
+    const destino = Math.floor(Math.random() * (indice + 1));
+    [resultado[indice], resultado[destino]] = [
+      resultado[destino]!,
+      resultado[indice]!,
+    ];
+  }
+
+  return resultado;
+}
+
+export function listarDestaquesAleatorios(limite = 4): DestaqueAprendizado[] {
+  const cursos: DestaqueAprendizado[] = courses
+    .filter((curso) => curso.status === "publicado")
+    .map((curso) => ({
+      href: `/aprendizado/cursos/${curso.slug}`,
+      imagemCapa: curso.imagemCapa,
+      tipo: "Curso" as const,
+      titulo: curso.titulo,
+    }));
+  const trilhas: DestaqueAprendizado[] = trails
+    .filter((trilha) => trilha.status === "publicado")
+    .map((trilha) => ({
+      href: `/aprendizado/trilhas/${trilha.slug}`,
+      imagemCapa: trilha.imagemCapa,
+      tipo: "Trilha" as const,
+      titulo: trilha.titulo,
+    }));
+  const quantidade = Math.max(0, limite);
+
+  if (!quantidade) return [];
+
+  const sementes =
+    quantidade > 1 && cursos.length && trilhas.length
+      ? [
+          cursos[Math.floor(Math.random() * cursos.length)]!,
+          trilhas[Math.floor(Math.random() * trilhas.length)]!,
+        ]
+      : [];
+  const restantes = [...cursos, ...trilhas].filter(
+    (item) => !sementes.some((semente) => semente.href === item.href),
+  );
+
+  return embaralhar([...sementes, ...restantes]).slice(0, quantidade);
+}
+
 export function listarConteudosRecentes(limite = 5): ConteudoRecente[] {
   const conteudos: ConteudoRecente[] = [
     ...courses

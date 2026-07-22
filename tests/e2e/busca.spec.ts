@@ -58,6 +58,14 @@ test("categoria permite buscar e ordenar opções", async ({ page }) => {
   await expect(page.getByLabel("Ordenar Categoria")).toBeVisible();
 });
 
+test("área permite buscar e ordenar opções", async ({ page }) => {
+  await page.goto("/aprendizado/trilhas");
+  await page.locator("details", { hasText: "Área" }).locator("summary").click();
+
+  await expect(page.getByLabel("Buscar em Área")).toBeVisible();
+  await expect(page.getByLabel("Ordenar Área")).toBeVisible();
+});
+
 test("resultados são limitados a 12 itens por página", async ({ page }) => {
   await page.goto("/aprendizado/aulas");
 

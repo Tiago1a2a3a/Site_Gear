@@ -15,10 +15,10 @@ for (const caso of [
       page.getByRole("heading", { level: 1, name: caso.titulo }),
     ).toBeVisible();
     await expect(page.locator(".search-result-card").first()).toBeVisible();
-    const links = page.locator(".search-result-card .text-link");
-    expect(await links.count()).toBeGreaterThan(0);
-    for (const link of await links.all()) {
-      await expect(link).toHaveAttribute(
+    const cards = page.locator(".search-result-card");
+    expect(await cards.count()).toBeGreaterThan(0);
+    for (const card of await cards.all()) {
+      await expect(card).toHaveAttribute(
         "aria-label",
         new RegExp(`^Abrir ${caso.tipo}:`),
       );

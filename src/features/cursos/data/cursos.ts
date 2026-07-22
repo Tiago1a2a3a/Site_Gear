@@ -17,6 +17,20 @@ export function listarCursosPublicados() {
   return ordenarCursos(courses.filter((curso) => curso.status === "publicado"));
 }
 
+export function listarCursosAleatorios() {
+  const embaralhados = [...listarCursosPublicados()];
+
+  for (let indice = embaralhados.length - 1; indice > 0; indice -= 1) {
+    const destino = Math.floor(Math.random() * (indice + 1));
+    [embaralhados[indice], embaralhados[destino]] = [
+      embaralhados[destino]!,
+      embaralhados[indice]!,
+    ];
+  }
+
+  return embaralhados;
+}
+
 export function listarCursosEmDestaque(limite = 4) {
   return listarCursosPublicados()
     .filter((curso) => curso.destaque)

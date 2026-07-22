@@ -837,6 +837,99 @@ a {
   gap: var(--space-4);
 }
 
+.home-courses-carousel {
+  display: grid;
+  min-height: 22rem;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: var(--space-4);
+}
+
+.home-courses-carousel__heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.home-courses-carousel__heading h3 {
+  margin: var(--space-3) 0 0;
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+}
+
+.home-courses-carousel__controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text-secondary);
+  font-family: var(--font-utility), Consolas, monospace;
+  font-size: 0.75rem;
+}
+
+.home-courses-carousel__controls button {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+.home-courses-carousel__controls button:hover {
+  border-color: var(--color-gear-red);
+  color: var(--color-gear-red);
+}
+
+.home-course-slide {
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--space-6);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    border-color var(--motion-fast),
+    transform var(--motion-fast);
+}
+
+.home-course-slide:hover {
+  border-color: var(--color-gear-red);
+  transform: translateY(-2px);
+}
+
+.home-course-slide > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.home-course-slide small {
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+}
+
+.home-course-slide strong {
+  margin-top: var(--space-6);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.05;
+}
+
+.home-course-slide p {
+  margin: var(--space-3) 0 0;
+  color: var(--color-text-secondary);
+}
+
+.home-course-slide > span {
+  margin-top: auto;
+  padding-top: var(--space-4);
+  color: var(--color-gear-red);
+  font-weight: 700;
+}
+
 .learning-suggestions {
   display: grid;
   min-height: 22rem;

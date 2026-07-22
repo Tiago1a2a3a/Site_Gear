@@ -1,7 +1,6 @@
-import Link from "next/link";
-
-import { listarDestaquesAleatorios } from "@features/aprendizado/data/conteudosRecentes";
+import { listarCursosAleatorios } from "@features/cursos/data/cursos";
 import { HeroCarousel } from "@features/home/components/HeroCarousel";
+import { HomeCoursesCarousel } from "@features/home/components/HomeCoursesCarousel";
 import { MemberGrid } from "@features/institucional/components/MemberGrid";
 import { ResearchAreaGrid } from "@features/institucional/components/ResearchAreaGrid";
 import { NoticiaCard } from "@features/noticias/components/NoticiaCard";
@@ -16,7 +15,7 @@ export const dynamic = "force-dynamic";
 
 export default function Home() {
   const noticiaRecente = listarNoticiasPublicadas()[0];
-  const destaquesAleatorios = listarDestaquesAleatorios(2);
+  const cursos = listarCursosAleatorios();
 
   return (
     <div className="home-page">
@@ -86,39 +85,8 @@ export default function Home() {
             </div>
           </div>
           <div className="empty-state-grid">
-            {destaquesAleatorios.length ? (
-              <div className="learning-suggestions">
-                <div className="learning-suggestions__heading">
-                  <div>
-                    <Badge>Para explorar</Badge>
-                    <h3>Escolhas para você</h3>
-                  </div>
-                  <Link className="text-link" href="/aprendizado">
-                    Explorar
-                  </Link>
-                </div>
-                <div className="learning-suggestions__cards">
-                  {destaquesAleatorios.map((item, indice) => (
-                    <Link
-                      aria-label={`Abrir ${item.tipo.toLocaleLowerCase("pt-BR")}: ${item.titulo}`}
-                      className="card learning-suggestion-card"
-                      href={item.href}
-                      key={item.href}
-                    >
-                      <span aria-hidden="true" className="learning-suggestions__number">
-                        {String(indice + 1).padStart(2, "0")}
-                      </span>
-                      <span>
-                        <small>{item.tipo}</small>
-                        <strong>{item.titulo}</strong>
-                      </span>
-                      <span aria-hidden="true" className="learning-suggestions__arrow">
-                        →
-                      </span>
-                    </Link>
-                  ))}
-                </div>
-              </div>
+            {cursos.length ? (
+              <HomeCoursesCarousel courses={cursos} />
             ) : (
               <Card className="empty-state">
                 <Badge>Aprendizado</Badge>

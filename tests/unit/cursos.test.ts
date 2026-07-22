@@ -4,6 +4,7 @@ import { describe, expect, it } from "vitest";
 
 import {
   encontrarCursoPorSlug,
+  listarCursosAleatorios,
   listarCursosPublicados,
   ordenarCursos,
   resolverAulasDoCurso,
@@ -16,6 +17,17 @@ describe("acesso a Cursos", () => {
 
     expect(cursos.map((curso) => curso.slug)).not.toContain("curso-interno");
     expect(cursos).toEqual(ordenarCursos(cursos));
+  });
+
+  it("sorteia apenas cursos publicados", () => {
+    const cursos = listarCursosAleatorios();
+
+    expect(cursos).toHaveLength(listarCursosPublicados().length);
+    expect(
+      cursos.every((curso) =>
+        listarCursosPublicados().some((item) => item.slug === curso.slug),
+      ),
+    ).toBe(true);
   });
 
   it("resolve Aulas na ordem exata de aulaSlugs", () => {

@@ -2303,19 +2303,76 @@ a {
   gap: var(--space-3);
 }
 
-.filter-panel fieldset {
+.filter-panel__group {
   margin: 0;
-  padding: var(--space-4) 0;
-  border: 0;
+  padding: var(--space-3) 0;
   border-top: 1px solid var(--color-border);
+}
+
+.filter-panel__group summary {
+  display: flex;
+  min-height: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.filter-panel__group summary::-webkit-details-marker {
+  display: none;
+}
+
+.filter-panel__group summary::after {
+  content: "+";
+  color: var(--color-text-secondary);
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.filter-panel__group[open] summary::after {
+  content: "−";
+}
+
+.filter-panel__group fieldset {
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.filter-panel__options {
+  display: grid;
+  gap: var(--space-1);
+  max-height: 15rem;
+  overflow: auto;
+  padding-right: var(--space-1);
+}
+
+.filter-panel__count {
+  display: inline-grid;
+  min-width: 1.35rem;
+  min-height: 1.35rem;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--color-signal-blue);
+  color: var(--color-surface);
+  font-size: 0.75rem;
+  line-height: 1;
 }
 
 .filter-panel label {
   display: flex;
-  min-height: 2.25rem;
+  min-height: 2rem;
   align-items: center;
   gap: var(--space-2);
+  padding: 0 var(--space-1);
+  border-radius: var(--radius-small);
   cursor: pointer;
+}
+
+.filter-panel label:hover {
+  background: color-mix(in srgb, var(--color-signal-blue) 8%, transparent);
 }
 
 .filter-panel input {

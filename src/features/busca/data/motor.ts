@@ -2,7 +2,11 @@ import MiniSearch, { type Options, type SearchResult } from "minisearch";
 
 import { normalizarTermoBusca } from "@shared/lib/busca";
 
-import type { DocumentoBusca, NomeFiltroBusca } from "../types";
+import type {
+  DocumentoBusca,
+  NomeFiltroBusca,
+  OrdemResultados,
+} from "../types";
 
 export { normalizarTermoBusca } from "@shared/lib/busca";
 
@@ -62,4 +66,29 @@ export function filtrarDocumentos(
 
 export function idsDosResultados(resultados: readonly SearchResult[]) {
   return new Set(resultados.map((resultado) => String(resultado.id)));
+}
+
+export function ordenarDocumentos(
+  documentos: readonly DocumentoBusca[],
+  ordem: OrdemResultados,
+) {
+  return [...documentos].sort((primeiro, segundo) => {
+    if (ordem === "alfabetica") {
+      return primeiro.titulo.localeCompare(segundo.titulo, "pt-BR");
+    }
+
+    if (!primeiro.dataPublicacao && !segundo.dataPublicacao) {
+      return primeiro.titulo.localeCompare(segundo.titulo, "pt-BR");
+    }
+    if (!primeiro.dataPublicacao) return 1;
+    if (!segundo.dataPublicacao) return -1;
+
+    const comparacao = primeiro.dataPublicacao.localeCompare(
+      segundo.dataPublicacao,
+    );
+    return (
+      (ordem === "recentes" ? -comparacao : comparacao) ||
+      primeiro.titulo.localeCompare(segundo.titulo, "pt-BR")
+    );
+  });
 }

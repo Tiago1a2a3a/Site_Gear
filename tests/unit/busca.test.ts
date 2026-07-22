@@ -15,6 +15,7 @@ import {
   filtrarDocumentos,
   normalizarTermoBusca,
   opcoesDoIndice,
+  ordenarDocumentos,
 } from "@features/busca/data/motor";
 
 describe("índices da busca educacional", () => {
@@ -105,6 +106,53 @@ describe("índices da busca educacional", () => {
 
     expect(tags?.opcoes).toEqual(["robotica", "sensores"]);
     expect(tags?.contagens).toEqual({ robotica: 2, sensores: 1 });
+  });
+
+  it("ordena resultados por título e data, deixando itens sem data no fim", () => {
+    const documentos = [
+      {
+        conteudo: "",
+        dataPublicacao: "2026-01-02",
+        descricao: "",
+        href: "/z",
+        id: "aula:z",
+        slug: "z",
+        tags: [],
+        tipo: "aula" as const,
+        titulo: "Zeta",
+      },
+      {
+        conteudo: "",
+        dataPublicacao: "2026-02-03",
+        descricao: "",
+        href: "/a",
+        id: "curso:a",
+        slug: "a",
+        tags: [],
+        tipo: "curso" as const,
+        titulo: "Alfa",
+      },
+      {
+        conteudo: "",
+        descricao: "",
+        href: "/b",
+        id: "trilha:b",
+        slug: "b",
+        tags: [],
+        tipo: "trilha" as const,
+        titulo: "Beta",
+      },
+    ];
+
+    expect(
+      ordenarDocumentos(documentos, "alfabetica").map((item) => item.titulo),
+    ).toEqual(["Alfa", "Beta", "Zeta"]);
+    expect(
+      ordenarDocumentos(documentos, "recentes").map((item) => item.titulo),
+    ).toEqual(["Alfa", "Zeta", "Beta"]);
+    expect(
+      ordenarDocumentos(documentos, "antigas").map((item) => item.titulo),
+    ).toEqual(["Zeta", "Alfa", "Beta"]);
   });
 
   it("mantém índices pequenos e resposta local abaixo da baseline", () => {

@@ -5,6 +5,7 @@ export type DocumentoBusca = Readonly<{
   area?: string;
   categoria?: string;
   conteudo: string;
+  dataPublicacao?: string;
   descricao: string;
   dificuldade?: string;
   href: string;
@@ -14,6 +15,8 @@ export type DocumentoBusca = Readonly<{
   tipo: TipoDocumentoBusca;
   titulo: string;
 }>;
+
+export type OrdemResultados = "alfabetica" | "antigas" | "recentes";
 
 export type NomeFiltroBusca =
   "area" | "categoria" | "dificuldade" | "tag" | "tipo";

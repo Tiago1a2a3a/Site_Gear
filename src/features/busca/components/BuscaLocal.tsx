@@ -24,11 +24,13 @@ import {
   filtrarDocumentos,
   idsDosResultados,
   opcoesDoIndice,
+  ordenarDocumentos,
 } from "../data/motor";
 import type {
   DocumentoBusca,
   FiltroBusca,
   NomeFiltroBusca,
+  OrdemResultados,
   TipoBusca,
   TipoDocumentoBusca,
 } from "../types";
@@ -46,6 +48,10 @@ const rotulos: Record<TipoDocumentoBusca, string> = {
   trilha: "Trilhas",
 };
 
+function lerOrdem(valor: string | null): OrdemResultados {
+  return valor === "recentes" || valor === "antigas" ? valor : "alfabetica";
+}
+
 export function BuscaLocal({
   documentos,
   filtros,
@@ -57,6 +63,7 @@ export function BuscaLocal({
   const searchParams = useSearchParams();
   const [drawerAberto, setDrawerAberto] = useState(false);
   const termoDaUrl = searchParams.get("q") ?? "";
+  const ordemDaUrl = lerOrdem(searchParams.get("ordem"));
   const selecionadosDaUrl = useMemo(
     () =>
       Object.fromEntries(
@@ -68,6 +75,7 @@ export function BuscaLocal({
     [filtros, searchParams],
   );
   const [termo, definirTermoOtimista] = useOptimistic(termoDaUrl);
+  const [ordem, definirOrdemOtimista] = useOptimistic(ordemDaUrl);
   const [selecionados, definirSelecionadosOtimistas] =
     useOptimistic(selecionadosDaUrl);
   const haFiltros = Object.values(selecionados).some((itens) => itens.length);
@@ -115,9 +123,21 @@ export function BuscaLocal({
     });
   }
 
+  function atualizarOrdem(valor: OrdemResultados) {
+    startTransition(() => {
+      definirOrdemOtimista(valor);
+      atualizarUrl((params) =>
+        valor === "alfabetica"
+          ? params.delete("ordem")
+          : params.set("ordem", valor),
+      );
+    });
+  }
+
   function limparTudo() {
     startTransition(() => {
       definirTermoOtimista("");
+      definirOrdemOtimista("alfabetica");
       definirSelecionadosOtimistas({});
       router.push(pathname, { scroll: false });
     });
@@ -144,12 +164,15 @@ export function BuscaLocal({
         : documentos;
       return {
         erro: false,
-        resultados: filtrarDocumentos(candidatos, selecionados),
+        resultados: ordenarDocumentos(
+          filtrarDocumentos(candidatos, selecionados),
+          ordem,
+        ),
       };
     } catch {
       return { erro: true, resultados: [] };
     }
-  }, [documentos, indiceSerializado, selecionados, termo]);
+  }, [documentos, indiceSerializado, ordem, selecionados, termo]);
 
   const fecharDrawer = useCallback(() => setDrawerAberto(false), []);
 
@@ -220,11 +243,26 @@ export function BuscaLocal({
                   : `${estado.resultados.length} resultado${estado.resultados.length === 1 ? "" : "s"}`}
               </p>
             </div>
-            {termo || haFiltros ? (
-              <Button onClick={limparTudo} variant="secondary">
-                Limpar busca e filtros
-              </Button>
-            ) : null}
+            <div className="search-content__actions">
+              <label>
+                <span>Ordenar por</span>
+                <select
+                  onChange={(event) =>
+                    atualizarOrdem(event.target.value as OrdemResultados)
+                  }
+                  value={ordem}
+                >
+                  <option value="alfabetica">A–Z</option>
+                  <option value="recentes">Mais recentes</option>
+                  <option value="antigas">Mais antigas</option>
+                </select>
+              </label>
+              {termo || haFiltros ? (
+                <Button onClick={limparTudo} variant="secondary">
+                  Limpar busca e filtros
+                </Button>
+              ) : null}
+            </div>
           </div>
 
           {estado.erro ? (

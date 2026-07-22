@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { Badge } from "@shared/components/ui/Badge";
 import { Card } from "@shared/components/ui/Card";
+import { formatarDataLonga } from "@shared/lib/formatar-data";
 
 import type { DocumentoBusca } from "../types";
 
@@ -23,6 +24,11 @@ export function ResultList({
                     documento.categoria ??
                     documento.dificuldade}
                 </span>
+              ) : null}
+              {documento.dataPublicacao ? (
+                <time dateTime={documento.dataPublicacao}>
+                  {formatarDataLonga(documento.dataPublicacao)}
+                </time>
               ) : null}
             </div>
             <h2>

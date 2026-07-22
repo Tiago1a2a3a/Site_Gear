@@ -23,6 +23,7 @@ export function criarDocumentosDeBusca(): Record<
       .map((trilha) => ({
         area: trilha.area,
         conteudo: extrairTextoDoMdx(trilha.conteudo),
+        dataPublicacao: trilha.dataPublicacao,
         descricao: [trilha.descricaoCurta, trilha.descricaoLonga]
           .filter(Boolean)
           .join(" "),
@@ -38,6 +39,7 @@ export function criarDocumentosDeBusca(): Record<
       .map((curso) => ({
         categoria: curso.categoria,
         conteudo: extrairTextoDoMdx(curso.conteudo),
+        dataPublicacao: curso.dataPublicacao,
         descricao: curso.descricao,
         dificuldade: curso.dificuldade,
         href: `/aprendizado/cursos/${curso.slug}`,
@@ -52,6 +54,7 @@ export function criarDocumentosDeBusca(): Record<
       .map((aula) => ({
         categoria: aula.categoria,
         conteudo: extrairTextoDoMdx(aula.conteudo),
+        dataPublicacao: aula.dataPublicacao,
         descricao: aula.resumo,
         dificuldade: aula.dificuldade,
         href: `/aprendizado/aulas/${aula.slug}`,

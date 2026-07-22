@@ -17,8 +17,25 @@ export function SearchInput({
 }: SearchInputProps) {
   return (
     <div className="search-bar">
-      <label htmlFor={id}>{rotulo}</label>
+      <label className="sr-only" htmlFor={id}>
+        {rotulo}
+      </label>
       <div className="search-bar__control">
+        <svg
+          aria-hidden="true"
+          className="search-bar__icon"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            cx="11"
+            cy="11"
+            r="6.5"
+            stroke="currentColor"
+            strokeWidth="1.8"
+          />
+          <path d="m16 16 4 4" stroke="currentColor" strokeWidth="1.8" />
+        </svg>
         <input
           autoComplete="off"
           id={id}
@@ -28,8 +45,8 @@ export function SearchInput({
           value={valor}
         />
         {valor ? (
-          <button onClick={onClear} type="button">
-            Limpar termo
+          <button aria-label="Limpar termo" onClick={onClear} type="button">
+            ×
           </button>
         ) : null}
       </div>

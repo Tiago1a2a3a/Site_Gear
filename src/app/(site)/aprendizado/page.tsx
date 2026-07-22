@@ -89,7 +89,6 @@ export default function AprendizadoPage() {
               <p className="section-index">ESCOLHA SEU CAMINHO</p>
               <h2 id="explorar-aprendizado">Explorar</h2>
             </div>
-            <p>Encontre o formato que combina com o seu próximo passo.</p>
           </div>
 
           <div className="learning-explore-search">

@@ -67,30 +67,42 @@ export function HomeCoursesCarousel({ courses }: HomeCoursesCarouselProps) {
             <Badge>{course.dificuldade}</Badge>
             {course.categoria ? <small>{course.categoria}</small> : null}
           </div>
-          <strong>{course.titulo}</strong>
+          <h2>
+            <Link href={`/aprendizado/cursos/${course.slug}`}>
+              {course.titulo}
+            </Link>
+          </h2>
           <p>{course.descricao}</p>
         </div>
-        {courses.length > 1 ? (
-          <div className="home-courses-carousel__controls">
-            <button
-              aria-label="Curso anterior"
-              onClick={() => move(-1)}
-              type="button"
-            >
-              ←
-            </button>
-            <span>
-              {activeIndex + 1} / {courses.length}
-            </span>
-            <button
-              aria-label="Próximo curso"
-              onClick={() => move(1)}
-              type="button"
-            >
-              →
-            </button>
-          </div>
-        ) : null}
+        <div className="home-course-info__footer">
+          <Link
+            className="text-link"
+            href={`/aprendizado/cursos/${course.slug}`}
+          >
+            Ver curso
+          </Link>
+          {courses.length > 1 ? (
+            <div className="home-courses-carousel__controls">
+              <button
+                aria-label="Curso anterior"
+                onClick={() => move(-1)}
+                type="button"
+              >
+                ←
+              </button>
+              <span>
+                {activeIndex + 1} / {courses.length}
+              </span>
+              <button
+                aria-label="Próximo curso"
+                onClick={() => move(1)}
+                type="button"
+              >
+                →
+              </button>
+            </div>
+          ) : null}
+        </div>
       </div>
     </section>
   );

@@ -176,7 +176,6 @@ export function BuscaLocal({
 
   const fecharDrawer = useCallback(() => setDrawerAberto(false), []);
 
-  const estadoInicial = !termo.trim() && !haFiltros;
   const buscaGeral = tipo === "geral";
   const rotulo = buscaGeral ? "todos os conteúdos" : rotulos[tipo];
   const breadcrumbs: BreadcrumbItem[] = [
@@ -238,9 +237,7 @@ export function BuscaLocal({
                 Resultados
               </p>
               <p aria-live="polite" className="search-result-count">
-                {estadoInicial
-                  ? "Aguardando uma busca"
-                  : `${estado.resultados.length} resultado${estado.resultados.length === 1 ? "" : "s"}`}
+                {`${estado.resultados.length} resultado${estado.resultados.length === 1 ? "" : "s"}`}
               </p>
             </div>
             <div className="search-content__actions">
@@ -269,11 +266,6 @@ export function BuscaLocal({
             <div className="search-state card" role="alert">
               <h2>Não foi possível carregar o índice</h2>
               <p>Atualize a página e tente novamente.</p>
-            </div>
-          ) : estadoInicial ? (
-            <div className="search-state card">
-              <h2>Comece pelo tema que procura</h2>
-              <p>Digite um termo ou selecione um filtro para ver resultados.</p>
             </div>
           ) : estado.resultados.length ? (
             <ResultList documentos={estado.resultados} />

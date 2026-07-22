@@ -19,13 +19,14 @@ describe("acesso a Cursos", () => {
     expect(cursos).toEqual(ordenarCursos(cursos));
   });
 
-  it("sorteia apenas cursos publicados", () => {
+  it("sorteia no mÃ¡ximo trÃªs cursos publicados com imagem de capa", () => {
     const cursos = listarCursosAleatorios();
 
-    expect(cursos).toHaveLength(listarCursosPublicados().length);
+    expect(cursos).toHaveLength(3);
     expect(
       cursos.every((curso) =>
-        listarCursosPublicados().some((item) => item.slug === curso.slug),
+        listarCursosPublicados().some((item) => item.slug === curso.slug) &&
+        !curso.imagemCapa.endsWith("/placeholder.svg"),
       ),
     ).toBe(true);
   });

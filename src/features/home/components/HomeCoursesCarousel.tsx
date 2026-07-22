@@ -1,7 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Badge } from "@shared/components/ui/Badge";
 
@@ -13,6 +14,27 @@ type HomeCoursesCarouselProps = Readonly<{
 
 export function HomeCoursesCarousel({ courses }: HomeCoursesCarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    const reducedMotion = window.matchMedia?.(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (
+      courses.length < 2 ||
+      isPaused ||
+      reducedMotion
+    ) {
+      return;
+    }
+
+    const timer = window.setInterval(() => {
+      setActiveIndex((current) => (current + 1) % courses.length);
+    }, 4000);
+
+    return () => window.clearInterval(timer);
+  }, [courses.length, isPaused]);
 
   if (!courses.length) return null;
 
@@ -21,7 +43,13 @@ export function HomeCoursesCarousel({ courses }: HomeCoursesCarouselProps) {
     setActiveIndex((current) => (current + direction + courses.length) % courses.length);
 
   return (
-    <section aria-label="Cursos para explorar" className="home-courses-carousel">
+    <section
+      aria-label="Cursos para explorar"
+      className="home-courses-carousel"
+      onFocus={() => setIsPaused(true)}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       <div className="home-courses-carousel__heading">
         <div>
           <Badge>Cursos</Badge>
@@ -39,14 +67,24 @@ export function HomeCoursesCarousel({ courses }: HomeCoursesCarouselProps) {
         aria-label={`Abrir curso: ${course.titulo}`}
         className="card home-course-slide"
         href={`/aprendizado/cursos/${course.slug}`}
+        key={course.slug}
       >
-        <div>
-          <Badge>{course.dificuldade}</Badge>
-          {course.categoria ? <small>{course.categoria}</small> : null}
-        </div>
-        <strong>{course.titulo}</strong>
-        <p>{course.descricao}</p>
-        <span>Ver curso →</span>
+        <Image
+          alt=""
+          fill
+          priority={activeIndex === 0}
+          sizes="(max-width: 48rem) 100vw, 50vw"
+          src={course.imagemCapa}
+        />
+        <span className="home-course-slide__overlay" />
+        <span className="home-course-slide__content">
+          <span>
+            <Badge>{course.dificuldade}</Badge>
+            {course.categoria ? <small>{course.categoria}</small> : null}
+          </span>
+          <strong>{course.titulo}</strong>
+          <span>Ver curso →</span>
+        </span>
       </Link>
     </section>
   );

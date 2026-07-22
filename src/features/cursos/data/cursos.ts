@@ -17,8 +17,14 @@ export function listarCursosPublicados() {
   return ordenarCursos(courses.filter((curso) => curso.status === "publicado"));
 }
 
-export function listarCursosAleatorios() {
-  const embaralhados = [...listarCursosPublicados()];
+function temImagemCapaParaDestaque(curso: Curso) {
+  return Boolean(
+    curso.imagemCapa.trim() && !curso.imagemCapa.endsWith("/placeholder.svg"),
+  );
+}
+
+export function listarCursosAleatorios(limite = 3) {
+  const embaralhados = listarCursosPublicados().filter(temImagemCapaParaDestaque);
 
   for (let indice = embaralhados.length - 1; indice > 0; indice -= 1) {
     const destino = Math.floor(Math.random() * (indice + 1));
@@ -28,7 +34,7 @@ export function listarCursosAleatorios() {
     ];
   }
 
-  return embaralhados;
+  return embaralhados.slice(0, Math.max(0, limite));
 }
 
 export function listarCursosEmDestaque(limite = 4) {

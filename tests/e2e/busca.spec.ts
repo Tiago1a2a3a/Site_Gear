@@ -47,6 +47,21 @@ test("termo e filtro ficam na URL e usam interseção", async ({ page }) => {
   await expect(page.getByText("2 resultados", { exact: true })).toBeVisible();
 });
 
+test("resultados são limitados a 12 itens por página", async ({ page }) => {
+  await page.goto("/aprendizado/aulas");
+
+  await expect(page.locator(".search-result-card")).toHaveCount(12);
+  await expect(page.locator(".search-result-card > p")).toHaveCount(0);
+  await expect(page.getByText("Página 1 de 2", { exact: true })).toBeVisible();
+
+  await page.getByRole("button", { name: "Próxima" }).click();
+  await expect(page).toHaveURL(/pagina=2/);
+  const itensNaUltimaPagina = await page.locator(".search-result-card").count();
+  expect(itensNaUltimaPagina).toBeGreaterThan(0);
+  expect(itensNaUltimaPagina).toBeLessThanOrEqual(12);
+  await expect(page.getByText("Página 2 de 2", { exact: true })).toBeVisible();
+});
+
 test("drawer móvel gerencia foco, fecha por teclado e não causa overflow", async ({
   page,
 }) => {

@@ -56,8 +56,15 @@ const descricoes: Record<TipoDocumentoBusca, string> = {
     "Veja todas as trilhas publicadas e encontre o próximo conteúdo para aprender.",
 };
 
+const ITENS_POR_PAGINA = 12;
+
 function lerOrdem(valor: string | null): OrdemResultados {
   return valor === "recentes" || valor === "antigas" ? valor : "alfabetica";
+}
+
+function lerPagina(valor: string | null) {
+  const pagina = Number.parseInt(valor ?? "1", 10);
+  return Number.isFinite(pagina) && pagina > 0 ? pagina : 1;
 }
 
 export function BuscaLocal({
@@ -72,6 +79,7 @@ export function BuscaLocal({
   const [drawerAberto, setDrawerAberto] = useState(false);
   const termoDaUrl = searchParams.get("q") ?? "";
   const ordemDaUrl = lerOrdem(searchParams.get("ordem"));
+  const paginaDaUrl = lerPagina(searchParams.get("pagina"));
   const selecionadosDaUrl = useMemo(
     () =>
       Object.fromEntries(
@@ -103,9 +111,14 @@ export function BuscaLocal({
   function atualizarTermo(valor: string) {
     startTransition(() => {
       definirTermoOtimista(valor);
-      atualizarUrl((params) =>
-        valor ? params.set("q", valor) : params.delete("q"),
-      );
+      atualizarUrl((params) => {
+        if (valor) {
+          params.set("q", valor);
+        } else {
+          params.delete("q");
+        }
+        params.delete("pagina");
+      });
     });
   }
 
@@ -127,6 +140,7 @@ export function BuscaLocal({
         for (const item of novosSelecionados[nome] ?? []) {
           params.append(nome, item);
         }
+        params.delete("pagina");
       }, "push");
     });
   }
@@ -134,12 +148,25 @@ export function BuscaLocal({
   function atualizarOrdem(valor: OrdemResultados) {
     startTransition(() => {
       definirOrdemOtimista(valor);
-      atualizarUrl((params) =>
-        valor === "alfabetica"
-          ? params.delete("ordem")
-          : params.set("ordem", valor),
-      );
+      atualizarUrl((params) => {
+        if (valor === "alfabetica") {
+          params.delete("ordem");
+        } else {
+          params.set("ordem", valor);
+        }
+        params.delete("pagina");
+      });
     });
+  }
+
+  function atualizarPagina(pagina: number) {
+    atualizarUrl((params) => {
+      if (pagina === 1) {
+        params.delete("pagina");
+      } else {
+        params.set("pagina", String(pagina));
+      }
+    }, "push");
   }
 
   function limparTudo() {
@@ -181,6 +208,17 @@ export function BuscaLocal({
       return { erro: true, resultados: [] };
     }
   }, [documentos, indiceSerializado, ordem, selecionados, termo]);
+
+  const totalDePaginas = Math.max(
+    1,
+    Math.ceil(estado.resultados.length / ITENS_POR_PAGINA),
+  );
+  const paginaAtual = Math.min(paginaDaUrl, totalDePaginas);
+  const inicioDaPagina = (paginaAtual - 1) * ITENS_POR_PAGINA;
+  const resultadosDaPagina = estado.resultados.slice(
+    inicioDaPagina,
+    inicioDaPagina + ITENS_POR_PAGINA,
+  );
 
   const fecharDrawer = useCallback(() => setDrawerAberto(false), []);
 
@@ -274,7 +312,33 @@ export function BuscaLocal({
               <p>Atualize a página e tente novamente.</p>
             </div>
           ) : estado.resultados.length ? (
-            <ResultList documentos={estado.resultados} />
+            <>
+              <ResultList documentos={resultadosDaPagina} />
+              {totalDePaginas > 1 ? (
+                <nav
+                  aria-label="Paginação dos resultados"
+                  className="pagination search-pagination"
+                >
+                  <button
+                    disabled={paginaAtual === 1}
+                    onClick={() => atualizarPagina(paginaAtual - 1)}
+                    type="button"
+                  >
+                    Anterior
+                  </button>
+                  <span>
+                    Página {paginaAtual} de {totalDePaginas}
+                  </span>
+                  <button
+                    disabled={paginaAtual === totalDePaginas}
+                    onClick={() => atualizarPagina(paginaAtual + 1)}
+                    type="button"
+                  >
+                    Próxima
+                  </button>
+                </nav>
+              ) : null}
+            </>
           ) : (
             <div className="search-state card">
               <h2>Nenhum resultado encontrado</h2>

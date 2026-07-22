@@ -28,7 +28,6 @@ export function ResultList({
             <h2>
               <Link href={documento.href}>{documento.titulo}</Link>
             </h2>
-            <p>{documento.descricao}</p>
             {documento.tags.length ? (
               <ul
                 aria-label="Tags"

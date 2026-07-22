@@ -1,0 +1,354 @@
+---
+slug: laboratorio-classes-python-robotica
+titulo: Laboratório de classes em Python para robótica
+banner: /images/content/placeholder.svg
+resumo: Construa um pequeno simulador de robôs com classes, composição, herança, validações, testes e boas práticas de organização em Python.
+tags:
+  - Python
+  - robótica
+  - orientação a objetos
+  - programação
+  - testes
+categoria: Programação
+dificuldade: intermediário
+dataPublicacao: 2026-07-22
+autores:
+  - Equipe GEAR
+linksExternos:
+  - titulo: Tutorial oficial de classes do Python
+    url: https://docs.python.org/3/tutorial/classes.html
+  - titulo: Documentação do módulo unittest
+    url: https://docs.python.org/3/library/unittest.html
+repositorioGithub: https://github.com/python/cpython
+status: publicado
+permiteComentarios: true
+---
+
+## Visão geral do laboratório
+
+Nesta aula vamos construir, passo a passo, um pequeno modelo de robô móvel. O objetivo não é controlar um hardware real ainda: vamos usar o código como um laboratório para entender como objetos representam coisas do mundo físico. Ao final, teremos uma base que pode receber sensores, motores, baterias, registros de telemetria e testes automatizados.
+
+Em robótica, uma classe bem definida evita que o programa vire uma sequência de variáveis espalhadas. Em vez de manter `bateria`, `velocidade`, `nome` e `posicao` em muitos lugares, agrupamos estado e comportamento em uma entidade coerente. Isso facilita alterar o projeto quando um robô ganha um novo sensor ou quando vários robôs precisam seguir o mesmo protocolo.
+
+<VideoEmbed
+  titulo="Introdução visual à orientação a objetos em Python"
+  url="https://www.youtube.com/watch?v=JeznW_7DlB0"
+/>
+
+Antes de copiar exemplos, faça uma pergunta importante: **qual responsabilidade este objeto deve ter?** Uma bateria sabe informar sua carga; um motor sabe receber potência; um robô coordena esses componentes. Quando cada classe tenta fazer apenas sua parte, o sistema fica mais fácil de testar e reutilizar.
+
+## Preparando o ambiente
+
+Use Python 3.11 ou superior. Crie uma pasta chamada `laboratorio-robo` e um arquivo `main.py`. Não precisamos de bibliotecas externas para esta primeira versão. Isso é útil porque permite executar o mesmo exemplo no computador, em um notebook de laboratório ou em uma placa que rode Python.
+
+```bash
+mkdir laboratorio-robo
+cd laboratorio-robo
+python -m venv .venv
+```
+
+Ative o ambiente virtual no seu sistema operacional e confirme a versão instalada:
+
+```bash
+python --version
+```
+
+Ambientes virtuais não tornam o código melhor por si só; eles isolam dependências. Essa disciplina se torna essencial quando um projeto começa a usar bibliotecas de visão computacional, comunicação serial ou processamento de dados.
+
+## A primeira abstração: um robô com estado
+
+Começaremos com uma classe pequena. Ela recebe um nome e uma carga de bateria. O construtor `__init__` roda quando criamos uma instância. A palavra `self` é a referência ao objeto que está sendo configurado.
+
+```python
+class Robo:
+    def __init__(self, nome: str, bateria: float = 100.0) -> None:
+        self.nome = nome
+        self.bateria = bateria
+        self.posicao = 0.0
+
+    def status(self) -> str:
+        return (
+            f"Robô: {self.nome} | "
+            f"bateria: {self.bateria:.1f}% | "
+            f"posição: {self.posicao:.1f} m"
+        )
+
+
+luna = Robo("Luna", bateria=85)
+print(luna.status())
+```
+
+Observe que `luna` não é a classe; ela é uma instância de `Robo`. Podemos criar outra instância sem misturar seus dados:
+
+```python
+atlas = Robo("Atlas", bateria=60)
+atlas.posicao = 2.5
+
+print(luna.status())
+print(atlas.status())
+```
+
+Em um projeto maior, prefira alterar a posição por meio de métodos. Acessar atributos diretamente é aceitável em um exemplo pequeno, mas métodos são o local ideal para proteger regras do domínio, registrar eventos e validar entradas.
+
+## Transformando movimento em comportamento
+
+Um robô não deve avançar se não houver energia suficiente. Vamos adicionar um método que calcula o consumo, atualiza a posição e informa o resultado. Repare que o método recebe dados do mundo externo — a distância desejada — e decide se a operação é permitida.
+
+```python
+class Robo:
+    def __init__(self, nome: str, bateria: float = 100.0) -> None:
+        self.nome = nome
+        self.bateria = bateria
+        self.posicao = 0.0
+
+    def mover(self, distancia: float) -> bool:
+        if distancia <= 0:
+            raise ValueError("A distância deve ser maior que zero.")
+
+        consumo = distancia * 1.8
+        if consumo > self.bateria:
+            print("Movimento cancelado: bateria insuficiente.")
+            return False
+
+        self.bateria -= consumo
+        self.posicao += distancia
+        print(f"{self.nome} avançou {distancia:.1f} m.")
+        return True
+
+    def status(self) -> str:
+        return f"{self.nome}: {self.bateria:.1f}% em {self.posicao:.1f} m"
+```
+
+Agora experimente diferentes distâncias. Erros de entrada devem aparecer cedo. Permitir uma distância negativa talvez faça sentido para ré, mas então essa regra precisa ser explícita e o consumo deve ser calculado com cuidado. O ponto central é que a regra mora perto do estado que ela protege.
+
+## Composição: o robô tem componentes
+
+Um robô **tem** uma bateria e **tem** motores. Essa relação é um ótimo caso para composição. Em vez de colocar toda a lógica dentro de uma classe gigantesca, criamos componentes pequenos e entregamos esses objetos ao robô.
+
+<VideoEmbed
+  titulo="Quando usar composição em orientação a objetos"
+  url="https://www.youtube.com/watch?v=apACNr7DC_s"
+/>
+
+```python
+class Bateria:
+    def __init__(self, capacidade: float = 100.0) -> None:
+        self.capacidade = capacidade
+        self.carga = capacidade
+
+    @property
+    def percentual(self) -> float:
+        return (self.carga / self.capacidade) * 100
+
+    def consumir(self, quantidade: float) -> bool:
+        if quantidade < 0:
+            raise ValueError("O consumo não pode ser negativo.")
+        if quantidade > self.carga:
+            return False
+        self.carga -= quantidade
+        return True
+
+    def recarregar(self) -> None:
+        self.carga = self.capacidade
+
+
+class Motor:
+    def __init__(self, lado: str) -> None:
+        self.lado = lado
+        self.potencia = 0
+
+    def definir_potencia(self, potencia: int) -> None:
+        if not -100 <= potencia <= 100:
+            raise ValueError("A potência deve estar entre -100 e 100.")
+        self.potencia = potencia
+```
+
+Com isso, a classe principal passa a coordenar objetos especializados:
+
+```python
+class RoboMovel:
+    def __init__(self, nome: str) -> None:
+        self.nome = nome
+        self.bateria = Bateria()
+        self.motor_esquerdo = Motor("esquerdo")
+        self.motor_direito = Motor("direito")
+        self.posicao = 0.0
+
+    def avancar(self, metros: float) -> bool:
+        energia_necessaria = metros * 2.0
+        if not self.bateria.consumir(energia_necessaria):
+            self.parar()
+            return False
+
+        self.motor_esquerdo.definir_potencia(65)
+        self.motor_direito.definir_potencia(65)
+        self.posicao += metros
+        return True
+
+    def parar(self) -> None:
+        self.motor_esquerdo.definir_potencia(0)
+        self.motor_direito.definir_potencia(0)
+```
+
+Essa divisão parece mais longa agora, mas reduz acoplamento. Se o cálculo da bateria mudar, não precisamos editar a lógica de motores. Se no futuro houver quatro motores, criamos uma estrutura adequada sem reescrever cada regra de energia.
+
+## Sensores e contratos simples
+
+Sensores são outra fonte de dados. Para este laboratório, vamos usar uma classe que produz uma distância simulada. Em hardware real, o método poderia ler uma porta serial, um pino GPIO ou uma mensagem de rede. A interface pública continua parecida: quem usa o sensor só pede uma leitura.
+
+```python
+class SensorUltrassonico:
+    def __init__(self, distancia_simulada: float = 100.0) -> None:
+        self.distancia_simulada = distancia_simulada
+
+    def ler_distancia(self) -> float:
+        return self.distancia_simulada
+
+
+class RoboSeguro(RoboMovel):
+    def __init__(self, nome: str, sensor: SensorUltrassonico) -> None:
+        super().__init__(nome)
+        self.sensor = sensor
+
+    def avancar_com_segurança(self, metros: float) -> bool:
+        distancia_obstaculo = self.sensor.ler_distancia()
+        if distancia_obstaculo < 25:
+            print("Obstáculo próximo: movimento bloqueado.")
+            self.parar()
+            return False
+        return self.avancar(metros)
+```
+
+Aqui usamos herança de forma moderada: `RoboSeguro` é um `RoboMovel` com uma regra adicional. A composição ainda é a parte mais importante, pois o sensor é entregue à classe como dependência. Isso torna o comportamento previsível e permite trocar o sensor por uma versão real, uma versão simulada ou uma versão de teste.
+
+## Registrando telemetria
+
+Telemetria é o conjunto de informações que ajuda a entender o que o robô fez. Registrar eventos é útil para depurar falhas, comparar testes e verificar consumo. Vamos usar uma lista de dicionários primeiro; depois, você pode substituí-la por um banco de dados ou arquivo CSV.
+
+```python
+from datetime import datetime
+
+
+class RegistroTelemetria:
+    def __init__(self) -> None:
+        self.eventos: list[dict[str, object]] = []
+
+    def registrar(self, evento: str, **dados: object) -> None:
+        self.eventos.append(
+            {
+                "horario": datetime.now().isoformat(timespec="seconds"),
+                "evento": evento,
+                **dados,
+            }
+        )
+
+    def exibir(self) -> None:
+        for evento in self.eventos:
+            print(evento)
+```
+
+Integre esse registro no robô sem fazer a classe de telemetria conhecer motores ou sensores. Essa separação é importante: telemetria registra fatos; o robô decide quais fatos aconteceram.
+
+```python
+class RoboComTelemetria(RoboSeguro):
+    def __init__(self, nome: str, sensor: SensorUltrassonico) -> None:
+        super().__init__(nome, sensor)
+        self.telemetria = RegistroTelemetria()
+
+    def avancar_com_segurança(self, metros: float) -> bool:
+        permitido = super().avancar_com_segurança(metros)
+        self.telemetria.registrar(
+            "tentativa_de_movimento",
+            metros=metros,
+            permitido=permitido,
+            bateria=round(self.bateria.percentual, 1),
+        )
+        return permitido
+```
+
+## Testando regras importantes
+
+Código de robótica precisa de testes mesmo antes de chegar ao hardware. Um teste não prova que o robô físico funciona, mas confirma que as regras que escrevemos continuam corretas quando o projeto muda. Use `unittest`, que já acompanha o Python.
+
+<VideoEmbed
+  titulo="Introdução a testes automatizados em Python"
+  url="https://www.youtube.com/watch?v=6tNS--WetLI"
+/>
+
+Crie `test_robo.py` com os casos abaixo:
+
+```python
+import unittest
+
+
+class TesteBateria(unittest.TestCase):
+    def test_consumo_reduz_carga(self) -> None:
+        bateria = Bateria(capacidade=100)
+
+        resultado = bateria.consumir(30)
+
+        self.assertTrue(resultado)
+        self.assertEqual(bateria.carga, 70)
+
+    def test_nao_permite_consumo_maior_que_carga(self) -> None:
+        bateria = Bateria(capacidade=10)
+
+        resultado = bateria.consumir(20)
+
+        self.assertFalse(resultado)
+        self.assertEqual(bateria.carga, 10)
+
+
+class TesteRoboSeguro(unittest.TestCase):
+    def test_bloqueia_movimento_com_obstaculo_proximo(self) -> None:
+        sensor = SensorUltrassonico(distancia_simulada=15)
+        robo = RoboSeguro("Teste", sensor)
+
+        resultado = robo.avancar_com_segurança(2)
+
+        self.assertFalse(resultado)
+        self.assertEqual(robo.posicao, 0)
+
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+Execute os testes com:
+
+```bash
+python -m unittest -v
+```
+
+Se um teste falhar, não tente apenas ajustar o valor esperado. Primeiro descubra qual regra do domínio foi quebrada. Um teste bom explica o comportamento esperado: uma bateria não entrega mais energia do que possui e um robô seguro não avança em direção a um obstáculo próximo.
+
+## Erros comuns e como evitá-los
+
+O primeiro erro comum é transformar a classe `Robo` em um lugar para tudo: leitura de arquivo, conexão de rede, cálculo de rota, controle de motor e interface gráfica. Esse objeto cresce rápido e fica difícil de mudar. Prefira separar responsabilidades em componentes pequenos.
+
+Outro erro é usar herança apenas para reaproveitar código. Herança comunica uma relação de especialização: um robô com telemetria ainda é um robô móvel. Se a relação for de posse — um robô possui uma bateria, um sensor ou um registrador — composição é mais clara e menos rígida.
+
+Também vale evitar métodos que alteram muitas coisas sem informar o resultado. Retornar `True` ou `False`, levantar uma exceção bem explicada ou devolver um objeto de resultado ajuda quem chama o método a tomar decisões. Em sistemas físicos, essa clareza reduz comportamentos inesperados.
+
+## Desafio final
+
+Amplie o laboratório com uma missão simples: o robô deve avançar em trechos de um metro até encontrar um obstáculo ou ficar com menos de 15% de bateria. Para cada tentativa, registre telemetria. Depois escreva testes para os dois critérios de parada.
+
+Uma possível organização de arquivos é:
+
+```text
+laboratorio-robo/
+├── robo.py
+├── componentes.py
+├── telemetria.py
+├── main.py
+└── test_robo.py
+```
+
+Quando esse exemplo estiver estável, o próximo passo pode ser criar uma abstração de `Motor` que envie comandos reais, mantendo a mesma interface pública. Essa é a vantagem mais prática de uma boa modelagem: o código de alto nível muda pouco quando trocamos a simulação por hardware.
+
+## Conclusão
+
+Classes não existem para tornar o código mais sofisticado; elas existem para tornar regras visíveis. Neste laboratório, cada objeto recebeu uma responsabilidade clara: bateria controla energia, motor controla potência, sensor fornece leitura e robô coordena a missão. Essa estrutura é pequena o bastante para estudar e sólida o bastante para crescer.
+
+Revise o código, execute os testes e experimente mudar um componente por vez. A prática de escrever, observar o resultado e refinar a modelagem é o que transforma orientação a objetos em uma ferramenta útil para projetos de robótica.

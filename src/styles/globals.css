@@ -2335,6 +2335,26 @@ a {
   gap: var(--space-3);
 }
 
+.filter-panel__clear {
+  justify-self: start;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-gear-red);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+
+.filter-panel__clear:hover {
+  color: var(--color-signal-blue);
+}
+
 .filter-panel__group {
   margin: 0;
   padding: var(--space-3) 0;

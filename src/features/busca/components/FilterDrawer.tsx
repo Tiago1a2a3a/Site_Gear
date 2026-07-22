@@ -10,6 +10,7 @@ import type { FiltroBusca, NomeFiltroBusca } from "../types";
 type FilterDrawerProps = Readonly<{
   filtros: readonly FiltroBusca[];
   onChange: (nome: NomeFiltroBusca, valor: string, ativo: boolean) => void;
+  onClear: () => void;
   onClose: () => void;
   selecionados: Readonly<Partial<Record<NomeFiltroBusca, readonly string[]>>>;
 }>;
@@ -64,6 +65,7 @@ export function FilterDrawer(props: FilterDrawerProps) {
         <FilterPanel
           filtros={props.filtros}
           onChange={props.onChange}
+          onClear={props.onClear}
           selecionados={props.selecionados}
         />
       </div>

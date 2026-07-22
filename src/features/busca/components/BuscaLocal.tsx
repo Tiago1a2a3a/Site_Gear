@@ -169,6 +169,18 @@ export function BuscaLocal({
     }, "push");
   }
 
+  function limparFiltros() {
+    startTransition(() => {
+      definirSelecionadosOtimistas({});
+      atualizarUrl((params) => {
+        for (const filtro of filtros) {
+          params.delete(filtro.nome);
+        }
+        params.delete("pagina");
+      }, "push");
+    });
+  }
+
   function limparTudo() {
     startTransition(() => {
       definirTermoOtimista("");
@@ -298,6 +310,7 @@ export function BuscaLocal({
           <FilterPanel
             filtros={filtros}
             onChange={atualizarFiltro}
+            onClear={limparFiltros}
             selecionados={selecionados}
           />
         </aside>
@@ -355,6 +368,7 @@ export function BuscaLocal({
         <FilterDrawer
           filtros={filtros}
           onChange={atualizarFiltro}
+          onClear={limparFiltros}
           onClose={fecharDrawer}
           selecionados={selecionados}
         />

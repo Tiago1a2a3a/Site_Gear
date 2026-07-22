@@ -47,6 +47,21 @@ test("termo e filtro ficam na URL e usam interseção", async ({ page }) => {
   await expect(page.getByText("2 resultados", { exact: true })).toBeVisible();
 });
 
+test("limpar filtros preserva o termo da busca", async ({ page }) => {
+  await page.goto("/aprendizado/cursos?q=robotica");
+  await page
+    .locator("details", { hasText: "Dificuldade" })
+    .locator("summary")
+    .click();
+  await page.getByLabel("intermediário").check();
+
+  await page.getByRole("button", { name: "Limpar filtros" }).click();
+
+  await expect(page).toHaveURL(/q=robotica/);
+  await expect(page).not.toHaveURL(/dificuldade/);
+  await expect(page.getByLabel("intermediário")).not.toBeChecked();
+});
+
 test("categoria permite buscar e ordenar opções", async ({ page }) => {
   await page.goto("/aprendizado/cursos");
   await page

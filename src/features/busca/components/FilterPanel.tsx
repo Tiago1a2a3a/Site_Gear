@@ -7,16 +7,27 @@ import type { FiltroBusca, NomeFiltroBusca } from "../types";
 type FilterPanelProps = Readonly<{
   filtros: readonly FiltroBusca[];
   onChange: (nome: NomeFiltroBusca, valor: string, ativo: boolean) => void;
+  onClear: () => void;
   selecionados: Readonly<Partial<Record<NomeFiltroBusca, readonly string[]>>>;
 }>;
 
 export function FilterPanel({
   filtros,
   onChange,
+  onClear,
   selecionados,
 }: FilterPanelProps) {
+  const haFiltrosAtivos = Object.values(selecionados).some(
+    (opcoes) => opcoes.length > 0,
+  );
+
   return (
     <div className="filter-panel">
+      {haFiltrosAtivos ? (
+        <button className="filter-panel__clear" onClick={onClear} type="button">
+          Limpar filtros
+        </button>
+      ) : null}
       {filtros.map((filtro) => (
         <FilterGroup
           filtro={filtro}

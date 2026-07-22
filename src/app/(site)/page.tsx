@@ -87,7 +87,7 @@ export default function Home() {
           </div>
           <div className="empty-state-grid">
             {destaquesAleatorios.length ? (
-              <Card className="learning-suggestions">
+              <div className="learning-suggestions">
                 <div className="learning-suggestions__heading">
                   <div>
                     <Badge>Para explorar</Badge>
@@ -97,28 +97,28 @@ export default function Home() {
                     Explorar
                   </Link>
                 </div>
-                <ol>
+                <div className="learning-suggestions__cards">
                   {destaquesAleatorios.map((item, indice) => (
-                    <li key={item.href}>
-                      <Link
-                        aria-label={`Abrir ${item.tipo.toLocaleLowerCase("pt-BR")}: ${item.titulo}`}
-                        href={item.href}
-                      >
-                        <span aria-hidden="true" className="learning-suggestions__number">
-                          {String(indice + 1).padStart(2, "0")}
-                        </span>
-                        <span>
-                          <small>{item.tipo}</small>
-                          <strong>{item.titulo}</strong>
-                        </span>
-                        <span aria-hidden="true" className="learning-suggestions__arrow">
-                          →
-                        </span>
-                      </Link>
-                    </li>
+                    <Link
+                      aria-label={`Abrir ${item.tipo.toLocaleLowerCase("pt-BR")}: ${item.titulo}`}
+                      className="card learning-suggestion-card"
+                      href={item.href}
+                      key={item.href}
+                    >
+                      <span aria-hidden="true" className="learning-suggestions__number">
+                        {String(indice + 1).padStart(2, "0")}
+                      </span>
+                      <span>
+                        <small>{item.tipo}</small>
+                        <strong>{item.titulo}</strong>
+                      </span>
+                      <span aria-hidden="true" className="learning-suggestions__arrow">
+                        →
+                      </span>
+                    </Link>
                   ))}
-                </ol>
-              </Card>
+                </div>
+              </div>
             ) : (
               <Card className="empty-state">
                 <Badge>Aprendizado</Badge>

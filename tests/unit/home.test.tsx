@@ -39,7 +39,7 @@ describe("Home", () => {
       }),
     ).toBeDefined();
     expect(screen.getByText("Equipe em atualização")).toBeDefined();
-    expect(screen.getByText("Escolha seu próximo desafio")).toBeDefined();
+    expect(screen.getByRole("button", { name: "Próximo curso" })).toBeDefined();
     expect(
       screen.getByRole("link", { name: /^Abrir curso:/ }),
     ).toHaveProperty("pathname", expect.stringMatching(/^\/aprendizado\/cursos\//));

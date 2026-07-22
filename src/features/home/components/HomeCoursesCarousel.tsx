@@ -21,13 +21,7 @@ export function HomeCoursesCarousel({ courses }: HomeCoursesCarouselProps) {
       "(prefers-reduced-motion: reduce)",
     ).matches;
 
-    if (
-      courses.length < 2 ||
-      isPaused ||
-      reducedMotion
-    ) {
-      return;
-    }
+    if (courses.length < 2 || isPaused || reducedMotion) return;
 
     const timer = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % courses.length);
@@ -40,32 +34,21 @@ export function HomeCoursesCarousel({ courses }: HomeCoursesCarouselProps) {
 
   const course = courses[activeIndex]!;
   const move = (direction: number) =>
-    setActiveIndex((current) => (current + direction + courses.length) % courses.length);
+    setActiveIndex(
+      (current) => (current + direction + courses.length) % courses.length,
+    );
 
   return (
     <section
       aria-label="Cursos para explorar"
-      className="home-courses-carousel"
+      className="card home-courses-carousel"
       onFocus={() => setIsPaused(true)}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      <div className="home-courses-carousel__heading">
-        <div>
-          <Badge>Cursos</Badge>
-          <h3>Escolha seu próximo desafio</h3>
-        </div>
-        {courses.length > 1 ? (
-          <div className="home-courses-carousel__controls">
-            <button aria-label="Curso anterior" onClick={() => move(-1)} type="button">←</button>
-            <span>{activeIndex + 1} / {courses.length}</span>
-            <button aria-label="Próximo curso" onClick={() => move(1)} type="button">→</button>
-          </div>
-        ) : null}
-      </div>
       <Link
         aria-label={`Abrir curso: ${course.titulo}`}
-        className="card home-course-slide"
+        className="home-course-slide"
         href={`/aprendizado/cursos/${course.slug}`}
         key={course.slug}
       >
@@ -76,16 +59,39 @@ export function HomeCoursesCarousel({ courses }: HomeCoursesCarouselProps) {
           sizes="(max-width: 48rem) 100vw, 50vw"
           src={course.imagemCapa}
         />
-        <span className="home-course-slide__overlay" />
-        <span className="home-course-slide__content">
-          <span>
+      </Link>
+
+      <div className="home-course-info">
+        <div>
+          <div className="home-course-info__meta">
             <Badge>{course.dificuldade}</Badge>
             {course.categoria ? <small>{course.categoria}</small> : null}
-          </span>
+          </div>
           <strong>{course.titulo}</strong>
-          <span>Ver curso →</span>
-        </span>
-      </Link>
+          <p>{course.descricao}</p>
+        </div>
+        {courses.length > 1 ? (
+          <div className="home-courses-carousel__controls">
+            <button
+              aria-label="Curso anterior"
+              onClick={() => move(-1)}
+              type="button"
+            >
+              ←
+            </button>
+            <span>
+              {activeIndex + 1} / {courses.length}
+            </span>
+            <button
+              aria-label="Próximo curso"
+              onClick={() => move(1)}
+              type="button"
+            >
+              →
+            </button>
+          </div>
+        ) : null}
+      </div>
     </section>
   );
 }

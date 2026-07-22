@@ -12,19 +12,19 @@ const areas = [
   {
     title: "Aulas",
     description: "Conteúdos pontuais para aprender um conceito por vez.",
-    href: "/aprendizado/aulas/busca",
+    href: "/aprendizado/aulas",
   },
   {
     title: "Cursos",
     description:
       "Sequências de aulas para desenvolver uma habilidade completa.",
-    href: "/aprendizado/cursos/busca",
+    href: "/aprendizado/cursos",
   },
   {
     title: "Trilhas",
     description:
       "Percursos guiados que conectam cursos e aulas em uma jornada.",
-    href: "/aprendizado/trilhas/busca",
+    href: "/aprendizado/trilhas",
   },
 ] as const;
 

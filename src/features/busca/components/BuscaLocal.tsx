@@ -48,6 +48,14 @@ const rotulos: Record<TipoDocumentoBusca, string> = {
   trilha: "Trilhas",
 };
 
+const descricoes: Record<TipoDocumentoBusca, string> = {
+  aula: "Veja todas as aulas publicadas e encontre o próximo conteúdo para aprender.",
+  curso:
+    "Veja todos os cursos publicados e encontre o próximo conteúdo para aprender.",
+  trilha:
+    "Veja todas as trilhas publicadas e encontre o próximo conteúdo para aprender.",
+};
+
 function lerOrdem(valor: string | null): OrdemResultados {
   return valor === "recentes" || valor === "antigas" ? valor : "alfabetica";
 }
@@ -183,13 +191,10 @@ export function BuscaLocal({
   ];
 
   if (!buscaGeral) {
-    breadcrumbs.push({
-      href: `/aprendizado/${tipo}s`,
-      label: rotulos[tipo],
-    });
+    breadcrumbs.push({ label: rotulos[tipo] });
+  } else {
+    breadcrumbs.push({ label: "Todos os conteúdos" });
   }
-
-  breadcrumbs.push({ label: "Busca" });
 
   return (
     <div className="search-page">
@@ -197,10 +202,11 @@ export function BuscaLocal({
         <Breadcrumbs items={breadcrumbs} />
       </div>
       <header className="page-heading">
-        <h1>{buscaGeral ? "Pesquisar conteúdos" : `Busca de ${rotulo}`}</h1>
+        <h1>{buscaGeral ? "Todos os conteúdos" : rotulos[tipo]}</h1>
         <p>
-          Esta busca consulta exclusivamente {rotulo.toLocaleLowerCase("pt-BR")}{" "}
-          publicados.
+          {buscaGeral
+            ? "Explore aulas, cursos e trilhas publicados em um só lugar."
+            : descricoes[tipo]}
         </p>
       </header>
 

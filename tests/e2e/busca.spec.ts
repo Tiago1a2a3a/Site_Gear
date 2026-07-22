@@ -1,31 +1,41 @@
 import { expect, test } from "@playwright/test";
 
 for (const caso of [
-  { tipo: "trilha", rota: "/aprendizado/trilhas/busca?q=robotica" },
-  { tipo: "curso", rota: "/aprendizado/cursos/busca?q=robotica" },
-  { tipo: "aula", rota: "/aprendizado/aulas/busca?q=robotica" },
+  {
+    titulo: "Trilhas",
+    tipo: "trilha",
+    rota: "/aprendizado/trilhas?q=robotica",
+  },
+  { titulo: "Cursos", tipo: "curso", rota: "/aprendizado/cursos?q=robotica" },
+  { titulo: "Aulas", tipo: "aula", rota: "/aprendizado/aulas?q=robotica" },
 ]) {
   test(`busca de ${caso.tipo} não mistura classificações`, async ({ page }) => {
     await page.goto(caso.rota);
-    await expect(page.getByRole("heading", { level: 1 })).toContainText(
-      /Busca de/,
-    );
+    await expect(
+      page.getByRole("heading", { level: 1, name: caso.titulo }),
+    ).toBeVisible();
     await expect(page.locator(".search-result-card").first()).toBeVisible();
-    const tipos = await page
-      .locator(".search-result-card .badge")
-      .allTextContents();
-    expect(tipos.length).toBeGreaterThan(0);
-    expect(
-      tipos.every((tipo) => tipo.toLocaleLowerCase("pt-BR") === caso.tipo),
-    ).toBe(true);
+    const links = page.locator(".search-result-card .text-link");
+    expect(await links.count()).toBeGreaterThan(0);
+    for (const link of await links.all()) {
+      await expect(link).toHaveAttribute(
+        "aria-label",
+        new RegExp(`^Abrir ${caso.tipo}:`),
+      );
+    }
   });
 }
 
 test("termo e filtro ficam na URL e usam interseção", async ({ page }) => {
-  await page.goto("/aprendizado/cursos/busca?q=robotica");
+  await page.goto("/aprendizado/cursos?q=robotica");
+  await page
+    .locator("details", { hasText: "Dificuldade" })
+    .locator("summary")
+    .click();
   await page.getByLabel("intermediário").check();
   await expect(page).toHaveURL(/q=robotica.*dificuldade=intermedi%C3%A1rio/);
   await expect(page.getByText("2 resultados", { exact: true })).toBeVisible();
+  await page.locator("details", { hasText: "Tags" }).locator("summary").click();
   await page.getByLabel("firmware").check();
   await expect(page).toHaveURL(/tag=firmware/);
   await expect(page.getByText("1 resultado", { exact: true })).toBeVisible();

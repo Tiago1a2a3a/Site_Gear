@@ -111,13 +111,10 @@ describe("Calendário público", () => {
     expect(
       within(dialog).getByText("Descrição do evento confirmado."),
     ).toBeDefined();
-    expect(
-      (
-        within(dialog).getByRole("button", {
-          name: "Google Agenda — em breve",
-        }) as HTMLButtonElement
-      ).disabled,
-    ).toBe(true);
+    const googleCalendarLink = within(dialog).getByRole("link", {
+      name: /Adicionar evento ao Google Agenda/,
+    }) as HTMLAnchorElement;
+    expect(googleCalendarLink.href).toContain("calendar.google.com");
     fireEvent.click(
       within(dialog).getByRole("button", { name: "Fechar detalhes do evento" }),
     );
@@ -143,6 +140,6 @@ describe("Calendário público", () => {
     expect(
       screen.getByRole("dialog", { name: "Oficina a definir" }),
     ).toBeDefined();
-    expect(screen.queryByRole("button", { name: /Google Agenda/ })).toBeNull();
+    expect(screen.queryByRole("link", { name: /Google Agenda/ })).toBeNull();
   });
 });

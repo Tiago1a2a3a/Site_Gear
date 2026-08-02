@@ -45,11 +45,32 @@ test("calendário desktop navega por mês e abre os detalhes", async ({
   });
   await expect(dialog).toBeVisible();
   await expect(
-    dialog.getByRole("button", { name: "Google Agenda — em breve" }),
-  ).toBeDisabled();
+    dialog.getByRole("link", { name: /Adicionar evento ao Google Agenda/ }),
+  ).toHaveAttribute("href", /calendar\.google\.com/);
   await page.keyboard.press("Escape");
   await expect(dialog).toHaveCount(0);
   await expectNoHorizontalOverflow(page);
+});
+
+test("permite copiar o endereço de assinatura e expõe o feed iCalendar", async ({
+  page,
+}) => {
+  await page.goto("/calendario");
+  await page.getByRole("button", { name: "Assinar calendário" }).click();
+
+  const dialog = page.getByRole("dialog", { name: "Assinar calendário" });
+  await expect(dialog).toBeVisible();
+  await expect(
+    dialog.getByRole("textbox", { name: "Endereço do calendário" }),
+  ).toHaveValue(/\/calendario\/feed\.ics$/);
+  await expect(
+    dialog.getByRole("link", { name: "Abrir arquivo .ics" }),
+  ).toHaveAttribute("href", "/calendario/feed.ics");
+
+  const feedResponse = await page.request.get("/calendario/feed.ics");
+  expect(feedResponse.ok()).toBe(true);
+  expect(feedResponse.headers()["content-type"]).toContain("text/calendar");
+  expect(await feedResponse.text()).toContain("BEGIN:VCALENDAR\r\n");
 });
 
 test("celular mostra cinco próximos eventos e permite carregar mais", async ({

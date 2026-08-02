@@ -11,6 +11,7 @@ export type SocialLink = Readonly<{
 
 export const siteConfig = {
   name: "Portal GEAR",
+  url: "https://site-gear.vercel.app",
   description:
     "Portal de aprendizado e projetos do Grupo de Estudos Avançados em Robótica.",
   mainNavigation: [
@@ -47,6 +48,7 @@ export const siteConfig = {
   ],
 } as const satisfies Readonly<{
   name: string;
+  url: `https://${string}`;
   description: string;
   mainNavigation: readonly NavigationItem[];
   institutionalNavigation: readonly NavigationItem[];

@@ -13,6 +13,26 @@ O público poderá:
 - adicionar um evento confirmado ao Google Agenda;
 - assinar o calendário público do GEAR.
 
+## Estado da implementação
+
+Implementado no repositório:
+
+- página responsiva, calendário mensal, lista móvel, legenda e pop-up acessível;
+- tipos, fixtures de desenvolvimento e normalização fail-closed;
+- consulta server-only da Data Source do Notion, com filtro público, paginação, timeout e cache de cinco minutos;
+- estados seguros para calendário vazio, fonte não configurada e indisponibilidade externa;
+- link individual para adicionar somente eventos confirmados ao Google Agenda;
+- feed público `/calendario/feed.ics`, somente com eventos confirmados, UIDs estáveis e datas de dia inteiro com fim exclusivo;
+- diálogo para copiar o endereço de assinatura e abrir o arquivo `.ics`;
+- testes unitários e E2E da interface e das integrações.
+
+Dependências externas ainda necessárias para ativar dados reais:
+
+- criar ou conferir os seis campos na Data Source do Notion;
+- criar a integração de leitura e compartilhar a Data Source com ela;
+- cadastrar `NOTION_API_KEY` e `NOTION_CALENDAR_DATA_SOURCE_ID` na Vercel;
+- validar em produção um evento público e um evento interno conhecido.
+
 ## Funcionamento geral
 
 ```mermaid

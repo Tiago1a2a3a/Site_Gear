@@ -4313,26 +4313,19 @@ a {
 
 .calendar-toolbar {
   display: grid;
-  grid-template-columns: 2.25rem minmax(0, 1fr) 2.25rem;
+  grid-template-columns: 2rem minmax(0, 1fr) 2rem;
   align-items: center;
   gap: var(--space-3);
-  padding: 0.875rem var(--space-4) 0.75rem;
+  padding: 0.625rem var(--space-4);
   border-bottom: 1px solid
     color-mix(in srgb, var(--color-gear-red) 16%, var(--color-border));
-  background:
-    linear-gradient(
-      110deg,
-      color-mix(in srgb, var(--color-gear-red) 12%, var(--color-surface)),
-      var(--color-surface) 42%,
-      color-mix(in srgb, var(--color-text-primary) 3%, var(--color-surface))
-    ),
-    var(--color-surface);
+  background: var(--color-surface);
   color: var(--color-text-primary);
 }
 
 .calendar-toolbar h2 {
   margin: 0;
-  font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+  font-size: 1.25rem;
   font-weight: 500;
   letter-spacing: -0.02em;
   text-align: center;
@@ -4340,8 +4333,8 @@ a {
 
 .calendar-toolbar__arrow {
   display: grid;
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 2rem;
+  height: 2rem;
   place-items: center;
   border: 1px solid
     color-mix(in srgb, var(--color-text-primary) 20%, transparent);
@@ -4510,18 +4503,26 @@ a {
 }
 
 .calendar-event--tentative {
-  border: 2px dashed color-mix(in srgb, white 78%, transparent);
-  background: var(--color-text-secondary);
-  color: white;
-  line-height: 1.45rem;
-  box-shadow:
-    0 0 0 1px var(--color-text-secondary),
-    0 0.2rem 0.5rem
-      color-mix(in srgb, var(--color-text-secondary) 18%, transparent);
+  border: 1px dashed
+    color-mix(in srgb, var(--color-text-primary) 48%, transparent);
+  border-left: 4px solid var(--color-text-secondary);
+  background: color-mix(
+    in srgb,
+    var(--color-text-primary) 5%,
+    var(--color-surface)
+  );
+  color: var(--color-text-primary);
+  line-height: 1.6rem;
+  box-shadow: 0 0.2rem 0.5rem
+    color-mix(in srgb, var(--color-text-secondary) 10%, transparent);
 }
 
 .calendar-event--tentative:hover {
-  filter: brightness(1.08);
+  background: color-mix(
+    in srgb,
+    var(--color-text-primary) 9%,
+    var(--color-surface)
+  );
 }
 
 .calendar-event--continues-before {
@@ -4569,9 +4570,14 @@ a {
 }
 
 .calendar-legend__tentative {
-  border: 2px dashed var(--color-surface);
-  background: var(--color-text-secondary);
-  box-shadow: 0 0 0 1px var(--color-text-secondary);
+  border: 1px dashed
+    color-mix(in srgb, var(--color-text-primary) 48%, transparent);
+  border-left: 3px solid var(--color-text-secondary);
+  background: color-mix(
+    in srgb,
+    var(--color-text-primary) 5%,
+    var(--color-surface)
+  );
 }
 
 .calendar-mobile {

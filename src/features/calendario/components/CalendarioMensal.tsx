@@ -37,7 +37,7 @@ export function CalendarioMensal({
           className="calendar-week"
           key={week.days[0].toISOString()}
           style={{
-            minHeight: `${1.95 + Math.max(1, ...week.segments.map((segment) => segment.lane + 1)) * 1.8}rem`,
+            minHeight: `${2.55 + Math.max(1, ...week.segments.map((segment) => segment.lane + 1)) * 1.8}rem`,
           }}
         >
           <div className="calendar-week__days">

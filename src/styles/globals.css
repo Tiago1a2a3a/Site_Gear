@@ -4283,7 +4283,7 @@ a {
 .calendar-desktop {
   overflow: hidden;
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-medium);
+  border-radius: clamp(0.75rem, 1.2vw, 1rem);
   background: var(--color-surface);
   box-shadow: 0 1.25rem 3rem
     color-mix(in srgb, var(--color-gear-gray) 7%, transparent);

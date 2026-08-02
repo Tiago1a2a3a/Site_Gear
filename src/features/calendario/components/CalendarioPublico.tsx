@@ -68,6 +68,7 @@ export function CalendarioPublico({
           events={events}
           month={displayedMonth.month}
           onSelectEvent={setSelectedEvent}
+          today={referenceDate}
           year={displayedMonth.year}
         />
         <LegendaCalendario />

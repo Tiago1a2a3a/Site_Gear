@@ -9,6 +9,7 @@ type CalendarioMensalProps = Readonly<{
   events: readonly CalendarEvent[];
   month: number;
   onSelectEvent: (event: CalendarEvent) => void;
+  today: string;
   year: number;
 }>;
 
@@ -16,6 +17,7 @@ export function CalendarioMensal({
   events,
   month,
   onSelectEvent,
+  today,
   year,
 }: CalendarioMensalProps) {
   const weeks = buildCalendarMonth(year, month, events);
@@ -23,8 +25,10 @@ export function CalendarioMensal({
   return (
     <div className="calendar-month" data-testid="calendar-month-grid">
       <div aria-hidden="true" className="calendar-weekdays">
-        {weekdays.map((weekday) => (
-          <span key={weekday}>{weekday}</span>
+        {weekdays.map((weekday, index) => (
+          <span data-weekend={index > 4 || undefined} key={weekday}>
+            {weekday}
+          </span>
         ))}
       </div>
 
@@ -33,15 +37,17 @@ export function CalendarioMensal({
           <div className="calendar-week__days">
             {week.days.map((day) => {
               const isOutsideMonth = day.getMonth() !== month;
+              const dateKey = day.toISOString().slice(0, 10);
+              const isWeekend = day.getDay() === 0 || day.getDay() === 6;
               return (
                 <div
                   className="calendar-day"
                   data-outside-month={isOutsideMonth || undefined}
+                  data-today={dateKey === today || undefined}
+                  data-weekend={isWeekend || undefined}
                   key={day.toISOString()}
                 >
-                  <time dateTime={day.toISOString().slice(0, 10)}>
-                    {day.getDate()}
-                  </time>
+                  <time dateTime={dateKey}>{day.getDate()}</time>
                 </div>
               );
             })}

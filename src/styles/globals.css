@@ -4497,13 +4497,12 @@ a {
 }
 
 .calendar-event--confirmed {
-  border-color: var(--calendar-event-color);
-  border-left: 4px solid
-    color-mix(in srgb, var(--calendar-event-color) 72%, black);
-  background: var(--calendar-event-color);
+  border-color: var(--color-gear-red);
+  border-left: 4px solid color-mix(in srgb, var(--color-gear-red) 72%, black);
+  background: var(--color-gear-red);
   color: white;
   box-shadow: 0 0.2rem 0.5rem
-    color-mix(in srgb, var(--calendar-event-color) 22%, transparent);
+    color-mix(in srgb, var(--color-gear-red) 22%, transparent);
 }
 
 .calendar-event--confirmed:hover {
@@ -4512,37 +4511,17 @@ a {
 
 .calendar-event--tentative {
   border: 2px dashed color-mix(in srgb, white 78%, transparent);
-  background: var(--calendar-event-color);
+  background: var(--color-text-secondary);
   color: white;
   line-height: 1.45rem;
   box-shadow:
-    0 0 0 1px var(--calendar-event-color),
+    0 0 0 1px var(--color-text-secondary),
     0 0.2rem 0.5rem
-      color-mix(in srgb, var(--calendar-event-color) 18%, transparent);
+      color-mix(in srgb, var(--color-text-secondary) 18%, transparent);
 }
 
 .calendar-event--tentative:hover {
   filter: brightness(1.08);
-}
-
-.calendar-event--tone-0 {
-  --calendar-event-color: #d92335;
-}
-
-.calendar-event--tone-1 {
-  --calendar-event-color: #8f304d;
-}
-
-.calendar-event--tone-2 {
-  --calendar-event-color: #355b7d;
-}
-
-.calendar-event--tone-3 {
-  --calendar-event-color: #287068;
-}
-
-.calendar-event--tone-4 {
-  --calendar-event-color: #925619;
 }
 
 .calendar-event--continues-before {

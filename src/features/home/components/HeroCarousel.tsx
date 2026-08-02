@@ -7,6 +7,12 @@ import { Badge } from "@shared/components/ui/Badge";
 import { Button } from "@shared/components/ui/Button";
 import { institutionalContent } from "@shared/config/institutional";
 
+const slideDurationMs = 5000;
+const fadeDurationMs = 220;
+const swapPaintDelayMs = 34;
+
+type TransitionState = "idle" | "exiting" | "entering";
+
 const slides = [
   {
     eyebrow: institutionalContent.eyebrow,
@@ -42,16 +48,59 @@ const slides = [
 export function HeroCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [pendingIndex, setPendingIndex] = useState<number | null>(null);
+  const [transitionState, setTransitionState] =
+    useState<TransitionState>("idle");
 
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || transitionState !== "idle") return;
 
-    const timer = window.setInterval(() => {
-      setActiveIndex((current) => (current + 1) % slides.length);
-    }, 5000);
+    const timer = window.setTimeout(() => {
+      const nextIndex = (activeIndex + 1) % slides.length;
 
-    return () => window.clearInterval(timer);
-  }, [isPaused]);
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        setActiveIndex(nextIndex);
+        return;
+      }
+
+      setPendingIndex(nextIndex);
+      setTransitionState("exiting");
+    }, slideDurationMs);
+
+    return () => window.clearTimeout(timer);
+  }, [activeIndex, isPaused, transitionState]);
+
+  useEffect(() => {
+    if (transitionState === "exiting" && pendingIndex !== null) {
+      const swapTimer = window.setTimeout(() => {
+        setActiveIndex(pendingIndex);
+        setTransitionState("entering");
+      }, fadeDurationMs);
+
+      return () => window.clearTimeout(swapTimer);
+    }
+
+    if (transitionState === "entering") {
+      const paintTimer = window.setTimeout(() => {
+        setPendingIndex(null);
+        setTransitionState("idle");
+      }, swapPaintDelayMs);
+
+      return () => window.clearTimeout(paintTimer);
+    }
+  }, [pendingIndex, transitionState]);
+
+  function showSlide(index: number) {
+    if (index === activeIndex || transitionState !== "idle") return;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setActiveIndex(index);
+      return;
+    }
+
+    setPendingIndex(index);
+    setTransitionState("exiting");
+  }
 
   const slide = slides[activeIndex];
 
@@ -59,7 +108,7 @@ export function HeroCarousel() {
     <>
       <div
         className="hero-content hero-carousel-content"
-        key={activeIndex}
+        data-transition-state={transitionState}
         onFocus={() => setIsPaused(true)}
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
@@ -79,7 +128,7 @@ export function HeroCarousel() {
 
       <div
         className="hero-brand-panel hero-carousel-panel"
-        key={`panel-${activeIndex}`}
+        data-transition-state={transitionState}
         onFocus={() => setIsPaused(true)}
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
@@ -111,7 +160,7 @@ export function HeroCarousel() {
               aria-pressed={activeIndex === index}
               className="hero-carousel-dot"
               key={item.title}
-              onClick={() => setActiveIndex(index)}
+              onClick={() => showSlide(index)}
               type="button"
             />
           ))}

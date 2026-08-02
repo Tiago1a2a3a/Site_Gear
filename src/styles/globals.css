@@ -549,9 +549,48 @@ a {
   padding: clamp(var(--space-8), 7vw, 6rem);
 }
 
-.hero-carousel-content,
-.hero-carousel-panel {
-  animation: hero-slide-in 450ms ease-out both;
+.hero-carousel-content {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 220ms ease-in-out,
+    transform 220ms ease-in-out;
+}
+
+.hero-carousel-panel > .hero-compact-logo,
+.hero-carousel-panel > .hero-mascot-crop,
+.hero-carousel-panel > p {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 220ms ease-in-out,
+    transform 220ms ease-in-out;
+}
+
+.hero-carousel-content[data-transition-state="exiting"],
+.hero-carousel-content[data-transition-state="entering"] {
+  opacity: 0;
+  transform: translateY(0.25rem);
+}
+
+.hero-carousel-panel[data-transition-state="exiting"]
+  > .hero-compact-logo,
+.hero-carousel-panel[data-transition-state="exiting"]
+  > .hero-mascot-crop,
+.hero-carousel-panel[data-transition-state="exiting"]
+  > p,
+.hero-carousel-panel[data-transition-state="entering"]
+  > .hero-compact-logo,
+.hero-carousel-panel[data-transition-state="entering"]
+  > .hero-mascot-crop,
+.hero-carousel-panel[data-transition-state="entering"]
+  > p {
+  opacity: 0;
+  transform: translateY(0.25rem);
+}
+
+.hero-carousel-panel[data-transition-state="entering"] .hero-mascot-sheet {
+  transition: none;
 }
 
 @keyframes hero-slide-in {
@@ -568,6 +607,7 @@ a {
 
 .hero h1 {
   max-width: 12ch;
+  min-height: 3.36em;
   margin-block: var(--space-6) var(--space-6);
   font-size: clamp(3rem, 8vw, 6rem);
   letter-spacing: -0.055em;
@@ -581,6 +621,7 @@ a {
 
 .hero-content > p {
   max-width: 39rem;
+  min-height: 3.2em;
   margin-bottom: var(--space-8);
   color: var(--color-text-secondary);
   font-size: clamp(1.125rem, 2vw, 1.25rem);
@@ -3969,6 +4010,14 @@ a {
     width: 100%;
   }
 
+  .hero-content > .badge {
+    min-height: calc(2.4em + var(--space-2));
+  }
+
+  .hero-content > p {
+    min-height: 4.8em;
+  }
+
   .hero-brand-panel {
     min-height: 22rem;
     border-top: 1px solid var(--color-border);
@@ -4127,6 +4176,24 @@ a {
   }
 }
 
+@media (max-width: 30rem) {
+  .hero-content > p {
+    min-height: 6.4em;
+  }
+}
+
+@media (max-width: 23.99rem) {
+  .hero-content > p {
+    min-height: 8em;
+  }
+}
+
+@media (max-width: 21rem) {
+  .hero-content > p {
+    min-height: 9.6em;
+  }
+}
+
 @media (min-width: 48rem) {
   .mobile-navigation {
     display: none;
@@ -4194,82 +4261,23 @@ a {
 /* Calend?rio p?blico */
 .calendar-page {
   display: grid;
-  gap: clamp(var(--space-6), 4vw, var(--space-12));
+  gap: var(--space-6);
 }
 
-.calendar-hero {
-  position: relative;
+.calendar-heading {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: end;
-  gap: var(--space-8);
-  padding: clamp(var(--space-8), 5vw, var(--space-12));
-  overflow: hidden;
-  border: 1px solid var(--color-border);
-  border-top: 4px solid var(--color-gear-red);
-  border-radius: var(--radius-medium);
-  background: linear-gradient(
-    120deg,
-    var(--color-surface) 0%,
-    var(--color-surface) 67%,
-    color-mix(in srgb, var(--color-gear-red) 8%, var(--color-surface)) 100%
-  );
+  justify-items: start;
+  gap: var(--space-3);
 }
 
-.calendar-hero::after {
-  position: absolute;
-  right: -4rem;
-  bottom: -5rem;
-  width: 15rem;
-  height: 9rem;
-  border-top: 2px solid
-    color-mix(in srgb, var(--color-gear-red) 55%, transparent);
-  border-left: 2px solid
-    color-mix(in srgb, var(--color-gear-red) 55%, transparent);
-  content: "";
-  transform: skewX(-25deg);
-  pointer-events: none;
-}
-
-.calendar-hero > * {
-  position: relative;
-  z-index: 1;
-}
-
-.calendar-hero .section-index {
-  margin-bottom: var(--space-3);
-}
-
-.calendar-hero h1 {
-  margin-bottom: var(--space-3);
-  font-size: clamp(2.75rem, 7vw, 5rem);
-  letter-spacing: -0.05em;
-}
-
-.calendar-hero p:last-child {
-  max-width: 42rem;
-  margin-bottom: 0;
-  color: var(--color-text-secondary);
-  font-size: clamp(1rem, 2vw, 1.1875rem);
+.calendar-heading h1 {
+  margin: 0;
 }
 
 .calendar-coming-soon:disabled {
   opacity: 0.58;
   cursor: not-allowed;
   transform: none;
-}
-
-.calendar-demo-note {
-  margin: calc(-1 * var(--space-6)) 0 0;
-  padding: var(--space-3) var(--space-4);
-  border-left: 3px solid var(--color-signal-blue);
-  background: color-mix(in srgb, var(--color-signal-blue) 7%, transparent);
-  color: var(--color-text-secondary);
-  font-size: 0.9375rem;
-}
-
-.calendar-demo-note strong {
-  color: var(--color-text-primary);
 }
 
 .calendar-desktop {
@@ -4283,30 +4291,30 @@ a {
 
 .calendar-toolbar {
   display: grid;
-  grid-template-columns: 3rem minmax(0, 1fr) 3rem;
+  grid-template-columns: 2.25rem minmax(0, 1fr) 2.25rem;
   align-items: center;
-  gap: var(--space-4);
-  padding: var(--space-6);
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
   border-bottom: 1px solid var(--color-border);
 }
 
 .calendar-toolbar h2 {
   margin: 0;
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.25rem, 2.5vw, 1.625rem);
   text-align: center;
 }
 
 .calendar-toolbar__arrow {
   display: grid;
-  width: 3rem;
-  height: 3rem;
+  width: 2.25rem;
+  height: 2.25rem;
   place-items: center;
   border: 1px solid var(--color-border);
   border-radius: 50%;
   background: var(--color-surface);
   color: var(--color-text-primary);
   font: inherit;
-  font-size: 1.25rem;
+  font-size: 1rem;
   cursor: pointer;
   transition:
     border-color var(--motion-fast) var(--ease-standard),
@@ -4337,10 +4345,10 @@ a {
 }
 
 .calendar-weekdays span {
-  padding: var(--space-3);
+  padding: var(--space-2);
   color: var(--color-text-secondary);
   font-family: var(--font-utility), Consolas, monospace;
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-align: center;
@@ -4349,7 +4357,7 @@ a {
 
 .calendar-week {
   position: relative;
-  min-height: 9.5rem;
+  min-height: 4.25rem;
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -4363,11 +4371,11 @@ a {
 }
 
 .calendar-day {
-  padding: var(--space-2) var(--space-3);
+  padding: 0.375rem var(--space-2);
   border-right: 1px solid var(--color-border);
   color: var(--color-text-primary);
   font-family: var(--font-utility), Consolas, monospace;
-  font-size: 0.8125rem;
+  font-size: 0.6875rem;
   font-weight: 700;
 }
 
@@ -4382,9 +4390,9 @@ a {
 
 .calendar-week__events {
   position: absolute;
-  inset: 2.5rem 0 auto;
-  grid-auto-rows: 1.875rem;
-  row-gap: var(--space-1);
+  inset: 1.625rem 0 auto;
+  grid-auto-rows: 1.125rem;
+  row-gap: 2px;
   pointer-events: none;
 }
 
@@ -4392,15 +4400,15 @@ a {
   position: relative;
   min-width: 0;
   margin-inline: 2px;
-  padding: 0 var(--space-2);
+  padding: 0 0.375rem;
   overflow: hidden;
   border: 1px solid transparent;
   border-radius: var(--radius-small);
   font: inherit;
   font-family: var(--font-utility), Consolas, monospace;
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   font-weight: 700;
-  line-height: 1.75rem;
+  line-height: 1.0625rem;
   text-align: left;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -4430,7 +4438,7 @@ a {
     var(--color-surface)
   );
   color: var(--color-text-primary);
-  line-height: calc(1.75rem - 2px);
+  line-height: calc(1.0625rem - 2px);
 }
 
 .calendar-event--continues-before {
@@ -4450,12 +4458,12 @@ a {
 .calendar-legend {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-4) var(--space-8);
-  padding: var(--space-4) var(--space-6);
+  gap: var(--space-3) var(--space-6);
+  padding: var(--space-2) var(--space-4);
   border-top: 1px solid var(--color-border);
   background: var(--color-background);
   color: var(--color-text-secondary);
-  font-size: 0.875rem;
+  font-size: 0.75rem;
 }
 
 .calendar-legend span {
@@ -4585,22 +4593,8 @@ a {
     gap: var(--space-6);
   }
 
-  .calendar-hero {
-    grid-template-columns: 1fr;
-    align-items: start;
-    padding: var(--space-6);
-  }
-
-  .calendar-hero h1 {
-    font-size: clamp(2.5rem, 15vw, 4rem);
-  }
-
-  .calendar-hero .button {
+  .calendar-heading .button {
     width: 100%;
-  }
-
-  .calendar-demo-note {
-    margin-top: 0;
   }
 
   .calendar-desktop {

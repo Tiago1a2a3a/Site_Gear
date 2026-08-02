@@ -28,24 +28,12 @@ export default function CalendarioPage() {
   return (
     <div className="calendar-page">
       <Breadcrumbs items={[{ label: "Calendário" }]} />
-      <header className="calendar-hero">
-        <div>
-          <p className="section-index">PROGRAMAÇÃO PÚBLICA</p>
-          <h1>Calendário</h1>
-          <p>
-            Encontros, oficinas e atividades abertas organizados em um só lugar.
-          </p>
-        </div>
+      <header className="page-heading calendar-heading">
+        <h1>Calendário</h1>
         <Button className="calendar-coming-soon" disabled variant="secondary">
           Assinar calendário — em breve
         </Button>
       </header>
-
-      <p className="calendar-demo-note" role="note">
-        <strong>Visualização de demonstração.</strong> Os eventos abaixo são
-        exemplos enquanto a conexão com o calendário oficial do Notion é
-        preparada.
-      </p>
 
       <CalendarioPublico
         events={events}

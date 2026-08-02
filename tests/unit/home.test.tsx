@@ -1,9 +1,13 @@
-import { cleanup, render, screen } from "@testing-library/react";
-import { afterEach, describe, expect, it } from "vitest";
+import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 import Home from "@app/(site)/page";
 
-afterEach(cleanup);
+afterEach(() => {
+  cleanup();
+  vi.useRealTimers();
+  vi.unstubAllGlobals();
+});
 
 describe("Home", () => {
   it("apresenta o GEAR e direciona para os dois fluxos principais", () => {
@@ -43,5 +47,36 @@ describe("Home", () => {
     expect(
       screen.getByRole("link", { name: /^Abrir curso:/ }),
     ).toHaveProperty("pathname", expect.stringMatching(/^\/aprendizado\/cursos\//));
+  });
+
+  it("faz fade-out antes de trocar o destaque e fade-in depois", () => {
+    vi.useFakeTimers();
+    vi.stubGlobal(
+      "matchMedia",
+      vi.fn(() => ({ matches: false })),
+    );
+    render(<Home />);
+
+    const heading = screen.getByRole("heading", {
+      level: 1,
+      name: "Conhecimento que move ideias.",
+    });
+    const content = heading.closest(".hero-carousel-content");
+
+    fireEvent.click(
+      screen.getByRole("button", { name: "Mostrar destaque 2" }),
+    );
+
+    expect(content?.getAttribute("data-transition-state")).toBe("exiting");
+    expect(heading.textContent).toBe("Conhecimento que move ideias.");
+
+    act(() => vi.advanceTimersByTime(220));
+
+    expect(content?.getAttribute("data-transition-state")).toBe("entering");
+    expect(heading.textContent).toBe("Da teoria ao prototipo.");
+
+    act(() => vi.advanceTimersByTime(34));
+
+    expect(content?.getAttribute("data-transition-state")).toBe("idle");
   });
 });

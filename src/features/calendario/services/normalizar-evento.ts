@@ -19,6 +19,20 @@ function getProperty(page: NotionCalendarPage, name: string) {
   return asRecord(asRecord(page.properties)?.[name]);
 }
 
+function getPropertyIgnoringOuterSpaces(
+  page: NotionCalendarPage,
+  name: string,
+) {
+  const properties = asRecord(page.properties);
+  if (!properties) return;
+
+  const matches = Object.entries(properties).filter(
+    ([propertyName]) => propertyName.trim() === name,
+  );
+  if (matches.length !== 1) return;
+  return asRecord(matches[0]?.[1]);
+}
+
 function readPlainText(value: unknown) {
   if (!Array.isArray(value)) return;
   const text = value
@@ -76,8 +90,17 @@ export function normalizeNotionCalendarPage(
     return;
   }
 
-  const publicProperty = getProperty(page, "Público");
-  if (publicProperty?.type !== "checkbox" || publicProperty.checkbox !== true) {
+  const visibilityProperty = getProperty(page, "Visibilidade");
+  const visibilityNames = Array.isArray(visibilityProperty?.multi_select)
+    ? visibilityProperty.multi_select
+        .map((option) => asRecord(option)?.name)
+        .filter((name): name is string => typeof name === "string")
+    : [];
+  if (
+    visibilityProperty?.type !== "multi_select" ||
+    visibilityNames.length !== 1 ||
+    visibilityNames[0] !== "Público"
+  ) {
     return;
   }
 
@@ -123,7 +146,10 @@ export function normalizeNotionCalendarPage(
     return;
   }
 
-  const descriptionProperty = getProperty(page, "Descrição");
+  const descriptionProperty = getPropertyIgnoringOuterSpaces(
+    page,
+    "Descrição",
+  );
   const description =
     descriptionProperty?.type === "rich_text"
       ? readPlainText(descriptionProperty.rich_text)

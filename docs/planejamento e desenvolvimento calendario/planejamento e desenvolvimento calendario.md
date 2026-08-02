@@ -18,9 +18,9 @@ O público poderá:
 Implementado no repositório:
 
 - página responsiva, calendário mensal, lista móvel, legenda e pop-up acessível;
-- tipos, fixtures temporárias de fallback e normalização fail-closed;
+- tipos e normalização fail-closed;
 - consulta server-only da Data Source do Notion, com filtro público, paginação, timeout e cache de cinco minutos;
-- fallback demonstrativo enquanto a fonte não está configurada e estados seguros para calendário vazio ou indisponibilidade externa;
+- estados seguros para calendário vazio ou indisponibilidade externa, sem fallback demonstrativo;
 - link individual para adicionar somente eventos confirmados ao Google Agenda;
 - feed público `/calendario/feed.ics`, somente com eventos confirmados, UIDs estáveis e datas de dia inteiro com fim exclusivo;
 - diálogo para copiar o endereço de assinatura e abrir o arquivo `.ics`;
@@ -33,7 +33,7 @@ Dependências externas ainda necessárias para ativar dados reais:
 - cadastrar `NOTION_API_KEY` e `NOTION_CALENDAR_DATA_SOURCE_ID` na Vercel;
 - validar em produção um evento público e um evento interno conhecido.
 
-Até essa ativação, a produção exibe os eventos demonstrativos. Quando as duas variáveis do Notion forem cadastradas, página e feed deixam o fallback automaticamente e passam a usar somente a fonte real normalizada.
+Até essa ativação, página e feed permanecem indisponíveis. O site não publica eventos fictícios e passa a usar somente a fonte real normalizada quando as duas variáveis do Notion forem cadastradas.
 
 ## Funcionamento geral
 
@@ -59,16 +59,17 @@ Será utilizado um calendário geral com eventos públicos e internos.
 | Nome        | Título               |         Sim | Palestra de Robótica             |
 | Período     | Data inicial e final |         Sim | 4 a 10 de janeiro                |
 | Confirmação | Seleção              |         Sim | Confirmado / A definir           |
-| Público     | Checkbox             |         Sim | Marcado                          |
+| Visibilidade | Seleção múltipla    |         Sim | Público / Interno                |
 | Descrição   | Texto                |         Não | Apresentação aberta à comunidade |
 | Link        | URL                  |         Não | Página de inscrição              |
 
 ### Significado dos campos
 
-#### Público
+#### Visibilidade
 
-- Marcado: aparece no site.
-- Desmarcado: evento interno e nunca aparece no site.
+- Somente Público selecionado: aparece no site.
+- Interno: nunca aparece no site.
+- Público e Interno simultaneamente: é descartado por segurança.
 
 #### Confirmação
 
@@ -83,7 +84,7 @@ Será utilizado um calendário geral com eventos públicos e internos.
 
 ### Segurança
 
-A integração terá acesso de leitura ao calendário geral, mas o site deverá filtrar `Público = marcado` ainda na consulta ao Notion.
+A integração terá acesso de leitura ao calendário geral, mas o site deverá filtrar `Visibilidade = Público` ainda na consulta ao Notion.
 
 Também serão criados testes para impedir que eventos internos apareçam:
 
@@ -108,7 +109,7 @@ type CalendarEvent = {
 };
 ```
 
-Inicialmente, eventos fictícios serão usados para desenvolver a interface.
+Durante o desenvolvimento inicial, eventos fictícios foram usados somente para validar a interface.
 
 Esses dados simulados deverão incluir:
 
@@ -283,7 +284,7 @@ Essas informações nunca serão enviadas ao navegador.
 O servidor deverá:
 
 1. consultar o calendário;
-2. filtrar apenas `Público = marcado`;
+2. filtrar apenas `Visibilidade = Público`;
 3. converter os campos do Notion;
 4. ordenar os eventos por data;
 5. descartar registros inválidos;
@@ -458,8 +459,8 @@ Usar uma Data Source do calendário geral com os seguintes campos exatos:
 | `Nome`         | Title     | Obrigatório                              |
 | `Período`      | Date      | Obrigatório; aceita início e fim         |
 | `Confirmação`  | Select    | `Confirmado` ou `A definir`              |
-| `Público`      | Checkbox  | Somente `true` pode sair do servidor     |
-| `Descrição`    | Rich text | Opcional                                 |
+| `Visibilidade` | Multi-select | Somente `Público` pode sair do servidor |
+| `Descrição`    | Rich text | Opcional; tolera espaços externos no nome |
 | `Link`         | URL       | Opcional; somente HTTPS na saída pública |
 
 ### 3.2 Significado do período
@@ -481,7 +482,7 @@ Usar uma Data Source do calendário geral com os seguintes campos exatos:
 
 Um registro só entra na saída pública quando:
 
-1. `Público` está marcado;
+1. `Visibilidade` contém somente `Público`;
 2. o nome existe;
 3. o período é válido;
 4. a confirmação possui um valor reconhecido;
@@ -538,7 +539,6 @@ src/
 │       │   ├── AssinarCalendarioDialog.tsx
 │       │   └── LegendaCalendario.tsx
 │       ├── data/
-│       │   ├── eventos-exemplo.ts
 │       │   └── eventos.ts
 │       ├── services/
 │       │   ├── notion.ts
@@ -885,7 +885,7 @@ A implementação só começa quando:
 - [ ] existe responsável humano;
 - [x] o ambiente Vercel atual e seu fluxo de deploy por push na `main` são conhecidos;
 - [ ] o domínio/URL oficial para o feed será obtido da configuração real;
-- [ ] eventos de exemplo cobrem os casos obrigatórios;
+- [x] testes automatizados cobrem os casos obrigatórios sem publicar fixtures;
 - [ ] o que está fora de escopo foi aceito.
 
 ## 19. Gate de saída

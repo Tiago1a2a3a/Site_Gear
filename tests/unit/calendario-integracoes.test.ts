@@ -1,5 +1,6 @@
-import { describe, expect, it, vi } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
+import { listPublicCalendarEvents } from "@features/calendario/data/eventos";
 import { buildGoogleCalendarUrl } from "@features/calendario/services/google-calendar";
 import { serializeCalendar } from "@features/calendario/services/icalendar";
 import {
@@ -9,6 +10,12 @@ import {
 } from "@features/calendario/services/normalizar-evento";
 import { queryPublicNotionCalendar } from "@features/calendario/services/notion";
 import type { CalendarEvent } from "@features/calendario/types";
+
+vi.mock("server-only", () => ({}));
+
+afterEach(() => {
+  vi.unstubAllEnvs();
+});
 
 const confirmedEvent: CalendarEvent = {
   allDay: true,
@@ -41,14 +48,17 @@ function notionPage(
         select: { name: "Confirmado" },
         type: "select",
       },
-      Descrição: {
+      "Descrição ": {
         rich_text: [{ plain_text: "Evento público." }],
         type: "rich_text",
       },
       Link: { type: "url", url: "https://gear.example/evento" },
       Nome: { title: [{ plain_text: "Palestra aberta" }], type: "title" },
       Período: { date: { end: null, start: "2026-08-07" }, type: "date" },
-      Público: { checkbox: true, type: "checkbox" },
+      Visibilidade: {
+        multi_select: [{ name: "Público" }],
+        type: "multi_select",
+      },
       ...overrides,
     },
   };
@@ -68,7 +78,24 @@ describe("normalização do calendário do Notion", () => {
   });
 
   it.each([
-    ["privado", { Público: { checkbox: false, type: "checkbox" } }],
+    [
+      "interno",
+      {
+        Visibilidade: {
+          multi_select: [{ name: "Interno" }],
+          type: "multi_select",
+        },
+      },
+    ],
+    [
+      "com visibilidade ambígua",
+      {
+        Visibilidade: {
+          multi_select: [{ name: "Público" }, { name: "Interno" }],
+          type: "multi_select",
+        },
+      },
+    ],
     [
       "confirmação desconhecida",
       { Confirmação: { select: { name: "Talvez" }, type: "select" } },
@@ -96,7 +123,17 @@ describe("normalização do calendário do Notion", () => {
 });
 
 describe("consulta server-only do Notion", () => {
-  it("filtra Público no servidor e percorre a paginação", async () => {
+  it("não publica eventos fictícios quando a integração não está configurada", async () => {
+    vi.stubEnv("NOTION_API_KEY", "");
+    vi.stubEnv("NOTION_CALENDAR_DATA_SOURCE_ID", "");
+
+    await expect(listPublicCalendarEvents()).resolves.toEqual({
+      events: [],
+      status: "unavailable",
+    });
+  });
+
+  it("filtra Visibilidade pública no servidor e percorre a paginação", async () => {
     const fetcher = vi
       .fn<typeof fetch>()
       .mockResolvedValueOnce(
@@ -129,7 +166,10 @@ describe("consulta server-only do Notion", () => {
       "Notion-Version": "2026-03-11",
     });
     expect(JSON.parse(String(firstRequest?.body))).toMatchObject({
-      filter: { checkbox: { equals: true }, property: "Público" },
+      filter: {
+        multi_select: { contains: "Público" },
+        property: "Visibilidade",
+      },
     });
     expect(JSON.parse(String(fetcher.mock.calls[1]?.[1]?.body))).toMatchObject({
       start_cursor: "next",

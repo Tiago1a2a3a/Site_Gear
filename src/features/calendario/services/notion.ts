@@ -42,8 +42,8 @@ export async function queryPublicNotionCalendar({
         {
           body: JSON.stringify({
             filter: {
-              checkbox: { equals: true },
-              property: "Público",
+              multi_select: { contains: "Público" },
+              property: "Visibilidade",
             },
             page_size: NOTION_PAGE_SIZE,
             result_type: "page",

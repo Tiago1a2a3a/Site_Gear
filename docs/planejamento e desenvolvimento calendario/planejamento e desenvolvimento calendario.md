@@ -18,9 +18,9 @@ O público poderá:
 Implementado no repositório:
 
 - página responsiva, calendário mensal, lista móvel, legenda e pop-up acessível;
-- tipos, fixtures de desenvolvimento e normalização fail-closed;
+- tipos, fixtures temporárias de fallback e normalização fail-closed;
 - consulta server-only da Data Source do Notion, com filtro público, paginação, timeout e cache de cinco minutos;
-- estados seguros para calendário vazio, fonte não configurada e indisponibilidade externa;
+- fallback demonstrativo enquanto a fonte não está configurada e estados seguros para calendário vazio ou indisponibilidade externa;
 - link individual para adicionar somente eventos confirmados ao Google Agenda;
 - feed público `/calendario/feed.ics`, somente com eventos confirmados, UIDs estáveis e datas de dia inteiro com fim exclusivo;
 - diálogo para copiar o endereço de assinatura e abrir o arquivo `.ics`;
@@ -32,6 +32,8 @@ Dependências externas ainda necessárias para ativar dados reais:
 - criar a integração de leitura e compartilhar a Data Source com ela;
 - cadastrar `NOTION_API_KEY` e `NOTION_CALENDAR_DATA_SOURCE_ID` na Vercel;
 - validar em produção um evento público e um evento interno conhecido.
+
+Até essa ativação, a produção exibe os eventos demonstrativos. Quando as duas variáveis do Notion forem cadastradas, página e feed deixam o fallback automaticamente e passam a usar somente a fonte real normalizada.
 
 ## Funcionamento geral
 

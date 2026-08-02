@@ -2,7 +2,7 @@
 
 Propósito: apresentar eventos públicos em uma grade mensal no desktop e em uma lista de próximos eventos no celular.
 
-Fonte: em produção, os eventos vêm exclusivamente de uma Data Source do Notion consultada no servidor. O navegador nunca recebe o token nem os registros privados. Em desenvolvimento, quando as variáveis não existem, a página usa dados locais para permitir testes visuais.
+Fonte: quando as credenciais existem, os eventos vêm exclusivamente de uma Data Source do Notion consultada no servidor. O navegador nunca recebe o token nem os registros privados. Enquanto o Notion ainda não estiver configurado, todos os ambientes usam dados demonstrativos locais; esse fallback temporário é substituído automaticamente assim que as duas variáveis forem cadastradas.
 
 Campos obrigatórios no Notion: `Nome` (título), `Período` (data), `Confirmação` (select com `Confirmado` ou `A definir`) e `Público` (checkbox). `Descrição` (texto) e `Link` (URL HTTPS) são opcionais. Um evento `A definir` precisa ter início e fim da janela possível.
 

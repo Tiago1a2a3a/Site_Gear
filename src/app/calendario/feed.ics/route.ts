@@ -18,7 +18,7 @@ function getSiteUrl() {
 export async function GET() {
   const result = await listPublicCalendarEvents();
 
-  if (result.status === "not-configured" || result.status === "unavailable") {
+  if (result.status === "unavailable") {
     return new Response("Calendário temporariamente indisponível.", {
       status: 503,
       headers: {

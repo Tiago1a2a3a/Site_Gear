@@ -26,8 +26,7 @@ function toDateKey(date: Date) {
 export default async function CalendarioPage() {
   const referenceDate = new Date();
   const result = await listPublicCalendarEvents(referenceDate);
-  const isUnavailable =
-    result.status === "not-configured" || result.status === "unavailable";
+  const isUnavailable = result.status === "unavailable";
 
   return (
     <div className="calendar-page">

@@ -7,7 +7,7 @@ import type { CalendarEvent } from "../types";
 
 export type CalendarEventsResult = Readonly<{
   events: readonly CalendarEvent[];
-  status: "demo" | "not-configured" | "ready" | "unavailable";
+  status: "demo" | "ready" | "unavailable";
 }>;
 
 export async function listPublicCalendarEvents(
@@ -17,13 +17,10 @@ export async function listPublicCalendarEvents(
   const dataSourceId = process.env.NOTION_CALENDAR_DATA_SOURCE_ID?.trim();
 
   if (!apiKey || !dataSourceId) {
-    if (process.env.NODE_ENV !== "production") {
-      return {
-        events: listarEventosDeExemplo(referenceDate),
-        status: "demo",
-      };
-    }
-    return { events: [], status: "not-configured" };
+    return {
+      events: listarEventosDeExemplo(referenceDate),
+      status: "demo",
+    };
   }
 
   try {

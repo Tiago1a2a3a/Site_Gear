@@ -26,6 +26,13 @@ describe("configuração central do site", () => {
     ).toBe(true);
   });
 
+  it("inclui o calendário público na navegação principal", () => {
+    expect(siteConfig.mainNavigation).toContainEqual({
+      href: "/calendario",
+      label: "Calendário",
+    });
+  });
+
   it("mantém o grupo de avisos apontando para a 404 temporária", () => {
     expect(
       siteConfig.socialLinks.find((item) => item.label.includes("WhatsApp"))

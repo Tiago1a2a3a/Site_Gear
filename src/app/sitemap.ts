@@ -13,6 +13,7 @@ const publicRoutes = [
   "/aprendizado/trilhas/busca",
   "/aprendizado/busca",
   "/projetos",
+  "/calendario",
   "/noticias",
   "/sobre",
   "/patrocinadores",

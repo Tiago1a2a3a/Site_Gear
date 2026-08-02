@@ -16,6 +16,7 @@ export const siteConfig = {
   mainNavigation: [
     { href: "/aprendizado", label: "Aprendizado" },
     { href: "/projetos", label: "Projetos" },
+    { href: "/calendario", label: "Calendário" },
     { href: "/noticias", label: "Notícias" },
     { href: "/sobre", label: "Sobre" },
   ],

@@ -13,6 +13,7 @@ const plannedRoutes = [
   ["/aprendizado/aulas/busca", "Aulas"],
   ["/aprendizado/aulas/introducao-robotica", "Introdução à robótica"],
   ["/projetos", "Projetos"],
+  ["/calendario", "Calendário"],
   ["/projetos/robo-exemplo", "Robô móvel de demonstração"],
   ["/noticias", "Notícias"],
   ["/noticias/fundacao-mdx", "Portal adota conteúdo estruturado em MDX"],

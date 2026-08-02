@@ -400,8 +400,8 @@ Antes de iniciar o código, a equipe deve aprovar e registrar essa exceção. O 
 5. O token do Notion nunca terá prefixo `NEXT_PUBLIC_`.
 6. A interface pública continuará disponível mesmo quando o Notion estiver temporariamente indisponível, apresentando um estado de erro controlado.
 7. O calendário mensal e os pop-ups formarão uma ilha Client Component pequena; busca, filtragem de dados públicos e geração de `.ics` permanecerão no servidor ou em funções puras.
-8. A hospedagem atual a validar é o **Cloudflare**, conforme o documento de continuidade. Vercel não deve ser presumida como destino.
-9. Webhooks do Notion ficam fora da V1. A atualização inicial usará cache com revalidação periódica, condicionado à compatibilidade comprovada no Cloudflare.
+8. A hospedagem oficial é a **Vercel**. O Cloudflare foi abandonado por decisão do responsável pelo projeto em 2 de agosto de 2026.
+9. Webhooks do Notion ficam fora da V1. A atualização inicial usará cache com revalidação periódica, condicionado à compatibilidade comprovada na Vercel.
 10. Eventos “A definir” aparecerão no site, mas não serão enviados ao Google Agenda nem incluídos no feed `.ics`.
 
 ## 2. Regras arquiteturais que a implementação deve preservar
@@ -595,7 +595,7 @@ Deverá conter:
 
 A proposta inicial é revalidar os dados em intervalo curto, por exemplo cinco minutos. Antes de fixar a solução, uma prova técnica deve confirmar:
 
-- suporte da adaptação atual do Next.js no Cloudflare;
+- suporte da aplicação Next.js no ambiente Vercel;
 - comportamento do cache em produção;
 - atualização depois de editar um evento no Notion;
 - ausência de token no bundle e nas respostas;
@@ -725,21 +725,21 @@ Regras:
 
 ## 13. Plano executável da Milestone extra
 
-| ID     | Pri. | Tam. | Entrega e critério de aceite                                                                                                                                                         | Dependência             |
-| ------ | ---- | ---: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------- |
-| CAL-00 | P0   |    P | Registrar e aprovar a exceção arquitetural: Notion como fonte exclusiva de eventos, Cloudflare como ambiente atual, `fetch` nativo, ausência de webhook e feed público documentados. | planejamento aprovado   |
-| CAL-01 | P0   |    P | Configurar a Data Source e integração de leitura no Notion; aceito com os seis campos definidos, eventos de exemplo e nenhum segredo no repositório.                                 | CAL-00                  |
-| CAL-02 | P0   |    M | Criar tipos, fixtures e validação fail-closed; aceito cobrindo dia inteiro, horário, vários dias, data a definir, link ausente e registro privado.                                   | CAL-00                  |
-| CAL-03 | P0   |    M | Fazer prova técnica Notion → Next.js → Cloudflare; aceito quando um evento público é lido no servidor, um privado é descartado e o token não aparece no cliente.                     | CAL-01, CAL-02          |
-| CAL-04 | P0   |    M | Implementar adaptador e consulta server-only com paginação, janela de datas, timeout, erros seguros e revalidação validada no ambiente.                                              | CAL-03                  |
-| CAL-05 | P0   |    M | Criar rota, metadata, navegação e composição inicial com estados de carregamento, vazio e indisponibilidade.                                                                         | CAL-02                  |
-| CAL-06 | P0   |    G | Implementar grade mensal desktop, navegação por mês, intervalos entre semanas/meses, concorrência visual e legenda acessível.                                                        | CAL-05                  |
-| CAL-07 | P0   |    M | Implementar lista móvel dos cinco próximos eventos e `Ver mais eventos`; aceito em viewport pequeno sem overflow horizontal.                                                         | CAL-05                  |
-| CAL-08 | P0   |    M | Implementar pop-up acessível e link individual do Google Agenda; aceito com restauração de foco, `Escape`, campos opcionais e ausência do botão em evento a definir.                 | CAL-06, CAL-07          |
-| CAL-09 | P0   |    G | Implementar serializador e Route Handler `.ics`; aceito com feed válido, apenas confirmados, UIDs estáveis, caracteres especiais e URL copiável.                                     | CAL-04                  |
-| CAL-10 | P0   |    M | Integrar dados reais à UI e remover dependência de fixtures em produção; aceito com página e feed consumindo a mesma fonte normalizada.                                              | CAL-04, CAL-06 a CAL-09 |
-| CAL-11 | P0   |    G | Completar testes unitários, componentes e E2E, incluindo privacidade, datas-limite, teclado, desktop e celular.                                                                      | CAL-10                  |
-| CAL-12 | P0   |    M | Auditar preview/deploy Cloudflare, atualizar documentação e fechar o gate; aceito com checks verdes, smoke test público, URL e commit registrados e aceite humano.                   | CAL-11                  |
+| ID     | Pri. | Tam. | Entrega e critério de aceite                                                                                                                                                     | Dependência             |
+| ------ | ---- | ---: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------- |
+| CAL-00 | P0   |    P | Registrar e aprovar a exceção arquitetural: Notion como fonte exclusiva de eventos, Vercel como ambiente atual, `fetch` nativo, ausência de webhook e feed público documentados. | planejamento aprovado   |
+| CAL-01 | P0   |    P | Configurar a Data Source e integração de leitura no Notion; aceito com os seis campos definidos, eventos de exemplo e nenhum segredo no repositório.                             | CAL-00                  |
+| CAL-02 | P0   |    M | Criar tipos, fixtures e validação fail-closed; aceito cobrindo dia inteiro, horário, vários dias, data a definir, link ausente e registro privado.                               | CAL-00                  |
+| CAL-03 | P0   |    M | Fazer prova técnica Notion → Next.js → Vercel; aceito quando um evento público é lido no servidor, um privado é descartado e o token não aparece no cliente.                     | CAL-01, CAL-02          |
+| CAL-04 | P0   |    M | Implementar adaptador e consulta server-only com paginação, janela de datas, timeout, erros seguros e revalidação validada no ambiente.                                          | CAL-03                  |
+| CAL-05 | P0   |    M | Criar rota, metadata, navegação e composição inicial com estados de carregamento, vazio e indisponibilidade.                                                                     | CAL-02                  |
+| CAL-06 | P0   |    G | Implementar grade mensal desktop, navegação por mês, intervalos entre semanas/meses, concorrência visual e legenda acessível.                                                    | CAL-05                  |
+| CAL-07 | P0   |    M | Implementar lista móvel dos cinco próximos eventos e `Ver mais eventos`; aceito em viewport pequeno sem overflow horizontal.                                                     | CAL-05                  |
+| CAL-08 | P0   |    M | Implementar pop-up acessível e link individual do Google Agenda; aceito com restauração de foco, `Escape`, campos opcionais e ausência do botão em evento a definir.             | CAL-06, CAL-07          |
+| CAL-09 | P0   |    G | Implementar serializador e Route Handler `.ics`; aceito com feed válido, apenas confirmados, UIDs estáveis, caracteres especiais e URL copiável.                                 | CAL-04                  |
+| CAL-10 | P0   |    M | Integrar dados reais à UI e remover dependência de fixtures em produção; aceito com página e feed consumindo a mesma fonte normalizada.                                          | CAL-04, CAL-06 a CAL-09 |
+| CAL-11 | P0   |    G | Completar testes unitários, componentes e E2E, incluindo privacidade, datas-limite, teclado, desktop e celular.                                                                  | CAL-10                  |
+| CAL-12 | P0   |    M | Auditar preview/deploy Vercel, atualizar documentação e fechar o gate; aceito com checks verdes, smoke test público, URL e commit registrados e aceite humano.                   | CAL-11                  |
 
 Itens `G` devem ser divididos em PRs menores se não couberem em até cinco dias focados.
 
@@ -822,19 +822,19 @@ Não declarar validação visual sem abrir realmente a página em navegador e co
 
 ## 16. Riscos e mitigação
 
-| ID      | Risco                                                   | Impacto | Mitigação / gate                                                                              |
-| ------- | ------------------------------------------------------- | ------: | --------------------------------------------------------------------------------------------- |
-| CAL-R01 | Evento interno chegar ao cliente                        |    Alto | filtro no request, validação fail-closed, teste negativo e inspeção da resposta               |
-| CAL-R02 | Token do Notion entrar no bundle ou log                 |    Alto | módulo server-only, variável privada e auditoria do build                                     |
-| CAL-R03 | Notion indisponível derrubar a página                   |    Alto | tratamento de erro, timeout, cache validado e estado público controlado                       |
-| CAL-R04 | Cloudflare não suportar a estratégia de cache escolhida |    Alto | CAL-03 antes da UI final e alternativa server-side simples                                    |
-| CAL-R05 | Intervalo “A definir” parecer evento de vários dias     |    Alto | visual tracejado, legenda textual e explicação no pop-up                                      |
-| CAL-R06 | Google receber uma data provisória                      |    Alto | Google e feed habilitados somente para confirmados                                            |
-| CAL-R07 | Datas mudarem de dia por fuso                           |    Alto | separar dia inteiro de timestamp e testar `America/Sao_Paulo`                                 |
-| CAL-R08 | Feed duplicar eventos após edição                       |   Médio | UID estável pelo ID do Notion                                                                 |
-| CAL-R09 | Grade mensal gerar JavaScript ou layout excessivo       |   Médio | implementação própria pequena, sem biblioteca inicialmente, e medição no build                |
-| CAL-R10 | Nova dependência aumentar manutenção                    |   Médio | `fetch`, `dialog`, `Intl` e serialização própria na V1; biblioteca só com problema comprovado |
-| CAL-R11 | Mudança do schema do Notion quebrar silenciosamente     |   Médio | nomes documentados, validação estrita, logs sanitizados e estado de erro observável           |
+| ID      | Risco                                               | Impacto | Mitigação / gate                                                                              |
+| ------- | --------------------------------------------------- | ------: | --------------------------------------------------------------------------------------------- |
+| CAL-R01 | Evento interno chegar ao cliente                    |    Alto | filtro no request, validação fail-closed, teste negativo e inspeção da resposta               |
+| CAL-R02 | Token do Notion entrar no bundle ou log             |    Alto | módulo server-only, variável privada e auditoria do build                                     |
+| CAL-R03 | Notion indisponível derrubar a página               |    Alto | tratamento de erro, timeout, cache validado e estado público controlado                       |
+| CAL-R04 | Vercel não suportar a estratégia de cache escolhida |    Alto | CAL-03 antes da UI final e alternativa server-side simples                                    |
+| CAL-R05 | Intervalo “A definir” parecer evento de vários dias |    Alto | visual tracejado, legenda textual e explicação no pop-up                                      |
+| CAL-R06 | Google receber uma data provisória                  |    Alto | Google e feed habilitados somente para confirmados                                            |
+| CAL-R07 | Datas mudarem de dia por fuso                       |    Alto | separar dia inteiro de timestamp e testar `America/Sao_Paulo`                                 |
+| CAL-R08 | Feed duplicar eventos após edição                   |   Médio | UID estável pelo ID do Notion                                                                 |
+| CAL-R09 | Grade mensal gerar JavaScript ou layout excessivo   |   Médio | implementação própria pequena, sem biblioteca inicialmente, e medição no build                |
+| CAL-R10 | Nova dependência aumentar manutenção                |   Médio | `fetch`, `dialog`, `Intl` e serialização própria na V1; biblioteca só com problema comprovado |
+| CAL-R11 | Mudança do schema do Notion quebrar silenciosamente |   Médio | nomes documentados, validação estrita, logs sanitizados e estado de erro observável           |
 
 ## 17. Fora do escopo da V1
 
@@ -861,7 +861,7 @@ A implementação só começa quando:
 - [ ] os seis campos do Notion possuem nomes e tipos fechados;
 - [ ] existe uma integração de leitura sem segredo versionado;
 - [ ] existe responsável humano;
-- [ ] o ambiente Cloudflare atual e seu fluxo de preview são conhecidos;
+- [x] o ambiente Vercel atual e seu fluxo de deploy por push na `main` são conhecidos;
 - [ ] o domínio/URL oficial para o feed será obtido da configuração real;
 - [ ] eventos de exemplo cobrem os casos obrigatórios;
 - [ ] o que está fora de escopo foi aceito.
@@ -880,6 +880,6 @@ A Milestone do calendário somente será considerada concluída quando:
 8. o feed `.ics` é aceito por pelo menos Google Agenda e outro cliente compatível durante validação manual;
 9. falha simulada do Notion não expõe segredo nem derruba o restante do layout;
 10. todos os checks obrigatórios passam;
-11. o preview e o deployment Cloudflare são testados em desktop e celular;
+11. o preview e o deployment Vercel são testados em desktop e celular;
 12. URL pública, commit implantado, riscos aceitos e aceite humano são registrados;
 13. `src/features/calendario/README.md`, `.env.example` e o documento de continuidade estão atualizados.

@@ -458,3 +458,20 @@ Cada atualização deve registrar data, commit, ambiente, validações executada
 resultado do smoke test, pendências e decisão humana relevante. Não transformar
 este documento em diário de cada pequena edição: preservar apenas contexto
 necessário para continuidade.
+
+## 14. Atualização de hospedagem — 2 de agosto de 2026
+
+Por decisão explícita de Tiago Lopes, o Cloudflare foi abandonado como destino de
+deploy. A **Vercel** passa a ser o provedor oficial do Portal GEAR.
+
+- branch de produção: `main`;
+- deploy acionado por push no GitHub;
+- commit validado: `dfd04d7deb55e000f426e1fb6818f9ffedf873ec`;
+- URL pública: `https://site-gear.vercel.app`;
+- rota do calendário: `https://site-gear.vercel.app/calendario`;
+- resultado observado: deployment Vercel concluído com sucesso e rota do
+  calendário respondendo HTTP 200 com o título `Calendário | Portal GEAR`.
+
+O histórico do primeiro deploy no Cloudflare permanece neste documento apenas
+como registro. Falhas futuras de build nesse provedor não bloqueiam a produção e
+não devem ser tratadas como incidentes do ambiente oficial.

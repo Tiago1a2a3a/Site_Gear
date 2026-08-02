@@ -34,6 +34,7 @@ export function SponsorStrip({ sponsors }: SponsorStripProps) {
                   <Image
                     alt={`Logo de ${sponsor.name}`}
                     fill
+                    loading="eager"
                     sizes="(max-width: 48rem) 10rem, 14vw"
                     src={sponsor.logo}
                   />

@@ -287,6 +287,7 @@ a {
   color: var(--color-gear-red);
   font-weight: 700;
   text-decoration: none;
+  white-space: nowrap;
   transition:
     background-color var(--motion-fast) var(--ease-standard),
     color var(--motion-fast) var(--ease-standard),
@@ -309,6 +310,8 @@ a {
   color: inherit;
   font: inherit;
   font-weight: 700;
+  overflow-wrap: normal;
+  word-break: normal;
   cursor: pointer;
 }
 
@@ -568,6 +571,8 @@ a {
   margin-block: var(--space-6) var(--space-6);
   font-size: clamp(3rem, 8vw, 6rem);
   letter-spacing: -0.055em;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .hero h1 span {
@@ -3915,8 +3920,20 @@ a {
     display: none;
   }
 
+  .header-content {
+    gap: var(--space-2);
+  }
+
+  .site-name img {
+    height: clamp(1.875rem, 9vw, 2.25rem);
+  }
+
   .header-actions {
     gap: var(--space-2);
+  }
+
+  .login-link {
+    padding-inline: var(--space-3);
   }
 
   .my-learning-link {
@@ -3944,7 +3961,7 @@ a {
   }
 
   .hero h1 {
-    font-size: clamp(2.75rem, 14vw, 4.5rem);
+    font-size: clamp(2.25rem, 11.5vw, 4.5rem);
   }
 
   .hero-actions,

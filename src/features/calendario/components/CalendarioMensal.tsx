@@ -4,6 +4,15 @@ import { buildCalendarMonth, formatEventPeriod } from "../services/calendario";
 import type { CalendarEvent } from "../types";
 
 const weekdays = ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom"];
+const eventToneCount = 5;
+
+function getEventTone(eventId: string) {
+  const hash = [...eventId].reduce(
+    (total, character) => (total * 31 + character.charCodeAt(0)) | 0,
+    0,
+  );
+  return Math.abs(hash) % eventToneCount;
+}
 
 type CalendarioMensalProps = Readonly<{
   events: readonly CalendarEvent[];
@@ -33,7 +42,13 @@ export function CalendarioMensal({
       </div>
 
       {weeks.map((week) => (
-        <div className="calendar-week" key={week.days[0].toISOString()}>
+        <div
+          className="calendar-week"
+          key={week.days[0].toISOString()}
+          style={{
+            minHeight: `${1.95 + Math.max(1, ...week.segments.map((segment) => segment.lane + 1)) * 1.8}rem`,
+          }}
+        >
           <div className="calendar-week__days">
             {week.days.map((day) => {
               const isOutsideMonth = day.getMonth() !== month;
@@ -58,6 +73,7 @@ export function CalendarioMensal({
               const classes = [
                 "calendar-event",
                 `calendar-event--${segment.event.confirmation}`,
+                `calendar-event--tone-${getEventTone(segment.event.id)}`,
                 !segment.isStart && "calendar-event--continues-before",
                 !segment.isEnd && "calendar-event--continues-after",
               ]

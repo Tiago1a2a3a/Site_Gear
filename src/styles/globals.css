@@ -4317,15 +4317,17 @@ a {
   align-items: center;
   gap: var(--space-3);
   padding: 0.875rem var(--space-4) 0.75rem;
-  border-bottom: 0;
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--color-gear-red) 16%, var(--color-border));
   background:
     linear-gradient(
       110deg,
-      color-mix(in srgb, var(--color-gear-red) 17%, transparent),
-      transparent 34%
+      color-mix(in srgb, var(--color-gear-red) 12%, var(--color-surface)),
+      var(--color-surface) 42%,
+      color-mix(in srgb, var(--color-text-primary) 3%, var(--color-surface))
     ),
-    var(--color-text-primary);
-  color: var(--color-surface);
+    var(--color-surface);
+  color: var(--color-text-primary);
 }
 
 .calendar-toolbar h2 {
@@ -4341,10 +4343,11 @@ a {
   width: 2.25rem;
   height: 2.25rem;
   place-items: center;
-  border: 1px solid color-mix(in srgb, var(--color-surface) 32%, transparent);
+  border: 1px solid
+    color-mix(in srgb, var(--color-text-primary) 20%, transparent);
   border-radius: 50%;
-  background: color-mix(in srgb, var(--color-surface) 6%, transparent);
-  color: var(--color-surface);
+  background: color-mix(in srgb, var(--color-surface) 78%, transparent);
+  color: var(--color-text-primary);
   font: inherit;
   font-size: 1rem;
   cursor: pointer;
@@ -4399,7 +4402,6 @@ a {
 
 .calendar-week {
   position: relative;
-  min-height: 4.25rem;
   border-bottom: 1px solid
     color-mix(in srgb, var(--color-text-primary) 9%, transparent);
 }
@@ -4462,23 +4464,23 @@ a {
 .calendar-week__events {
   position: absolute;
   inset: 1.75rem 0 auto;
-  grid-auto-rows: 1.25rem;
-  row-gap: 3px;
+  grid-auto-rows: 1.75rem;
+  row-gap: 0.15rem;
   pointer-events: none;
 }
 
 .calendar-event {
   position: relative;
   min-width: 0;
-  margin-inline: 0.25rem;
-  padding: 0 0.5rem;
+  margin-inline: 0.2rem;
+  padding: 0 0.625rem;
   overflow: hidden;
   border: 1px solid transparent;
   border-radius: 0.375rem;
   font: inherit;
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  line-height: 1.125rem;
+  line-height: 1.6rem;
   text-align: left;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -4495,49 +4497,52 @@ a {
 }
 
 .calendar-event--confirmed {
-  border-color: color-mix(in srgb, var(--color-gear-red) 18%, transparent);
-  border-left: 3px solid var(--color-gear-red);
-  background: color-mix(
-    in srgb,
-    var(--color-gear-red) 11%,
-    var(--color-surface)
-  );
-  color: color-mix(
-    in srgb,
-    var(--color-gear-red) 82%,
-    var(--color-text-primary)
-  );
-  box-shadow: 0 1px 0 color-mix(in srgb, var(--color-gear-red) 10%, transparent);
+  border-color: var(--calendar-event-color);
+  border-left: 4px solid
+    color-mix(in srgb, var(--calendar-event-color) 72%, black);
+  background: var(--calendar-event-color);
+  color: white;
+  box-shadow: 0 0.2rem 0.5rem
+    color-mix(in srgb, var(--calendar-event-color) 22%, transparent);
 }
 
 .calendar-event--confirmed:hover {
-  background: color-mix(
-    in srgb,
-    var(--color-gear-red) 17%,
-    var(--color-surface)
-  );
+  filter: brightness(1.08);
 }
 
 .calendar-event--tentative {
-  border: 1px dashed
-    color-mix(in srgb, var(--color-text-primary) 48%, transparent);
-  border-left: 3px solid
-    color-mix(in srgb, var(--color-text-primary) 62%, transparent);
-  background: color-mix(
-    in srgb,
-    var(--color-text-primary) 4%,
-    var(--color-surface)
-  );
-  color: var(--color-text-primary);
-  line-height: 1.125rem;
+  border: 2px dashed color-mix(in srgb, white 78%, transparent);
+  background: var(--calendar-event-color);
+  color: white;
+  line-height: 1.45rem;
+  box-shadow:
+    0 0 0 1px var(--calendar-event-color),
+    0 0.2rem 0.5rem
+      color-mix(in srgb, var(--calendar-event-color) 18%, transparent);
 }
 
 .calendar-event--tentative:hover {
-  background: color-mix(
-    in srgb,
-    var(--color-text-primary) 8%,
-    var(--color-surface)
-  );
+  filter: brightness(1.08);
+}
+
+.calendar-event--tone-0 {
+  --calendar-event-color: #d92335;
+}
+
+.calendar-event--tone-1 {
+  --calendar-event-color: #8f304d;
+}
+
+.calendar-event--tone-2 {
+  --calendar-event-color: #355b7d;
+}
+
+.calendar-event--tone-3 {
+  --calendar-event-color: #287068;
+}
+
+.calendar-event--tone-4 {
+  --calendar-event-color: #925619;
 }
 
 .calendar-event--continues-before {
@@ -4580,25 +4585,14 @@ a {
 }
 
 .calendar-legend__confirmed {
-  border: 1px solid color-mix(in srgb, var(--color-gear-red) 20%, transparent);
-  border-left: 3px solid var(--color-gear-red);
-  background: color-mix(
-    in srgb,
-    var(--color-gear-red) 11%,
-    var(--color-surface)
-  );
+  border: 1px solid var(--color-gear-red);
+  background: var(--color-gear-red);
 }
 
 .calendar-legend__tentative {
-  border: 1px dashed
-    color-mix(in srgb, var(--color-text-primary) 48%, transparent);
-  border-left: 3px solid
-    color-mix(in srgb, var(--color-text-primary) 62%, transparent);
-  background: color-mix(
-    in srgb,
-    var(--color-text-primary) 4%,
-    var(--color-surface)
-  );
+  border: 2px dashed var(--color-surface);
+  background: var(--color-text-secondary);
+  box-shadow: 0 0 0 1px var(--color-text-secondary);
 }
 
 .calendar-mobile {

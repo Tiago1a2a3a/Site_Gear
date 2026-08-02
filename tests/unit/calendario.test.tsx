@@ -57,6 +57,25 @@ describe("Calendário público", () => {
     ).toBe(true);
   });
 
+  it("separa eventos simultâneos em faixas clicáveis diferentes", () => {
+    const secondEvent: CalendarEvent = {
+      ...confirmedEvent,
+      id: "second-event",
+      name: "Segundo evento",
+    };
+    const week = buildCalendarMonth(2026, 7, [
+      confirmedEvent,
+      secondEvent,
+    ]).find((calendarWeek) =>
+      calendarWeek.segments.some(
+        (segment) => segment.event.id === confirmedEvent.id,
+      ),
+    );
+
+    expect(week?.segments).toHaveLength(2);
+    expect(week?.segments.map((segment) => segment.lane)).toEqual([0, 1]);
+  });
+
   it("ordena próximos eventos e remove os que já terminaram", () => {
     const pastEvent: CalendarEvent = {
       ...confirmedEvent,

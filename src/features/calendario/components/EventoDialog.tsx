@@ -18,8 +18,7 @@ export function EventoDialog({ event, onClose }: EventoDialogProps) {
 
   return (
     <DialogCalendario labelledBy={titleId} onClose={onClose}>
-      <div className="calendar-dialog__topline">
-        <p className="calendar-dialog__eyebrow">Evento do GEAR</p>
+      <div className="calendar-dialog__topline calendar-dialog__topline--event">
         <button
           aria-label="Fechar detalhes do evento"
           className="calendar-dialog__close"
@@ -31,7 +30,10 @@ export function EventoDialog({ event, onClose }: EventoDialogProps) {
       </div>
       <div className="calendar-dialog__content">
         <div>
-          <p className="calendar-dialog__eyebrow">
+          <p
+            className="calendar-dialog__status"
+            data-status={event.confirmation}
+          >
             {event.confirmation === "confirmed"
               ? "Data confirmada"
               : "Data a definir"}

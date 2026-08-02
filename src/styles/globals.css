@@ -4611,6 +4611,11 @@ a {
   margin-bottom: var(--space-8);
 }
 
+.calendar-dialog__topline--event {
+  justify-content: flex-end;
+  margin-bottom: var(--space-2);
+}
+
 .calendar-dialog__close {
   display: grid;
   width: 2.75rem;
@@ -4651,6 +4656,28 @@ a {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.calendar-dialog__status {
+  display: inline-flex;
+  margin: 0 0 var(--space-3);
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  color: white;
+  font-family: var(--font-utility), Consolas, monospace;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.055em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.calendar-dialog__status[data-status="confirmed"] {
+  background: var(--color-gear-red);
+}
+
+.calendar-dialog__status[data-status="tentative"] {
+  background: var(--color-text-secondary);
 }
 
 .calendar-dialog__date {

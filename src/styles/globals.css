@@ -549,6 +549,15 @@ a {
   padding: clamp(var(--space-8), 7vw, 6rem);
 }
 
+.hero-carousel-swipe-area {
+  display: contents;
+}
+
+.hero-carousel-content,
+.hero-carousel-panel {
+  touch-action: pan-y;
+}
+
 .hero-carousel-content {
   opacity: 1;
   transform: translateY(0);

@@ -79,4 +79,49 @@ describe("Home", () => {
 
     expect(content?.getAttribute("data-transition-state")).toBe("idle");
   });
+
+  it("avanca e volta os destaques com swipe horizontal", () => {
+    vi.stubGlobal(
+      "matchMedia",
+      vi.fn(() => ({ matches: true })),
+    );
+    render(<Home />);
+
+    const hero = screen
+      .getByRole("heading", {
+        level: 1,
+        name: "Conhecimento que move ideias.",
+      })
+      .closest(".hero-carousel-swipe-area");
+
+    expect(hero).not.toBeNull();
+
+    fireEvent.touchStart(hero!, {
+      touches: [{ clientX: 250, clientY: 100 }],
+    });
+    fireEvent.touchEnd(hero!, {
+      changedTouches: [{ clientX: 150, clientY: 105 }],
+    });
+
+    expect(
+      screen.getByRole("heading", {
+        level: 1,
+        name: "Aprender para transformar.",
+      }),
+    ).toBeDefined();
+
+    fireEvent.touchStart(hero!, {
+      touches: [{ clientX: 150, clientY: 100 }],
+    });
+    fireEvent.touchEnd(hero!, {
+      changedTouches: [{ clientX: 250, clientY: 105 }],
+    });
+
+    expect(
+      screen.getByRole("heading", {
+        level: 1,
+        name: "Conhecimento que move ideias.",
+      }),
+    ).toBeDefined();
+  });
 });

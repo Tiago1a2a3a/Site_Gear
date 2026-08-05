@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState, type TouchEvent } from "react";
 
 import { Badge } from "@shared/components/ui/Badge";
 import { Button } from "@shared/components/ui/Button";
@@ -10,6 +10,7 @@ import { institutionalContent } from "@shared/config/institutional";
 const slideDurationMs = 5000;
 const fadeDurationMs = 220;
 const swapPaintDelayMs = 34;
+const swipeThresholdPx = 50;
 
 type TransitionState = "idle" | "exiting" | "entering";
 
@@ -51,6 +52,7 @@ export function HeroCarousel() {
   const [pendingIndex, setPendingIndex] = useState<number | null>(null);
   const [transitionState, setTransitionState] =
     useState<TransitionState>("idle");
+  const touchStart = useRef<{ x: number; y: number } | null>(null);
 
   useEffect(() => {
     if (isPaused || transitionState !== "idle") return;
@@ -102,10 +104,53 @@ export function HeroCarousel() {
     setTransitionState("exiting");
   }
 
+  function handleTouchStart(event: TouchEvent<HTMLDivElement>) {
+    const touch = event.touches[0];
+
+    if (!touch) return;
+
+    touchStart.current = { x: touch.clientX, y: touch.clientY };
+    setIsPaused(true);
+  }
+
+  function handleTouchEnd(event: TouchEvent<HTMLDivElement>) {
+    const start = touchStart.current;
+    const touch = event.changedTouches[0];
+
+    touchStart.current = null;
+    setIsPaused(false);
+
+    if (!start || !touch) return;
+
+    const deltaX = touch.clientX - start.x;
+    const deltaY = touch.clientY - start.y;
+
+    if (
+      Math.abs(deltaX) < swipeThresholdPx ||
+      Math.abs(deltaX) <= Math.abs(deltaY)
+    ) {
+      return;
+    }
+
+    event.preventDefault();
+    const direction = deltaX < 0 ? -1 : 1;
+    showSlide((activeIndex + direction + slides.length) % slides.length);
+  }
+
+  function handleTouchCancel() {
+    touchStart.current = null;
+    setIsPaused(false);
+  }
+
   const slide = slides[activeIndex];
 
   return (
-    <>
+    <div
+      className="hero-carousel-swipe-area"
+      onTouchCancel={handleTouchCancel}
+      onTouchEnd={handleTouchEnd}
+      onTouchStart={handleTouchStart}
+    >
       <div
         className="hero-content hero-carousel-content"
         data-transition-state={transitionState}
@@ -166,6 +211,6 @@ export function HeroCarousel() {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }

@@ -32,33 +32,50 @@ describe("índices da busca educacional", () => {
     );
     expect(documentos.curso.every((item) => item.tipo === "curso")).toBe(true);
     expect(documentos.aula.every((item) => item.tipo === "aula")).toBe(true);
-    expect(documentos.trilha.map((item) => item.slug)).not.toContain(
-      "trilha-interna",
-    );
-    expect(documentos.curso.map((item) => item.slug)).not.toContain(
-      "curso-interno",
-    );
-    expect(documentos.aula.map((item) => item.slug)).not.toContain(
-      "rascunho-interno",
-    );
+    expect(documentos.trilha.map((item) => item.slug)).toEqual(["em-producao"]);
+    expect(documentos.curso.map((item) => item.slug)).toEqual(["em-producao"]);
+    expect(documentos.aula.map((item) => item.slug)).toEqual(["em-producao"]);
   });
 
-  it("pesquisa título, resumo, conteúdo e tags com acentos", () => {
+  it("pesquisa o aviso por título, resumo e conteúdo com acentos", () => {
     const documentos = criarDocumentosDeBusca();
     const indiceAulas = criarIndice(documentos.aula);
 
-    expect(consultarIndice(indiceAulas, "eletronica").length).toBeGreaterThan(
-      0,
-    );
     expect(
-      consultarIndice(indiceAulas, "sensores processamento atuadores").map(
-        (item) => item.id,
-      ),
-    ).toContain("aula:introducao-robotica");
+      consultarIndice(indiceAulas, "producao").map((item) => item.id),
+    ).toContain("aula:em-producao");
+    expect(
+      consultarIndice(indiceAulas, "revisao publicacao").map((item) => item.id),
+    ).toContain("aula:em-producao");
   });
 
   it("combina busca e filtros por interseção", () => {
-    const cursos = criarDocumentosDeBusca().curso;
+    const cursos = [
+      {
+        categoria: "Software",
+        conteudo: "",
+        descricao: "Robótica com firmware",
+        dificuldade: "intermediário" as const,
+        href: "/aprendizado/cursos/programacao",
+        id: "curso:programacao",
+        slug: "programacao",
+        tags: ["firmware"],
+        tipo: "curso" as const,
+        titulo: "Programação para robótica",
+      },
+      {
+        categoria: "Mecânica",
+        conteudo: "",
+        descricao: "Robótica com fabricação",
+        dificuldade: "iniciante" as const,
+        href: "/aprendizado/cursos/fabricacao",
+        id: "curso:fabricacao",
+        slug: "fabricacao",
+        tags: ["cad"],
+        tipo: "curso" as const,
+        titulo: "Fabricação para robótica",
+      },
+    ];
     const ids = new Set(
       consultarIndice(criarIndice(cursos), "robotica").map((item) =>
         String(item.id),
@@ -69,9 +86,7 @@ describe("índices da busca educacional", () => {
       { dificuldade: ["intermediário"], tag: ["firmware"] },
     );
 
-    expect(encontrados.map((curso) => curso.slug)).toEqual([
-      "programacao-robotica",
-    ]);
+    expect(encontrados.map((curso) => curso.slug)).toEqual(["programacao"]);
     expect(
       criarFiltros("trilha", criarDocumentosDeBusca().trilha).map(
         (filtro) => filtro.nome,

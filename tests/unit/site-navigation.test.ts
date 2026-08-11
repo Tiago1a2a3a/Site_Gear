@@ -33,10 +33,15 @@ describe("configuração central do site", () => {
     });
   });
 
-  it("mantém o grupo de avisos apontando para a 404 temporária", () => {
-    expect(
-      siteConfig.socialLinks.find((item) => item.label.includes("WhatsApp"))
-        ?.href,
-    ).toBe("/404");
+  it("mantém o grupo de avisos apontando para a comunidade oficial", () => {
+    const whatsapp = siteConfig.socialLinks.find((item) =>
+      item.label.includes("WhatsApp"),
+    );
+
+    expect(whatsapp).toEqual({
+      href: "https://chat.whatsapp.com/HOL41xgwO2TJmchxJbON0h",
+      label: "Grupo de avisos no WhatsApp",
+      opensInNewTab: true,
+    });
   });
 });

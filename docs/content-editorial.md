@@ -4,7 +4,7 @@ O conteúdo do portal fica em `src/content` e é validado pelo Velite antes de c
 
 ## Fluxo de publicação
 
-1. Copie um exemplo da entidade desejada e mantenha a extensão `.mdx`.
+1. Crie um arquivo na pasta da entidade desejada e mantenha a extensão `.mdx`.
 2. Use um `slug` único por coleção, em minúsculas e separado por hífens.
 3. Preencha o frontmatter, escreva o corpo em MDX e mantenha `status: rascunho` durante a revisão.
 4. Execute `npm run content:validate` e `npm test`.
@@ -24,13 +24,19 @@ Pré-requisitos de Curso podem apontar para Cursos ou Aulas publicados. Trilhas 
 
 ## Campos e formatos
 
-Datas usam `YYYY-MM-DD`. URLs externas usam `https://`. Imagens e downloads locais começam com `/` e precisam existir em `public/`. Use os exemplos versionados como templates completos:
+Datas usam `YYYY-MM-DD`. URLs externas usam `https://`. Imagens e downloads locais começam com `/` e precisam existir em `public/`.
 
-- `src/content/aprendizado/trilhas/robotica-inicial.mdx`
-- `src/content/aprendizado/cursos/git-para-robotica.mdx`
-- `src/content/aprendizado/aulas/introducao-robotica.mdx`
-- `src/content/projetos/robo-exemplo.mdx`
-- `src/content/noticias/fundacao-mdx.mdx`
+Enquanto uma coleção não tem conteúdo real publicado, ela mantém um aviso `em-producao.mdx`. O slug `em-producao` é reservado para esse aviso. Assim que qualquer outro MDX publicado entra na mesma coleção, o aviso é removido automaticamente da saída pública pelo `prepareContent`; não é necessário apagá-lo nem alterar as páginas.
+
+Use os avisos versionados como referência dos campos de cada entidade:
+
+- `src/content/aprendizado/trilhas/em-producao.mdx`
+- `src/content/aprendizado/cursos/em-producao.mdx`
+- `src/content/aprendizado/aulas/em-producao.mdx`
+- `src/content/projetos/em-producao.mdx`
+- `src/content/noticias/em-producao.mdx`
+
+O aviso de Curso pode ter `aulaSlugs: []` e o aviso de Trilha pode ter `itens: []`. Essa exceção vale somente para o slug reservado; qualquer Curso publicado real continua exigindo uma Aula publicada e qualquer Trilha real continua exigindo ao menos um item.
 
 O corpo MDX aceita texto, títulos, listas, links, imagens, blocos de código e os recursos de vídeo/download declarados no frontmatter. Não importe componentes React arbitrários no conteúdo sem uma decisão arquitetural específica.
 

@@ -64,12 +64,12 @@ describe("Notícias", () => {
     render(<NoticiasBusca {...busca} />);
 
     fireEvent.change(screen.getByLabelText("Buscar somente em Notícias"), {
-      target: { value: "Portal" },
+      target: { value: "produção" },
     });
     expect(screen.getByText("1 notícia")).toBeDefined();
     expect(
       screen.getByRole("heading", {
-        name: "Portal adota conteúdo estruturado em MDX",
+        name: "Notícias em produção",
       }),
     ).toBeDefined();
   });

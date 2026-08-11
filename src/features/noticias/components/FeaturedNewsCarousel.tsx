@@ -45,8 +45,7 @@ export function FeaturedNewsCarousel({
         <p className="section-index">NOTÍCIAS EM DESTAQUE</p>
         <h2 id="featured-news-title">Acompanhe as novidades.</h2>
         <p>
-          Veja as publicações mais recentes sobre atividades, projetos e
-          encontros do GEAR.
+          Veja os comunicados e as atualizações oficiais publicados pelo GEAR.
         </p>
       </div>
 

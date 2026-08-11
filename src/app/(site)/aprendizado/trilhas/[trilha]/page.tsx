@@ -8,6 +8,7 @@ import {
   resolverItensDaTrilha,
 } from "@features/trilhas/data/trilhas";
 import { EnrollmentButton } from "@features/meu-aprendizado/components/EnrollmentButton";
+import { isContentPlaceholder } from "@shared/config/content";
 
 type TrilhaPageProps = Readonly<{
   params: Promise<{ trilha: string }>;
@@ -48,10 +49,12 @@ export default async function TrilhaPage({ params }: TrilhaPageProps) {
     <TrilhaDetalhe
       itens={resolverItensDaTrilha(trilha)}
       personalAction={
-        <EnrollmentButton
-          contentIdentifier={trilha.slug}
-          contentType="trilha"
-        />
+        !isContentPlaceholder(trilha) ? (
+          <EnrollmentButton
+            contentIdentifier={trilha.slug}
+            contentType="trilha"
+          />
+        ) : null
       }
       trilha={trilha}
     />

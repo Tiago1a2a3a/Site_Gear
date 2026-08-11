@@ -46,32 +46,22 @@ test("Notícias lista, pesquisa e abre MDX sem misturar Aprendizado", async ({
   ).toBeVisible();
 
   const busca = page.getByLabel("Buscar somente em Notícias");
-  await busca.fill("Portal");
-  await expect(page.getByText("1 notícia")).toBeVisible();
-  await expect(
-    page.getByRole("heading", {
-      name: "Portal adota conteúdo estruturado em MDX",
-    }),
-  ).toBeVisible();
-
   await busca.fill("Introdução à robótica");
   await expect(page.getByText("Nenhuma notícia encontrada")).toBeVisible();
 
-  await busca.fill("Portal");
   await page
     .getByRole("link", {
-      name: "Portal adota conteúdo estruturado em MDX",
-      exact: true,
+      name: "Ler notícia: Notícias em produção",
     })
     .click();
-  await expect(page).toHaveURL(/\/noticias\/fundacao-mdx$/);
+  await expect(page).toHaveURL(/\/noticias\/em-producao$/);
   await expect(
     page.getByRole("heading", {
       level: 1,
-      name: "Portal adota conteúdo estruturado em MDX",
+      name: "Notícias em produção",
     }),
   ).toBeVisible();
-  await expect(page.getByText(/cinco entidades editoriais/)).toBeVisible();
+  await expect(page.getByText(/apuradas e revisadas/)).toBeVisible();
 });
 
 test("Notícia inexistente responde 404 e páginas não têm overflow móvel", async ({
@@ -85,7 +75,7 @@ test("Notícia inexistente responde 404 e páginas não têm overflow móvel", a
     "/sobre",
     "/patrocinadores",
     "/noticias",
-    "/noticias/fundacao-mdx",
+    "/noticias/em-producao",
   ]) {
     await page.goto(rota);
     const overflow = await page.evaluate(

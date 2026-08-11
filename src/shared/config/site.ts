@@ -41,9 +41,9 @@ export const siteConfig = {
       opensInNewTab: true,
     },
     {
-      href: "/404",
+      href: "https://chat.whatsapp.com/HOL41xgwO2TJmchxJbON0h",
       label: "Grupo de avisos no WhatsApp",
-      opensInNewTab: false,
+      opensInNewTab: true,
     },
   ],
 } as const satisfies Readonly<{

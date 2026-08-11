@@ -1,49 +1,32 @@
 import { expect, test } from "@playwright/test";
 
-test("visitante lista, abre e consome uma Aula completa", async ({ page }) => {
+test("visitante lista e abre o aviso de Aulas em produção", async ({
+  page,
+}) => {
   await page.goto("/aprendizado/aulas");
 
   await expect(
     page.getByRole("heading", { level: 1, name: "Aulas" }),
   ).toBeVisible();
-  await expect(page.getByText("Aula em preparação")).toHaveCount(0);
   await page
-    .getByRole("link", { name: "Abrir aula: Introdução à robótica" })
+    .getByRole("link", { name: "Abrir aula: Aulas em produção" })
     .click();
 
   await expect(
-    page.getByRole("heading", { level: 1, name: "Introdução à robótica" }),
+    page.getByRole("heading", { level: 1, name: "Aulas em produção" }),
   ).toBeVisible();
   await expect(
-    page.getByRole("heading", { name: "Primeiro experimento" }),
+    page.getByRole("heading", { level: 2, name: "Em produção" }),
   ).toBeVisible();
-  await expect(
-    page.getByRole("heading", { name: "Recursos da aula" }),
-  ).toBeVisible();
-  await expect(
-    page.getByRole("link", { name: "Baixar Guia de exemplo" }),
-  ).toHaveAttribute("download", "");
-  await expect(page.locator("iframe[loading='lazy']")).toHaveCount(1);
-  await expect(page.locator("text=Giscus")).toHaveCount(0);
   await expect(
     page.getByRole("button", { name: "Marcar como concluída" }),
-  ).toBeVisible();
+  ).toHaveCount(0);
 });
 
-test("pré-requisito usa a URL canônica da Aula", async ({ page }) => {
-  await page.goto("/aprendizado/aulas/git-branches");
-
-  const prerequisite = page.getByRole("link", {
-    name: "Criando um repositório Git",
-  });
-  await expect(prerequisite).toHaveAttribute(
-    "href",
-    "/aprendizado/aulas/git-repositorio",
-  );
-});
-
-test("slug inexistente e rascunho respondem com 404", async ({ request }) => {
-  for (const slug of ["nao-existe", "rascunho-interno"]) {
+test("slugs inexistentes e demonstrativos removidos respondem com 404", async ({
+  request,
+}) => {
+  for (const slug of ["nao-existe", "conteudo-demonstrativo-removido"]) {
     const response = await request.get(`/aprendizado/aulas/${slug}`);
     expect(response.status()).toBe(404);
   }
@@ -51,7 +34,7 @@ test("slug inexistente e rascunho respondem com 404", async ({ request }) => {
 
 test("Aula permanece legível e sem overflow no móvel", async ({ page }) => {
   await page.setViewportSize({ width: 360, height: 780 });
-  await page.goto("/aprendizado/aulas/introducao-robotica");
+  await page.goto("/aprendizado/aulas/em-producao");
 
   const hasHorizontalOverflow = await page.evaluate(
     () =>
@@ -70,7 +53,7 @@ test("Aula permanece legível e sem overflow no móvel", async ({ page }) => {
     );
   expect(headings[0]).toEqual({
     level: "H1",
-    text: "Introdução à robótica",
+    text: "Aulas em produção",
   });
   expect(headings.slice(1).every((heading) => heading.level === "H2")).toBe(
     true,

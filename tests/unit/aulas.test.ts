@@ -30,15 +30,14 @@ describe("acesso a Aulas", () => {
   it("lista apenas a saída publicada do Velite em ordem alfabética", () => {
     const aulas = listarAulasPublicadas();
 
-    expect(aulas.map((aula) => aula.slug)).not.toContain("rascunho-interno");
+    expect(aulas.map((aula) => aula.slug)).toEqual(["em-producao"]);
     expect(aulas).toEqual(ordenarAulas(aulas));
   });
 
   it("encontra uma Aula publicada por slug e ignora slug inexistente", () => {
-    expect(encontrarAulaPorSlug("introducao-robotica")?.titulo).toContain(
-      "robótica",
+    expect(encontrarAulaPorSlug("em-producao")?.titulo).toBe(
+      "Aulas em produção",
     );
-    expect(encontrarAulaPorSlug("rascunho-interno")).toBeUndefined();
     expect(encontrarAulaPorSlug("nao-existe")).toBeUndefined();
   });
 
@@ -53,21 +52,14 @@ describe("acesso a Aulas", () => {
     expect(paginarAulas(aulas, Number.NaN).paginaAtual).toBe(1);
   });
 
-  it("preserva somente contextos reais de Curso e Trilha", () => {
+  it("não inventa contexto entre os avisos de produção", () => {
     const contexto = resolverContextoAula(
-      "fundamentos-eletronica",
-      "fundamentos-arduino",
-      "robotica-do-zero",
+      "em-producao",
+      "em-producao",
+      "em-producao",
     );
 
-    expect(contexto.curso?.slug).toBe("fundamentos-arduino");
-    expect(contexto.trilha?.slug).toBe("robotica-do-zero");
-    expect(
-      resolverContextoAula(
-        "fundamentos-eletronica",
-        "fabricacao-digital",
-        "robotica-do-zero",
-      ).curso,
-    ).toBeUndefined();
+    expect(contexto.curso).toBeUndefined();
+    expect(contexto.trilha).toBeUndefined();
   });
 });

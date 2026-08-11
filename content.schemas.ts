@@ -39,7 +39,7 @@ export const trailFrontmatterSchema = s.object({
   area: nonEmptyText(),
   ordem: s.number().int().nonnegative(),
   dataPublicacao: isoDate().optional(),
-  itens: s.array(trailItem).min(1),
+  itens: s.array(trailItem),
   status: publicationStatus,
 });
 export const trailSchema = trailFrontmatterSchema.extend({

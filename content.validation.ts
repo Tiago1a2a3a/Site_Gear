@@ -2,8 +2,17 @@ import { existsSync, statSync } from "node:fs";
 import path from "node:path";
 
 import type { ContentCollections } from "./content.schemas";
+import { isContentPlaceholder } from "./src/shared/config/content";
 
 type ValidationOptions = Readonly<{ publicDirectory: string }>;
+
+function hidePlaceholderWhenContentExists<T extends { slug: string }>(
+  entries: readonly T[],
+) {
+  return entries.some((entry) => !isContentPlaceholder(entry))
+    ? entries.filter((entry) => !isContentPlaceholder(entry))
+    : [...entries];
+}
 
 function assertUniqueSlugs(
   entityName: string,
@@ -193,7 +202,11 @@ export function validateContent(
   }
 
   for (const course of data.courses) {
-    if (course.status === "publicado" && course.aulaSlugs.length === 0) {
+    if (
+      course.status === "publicado" &&
+      course.aulaSlugs.length === 0 &&
+      !isContentPlaceholder(course)
+    ) {
       throw new Error(
         `${course.sourcePath}: Curso publicado deve conter ao menos uma Aula em aulaSlugs.`,
       );
@@ -224,6 +237,11 @@ export function validateContent(
   }
 
   for (const trail of data.trails) {
+    if (trail.itens.length === 0 && !isContentPlaceholder(trail)) {
+      throw new Error(
+        `${trail.sourcePath}: Trilha deve conter ao menos um Curso ou uma Aula em itens.`,
+      );
+    }
     for (const item of trail.itens) {
       const allowedCourses =
         trail.status === "publicado" ? publishedCourses : allCourses;
@@ -248,24 +266,24 @@ export function prepareContent(data: ContentCollections): ContentCollections {
     first.titulo.localeCompare(second.titulo, "pt-BR");
 
   return {
-    trails: data.trails
-      .filter((entry) => entry.status === "publicado")
-      .sort(
-        (first, second) => first.ordem - second.ordem || byTitle(first, second),
-      ),
-    courses: data.courses
-      .filter((entry) => entry.status === "publicado")
-      .sort(byTitle),
-    lessons: data.lessons
-      .filter((entry) => entry.status === "publicado")
-      .sort(byTitle),
-    projects: [...data.projects].sort(byTitle),
-    news: data.news
-      .filter((entry) => entry.status === "publicado")
-      .sort(
-        (first, second) =>
-          second.dataPublicacao.localeCompare(first.dataPublicacao) ||
-          byTitle(first, second),
-      ),
+    trails: hidePlaceholderWhenContentExists(
+      data.trails.filter((entry) => entry.status === "publicado"),
+    ).sort(
+      (first, second) => first.ordem - second.ordem || byTitle(first, second),
+    ),
+    courses: hidePlaceholderWhenContentExists(
+      data.courses.filter((entry) => entry.status === "publicado"),
+    ).sort(byTitle),
+    lessons: hidePlaceholderWhenContentExists(
+      data.lessons.filter((entry) => entry.status === "publicado"),
+    ).sort(byTitle),
+    projects: hidePlaceholderWhenContentExists(data.projects).sort(byTitle),
+    news: hidePlaceholderWhenContentExists(
+      data.news.filter((entry) => entry.status === "publicado"),
+    ).sort(
+      (first, second) =>
+        second.dataPublicacao.localeCompare(first.dataPublicacao) ||
+        byTitle(first, second),
+    ),
   };
 }

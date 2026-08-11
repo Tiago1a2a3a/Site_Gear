@@ -4,10 +4,10 @@ for (const caso of [
   {
     titulo: "Trilhas",
     tipo: "trilha",
-    rota: "/aprendizado/trilhas?q=robotica",
+    rota: "/aprendizado/trilhas?q=producao",
   },
-  { titulo: "Cursos", tipo: "curso", rota: "/aprendizado/cursos?q=robotica" },
-  { titulo: "Aulas", tipo: "aula", rota: "/aprendizado/aulas?q=robotica" },
+  { titulo: "Cursos", tipo: "curso", rota: "/aprendizado/cursos?q=producao" },
+  { titulo: "Aulas", tipo: "aula", rota: "/aprendizado/aulas?q=producao" },
 ]) {
   test(`busca de ${caso.tipo} não mistura classificações`, async ({ page }) => {
     await page.goto(caso.rota);
@@ -27,39 +27,41 @@ for (const caso of [
 }
 
 test("termo e filtro ficam na URL e usam interseção", async ({ page }) => {
-  await page.goto("/aprendizado/cursos?q=robotica");
+  await page.goto("/aprendizado/cursos?q=producao");
   await page
-    .locator("details", { hasText: "Dificuldade" })
+    .locator("details", { hasText: "Categoria" })
     .locator("summary")
     .click();
-  await page.getByLabel("intermediário").check();
-  await expect(page).toHaveURL(/q=robotica.*dificuldade=intermedi%C3%A1rio/);
-  await expect(page.getByText("2 resultados", { exact: true })).toBeVisible();
-  await page.locator("details", { hasText: "Tags" }).locator("summary").click();
-  await page.getByLabel("firmware").check();
-  await expect(page).toHaveURL(/tag=firmware/);
+  const productionFilter = page.getByRole("checkbox", {
+    name: /^Em produção/,
+  });
+  await productionFilter.check();
+  await expect(page).toHaveURL(/q=producao.*categoria=Em\+produ%C3%A7%C3%A3o/);
   await expect(page.getByText("1 resultado", { exact: true })).toBeVisible();
   await expect(
-    page.getByRole("heading", { name: "Programação para robótica" }),
+    page.getByRole("heading", { name: "Cursos em produção" }),
   ).toBeVisible();
   await page.goBack();
-  await expect(page.getByLabel("firmware")).not.toBeChecked();
-  await expect(page.getByText("2 resultados", { exact: true })).toBeVisible();
+  await expect(productionFilter).not.toBeChecked();
+  await expect(page.getByText("1 resultado", { exact: true })).toBeVisible();
 });
 
 test("limpar filtros preserva o termo da busca", async ({ page }) => {
-  await page.goto("/aprendizado/cursos?q=robotica");
+  await page.goto("/aprendizado/cursos?q=producao");
   await page
-    .locator("details", { hasText: "Dificuldade" })
+    .locator("details", { hasText: "Categoria" })
     .locator("summary")
     .click();
-  await page.getByLabel("intermediário").check();
+  const productionFilter = page.getByRole("checkbox", {
+    name: /^Em produção/,
+  });
+  await productionFilter.check();
 
   await page.getByRole("button", { name: "Limpar filtros" }).click();
 
-  await expect(page).toHaveURL(/q=robotica/);
-  await expect(page).not.toHaveURL(/dificuldade/);
-  await expect(page.getByLabel("intermediário")).not.toBeChecked();
+  await expect(page).toHaveURL(/q=producao/);
+  await expect(page).not.toHaveURL(/categoria/);
+  await expect(productionFilter).not.toBeChecked();
 });
 
 test("categoria permite buscar e ordenar opções", async ({ page }) => {
@@ -81,26 +83,21 @@ test("área permite buscar e ordenar opções", async ({ page }) => {
   await expect(page.getByLabel("Ordenar Área")).toBeVisible();
 });
 
-test("resultados são limitados a 12 itens por página", async ({ page }) => {
+test("o aviso ocupa sozinho a listagem enquanto não há Aulas reais", async ({
+  page,
+}) => {
   await page.goto("/aprendizado/aulas");
 
-  await expect(page.locator(".search-result-card")).toHaveCount(12);
+  await expect(page.locator(".search-result-card")).toHaveCount(1);
   await expect(page.locator(".search-result-card > p")).toHaveCount(0);
-  await expect(page.getByText("Página 1 de 2", { exact: true })).toBeVisible();
-
-  await page.getByRole("button", { name: "Próxima" }).click();
-  await expect(page).toHaveURL(/pagina=2/);
-  const itensNaUltimaPagina = await page.locator(".search-result-card").count();
-  expect(itensNaUltimaPagina).toBeGreaterThan(0);
-  expect(itensNaUltimaPagina).toBeLessThanOrEqual(12);
-  await expect(page.getByText("Página 2 de 2", { exact: true })).toBeVisible();
+  await expect(page.getByRole("button", { name: "Próxima" })).toHaveCount(0);
 });
 
 test("drawer móvel gerencia foco, fecha por teclado e não causa overflow", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 360, height: 780 });
-  await page.goto("/aprendizado/aulas/busca?q=robotica");
+  await page.goto("/aprendizado/aulas/busca?q=producao");
 
   const trigger = page.getByRole("button", { name: "Filtros", exact: true });
   await trigger.click();

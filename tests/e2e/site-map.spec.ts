@@ -5,18 +5,18 @@ const plannedRoutes = [
   ["/aprendizado", "Aprendizado"],
   ["/aprendizado/trilhas", "Trilhas"],
   ["/aprendizado/trilhas/busca", "Trilhas"],
-  ["/aprendizado/trilhas/robotica-inicial", "Primeiros passos em robótica"],
+  ["/aprendizado/trilhas/em-producao", "Trilhas em produção"],
   ["/aprendizado/cursos", "Cursos"],
   ["/aprendizado/cursos/busca", "Cursos"],
-  ["/aprendizado/cursos/git-para-robotica", "Git para projetos de robótica"],
+  ["/aprendizado/cursos/em-producao", "Cursos em produção"],
   ["/aprendizado/aulas", "Aulas"],
   ["/aprendizado/aulas/busca", "Aulas"],
-  ["/aprendizado/aulas/introducao-robotica", "Introdução à robótica"],
+  ["/aprendizado/aulas/em-producao", "Aulas em produção"],
   ["/projetos", "Projetos"],
   ["/calendario", "Calendário"],
-  ["/projetos/robo-exemplo", "Robô móvel de demonstração"],
+  ["/projetos/em-producao", "Projetos em produção"],
   ["/noticias", "Notícias"],
-  ["/noticias/fundacao-mdx", "Portal adota conteúdo estruturado em MDX"],
+  ["/noticias/em-producao", "Notícias em produção"],
   ["/sobre", "Sobre o GEAR"],
   ["/patrocinadores", "Patrocinadores e parceiros"],
   ["/privacidade", "Privacidade"],
@@ -108,15 +108,18 @@ test("URL inexistente mostra a página 404 e um retorno funcional", async ({
   await expect(page).toHaveURL(/\/$/);
 });
 
-test("grupo de avisos usa a 404 enquanto o link oficial não existe", async ({
-  page,
-}) => {
+test("grupo de avisos usa o link oficial da comunidade", async ({ page }) => {
   await page.goto("/");
-  await page.getByRole("link", { name: "Grupo de avisos no WhatsApp" }).click();
+  const whatsapp = page.getByRole("link", {
+    name: /Grupo de avisos no WhatsApp/,
+  });
 
-  await expect(
-    page.getByRole("heading", { level: 1, name: "Página não encontrada" }),
-  ).toBeVisible();
+  await expect(whatsapp).toHaveAttribute(
+    "href",
+    "https://chat.whatsapp.com/HOL41xgwO2TJmchxJbON0h",
+  );
+  await expect(whatsapp).toHaveAttribute("target", "_blank");
+  await expect(whatsapp).toHaveAttribute("rel", "noreferrer");
 });
 
 test("rotas pessoais existem e preservam o acesso publico", async ({

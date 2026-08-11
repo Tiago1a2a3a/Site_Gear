@@ -15,6 +15,7 @@ import {
 } from "@features/aulas/data/aulas";
 import { LessonCompletionButton } from "@features/meu-aprendizado/components/LessonCompletionButton";
 import { getRelatedEnrollmentsForLesson } from "@features/meu-aprendizado/data/catalogo";
+import { isContentPlaceholder } from "@shared/config/content";
 
 type AulaPageProps = Readonly<{
   params: Promise<{ aula: string }>;
@@ -83,10 +84,12 @@ export default async function AulaPage({ params }: AulaPageProps) {
         </aside>
       </div>
       <AulaRecursos aula={aula} />
-      <LessonCompletionButton
-        lessonIdentifier={aula.slug}
-        relatedEnrollments={getRelatedEnrollmentsForLesson(aula.slug)}
-      />
+      {!isContentPlaceholder(aula) ? (
+        <LessonCompletionButton
+          lessonIdentifier={aula.slug}
+          relatedEnrollments={getRelatedEnrollmentsForLesson(aula.slug)}
+        />
+      ) : null}
     </article>
   );
 }

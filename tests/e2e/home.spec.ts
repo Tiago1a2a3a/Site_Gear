@@ -14,9 +14,7 @@ test("abre a página inicial com os landmarks públicos", async ({ page }) => {
   await expect(page.getByRole("contentinfo")).toBeVisible();
 });
 
-test("expõe os CTAs principais, aprendizado e Projeto em destaque", async ({
-  page,
-}) => {
+test("expõe os CTAs principais e os avisos editoriais", async ({ page }) => {
   await page.goto("/");
 
   await expect(
@@ -25,13 +23,18 @@ test("expõe os CTAs principais, aprendizado e Projeto em destaque", async ({
   await expect(
     page.getByRole("link", { name: "Conhecer projetos" }),
   ).toHaveAttribute("href", "/projetos");
-  await expect(page.getByText("Trilhas em preparação")).toBeVisible();
   await expect(
     page.getByRole("link", {
-      name: "Robô móvel de demonstração",
+      name: "Cursos em produção",
       exact: true,
     }),
-  ).toHaveAttribute("href", "/projetos/robo-exemplo");
+  ).toHaveAttribute("href", "/aprendizado/cursos/em-producao");
+  await expect(
+    page.getByRole("link", {
+      name: "Notícias em produção",
+      exact: true,
+    }),
+  ).toHaveAttribute("href", "/noticias/em-producao");
 });
 
 for (const viewport of [

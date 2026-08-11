@@ -104,6 +104,34 @@ describe("validação cruzada do conteúdo", () => {
     ).toThrow("Curso publicado deve conter ao menos uma Aula");
   });
 
+  it("aceita relações vazias somente nos avisos de produção", () => {
+    expect(() =>
+      validateContent(
+        data({
+          courses: [
+            course({
+              aulaSlugs: [],
+              slug: "em-producao",
+              sourcePath: "aprendizado/cursos/em-producao",
+            }),
+          ],
+          trails: [
+            trail({
+              itens: [],
+              slug: "em-producao",
+              sourcePath: "aprendizado/trilhas/em-producao",
+            }),
+          ],
+        }),
+        options,
+      ),
+    ).not.toThrow();
+
+    expect(() =>
+      validateContent(data({ trails: [trail({ itens: [] })] }), options),
+    ).toThrow("Trilha deve conter ao menos um Curso ou uma Aula");
+  });
+
   it("detecta ciclos de pré-requisitos entre aulas", () => {
     expect(() =>
       validateContent(
@@ -179,5 +207,37 @@ describe("validação cruzada do conteúdo", () => {
       "segunda",
     ]);
     expect(prepared.trails[1].itens).toBe(originalItems);
+  });
+
+  it("mantém o aviso sozinho e o oculta quando há conteúdo real publicado", () => {
+    const placeholder = lesson("em-producao", {
+      titulo: "Aulas em produção",
+    });
+
+    expect(
+      prepareContent(
+        data({ courses: [], lessons: [placeholder], trails: [] }),
+      ).lessons.map((entry) => entry.slug),
+    ).toEqual(["em-producao"]);
+
+    expect(
+      prepareContent(
+        data({
+          courses: [],
+          lessons: [placeholder, lesson("aula-real", { titulo: "Aula real" })],
+          trails: [],
+        }),
+      ).lessons.map((entry) => entry.slug),
+    ).toEqual(["aula-real"]);
+
+    expect(
+      prepareContent(
+        data({
+          courses: [],
+          lessons: [placeholder, lesson("rascunho", { status: "rascunho" })],
+          trails: [],
+        }),
+      ).lessons.map((entry) => entry.slug),
+    ).toEqual(["em-producao"]);
   });
 });

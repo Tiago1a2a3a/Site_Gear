@@ -23,6 +23,14 @@ export default function NoticiasPage() {
     <div className="news-page">
       <Breadcrumbs items={[{ label: "Notícias" }]} />
 
+      <header className="page-heading">
+        <h1>Notícias</h1>
+        <p>
+          Acompanhe comunicados e atualizações oficiais depois da revisão
+          editorial.
+        </p>
+      </header>
+
       <FeaturedNewsCarousel news={noticiasRecentes} />
 
       <section aria-labelledby="news-history-title" className="news-history">

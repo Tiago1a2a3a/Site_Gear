@@ -1,17 +1,26 @@
 import { courses, lessons, trails } from "../../../../.velite";
+import { isContentPlaceholder } from "@shared/config/content";
 
 import type { LearningCatalog, RelatedEnrollment } from "../types";
 
 export function getLearningCatalog(): LearningCatalog {
   return {
     courses: courses
-      .filter((course) => course.status === "publicado")
+      .filter(
+        (course) =>
+          course.status === "publicado" && !isContentPlaceholder(course),
+      )
       .map(({ aulaSlugs, slug, titulo }) => ({ aulaSlugs, slug, titulo })),
     lessons: lessons
-      .filter((lesson) => lesson.status === "publicado")
+      .filter(
+        (lesson) =>
+          lesson.status === "publicado" && !isContentPlaceholder(lesson),
+      )
       .map(({ slug, titulo }) => ({ slug, titulo })),
     trails: trails
-      .filter((trail) => trail.status === "publicado")
+      .filter(
+        (trail) => trail.status === "publicado" && !isContentPlaceholder(trail),
+      )
       .map(({ itens, slug, titulo }) => ({ itens, slug, titulo })),
   };
 }

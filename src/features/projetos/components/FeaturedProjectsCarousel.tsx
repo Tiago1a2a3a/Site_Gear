@@ -49,8 +49,8 @@ export function FeaturedProjectsCarousel({
         <p className="section-index">PARA EXPLORAR</p>
         <h2 id="featured-projects-title">Ideias para conhecer.</h2>
         <p>
-          Conheça protótipos desenvolvidos pelo GEAR e acompanhe como pesquisa,
-          programação e engenharia se transformam em soluções reais.
+          Acompanhe os projetos do GEAR à medida que suas informações forem
+          documentadas e publicadas.
         </p>
       </div>
 
@@ -76,7 +76,10 @@ export function FeaturedProjectsCarousel({
       </Link>
 
       {projects.length > 1 ? (
-        <div aria-label="Projetos para explorar" className="featured-project-dots">
+        <div
+          aria-label="Projetos para explorar"
+          className="featured-project-dots"
+        >
           {projects.map((item, index) => (
             <button
               aria-label={`Mostrar projeto ${index + 1}: ${item.titulo}`}

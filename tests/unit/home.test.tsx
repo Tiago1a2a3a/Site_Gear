@@ -1,4 +1,10 @@
-import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
+import {
+  act,
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+} from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 import Home from "@app/(site)/page";
@@ -27,7 +33,7 @@ describe("Home", () => {
     ).toHaveProperty("pathname", "/projetos");
   });
 
-  it("usa conteúdo institucional e estados vazios intencionais", () => {
+  it("usa conteúdo institucional e avisos editoriais intencionais", () => {
     render(<Home />);
 
     expect(
@@ -43,10 +49,12 @@ describe("Home", () => {
       }),
     ).toBeDefined();
     expect(screen.getByText("Equipe em atualização")).toBeDefined();
-    expect(screen.getByRole("button", { name: "Próximo curso" })).toBeDefined();
     expect(
-      screen.getByRole("link", { name: /^Abrir curso:/ }),
-    ).toHaveProperty("pathname", expect.stringMatching(/^\/aprendizado\/cursos\//));
+      screen.getByRole("link", { name: "Abrir curso: Cursos em produção" }),
+    ).toHaveProperty("pathname", "/aprendizado/cursos/em-producao");
+    expect(
+      screen.getByRole("link", { name: "Abrir notícia: Notícias em produção" }),
+    ).toHaveProperty("pathname", "/noticias/em-producao");
   });
 
   it("faz fade-out antes de trocar o destaque e fade-in depois", () => {
@@ -63,9 +71,7 @@ describe("Home", () => {
     });
     const content = heading.closest(".hero-carousel-content");
 
-    fireEvent.click(
-      screen.getByRole("button", { name: "Mostrar destaque 2" }),
-    );
+    fireEvent.click(screen.getByRole("button", { name: "Mostrar destaque 2" }));
 
     expect(content?.getAttribute("data-transition-state")).toBe("exiting");
     expect(heading.textContent).toBe("Conhecimento que move ideias.");

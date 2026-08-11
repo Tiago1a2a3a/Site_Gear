@@ -21,15 +21,15 @@ describe("Projetos", () => {
     expect(projetos).toEqual(ordenarProjetos(projetos));
     expect(listarProjetosEmDestaque(1)).toHaveLength(1);
     expect(listarProjetosEmDestaque(1)[0]?.destaque).toBe(true);
-    expect(encontrarProjetoPorSlug("robo-exemplo")?.titulo).toBe(
-      "Robô móvel de demonstração",
+    expect(encontrarProjetoPorSlug("em-producao")?.titulo).toBe(
+      "Projetos em produção",
     );
   });
 
   it("sorteia uma seleção limitada de projetos", () => {
     const projetos = listarProjetosAleatorios(2);
 
-    expect(projetos).toHaveLength(2);
+    expect(projetos).toHaveLength(1);
     expect(
       projetos.every((projeto) =>
         listarProjetos().some((item) => item.slug === projeto.slug),
@@ -63,7 +63,7 @@ describe("Projetos", () => {
       <ProjetoGaleria
         imagens={[
           "/images/content/placeholder.svg",
-          "/images/content/demo/emoji-coracao.jpg",
+          "/images/content/em-producao.png",
         ]}
         titulo="Projeto teste"
       />,

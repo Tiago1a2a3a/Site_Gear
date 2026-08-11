@@ -16,6 +16,14 @@ export default function ProjetosPage() {
 
   return (
     <div className="projects-page">
+      <header className="page-heading">
+        <h1>Projetos</h1>
+        <p>
+          Acompanhe os projetos oficiais do GEAR conforme suas informações forem
+          revisadas e publicadas.
+        </p>
+      </header>
+
       <FeaturedProjectsCarousel projects={projetosAleatorios} />
 
       <RevealOnScroll>
@@ -29,7 +37,7 @@ export default function ProjetosPage() {
               <h2 id="all-projects-title">Conheça todos os projetos.</h2>
             </div>
             <p>
-              Explore outras ideias, pesquisas e protótipos desenvolvidos pelo
+              Esta área reúne as iniciativas documentadas e publicadas pelo
               grupo.
             </p>
           </header>
@@ -39,9 +47,7 @@ export default function ProjetosPage() {
               {projetos.map((projeto) => (
                 <li key={projeto.slug}>
                   <div className="other-projects-content">
-                    <p className="status-label">
-                      Projeto · {projeto.status}
-                    </p>
+                    <p className="status-label">Projeto · {projeto.status}</p>
                     <h3>
                       <Link href={`/projetos/${projeto.slug}`}>
                         {projeto.titulo}

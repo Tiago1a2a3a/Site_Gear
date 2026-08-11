@@ -10,6 +10,7 @@ import {
   resolverPreRequisitosDoCurso,
 } from "@features/cursos/data/cursos";
 import { EnrollmentButton } from "@features/meu-aprendizado/components/EnrollmentButton";
+import { isContentPlaceholder } from "@shared/config/content";
 
 type CursoPageProps = Readonly<{
   params: Promise<{ curso: string }>;
@@ -52,7 +53,12 @@ export default async function CursoPage({ params }: CursoPageProps) {
       contextos={listarContextosDoCurso(curso.slug)}
       curso={curso}
       personalAction={
-        <EnrollmentButton contentIdentifier={curso.slug} contentType="curso" />
+        !isContentPlaceholder(curso) ? (
+          <EnrollmentButton
+            contentIdentifier={curso.slug}
+            contentType="curso"
+          />
+        ) : null
       }
       preRequisitos={resolverPreRequisitosDoCurso(curso)}
     />

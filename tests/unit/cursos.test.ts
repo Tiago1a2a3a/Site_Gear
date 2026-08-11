@@ -15,38 +15,33 @@ describe("acesso a Cursos", () => {
   it("lista somente Cursos publicados em ordem determinística", () => {
     const cursos = listarCursosPublicados();
 
-    expect(cursos.map((curso) => curso.slug)).not.toContain("curso-interno");
+    expect(cursos.map((curso) => curso.slug)).toEqual(["em-producao"]);
     expect(cursos).toEqual(ordenarCursos(cursos));
   });
 
-  it("sorteia no mÃ¡ximo trÃªs cursos publicados com imagem de capa", () => {
+  it("sorteia somente os cursos publicados com imagem de capa", () => {
     const cursos = listarCursosAleatorios();
 
-    expect(cursos).toHaveLength(3);
+    expect(cursos).toHaveLength(1);
     expect(
-      cursos.every((curso) =>
-        listarCursosPublicados().some((item) => item.slug === curso.slug) &&
-        !curso.imagemCapa.endsWith("/placeholder.svg"),
+      cursos.every(
+        (curso) =>
+          listarCursosPublicados().some((item) => item.slug === curso.slug) &&
+          !curso.imagemCapa.endsWith("/placeholder.svg"),
       ),
     ).toBe(true);
   });
 
   it("resolve Aulas na ordem exata de aulaSlugs", () => {
-    const curso = encontrarCursoPorSlug("fundamentos-arduino");
+    const curso = encontrarCursoPorSlug("em-producao");
 
     expect(curso).toBeDefined();
-    expect(resolverAulasDoCurso(curso!).map((aula) => aula.slug)).toEqual(
-      curso!.aulaSlugs,
-    );
+    expect(resolverAulasDoCurso(curso!)).toEqual([]);
   });
 
-  it("aceita apenas contexto de Trilha que realmente contém o Curso", () => {
+  it("não inventa contexto entre os avisos de produção", () => {
     expect(
-      resolverContextoCurso("fundamentos-arduino", "robotica-do-zero").trilha
-        ?.slug,
-    ).toBe("robotica-do-zero");
-    expect(
-      resolverContextoCurso("fundamentos-arduino", "robos-autonomos").trilha,
+      resolverContextoCurso("em-producao", "em-producao").trilha,
     ).toBeUndefined();
   });
 });

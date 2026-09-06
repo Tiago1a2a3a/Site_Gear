@@ -8,6 +8,7 @@ export type BreadcrumbItem = Readonly<{
 export function Breadcrumbs({
   items,
 }: Readonly<{ items: readonly BreadcrumbItem[] }>) {
+  if (!items.length) return null;
   return (
     <nav aria-label="Breadcrumb" className="breadcrumbs">
       <ol>
@@ -19,10 +20,15 @@ export function Breadcrumbs({
               aria-current={isCurrent ? "page" : undefined}
               key={`${item.label}-${index}`}
             >
+              {index > 0 ? (
+                <span aria-hidden="true" className="breadcrumbs__separator">
+                  /
+                </span>
+              ) : null}
               {!isCurrent && item.href ? (
                 <Link href={item.href}>{item.label}</Link>
               ) : (
-                item.label
+                <span>{item.label}</span>
               )}
             </li>
           );

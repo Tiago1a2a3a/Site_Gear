@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { siteConfig } from "@shared/config/site";
 
 import { courses, lessons, news, projects, trails } from "../../.velite";
 
@@ -22,7 +23,7 @@ const publicRoutes = [
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.SITE_URL ?? "http://localhost:3000";
+  const baseUrl = process.env.SITE_URL ?? siteConfig.url;
   const dynamicRoutes = [
     ...lessons
       .filter((item) => item.status === "publicado")

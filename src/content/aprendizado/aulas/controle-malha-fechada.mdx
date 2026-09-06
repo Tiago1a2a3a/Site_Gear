@@ -1,0 +1,51 @@
+---
+slug: controle-malha-fechada
+titulo: Controle em malha fechada
+banner: /images/content/controle.svg
+resumo: Compare uma sequência fixa de comandos com decisões que usam a medição do resultado.
+tags: [controle, realimentação, simulação]
+categoria: Fundamentos
+dificuldade: iniciante
+dataPublicacao: 2026-09-05
+autores: [Material didático elaborado com IA]
+preRequisitos: [sensores-e-atuadores]
+linksExternos: []
+status: publicado
+permiteComentarios: false
+---
+
+## Objetivos
+
+Explicar a diferença entre malha aberta e fechada e acompanhar, em uma tabela, como uma regra usa o erro entre referência e medição.
+
+## Comando fixo e realimentação
+
+Mandar um motor funcionar por dois segundos, sem observar o deslocamento, é uma estratégia de malha aberta em relação à posição. Ela pode funcionar em condições conhecidas, mas não corrige desvios causados por mudanças nessas condições.
+
+Em malha fechada, a saída medida retorna à decisão. Para controlar posição, compara-se a posição desejada com a medida. O erro é a diferença entre ambas. A ação depende desse erro e de uma regra de controle.
+
+## Exemplo numérico
+
+Considere uma referência de posição igual a 10 unidades e a regra didática `comando = 0,5 × erro`. Suponha, apenas para acompanhar a conta, que cada passo altere a posição exatamente pelo valor do comando.
+
+| Passo | Posição antes | Erro | Comando | Posição depois |
+| ----- | ------------- | ---- | ------- | -------------- |
+| 1     | 0             | 10   | 5       | 5              |
+| 2     | 5             | 5    | 2,5     | 7,5            |
+| 3     | 7,5           | 2,5  | 1,25    | 8,75           |
+
+O exemplo se aproxima da referência, mas não a alcança exatamente em um número finito de passos. Em um experimento, é preciso definir uma tolerância. O modelo é propositalmente simplificado e não representa a dinâmica de um motor real.
+
+## Mais ganho nem sempre melhora
+
+Nesse mesmo modelo, um ganho de 2 faria a posição alternar entre 0 e 20. O exemplo mostra por que aumentar a intensidade de uma correção pode produzir oscilação. Em sistemas físicos, atrasos, saturação e ruído também importam.
+
+Não ajuste um equipamento real a partir dessa tabela. Primeiro construa e teste um modelo apropriado ao equipamento e às condições do experimento.
+
+## Exercício
+
+Refaça quatro passos com ganho 1 e depois com ganho 0,25. Registre a trajetória, não apenas o último número. Qual regra chega mais rapidamente perto da referência neste modelo? O que precisaria mudar no teste para avaliar atraso de uma leitura?
+
+## Entrega
+
+Produza uma tabela contendo referência, posição, erro e comando. Registre as hipóteses do modelo. Essa explicação faz parte do resultado tanto quanto o gráfico ou o código.

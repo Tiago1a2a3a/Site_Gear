@@ -177,14 +177,21 @@ a {
   cursor: pointer;
 }
 
-.navigation-dropdown-trigger span {
-  font-size: 0.9em;
-  transition: transform var(--motion-fast) var(--ease-standard);
+.navigation-chevron {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  flex: none;
+  transform-origin: center;
+  transition: transform var(--motion-standard) var(--ease-standard);
 }
 
-.navigation-dropdown:focus-within .navigation-dropdown-trigger span,
-.navigation-dropdown:hover .navigation-dropdown-trigger span {
+.navigation-dropdown-trigger[aria-expanded="true"] > .navigation-chevron {
   transform: rotate(180deg);
+}
+
+.navigation-chevron[data-direction="right"] {
+  transform: rotate(-90deg);
 }
 
 .navigation-dropdown-menu {
@@ -507,16 +514,21 @@ a {
 }
 
 .scroll-reveal {
-  opacity: 0;
-  transform: translateY(1.25rem);
+  opacity: 1;
+  transform: none;
   transition:
-    opacity 550ms ease-out,
-    transform 550ms ease-out;
+    opacity var(--motion-standard) var(--ease-standard),
+    transform var(--motion-standard) var(--ease-standard);
 }
 
-.scroll-reveal--visible {
+.scroll-reveal--pending {
+  opacity: 0;
+  transform: translateY(0.5rem);
+}
+
+.scroll-reveal:focus-within {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 .hero {
@@ -562,8 +574,8 @@ a {
   opacity: 1;
   transform: translateY(0);
   transition:
-    opacity 220ms ease-in-out,
-    transform 220ms ease-in-out;
+    opacity var(--motion-standard) var(--ease-standard),
+    transform var(--motion-standard) var(--ease-standard);
 }
 
 .hero-carousel-panel > .hero-compact-logo,
@@ -572,8 +584,8 @@ a {
   opacity: 1;
   transform: translateY(0);
   transition:
-    opacity 220ms ease-in-out,
-    transform 220ms ease-in-out;
+    opacity var(--motion-standard) var(--ease-standard),
+    transform var(--motion-standard) var(--ease-standard);
 }
 
 .hero-carousel-content[data-transition-state="exiting"],
@@ -700,7 +712,7 @@ a {
   height: 200%;
   max-width: none;
   object-fit: fill;
-  transition: transform 450ms ease-out;
+  transition: transform var(--motion-standard) var(--ease-standard);
 }
 
 .hero-carousel-controls {
@@ -935,7 +947,7 @@ a {
 
 .home-course-slide > img {
   object-fit: cover;
-  transition: transform var(--motion-slow);
+  transition: transform var(--motion-standard) var(--ease-standard);
 }
 
 .home-course-slide:hover > img {
@@ -1248,13 +1260,40 @@ a {
 }
 
 .breadcrumbs {
+  min-width: 0;
   color: var(--color-text-secondary);
   font-size: 0.875rem;
+  line-height: 1.5;
 }
 
-.breadcrumbs li:not(:last-child)::after {
-  margin-left: var(--space-2);
-  content: "→";
+.breadcrumbs li {
+  display: flex;
+  min-width: 0;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+.breadcrumbs a,
+.breadcrumbs li > span:last-child {
+  overflow-wrap: anywhere;
+}
+
+.breadcrumbs a {
+  display: inline-block;
+  padding-block: var(--space-2);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.breadcrumbs [aria-current="page"] {
+  color: var(--color-text-primary);
+  font-weight: 600;
+  padding-block: var(--space-2);
+}
+
+.breadcrumbs__separator {
+  flex-shrink: 0;
+  color: var(--color-gear-red);
 }
 
 .learning-list-breadcrumbs .breadcrumbs {
@@ -1262,13 +1301,7 @@ a {
   font-family: var(--font-utility), Consolas, monospace;
   font-size: 0.875rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.learning-list-breadcrumbs .breadcrumbs li:not(:last-child)::after {
-  color: var(--color-gear-red);
-  content: "/";
+  letter-spacing: normal;
 }
 
 .learning-list-breadcrumbs .breadcrumbs a:hover {
@@ -1442,12 +1475,12 @@ a {
   color: var(--color-surface);
   isolation: isolate;
   text-decoration: none;
-  animation: hero-slide-in 450ms ease-out both;
+  animation: hero-slide-in var(--motion-standard) var(--ease-standard) both;
 }
 
 .featured-course-slide img {
   object-fit: cover;
-  transition: transform 450ms var(--ease-standard);
+  transition: transform var(--motion-standard) var(--ease-standard);
 }
 
 .featured-course-slide:hover img {
@@ -1723,13 +1756,14 @@ a {
     color-mix(in srgb, var(--color-gear-gray) 12%, transparent);
   color: var(--color-surface);
   text-decoration: none;
-  animation: featured-project-enter 450ms ease-out both;
+  animation: featured-project-enter var(--motion-standard) var(--ease-standard)
+    both;
 }
 
 .featured-project-slide img,
 .featured-news-slide img {
   object-fit: cover;
-  transition: transform 700ms ease-out;
+  transition: transform var(--motion-standard) var(--ease-standard);
 }
 
 .featured-project-slide:hover img,
@@ -3371,7 +3405,8 @@ a {
   background: linear-gradient(110deg, var(--color-surface) 0 72%, #f8e9eb 100%);
   box-shadow: 0 1rem 2.5rem
     color-mix(in srgb, var(--color-gear-gray) 7%, transparent);
-  animation: personal-learning-enter 450ms ease-out both;
+  animation: personal-learning-enter var(--motion-standard) var(--ease-standard)
+    both;
 }
 
 .personal-learning-hero::after {
@@ -3434,7 +3469,8 @@ a {
 
 .personal-learning-content {
   min-width: 0;
-  animation: personal-learning-enter 420ms ease-out both;
+  animation: personal-learning-enter var(--motion-standard) var(--ease-standard)
+    both;
 }
 
 .personal-learning-content > h2 {
@@ -4248,6 +4284,8 @@ a {
   *::after {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 
   .hero-mascot-sheet {
@@ -4879,5 +4917,67 @@ a {
   .calendar-dialog__actions,
   .calendar-dialog__actions .button {
     width: 100%;
+  }
+}
+
+/* Shared playback controls and readable editorial content. */
+.learning-detail-cover img[src$=".svg"] {
+  object-fit: contain;
+}
+.carousel-playback {
+  min-height: 2.75rem;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  font: inherit;
+  font-size: 0.8125rem;
+  cursor: pointer;
+}
+.carousel-playback:hover {
+  border-color: var(--color-gear-red);
+}
+.hero-carousel-controls {
+  flex-wrap: wrap;
+}
+.hero-carousel-dot,
+.featured-course-dot,
+.featured-project-dot,
+.featured-news-dot {
+  min-width: 1.5rem;
+  min-height: 1.5rem;
+}
+.lesson-content pre:focus-visible {
+  outline-offset: 3px;
+}
+.lesson-content table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin-block: var(--space-6);
+}
+.lesson-content th,
+.lesson-content td {
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+.lesson-content th {
+  background: var(--color-surface);
+}
+.lesson-content :not(pre) > code {
+  overflow-wrap: anywhere;
+}
+.lesson-content h2,
+.lesson-content h3,
+.lesson-content h4 {
+  scroll-margin-top: 7rem;
+}
+@media print {
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
   }
 }

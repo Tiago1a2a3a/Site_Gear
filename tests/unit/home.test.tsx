@@ -33,7 +33,7 @@ describe("Home", () => {
     ).toHaveProperty("pathname", "/projetos");
   });
 
-  it("usa conteúdo institucional e avisos editoriais intencionais", () => {
+  it("usa conteúdo institucional e destaques do catálogo", () => {
     render(<Home />);
 
     expect(
@@ -49,12 +49,17 @@ describe("Home", () => {
       }),
     ).toBeDefined();
     expect(screen.getByText("Equipe em atualização")).toBeDefined();
+    expect(screen.getByRole("link", { name: /Abrir curso:/ })).toHaveProperty(
+      "pathname",
+      expect.stringMatching(
+        /^\/aprendizado\/cursos\/(documentacao-prototipos|fundamentos-robotica|python-para-robotica)$/,
+      ),
+    );
     expect(
-      screen.getByRole("link", { name: "Abrir curso: Cursos em produção" }),
-    ).toHaveProperty("pathname", "/aprendizado/cursos/em-producao");
-    expect(
-      screen.getByRole("link", { name: "Abrir notícia: Notícias em produção" }),
-    ).toHaveProperty("pathname", "/noticias/em-producao");
+      screen.getByRole("link", {
+        name: "Abrir notícia: Como acompanhar o calendário público",
+      }),
+    ).toHaveProperty("pathname", "/noticias/como-acompanhar-calendario");
   });
 
   it("faz fade-out antes de trocar o destaque e fade-in depois", () => {
@@ -76,10 +81,10 @@ describe("Home", () => {
     expect(content?.getAttribute("data-transition-state")).toBe("exiting");
     expect(heading.textContent).toBe("Conhecimento que move ideias.");
 
-    act(() => vi.advanceTimersByTime(220));
+    act(() => vi.advanceTimersByTime(180));
 
     expect(content?.getAttribute("data-transition-state")).toBe("entering");
-    expect(heading.textContent).toBe("Da teoria ao prototipo.");
+    expect(heading.textContent).toBe("Da teoria ao protótipo.");
 
     act(() => vi.advanceTimersByTime(34));
 
@@ -112,7 +117,7 @@ describe("Home", () => {
     expect(
       screen.getByRole("heading", {
         level: 1,
-        name: "Aprender para transformar.",
+        name: "Da teoria ao protótipo.",
       }),
     ).toBeDefined();
 

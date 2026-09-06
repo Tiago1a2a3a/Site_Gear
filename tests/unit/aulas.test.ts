@@ -30,13 +30,18 @@ describe("acesso a Aulas", () => {
   it("lista apenas a saída publicada do Velite em ordem alfabética", () => {
     const aulas = listarAulasPublicadas();
 
-    expect(aulas.map((aula) => aula.slug)).toEqual(["em-producao"]);
+    expect(aulas).toHaveLength(8);
+    expect(
+      aulas.every(
+        (aula) => aula.status === "publicado" && aula.slug !== "em-producao",
+      ),
+    ).toBe(true);
     expect(aulas).toEqual(ordenarAulas(aulas));
   });
 
   it("encontra uma Aula publicada por slug e ignora slug inexistente", () => {
-    expect(encontrarAulaPorSlug("em-producao")?.titulo).toBe(
-      "Aulas em produção",
+    expect(encontrarAulaPorSlug("introducao-robotica")?.titulo).toBe(
+      "Introdução à robótica",
     );
     expect(encontrarAulaPorSlug("nao-existe")).toBeUndefined();
   });

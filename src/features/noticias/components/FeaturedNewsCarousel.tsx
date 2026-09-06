@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { CarouselPlaybackButton } from "@shared/components/ui/CarouselPlaybackButton";
+import { useCarouselPlayback } from "@shared/hooks/useCarouselPlayback";
 
 import { formatarDataLonga } from "@shared/lib/formatar-data";
 
@@ -12,34 +14,18 @@ export function FeaturedNewsCarousel({
   news,
 }: Readonly<{ news: readonly Noticia[] }>) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-
-  useEffect(() => {
-    if (
-      news.length < 2 ||
-      isPaused ||
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-      return;
-    }
-
-    const timer = window.setInterval(() => {
-      setActiveIndex((current) => (current + 1) % news.length);
-    }, 5000);
-
-    return () => window.clearInterval(timer);
-  }, [isPaused, news.length]);
+  const playback = useCarouselPlayback(() => {
+    setActiveIndex((current) => (current + 1) % news.length);
+  }, news.length > 1);
 
   if (!news.length) return null;
-  const item = news[activeIndex];
+  const item = news[activeIndex % news.length];
 
   return (
     <section
       aria-labelledby="featured-news-title"
       className="featured-news"
-      onFocus={() => setIsPaused(true)}
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
+      {...playback.interactionProps}
     >
       <div className="featured-news-heading">
         <p className="section-index">NOTÍCIAS EM DESTAQUE</p>
@@ -53,7 +39,6 @@ export function FeaturedNewsCarousel({
         aria-label={`Ler notícia: ${item.titulo}`}
         className="featured-news-slide"
         href={`/noticias/${item.slug}`}
-        key={item.slug}
       >
         <Image
           alt=""
@@ -86,6 +71,12 @@ export function FeaturedNewsCarousel({
             />
           ))}
         </div>
+      ) : null}
+      {news.length > 1 && !playback.reducedMotion ? (
+        <CarouselPlaybackButton
+          isPlaying={playback.isPlaying}
+          onClick={playback.togglePlayback}
+        />
       ) : null}
     </section>
   );

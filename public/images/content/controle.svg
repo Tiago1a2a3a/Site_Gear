@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">CONTROLE: Medir para corrigir.</title>
+<desc id="desc">Diagrama didático com as etapas Referência, Erro, Resposta conectadas da esquerda para a direita.</desc>
+<rect width="1200" height="675" fill="#eef0f2"/>
+<path d="M0 70H190V135H290M910 540H1030V610H1200" stroke="#cbd1d8" stroke-width="3" fill="none"/>
+<rect x="76" y="92" width="10" height="72" fill="#b51f2a"/>
+<text x="110" y="120" fill="#b51f2a" font-family="Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="5">GEAR / APRENDIZADO</text>
+<text x="105" y="209" fill="#292c31" font-family="Arial,sans-serif" font-size="64" font-weight="700">CONTROLE</text>
+<text x="108" y="263" fill="#5e646d" font-family="Arial,sans-serif" font-size="30">Medir para corrigir.</text>
+<path d="M360 410H840" stroke="#b51f2a" stroke-width="4" fill="none"/>
+<rect x="100" y="345" width="290" height="132" rx="4" fill="white" stroke="#cbd1d8" stroke-width="2"/><text x="124" y="383" fill="#b51f2a" font-family="monospace" font-size="18">01</text><text x="124" y="432" fill="#292c31" font-family="Arial,sans-serif" font-size="30" font-weight="700">Referência</text>
+<rect x="450" y="345" width="290" height="132" rx="4" fill="white" stroke="#cbd1d8" stroke-width="2"/><text x="474" y="383" fill="#b51f2a" font-family="monospace" font-size="18">02</text><text x="474" y="432" fill="#292c31" font-family="Arial,sans-serif" font-size="30" font-weight="700">Erro</text>
+<rect x="800" y="345" width="290" height="132" rx="4" fill="white" stroke="#cbd1d8" stroke-width="2"/><text x="824" y="383" fill="#b51f2a" font-family="monospace" font-size="18">03</text><text x="824" y="432" fill="#292c31" font-family="Arial,sans-serif" font-size="30" font-weight="700">Resposta</text>
+<text x="108" y="577" fill="#5e646d" font-family="Arial,sans-serif" font-size="21">Conceitos • Prática • Documentação</text>
+</svg>
+

@@ -1,3 +1,4 @@
+import { ConteudoMDX } from "@shared/components/ui/ConteudoMDX";
 import Image from "next/image";
 
 import { Breadcrumbs } from "@shared/components/ui/Breadcrumbs";
@@ -46,6 +47,7 @@ export function TrilhaDetalhe({
           />
         </div>
       </header>
+      <ConteudoMDX className="lesson-content" codigo={trilha.conteudo} />
       <TrilhaPercurso itens={itens} />
     </article>
   );

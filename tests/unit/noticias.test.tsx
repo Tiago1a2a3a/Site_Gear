@@ -64,12 +64,12 @@ describe("Notícias", () => {
     render(<NoticiasBusca {...busca} />);
 
     fireEvent.change(screen.getByLabelText("Buscar somente em Notícias"), {
-      target: { value: "produção" },
+      target: { value: "calendário" },
     });
     expect(screen.getByText("1 notícia")).toBeDefined();
     expect(
       screen.getByRole("heading", {
-        name: "Notícias em produção",
+        name: "Como acompanhar o calendário público",
       }),
     ).toBeDefined();
   });

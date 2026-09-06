@@ -1,30 +1,26 @@
 import { expect, test } from "@playwright/test";
 
-test("Curso em produção não inventa Aulas nem permite inscrição", async ({
-  page,
-}) => {
-  await page.goto("/aprendizado/cursos/em-producao");
+test("Curso apresenta suas aulas em ordem", async ({ page }) => {
+  await page.goto("/aprendizado/cursos/fundamentos-robotica");
 
   await expect(
-    page.getByRole("heading", { level: 1, name: "Cursos em produção" }),
+    page.getByRole("heading", { level: 1, name: "Fundamentos de robótica" }),
   ).toBeVisible();
-  await expect(page.getByRole("button", { name: "Inscrever-se" })).toHaveCount(
-    0,
-  );
-  await expect(page.locator(".course-lesson-list > li")).toHaveCount(0);
+  await expect(
+    page.getByRole("button", { name: "Inscrever-se" }),
+  ).toBeVisible();
+  await expect(page.locator(".course-lesson-list > li")).toHaveCount(3);
 });
 
-test("Trilha em produção não inventa percurso nem permite inscrição", async ({
-  page,
-}) => {
-  await page.goto("/aprendizado/trilhas/em-producao");
+test("Trilha apresenta cursos e aulas diretas", async ({ page }) => {
+  await page.goto("/aprendizado/trilhas/robotica-do-zero");
   await expect(
-    page.getByRole("heading", { level: 1, name: "Trilhas em produção" }),
+    page.getByRole("heading", { level: 1, name: "Robótica do zero" }),
   ).toBeVisible();
-  await expect(page.getByRole("button", { name: "Inscrever-se" })).toHaveCount(
-    0,
-  );
-  await expect(page.locator(".trail-path-list > li")).toHaveCount(0);
+  await expect(
+    page.getByRole("button", { name: "Inscrever-se" }),
+  ).toBeVisible();
+  await expect(page.locator(".trail-path-list > li")).toHaveCount(3);
 });
 
 test("slugs demonstrativos removidos de Curso e Trilha respondem com 404", async ({
@@ -48,7 +44,7 @@ test("listagens e percurso funcionam sem overflow no móvel", async ({
   for (const path of [
     "/aprendizado/cursos",
     "/aprendizado/trilhas",
-    "/aprendizado/trilhas/em-producao",
+    "/aprendizado/trilhas/robotica-do-zero",
   ]) {
     await page.goto(path);
     const hasOverflow = await page.evaluate(

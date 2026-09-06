@@ -32,9 +32,18 @@ describe("índices da busca educacional", () => {
     );
     expect(documentos.curso.every((item) => item.tipo === "curso")).toBe(true);
     expect(documentos.aula.every((item) => item.tipo === "aula")).toBe(true);
-    expect(documentos.trilha.map((item) => item.slug)).toEqual(["em-producao"]);
-    expect(documentos.curso.map((item) => item.slug)).toEqual(["em-producao"]);
-    expect(documentos.aula.map((item) => item.slug)).toEqual(["em-producao"]);
+    expect(documentos.trilha).toHaveLength(2);
+    expect(documentos.trilha.some((item) => item.slug === "em-producao")).toBe(
+      false,
+    );
+    expect(documentos.curso).toHaveLength(3);
+    expect(documentos.curso.some((item) => item.slug === "em-producao")).toBe(
+      false,
+    );
+    expect(documentos.aula).toHaveLength(8);
+    expect(documentos.aula.some((item) => item.slug === "em-producao")).toBe(
+      false,
+    );
   });
 
   it("pesquisa o aviso por título, resumo e conteúdo com acentos", () => {
@@ -42,11 +51,13 @@ describe("índices da busca educacional", () => {
     const indiceAulas = criarIndice(documentos.aula);
 
     expect(
-      consultarIndice(indiceAulas, "producao").map((item) => item.id),
-    ).toContain("aula:em-producao");
+      consultarIndice(indiceAulas, "introducao robotica").map(
+        (item) => item.id,
+      ),
+    ).toContain("aula:introducao-robotica");
     expect(
-      consultarIndice(indiceAulas, "revisao publicacao").map((item) => item.id),
-    ).toContain("aula:em-producao");
+      consultarIndice(indiceAulas, "percepcao").map((item) => item.id),
+    ).toContain("aula:introducao-robotica");
   });
 
   it("combina busca e filtros por interseção", () => {

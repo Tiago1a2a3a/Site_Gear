@@ -1,0 +1,62 @@
+---
+slug: python-primeiros-passos
+titulo: Primeiros passos com Python
+banner: /images/content/python.svg
+resumo: Escreva e execute uma função que transforma distâncias simuladas em decisões simples.
+tags: [python, programação, simulação]
+categoria: Programação
+dificuldade: iniciante
+dataPublicacao: 2026-09-05
+autores: [Material didático elaborado com IA]
+preRequisitos: []
+linksExternos:
+  - titulo: Tutorial oficial de controle de fluxo do Python
+    url: https://docs.python.org/3/tutorial/controlflow.html
+status: publicado
+permiteComentarios: false
+---
+
+## Objetivos
+
+Criar uma função, usar condicionais e percorrer uma lista de casos. Você precisará de Python 3 disponível no computador. O exemplo usa apenas a biblioteca padrão e não controla hardware.
+
+## Uma função com uma responsabilidade
+
+Salve o código abaixo como `decisao.py`. Nossa regra didática retorna parar para leitura ausente ou negativa, parar antes de 20 cm e avançar a partir de 20 cm. O limite é uma escolha da simulação.
+
+```python
+def decidir(distancia_cm):
+    if distancia_cm is None or distancia_cm < 0:
+        return "parar"
+    if distancia_cm < 20:
+        return "parar"
+    return "avancar"
+
+
+for distancia in [35, 12, 20, None, -1]:
+    print(distancia, decidir(distancia))
+```
+
+Execute no terminal com `python decisao.py` ou `python3 decisao.py`, conforme a instalação. A saída esperada é:
+
+```text
+35 avancar
+12 parar
+20 avancar
+None parar
+-1 parar
+```
+
+## Leia o fluxo
+
+`def` define a função; o parâmetro recebe cada entrada. `if` escolhe um caminho, e `return` encerra a chamada com o resultado. O laço `for` percorre a lista na ordem escrita. A indentação delimita os blocos.
+
+O contrato aceita números comuns ou `None`. Texto, infinito e outras entradas ainda não são tratados. Não confunda um exemplo pequeno com validação completa de dados vindos de um dispositivo.
+
+## Exercício
+
+Troque o limite para 25 e escreva a saída esperada antes de executar. Teste os valores 24, 25 e 26. Depois transforme o limite em um segundo parâmetro com valor padrão.
+
+## Confira
+
+Com a regra original, 20 retorna avançar porque a condição usa “menor que”, não “menor ou igual”. Esse detalhe será verificado novamente na [aula de testes](/aprendizado/aulas/testes-logica-robos).

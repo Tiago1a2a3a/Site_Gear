@@ -7,26 +7,36 @@ test("lista e abre um Projeto por URL canônica", async ({ page }) => {
   ).toBeVisible();
   const card = page
     .locator(".other-projects-list > li")
-    .filter({ hasText: "Projetos em produção" });
+    .filter({ hasText: "Carrinho virtual — projeto didático" });
   await expect(card).toContainText("em andamento");
   await card
-    .getByRole("link", { name: "Projetos em produção", exact: true })
+    .getByRole("link", {
+      name: "Carrinho virtual — projeto didático",
+      exact: true,
+    })
     .click();
-  await expect(page).toHaveURL(/\/projetos\/em-producao$/);
+  await expect(page).toHaveURL(/\/projetos\/carrinho-virtual$/);
   await expect(
-    page.getByRole("heading", { level: 1, name: "Projetos em produção" }),
+    page.getByRole("heading", {
+      level: 1,
+      name: "Carrinho virtual — projeto didático",
+    }),
   ).toBeVisible();
 });
 
 test("detalhe apresenta mídia e omite recursos opcionais ausentes", async ({
   page,
 }) => {
-  await page.goto("/projetos/em-producao");
+  await page.goto("/projetos/carrinho-virtual");
   await expect(
     page.getByRole("region", { name: /Galeria do projeto/ }),
   ).toBeVisible();
   await expect(
-    page.getByRole("heading", { level: 2, name: "Em produção", exact: true }),
+    page.getByRole("heading", {
+      level: 2,
+      name: "Sobre o projeto",
+      exact: true,
+    }),
   ).toBeVisible();
 
   await expect(
@@ -47,7 +57,7 @@ test("Home aponta para Projetos e páginas não têm overflow móvel", async ({
     page.getByRole("link", { name: "Conhecer projetos" }),
   ).toHaveAttribute("href", "/projetos");
 
-  for (const rota of ["/", "/projetos", "/projetos/em-producao"]) {
+  for (const rota of ["/", "/projetos", "/projetos/carrinho-virtual"]) {
     await page.goto(rota);
     const overflow = await page.evaluate(
       () =>

@@ -1,0 +1,56 @@
+---
+slug: registro-experimentos
+titulo: Como registrar um experimento
+banner: /images/content/projetos.svg
+resumo: Documente hipótese, procedimento e observações para permitir que outra pessoa repita o estudo.
+tags: [documentação, experimentos, metodologia]
+categoria: Projetos
+dificuldade: iniciante
+dataPublicacao: 2026-09-05
+autores: [Material didático elaborado com IA]
+preRequisitos: []
+linksExternos: []
+status: publicado
+permiteComentarios: false
+---
+
+## Objetivos
+
+Produzir um registro que diferencie observação de interpretação. A atividade pode ser feita com a simulação da aula de controle, sem equipamento físico.
+
+## Comece pela pergunta
+
+“O protótipo funcionou” não informa o que foi avaliado. Prefira uma pergunta específica: no modelo de posição, mudar o ganho de 0,25 para 0,5 reduz os passos necessários para o erro ficar abaixo de uma unidade?
+
+Anote também o que permanece fixo: posição inicial, referência, regra de atualização e tolerância. Se várias condições mudarem ao mesmo tempo, fica mais difícil atribuir a diferença a uma causa.
+
+## Um registro mínimo
+
+```text
+Título:
+Data e responsável pelo experimento:
+Pergunta:
+Hipótese:
+Versão do código ou descrição do modelo:
+Entradas e unidades:
+Condições mantidas:
+Procedimento:
+Resultados observados:
+Interpretação:
+Limitações:
+Próximo teste:
+```
+
+## Preserve os resultados que contrariam a hipótese
+
+Não descarte uma execução porque apresentou comportamento inesperado. Registre o que aconteceu e se o procedimento foi seguido. Um erro de execução pode justificar repetir o teste, mas deve continuar descrito no histórico.
+
+Uma tabela de números é observação. Dizer que a mudança melhorou o sistema é interpretação e depende do critério escolhido. O resultado pode melhorar um aspecto e piorar outro, como tempo de resposta e oscilação.
+
+## Exercício
+
+Use a tabela de [Controle em malha fechada](/aprendizado/aulas/controle-malha-fechada). Compare dois ganhos usando a mesma tolerância. Registre as contas e escreva uma conclusão de três frases com uma limitação explícita.
+
+## Critério de conclusão
+
+Entregue o registro a outra pessoa. Ela deve conseguir repetir as contas sem perguntar quais valores você usou. Corrija no texto qualquer informação que tenha sido necessária explicar verbalmente.

@@ -1,3 +1,5 @@
+import { Breadcrumbs } from "@shared/components/ui/Breadcrumbs";
+import { ConteudoMDX } from "@shared/components/ui/ConteudoMDX";
 import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
@@ -28,7 +30,17 @@ export function CursoDetalhe({
 }>) {
   return (
     <article className="learning-detail-page">
-      <Suspense fallback={null}>
+      <Suspense
+        fallback={
+          <Breadcrumbs
+            items={[
+              { href: "/aprendizado", label: "Aprendizado" },
+              { href: "/aprendizado/cursos", label: "Cursos" },
+              { label: curso.titulo },
+            ]}
+          />
+        }
+      >
         <CursoBreadcrumbs contextos={contextos} titulo={curso.titulo} />
       </Suspense>
       <header className="learning-detail-header">
@@ -78,6 +90,7 @@ export function CursoDetalhe({
         </section>
       ) : null}
 
+      <ConteudoMDX className="lesson-content" codigo={curso.conteudo} />
       <CursoAulas aulas={aulas} curso={curso} contextos={contextos} />
     </article>
   );

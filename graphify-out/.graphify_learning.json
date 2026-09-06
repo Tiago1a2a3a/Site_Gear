@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-07-16T21:50:27.293386+00:00",
+  "generated_at": "2026-09-06T00:03:36.868809+00:00",
   "nodes": {
     "content_schemas_projectfrontmatterschema": {
-      "code_fingerprint": "0c09af7693ac06ad2826b641013f276fda520df12b41c89fb94dc8730d399f93",
+      "code_fingerprint": "70d5cc344251375e313c13c9651f32d78b720831219c9d16052c43ca1596e504",
       "label": "projectFrontmatterSchema",
       "last": "2026-07-16T00:05:04.230164+00:00",
       "provenance": [
@@ -12,13 +12,13 @@
           "q": "Use o Graphify para entender a arquitetura e implemente a milestone 10 deste projeto."
         }
       ],
-      "score": 0.979272834,
+      "score": 0.300763285,
       "source_file": "content.schemas.ts",
       "status": "tentative",
       "uses": 1
     },
     "package_scripts": {
-      "code_fingerprint": "ad3b9089efdd745eaff3b436f4db1cb2e9f47fb275fc6c7cb19108b498a17239",
+      "code_fingerprint": "3561a06770f6c48f9f8df0454c954b745bcd6997d37bb62e9174dc0aff1d503a",
       "label": "scripts",
       "last": "2026-07-15T22:09:36.497823+00:00",
       "provenance": [
@@ -28,13 +28,13 @@
           "q": "Use o Graphify para entender a arquitetura e implemente a milestone 6 deste projeto. Consulte o grafo primeiro, faça as alterações necessárias e rode os testes."
         }
       ],
-      "score": 0.977460313,
+      "score": 0.300206607,
       "source_file": "package.json",
       "status": "tentative",
       "uses": 1
     },
     "parte_a_milestone_login_milestone_extra_login_inscrições_e_meu_aprendizado": {
-      "code_fingerprint": "adedc838265129a2784cfc10891103da54b3d1ad61c92d9cb3896287a0a7c7fa",
+      "code_fingerprint": "5c5299d40601d29b5cbd225609dcb8fec2c8d2c007c48af2dccf9c7fa9a6a0c9",
       "label": "Milestone extra — Login, inscrições e Meu aprendizado",
       "last": "2026-07-16T21:32:03.746019+00:00",
       "provenance": [
@@ -44,13 +44,45 @@
           "q": "Use o Graphify para entender a arquitetura e implemente ADENDO MILESTONE_LOGIN deste projeto. Consulte o grafo primeiro, faça as alterações necessárias e rode os testes."
         }
       ],
-      "score": 0.999704935,
+      "score": 0.30703858,
       "source_file": "PARTE A/milestone_login.md",
       "status": "tentative",
       "uses": 1
     },
+    "parte_a_milestone_login_privacidade_e_segurança_de_dados": {
+      "code_fingerprint": "5c5299d40601d29b5cbd225609dcb8fec2c8d2c007c48af2dccf9c7fa9a6a0c9",
+      "label": "Privacidade e segurança de dados",
+      "last": "2026-07-16T21:55:42.139389+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-16T21:55:42.139389+00:00",
+          "outcome": "useful",
+          "q": "Configurar projeto Supabase, OAuth App GitHub, callbacks e variáveis por ambiente. como faco isso Aprovar Privacidade/Termos e verificar retenção de backups antes de produção. aprovo"
+        }
+      ],
+      "score": 0.307155063,
+      "source_file": "PARTE A/milestone_login.md",
+      "status": "tentative",
+      "uses": 1
+    },
+    "src_app_site_login_page_loginpage": {
+      "code_fingerprint": "8c8205d40ce9ba0aab54eb7bfa1d8331c96c275547c81231037c9e82862f76d5",
+      "label": "LoginPage()",
+      "last": "2026-07-16T21:55:42.139389+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-16T21:55:42.139389+00:00",
+          "outcome": "useful",
+          "q": "Configurar projeto Supabase, OAuth App GitHub, callbacks e variáveis por ambiente. como faco isso Aprovar Privacidade/Termos e verificar retenção de backups antes de produção. aprovo"
+        }
+      ],
+      "score": 0.307155063,
+      "source_file": "src/app/(site)/login/page.tsx",
+      "status": "tentative",
+      "uses": 1
+    },
     "src_app_site_noticias_page_noticiaspage": {
-      "code_fingerprint": "d2866967a335fc92d2756b20fb5405d8acd22694bd9689b458926f6d75912022",
+      "code_fingerprint": "2426e211a7d0e57b35a0cbc42bf7bf54d186b69445d0ab3f1c03b39365ce2b08",
       "label": "NoticiasPage()",
       "last": "2026-07-16T16:37:32.541643+00:00",
       "provenance": [
@@ -60,13 +92,13 @@
           "q": "Use o Graphify para entender a arquitetura e implemente a milestone 11 e 12 deste projeto. Reveja o codigo para analisar reutilizacao entre as partes 11, 12 e aprendizado."
         }
       ],
-      "score": 0.994991878,
+      "score": 0.305591063,
       "source_file": "src/app/(site)/noticias/page.tsx",
       "status": "tentative",
       "uses": 1
     },
     "src_app_site_page_home": {
-      "code_fingerprint": "e92b5f03a14d7798c191e835ea0ac03c47a4d900fdfeb7ccee9514dfb11d6a73",
+      "code_fingerprint": "db972d58974e5afcaaec723879d31338ce45bf90456923ddb0f0e71fbb8a020f",
       "label": "Home()",
       "last": "2026-07-15T21:33:38.851860+00:00",
       "provenance": [
@@ -76,7 +108,7 @@
           "q": "Atualizar a Home com a logo principal, mascote, apoiadores e redes sociais do GEAR antes da M6"
         }
       ],
-      "score": 0.976896488,
+      "score": 0.30003344,
       "source_file": "src/app/(site)/page.tsx",
       "status": "tentative",
       "uses": 1
@@ -92,7 +124,7 @@
           "q": "Implementar milestones 7 e 8 consultando o grafo primeiro"
         }
       ],
-      "score": 0.978326991,
+      "score": 0.300472789,
       "source_file": "src/features/aulas/components/AulaBreadcrumbs.tsx",
       "status": "tentative",
       "uses": 1
@@ -108,8 +140,24 @@
           "q": "Use o Graphify para entender a arquitetura e implemente a milestone 11 e 12 deste projeto. Reveja o codigo para analisar reutilizacao entre as partes 11, 12 e aprendizado."
         }
       ],
-      "score": 0.994991878,
+      "score": 0.305591063,
       "source_file": "src/features/aulas/components/AulaConteudoMDX.tsx",
+      "status": "tentative",
+      "uses": 1
+    },
+    "src_features_autenticacao_components_githubloginbutton_githubloginbutton": {
+      "code_fingerprint": "8164b0c4f8767e3bfb01040f7b1aafde1048090f53a4bdc9e7c02edbb38bbc74",
+      "label": "GitHubLoginButton()",
+      "last": "2026-07-16T21:55:42.139389+00:00",
+      "provenance": [
+        {
+          "date": "2026-07-16T21:55:42.139389+00:00",
+          "outcome": "useful",
+          "q": "Configurar projeto Supabase, OAuth App GitHub, callbacks e variáveis por ambiente. como faco isso Aprovar Privacidade/Termos e verificar retenção de backups antes de produção. aprovo"
+        }
+      ],
+      "score": 0.307155063,
+      "source_file": "src/features/autenticacao/components/GitHubLoginButton.tsx",
       "status": "tentative",
       "uses": 1
     },
@@ -124,13 +172,13 @@
           "q": "Use o Graphify para entender a arquitetura e implemente a milestone 11 e 12 deste projeto. Reveja o codigo para analisar reutilizacao entre as partes 11, 12 e aprendizado."
         }
       ],
-      "score": 0.994991878,
+      "score": 0.305591063,
       "source_file": "src/features/busca/components/SearchBar.tsx",
       "status": "tentative",
       "uses": 1
     },
     "src_features_cursos_components_cursoaulas_cursoaulas": {
-      "code_fingerprint": "3583910517b53217f11bb47055220e7e338bd30501f0ae6e365ece7a88309919",
+      "code_fingerprint": "f7de489599be7fc5b5cb73adacf5b763de8fa537e999e0284a283e6b58e245dc",
       "label": "CursoAulas()",
       "last": "2026-07-15T23:04:50.673729+00:00",
       "provenance": [
@@ -140,7 +188,7 @@
           "q": "Implementar milestones 7 e 8 consultando o grafo primeiro"
         }
       ],
-      "score": 0.978326991,
+      "score": 0.300472789,
       "source_file": "src/features/cursos/components/CursoAulas.tsx",
       "status": "tentative",
       "uses": 1
@@ -156,13 +204,13 @@
           "q": "Implementar milestones 7 e 8 consultando o grafo primeiro"
         }
       ],
-      "score": 0.978326991,
+      "score": 0.300472789,
       "source_file": "src/features/cursos/components/CursoDetalhe.tsx",
       "status": "tentative",
       "uses": 1
     },
     "src_features_meu_aprendizado_components_personallearningdashboard_personallearningdashboard": {
-      "code_fingerprint": "e5b32d0936698a77d62cab54854199761927fcf57ecca174188b1217e1d0c39b",
+      "code_fingerprint": "acc7ed1a1e88f6cb48e402a90b48bad8a39bb94b6bcd7f6dfd84413545cb0a66",
       "label": "PersonalLearningDashboard()",
       "last": "2026-07-16T21:32:03.746019+00:00",
       "provenance": [
@@ -172,7 +220,7 @@
           "q": "Use o Graphify para entender a arquitetura e implemente ADENDO MILESTONE_LOGIN deste projeto. Consulte o grafo primeiro, faça as alterações necessárias e rode os testes."
         }
       ],
-      "score": 0.999704935,
+      "score": 0.30703858,
       "source_file": "src/features/meu-aprendizado/components/PersonalLearningDashboard.tsx",
       "status": "tentative",
       "uses": 1
@@ -188,7 +236,7 @@
           "q": "Use o Graphify para entender a arquitetura e implemente ADENDO MILESTONE_LOGIN deste projeto. Consulte o grafo primeiro, faça as alterações necessárias e rode os testes."
         }
       ],
-      "score": 0.999704935,
+      "score": 0.30703858,
       "source_file": "src/features/meu-aprendizado/services/progresso.ts",
       "status": "tentative",
       "uses": 1
@@ -204,13 +252,13 @@
           "q": "Use o Graphify para entender a arquitetura e implemente ADENDO MILESTONE_LOGIN deste projeto. Consulte o grafo primeiro, faça as alterações necessárias e rode os testes."
         }
       ],
-      "score": 0.999704935,
+      "score": 0.30703858,
       "source_file": "src/features/meu-aprendizado/services/progresso.ts",
       "status": "tentative",
       "uses": 1
     },
     "src_features_patrocinadores_components_sponsorstrip": {
-      "code_fingerprint": "607ab4ee80ace69e6761a75292c87448ed812dac67a4c3e4bed7de094f3d4bb1",
+      "code_fingerprint": "82e6596d89848cee403d4099f0fa307b79ff9d774011e0adbf309be3c0aefddb",
       "label": "SponsorStrip.tsx",
       "last": "2026-07-16T16:37:32.541643+00:00",
       "provenance": [
@@ -220,7 +268,7 @@
           "q": "Use o Graphify para entender a arquitetura e implemente a milestone 11 e 12 deste projeto. Reveja o codigo para analisar reutilizacao entre as partes 11, 12 e aprendizado."
         }
       ],
-      "score": 0.994991878,
+      "score": 0.305591063,
       "source_file": "src/features/patrocinadores/components/SponsorStrip.tsx",
       "status": "tentative",
       "uses": 1
@@ -236,13 +284,13 @@
           "q": "Implementar milestones 7 e 8 consultando o grafo primeiro"
         }
       ],
-      "score": 0.978326991,
+      "score": 0.300472789,
       "source_file": "src/features/trilhas/components/TrilhaDetalhe.tsx",
       "status": "tentative",
       "uses": 1
     },
     "src_features_trilhas_components_trilhapercurso_trilhapercurso": {
-      "code_fingerprint": "ba6a1435e675b3e1f65947084ed4470b2249bfc79dc01286e0f8b0c0ed9fde6f",
+      "code_fingerprint": "6e181a89a71bdd77edcadc191532921a20c9a53ea9f85fc4e9eb8bd60cc21120",
       "label": "TrilhaPercurso()",
       "last": "2026-07-15T23:04:50.673729+00:00",
       "provenance": [
@@ -252,7 +300,7 @@
           "q": "Implementar milestones 7 e 8 consultando o grafo primeiro"
         }
       ],
-      "score": 0.978326991,
+      "score": 0.300472789,
       "source_file": "src/features/trilhas/components/TrilhaPercurso.tsx",
       "status": "tentative",
       "uses": 1
@@ -268,13 +316,13 @@
           "q": "Atualizar a Home com a logo principal, mascote, apoiadores e redes sociais do GEAR antes da M6"
         }
       ],
-      "score": 0.976896488,
+      "score": 0.30003344,
       "source_file": "src/shared/components/layout/Footer.tsx",
       "status": "tentative",
       "uses": 1
     },
     "src_shared_components_layout_header_header": {
-      "code_fingerprint": "83d45fb3e623f69fbfaf2fd1bc0c0de6c13e8759068d2c12e2d4f2aff153ec26",
+      "code_fingerprint": "8f91c042725dd4ed225a1f36eb9fc53965d81e00f68a55915b89822bc2167187",
       "label": "Header()",
       "last": "2026-07-15T21:33:38.851860+00:00",
       "provenance": [
@@ -284,7 +332,7 @@
           "q": "Atualizar a Home com a logo principal, mascote, apoiadores e redes sociais do GEAR antes da M6"
         }
       ],
-      "score": 0.976896488,
+      "score": 0.30003344,
       "source_file": "src/shared/components/layout/Header.tsx",
       "status": "tentative",
       "uses": 1
@@ -300,7 +348,7 @@
           "q": "Use o Graphify para entender a arquitetura e implemente a milestone 6 deste projeto. Consulte o grafo primeiro, faça as alterações necessárias e rode os testes."
         }
       ],
-      "score": 0.977460313,
+      "score": 0.300206607,
       "source_file": "src/shared/components/layout/TemporaryPage.tsx",
       "status": "tentative",
       "uses": 1
@@ -316,13 +364,13 @@
           "q": "Use o Graphify para entender a arquitetura e implemente a milestone 11 e 12 deste projeto. Reveja o codigo para analisar reutilizacao entre as partes 11, 12 e aprendizado."
         }
       ],
-      "score": 0.994991878,
+      "score": 0.305591063,
       "source_file": "src/shared/config/institutional.ts",
       "status": "tentative",
       "uses": 1
     },
     "src_shared_config_site": {
-      "code_fingerprint": "bebb2e7cb66bf1c17f7a5c6d984a12e39d451823e5136ed8b98737b2bd9b882e",
+      "code_fingerprint": "8f1a49abf3ad7b4264a94b73b6372739a879cf7b60a794d4784706e7c3c1397b",
       "label": "site.ts",
       "last": "2026-07-15T21:33:38.851860+00:00",
       "provenance": [
@@ -332,7 +380,7 @@
           "q": "Atualizar a Home com a logo principal, mascote, apoiadores e redes sociais do GEAR antes da M6"
         }
       ],
-      "score": 0.976896488,
+      "score": 0.30003344,
       "source_file": "src/shared/config/site.ts",
       "status": "tentative",
       "uses": 1
@@ -348,7 +396,7 @@
           "q": "Use o Graphify para entender a arquitetura e implemente ADENDO MILESTONE_LOGIN deste projeto. Consulte o grafo primeiro, faça as alterações necessárias e rode os testes."
         }
       ],
-      "score": 0.999704935,
+      "score": 0.30703858,
       "source_file": "src/shared/lib/supabase/client.ts",
       "status": "tentative",
       "uses": 1
@@ -364,7 +412,7 @@
           "q": "Use o Graphify para entender a arquitetura e implemente ADENDO MILESTONE_LOGIN deste projeto. Consulte o grafo primeiro, faça as alterações necessárias e rode os testes."
         }
       ],
-      "score": 0.999704935,
+      "score": 0.30703858,
       "source_file": "src/shared/lib/supabase/server.ts",
       "status": "tentative",
       "uses": 1
@@ -380,7 +428,7 @@
           "q": "Use o Graphify para entender a arquitetura e implemente a milestone 6 deste projeto. Consulte o grafo primeiro, faça as alterações necessárias e rode os testes."
         }
       ],
-      "score": 0.977460313,
+      "score": 0.300206607,
       "source_file": "tests/e2e/responsive-navigation.spec.ts",
       "status": "tentative",
       "uses": 1
@@ -396,7 +444,7 @@
           "q": "Use o Graphify para entender a arquitetura e implemente a milestone 6 deste projeto. Consulte o grafo primeiro, faça as alterações necessárias e rode os testes."
         }
       ],
-      "score": 0.977460313,
+      "score": 0.300206607,
       "source_file": "tsconfig.json",
       "status": "tentative",
       "uses": 1

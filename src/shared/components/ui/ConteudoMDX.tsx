@@ -42,6 +42,10 @@ function ImagemMDX({ alt = "", src }: ComponentPropsWithoutRef<"img">) {
   );
 }
 
+function CodigoMDX(props: ComponentPropsWithoutRef<"pre">) {
+  return <pre {...props} tabIndex={0} />;
+}
+
 export function ConteudoMDX({
   className,
   codigo,
@@ -51,7 +55,9 @@ export function ConteudoMDX({
 
   return (
     <div className={className}>
-      <Conteudo components={{ a: LinkMDX, img: ImagemMDX, VideoEmbed }} />
+      <Conteudo
+        components={{ a: LinkMDX, img: ImagemMDX, pre: CodigoMDX, VideoEmbed }}
+      />
     </div>
   );
 }

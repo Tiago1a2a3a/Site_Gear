@@ -12,6 +12,7 @@ Portal do Grupo de Estudos Avancados em Robotica da UFMG, criado com foco princi
 
 ```bash
 npm ci
+npm run content:validate
 npm run dev
 ```
 
@@ -42,7 +43,11 @@ O projeto e um monolito modular Feature-First. `src/app` contem apenas roteament
 
 ## Estado atual
 
-As Milestones 4 e 5 estão concluídas: o layout global exibe a faixa de parceiros mantida pela feature de Patrocinadores, e o pipeline editorial possui cinco coleções MDX tipadas, validação de relações e mídias, exclusão de rascunhos e integração obrigatória com o build. As páginas consumidoras desse conteúdo continuam reservadas às próximas Milestones.
+O portal já oferece Home, aprendizado com busca por tipo, aulas, cursos, trilhas, projetos, notícias, páginas institucionais, calendário público integrado ao Notion e acompanhamento pessoal via Supabase.
+
+O catálogo inicial contém **8 aulas, 3 cursos, 2 trilhas, 2 propostas de projetos didáticos e 2 guias na seção de notícias**. Os conteúdos seguem os campos do GEAR Content Studio e estão identificados como material elaborado com IA. Os projetos são propostas de estudo; os guias não anunciam eventos ou resultados institucionais. Quando há conteúdo publicado real em uma coleção, o aviso `em-producao` é removido da saída gerada.
+
+A revisão de interface preserva a identidade visual, padroniza movimento e breadcrumbs e apresenta os textos MDX de cursos e trilhas. Veja [a revisão e o catálogo inicial](./docs/revisao-portal-2026-09.md) para escopo, fontes e validação.
 
 ## Documentacao do projeto
 

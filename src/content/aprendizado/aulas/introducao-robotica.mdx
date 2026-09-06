@@ -1,0 +1,57 @@
+---
+slug: introducao-robotica
+titulo: Introdução à robótica
+banner: /images/content/robotica.svg
+resumo: Entenda como percepção, decisão e atuação se conectam em um sistema robótico.
+tags: [robótica, fundamentos, sistemas]
+categoria: Fundamentos
+dificuldade: iniciante
+dataPublicacao: 2026-09-05
+autores: [Material didático elaborado com IA]
+preRequisitos: []
+linksExternos: []
+status: publicado
+permiteComentarios: false
+---
+
+## Objetivos
+
+Ao terminar, você deverá conseguir separar um problema de robótica em entradas, decisões e saídas, além de explicar como verificar se a solução funciona. Esta aula usa um exemplo conceitual; não exige kit ou montagem elétrica.
+
+## Um sistema que percebe e atua
+
+Imagine um carrinho que deve parar antes de uma caixa. Um sensor mede uma grandeza relacionada à distância. O programa interpreta a leitura e decide entre continuar e parar. Um circuito de acionamento recebe o comando e controla o motor.
+
+Essas responsabilidades formam um ciclo: **medir → interpretar → decidir → atuar → medir novamente**. A estrutura mecânica, a alimentação e a comunicação também fazem parte do sistema. Um algoritmo correto não compensa, sozinho, uma roda solta ou uma medição inadequada.
+
+![Diagrama conceitual de percepção, decisão e atuação](/images/content/robotica.svg)
+
+## Transforme a ideia em uma regra verificável
+
+“Não bater na caixa” ainda é uma intenção ampla. Uma regra de estudo mais precisa seria: em uma simulação, com leitura válida menor que 20 centímetros, o comando deve ser parar. Sem leitura válida, o exemplo também retorna parar.
+
+| Situação simulada  | Comando esperado |
+| ------------------ | ---------------- |
+| Distância de 35 cm | Continuar        |
+| Distância de 12 cm | Parar            |
+| Leitura ausente    | Parar            |
+
+Os 20 centímetros são uma escolha didática. Um robô físico exigiria considerar velocidade, frenagem, atraso, obstáculos e características do sensor. Este exemplo não constitui um sistema de segurança para uso real.
+
+## Descreva antes de programar
+
+1. Qual grandeza será medida? Distância em centímetros.
+2. Que valores são aceitos? Números não negativos.
+3. O que acontece se a medição faltar? O exemplo retorna parar.
+4. Como observar a saída? Primeiro por texto na tela.
+5. Como avaliar o resultado? Comparando casos de entrada com comandos esperados.
+
+## Exercício
+
+Escolha outro sistema: uma estufa que controla ventilação ou um braço que posiciona peças. Descreva uma entrada, uma decisão e uma saída. Escreva três cenários, incluindo uma falha de leitura. Não precisa escolher componentes ainda.
+
+## Confira seu entendimento
+
+Um sensor executa a decisão? Não: ele fornece uma medição. Um atuador interpreta o objetivo do projeto? Não: ele realiza uma ação comandada. A separação dessas funções torna o projeto mais fácil de explicar, testar e melhorar.
+
+Continue em [Sensores e atuadores](/aprendizado/aulas/sensores-e-atuadores).

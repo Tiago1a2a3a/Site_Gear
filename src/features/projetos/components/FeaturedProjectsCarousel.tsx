@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { CarouselPlaybackButton } from "@shared/components/ui/CarouselPlaybackButton";
+import { useCarouselPlayback } from "@shared/hooks/useCarouselPlayback";
 
 import type { Projeto } from "../types";
 
@@ -14,36 +16,20 @@ export function FeaturedProjectsCarousel({
   projects,
 }: FeaturedProjectsCarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-
-  useEffect(() => {
-    if (
-      projects.length < 2 ||
-      isPaused ||
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-      return;
-    }
-
-    const timer = window.setInterval(() => {
-      setActiveIndex((current) => (current + 1) % projects.length);
-    }, 5000);
-
-    return () => window.clearInterval(timer);
-  }, [isPaused, projects.length]);
+  const playback = useCarouselPlayback(() => {
+    setActiveIndex((current) => (current + 1) % projects.length);
+  }, projects.length > 1);
 
   if (!projects.length) return null;
 
-  const project = projects[activeIndex];
+  const project = projects[activeIndex % projects.length];
   const image = project.imagens?.[0] ?? "/images/content/placeholder.svg";
 
   return (
     <section
       aria-labelledby="featured-projects-title"
       className="featured-projects"
-      onFocus={() => setIsPaused(true)}
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
+      {...playback.interactionProps}
     >
       <div className="featured-projects-heading">
         <p className="section-index">PARA EXPLORAR</p>
@@ -58,7 +44,6 @@ export function FeaturedProjectsCarousel({
         aria-label={`Conhecer projeto: ${project.titulo}`}
         className="featured-project-slide"
         href={`/projetos/${project.slug}`}
-        key={project.slug}
       >
         <Image
           alt=""
@@ -91,6 +76,12 @@ export function FeaturedProjectsCarousel({
             />
           ))}
         </div>
+      ) : null}
+      {projects.length > 1 && !playback.reducedMotion ? (
+        <CarouselPlaybackButton
+          isPlaying={playback.isPlaying}
+          onClick={playback.togglePlayback}
+        />
       ) : null}
     </section>
   );

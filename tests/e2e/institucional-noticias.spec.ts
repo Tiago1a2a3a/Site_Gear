@@ -49,19 +49,22 @@ test("Notícias lista, pesquisa e abre MDX sem misturar Aprendizado", async ({
   await busca.fill("Introdução à robótica");
   await expect(page.getByText("Nenhuma notícia encontrada")).toBeVisible();
 
+  await busca.fill("");
   await page
     .getByRole("link", {
-      name: "Ler notícia: Notícias em produção",
+      name: "Ler notícia: Como acompanhar o calendário público",
     })
     .click();
-  await expect(page).toHaveURL(/\/noticias\/em-producao$/);
+  await expect(page).toHaveURL(/\/noticias\/como-acompanhar-calendario$/);
   await expect(
     page.getByRole("heading", {
       level: 1,
-      name: "Notícias em produção",
+      name: "Como acompanhar o calendário público",
     }),
   ).toBeVisible();
-  await expect(page.getByText(/apuradas e revisadas/)).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Cópia e assinatura" }),
+  ).toBeVisible();
 });
 
 test("Notícia inexistente responde 404 e páginas não têm overflow móvel", async ({
@@ -75,7 +78,7 @@ test("Notícia inexistente responde 404 e páginas não têm overflow móvel", a
     "/sobre",
     "/patrocinadores",
     "/noticias",
-    "/noticias/em-producao",
+    "/noticias/como-acompanhar-calendario",
   ]) {
     await page.goto(rota);
     const overflow = await page.evaluate(

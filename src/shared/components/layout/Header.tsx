@@ -13,6 +13,29 @@ function isCurrentSection(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
+function NavigationChevron({ right = false }: { right?: boolean }) {
+  return (
+    <svg
+      aria-hidden="true"
+      className="navigation-chevron"
+      data-direction={right ? "right" : undefined}
+      fill="none"
+      focusable="false"
+      height="16"
+      viewBox="0 0 16 16"
+      width="16"
+    >
+      <path
+        d="m4 6 4 4 4-4"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.75"
+      />
+    </svg>
+  );
+}
+
 export function Header({
   accountAccess,
   mobileAccountAccess,
@@ -87,15 +110,16 @@ export function Header({
                       onMouseLeave={() => setIsLearningMenuOpen(false)}
                     >
                       <Link
+                        aria-expanded={isLearningMenuOpen}
                         aria-current={
                           pathname === item.href ? "page" : undefined
                         }
-                        className="navigation-link"
+                        className="navigation-link navigation-dropdown-trigger"
                         data-current={isCurrent || undefined}
                         href={item.href}
                       >
                         {item.label}
-                        <span aria-hidden="true">⌄</span>
+                        <NavigationChevron />
                       </Link>
                       {isLearningMenuOpen ? (
                         <ul className="navigation-dropdown-menu navigation-dropdown-menu--learning">
@@ -104,7 +128,7 @@ export function Header({
                               className="navigation-dropdown-link"
                               href="/aprendizado"
                             >
-                              Aprendizado <span aria-hidden="true">›</span>
+                              Aprendizado <NavigationChevron right />
                             </Link>
                             <ul className="navigation-nested-menu">
                               <li>
@@ -160,6 +184,13 @@ export function Header({
                     <li
                       className="navigation-dropdown"
                       key={item.href}
+                      onBlur={(event) => {
+                        if (
+                          !event.currentTarget.contains(event.relatedTarget)
+                        ) {
+                          setIsAboutMenuOpen(false);
+                        }
+                      }}
                       onMouseEnter={() => setIsAboutMenuOpen(true)}
                       onMouseLeave={() => setIsAboutMenuOpen(false)}
                     >
@@ -173,7 +204,7 @@ export function Header({
                         type="button"
                       >
                         {item.label}
-                        <span aria-hidden="true">⌄</span>
+                        <NavigationChevron />
                       </button>
                       {isAboutMenuOpen ? (
                         <ul className="navigation-dropdown-menu">
@@ -255,9 +286,7 @@ export function Header({
                   aria-controls="mobile-learning-navigation"
                   aria-expanded={isMobileLearningOpen}
                   className="mobile-navigation-trigger"
-                  onClick={() =>
-                    setIsMobileLearningOpen((current) => !current)
-                  }
+                  onClick={() => setIsMobileLearningOpen((current) => !current)}
                   ref={firstMobileItemRef}
                   type="button"
                 >
@@ -401,13 +430,13 @@ export function Header({
 
               <li className="mobile-navigation-account">
                 {mobileAccountAccess ?? (
-                    <Link
-                      className="navigation-link mobile-navigation-link"
-                      href="/login"
-                      onClick={closeMobileMenu}
-                    >
-                      Login
-                    </Link>
+                  <Link
+                    className="navigation-link mobile-navigation-link"
+                    href="/login"
+                    onClick={closeMobileMenu}
+                  >
+                    Login
+                  </Link>
                 )}
               </li>
             </ul>

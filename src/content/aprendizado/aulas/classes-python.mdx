@@ -1,0 +1,68 @@
+---
+slug: classes-python
+titulo: Classes em Python para simular um robô
+banner: /images/content/python.svg
+resumo: Organize estado e comportamento em uma classe pequena, com validação das entradas.
+tags: [python, classes, objetos]
+categoria: Programação
+dificuldade: iniciante
+dataPublicacao: 2026-09-05
+autores: [Material didático elaborado com IA]
+preRequisitos: [python-primeiros-passos]
+linksExternos:
+  - titulo: Classes no tutorial oficial do Python
+    url: https://docs.python.org/3/tutorial/classes.html
+status: publicado
+permiteComentarios: false
+---
+
+## Objetivos
+
+Criar instâncias independentes e observar como métodos modificam o estado de um objeto. A bateria abaixo é uma unidade fictícia de energia, sem relação com o consumo de um motor físico.
+
+## Estado e comportamento
+
+Uma classe reúne atributos e operações. `__init__` inicializa a instância; `self` permite acessar aquela instância dentro dos métodos. Use uma classe quando manter estado associado a comportamento tornar o modelo mais claro.
+
+```python
+class Robo:
+    def __init__(self, nome, energia=100):
+        if not 0 <= energia <= 100:
+            raise ValueError("Energia deve ficar entre 0 e 100.")
+        self.nome = nome
+        self.energia = energia
+
+    def mover(self, passos):
+        if not isinstance(passos, int) or passos < 0:
+            raise ValueError("Use uma quantidade inteira não negativa.")
+        custo = passos * 2
+        if custo > self.energia:
+            return False
+        self.energia -= custo
+        return True
+
+
+robo_a = Robo("A", 20)
+robo_b = Robo("B", 40)
+print(robo_a.mover(3), robo_a.energia)
+print(robo_b.energia)
+print(robo_a.mover(10), robo_a.energia)
+```
+
+## Resultado esperado
+
+```text
+True 14
+40
+False 14
+```
+
+Mover A não altera B. A tentativa sem energia suficiente retorna falso e mantém a energia anterior. Esse comportamento é parte do contrato da operação.
+
+## Exercício
+
+Adicione `recarregar`, que restaura a energia para 100. Verifique recarga depois de movimento e recarga repetida. Escreva três expectativas antes de mudar o código.
+
+## Quando preferir uma função
+
+Uma transformação sem estado, como converter unidade ou classificar uma leitura, pode continuar sendo uma função simples. Não é necessário criar uma classe para cada conceito mencionado no projeto.

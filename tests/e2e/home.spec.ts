@@ -25,16 +25,19 @@ test("expõe os CTAs principais e os avisos editoriais", async ({ page }) => {
   ).toHaveAttribute("href", "/projetos");
   await expect(
     page.getByRole("link", {
-      name: "Cursos em produção",
+      name: /Abrir curso:/,
       exact: true,
     }),
-  ).toHaveAttribute("href", "/aprendizado/cursos/em-producao");
+  ).toHaveAttribute(
+    "href",
+    /^\/aprendizado\/cursos\/(fundamentos-robotica|python-para-robotica|documentacao-prototipos)$/,
+  );
   await expect(
     page.getByRole("link", {
-      name: "Notícias em produção",
+      name: "Como acompanhar o calendário público",
       exact: true,
     }),
-  ).toHaveAttribute("href", "/noticias/em-producao");
+  ).toHaveAttribute("href", "/noticias/como-acompanhar-calendario");
 });
 
 for (const viewport of [

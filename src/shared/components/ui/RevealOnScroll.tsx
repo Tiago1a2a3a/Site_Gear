@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 type RevealOnScrollProps = Readonly<{
   children: React.ReactNode;
@@ -9,40 +9,46 @@ type RevealOnScrollProps = Readonly<{
 
 export function RevealOnScroll({ children, className }: RevealOnScrollProps) {
   const elementRef = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const element = elementRef.current;
     if (!element) return;
 
-    if (typeof IntersectionObserver === "undefined") {
-      const timeoutId = window.setTimeout(() => setIsVisible(true), 0);
-      return () => window.clearTimeout(timeoutId);
-    }
+    // Keep server-rendered content visible; only animate offscreen sections.
+    if (
+      typeof IntersectionObserver === "undefined" ||
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ||
+      element.getBoundingClientRect().top < window.innerHeight
+    )
+      return;
+
+    element.classList.add("scroll-reveal--pending");
+    const reveal = () => {
+      element.classList.remove("scroll-reveal--pending");
+      observer.disconnect();
+    };
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting) return;
 
-        setIsVisible(true);
-        observer.disconnect();
+        reveal();
       },
-      { threshold: 0.14, rootMargin: "0px 0px -8%" },
+      { threshold: 0, rootMargin: "0px 0px 32px" },
     );
 
     observer.observe(element);
-    return () => observer.disconnect();
+    element.addEventListener("focusin", reveal);
+    return () => {
+      observer.disconnect();
+      element.removeEventListener("focusin", reveal);
+      element.classList.remove("scroll-reveal--pending");
+    };
   }, []);
 
   return (
     <div
-      className={[
-        "scroll-reveal",
-        isVisible && "scroll-reveal--visible",
-        className,
-      ]
-        .filter(Boolean)
-        .join(" ")}
+      className={["scroll-reveal", className].filter(Boolean).join(" ")}
       ref={elementRef}
     >
       {children}

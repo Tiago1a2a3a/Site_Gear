@@ -1,0 +1,50 @@
+---
+slug: sensores-e-atuadores
+titulo: Sensores e atuadores
+banner: /images/content/robotica.svg
+resumo: Diferencie medição e acionamento e planeje o tratamento de leituras em um protótipo.
+tags: [sensores, atuadores, medição]
+categoria: Fundamentos
+dificuldade: iniciante
+dataPublicacao: 2026-09-05
+autores: [Material didático elaborado com IA]
+preRequisitos: [introducao-robotica]
+linksExternos: []
+status: publicado
+permiteComentarios: false
+---
+
+## Objetivos
+
+Identificar a função de sensores e atuadores, registrar unidades de medida e reconhecer que uma leitura precisa ser interpretada antes de virar uma decisão.
+
+## Da grandeza ao dado
+
+O sensor permite observar uma característica do ambiente ou do próprio mecanismo. Distância, posição e temperatura são exemplos. O valor recebido pelo programa nem sempre já representa a unidade física desejada: pode exigir conversão e calibração.
+
+Antes de usar um componente, consulte sua documentação para conhecer faixa de operação, interface, alimentação e limitações. “Analógico” e “digital” descrevem aspectos da representação ou comunicação; não determinam, sozinhos, a qualidade da medição.
+
+## Da decisão à ação
+
+Um atuador converte energia em uma ação. Um motor pode produzir movimento; uma válvula pode controlar passagem de fluido. O comando lógico e o fornecimento de potência são responsabilidades diferentes. Nesta sequência de aulas, vamos simular comandos e não conectar motores diretamente a pinos de uma placa.
+
+| Elemento    | Pergunta de projeto                           |
+| ----------- | --------------------------------------------- |
+| Sensor      | O que mede, em qual faixa e com qual unidade? |
+| Programa    | Quais valores aceita e como trata uma falha?  |
+| Acionamento | Como o comando chega ao atuador?              |
+| Atuador     | Qual ação produz e quais limites possui?      |
+
+## Leituras imperfeitas
+
+Uma medida pode oscilar mesmo com o objeto parado. Também pode chegar atrasada ou estar ausente. Guardar o instante da leitura ajuda a distinguir um valor recente de um dado antigo.
+
+Considere a sequência fictícia `30, 29, 31, 8, 30` em centímetros. O valor 8 pode representar uma mudança real ou um erro. Sem outra evidência, não é correto simplesmente apagá-lo. Compare novas leituras e defina uma política compatível com o risco do experimento.
+
+## Atividade prática sem hardware
+
+Crie uma tabela com cinco leituras simuladas. Inclua unidade, instante e uma coluna “válida?”. Adicione um registro vazio e outro negativo. Escreva o que seu programa faria em cada situação e justifique.
+
+## Critério de conclusão
+
+Você deve conseguir entregar um pequeno contrato de entrada: nome da medida, unidade, faixa aceita e comportamento quando o dado estiver ausente. Esse contrato será usado na [aula de Python](/aprendizado/aulas/python-primeiros-passos).

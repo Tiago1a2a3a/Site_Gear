@@ -4,10 +4,10 @@ for (const caso of [
   {
     titulo: "Trilhas",
     tipo: "trilha",
-    rota: "/aprendizado/trilhas?q=producao",
+    rota: "/aprendizado/trilhas?q=robotica",
   },
-  { titulo: "Cursos", tipo: "curso", rota: "/aprendizado/cursos?q=producao" },
-  { titulo: "Aulas", tipo: "aula", rota: "/aprendizado/aulas?q=producao" },
+  { titulo: "Cursos", tipo: "curso", rota: "/aprendizado/cursos?q=robotica" },
+  { titulo: "Aulas", tipo: "aula", rota: "/aprendizado/aulas?q=robotica" },
 ]) {
   test(`busca de ${caso.tipo} não mistura classificações`, async ({ page }) => {
     await page.goto(caso.rota);
@@ -27,39 +27,39 @@ for (const caso of [
 }
 
 test("termo e filtro ficam na URL e usam interseção", async ({ page }) => {
-  await page.goto("/aprendizado/cursos?q=producao");
+  await page.goto("/aprendizado/cursos?q=robotica");
   await page
     .locator("details", { hasText: "Categoria" })
     .locator("summary")
     .click();
   const productionFilter = page.getByRole("checkbox", {
-    name: /^Em produção/,
+    name: /^Fundamentos/,
   });
   await productionFilter.check();
-  await expect(page).toHaveURL(/q=producao.*categoria=Em\+produ%C3%A7%C3%A3o/);
+  await expect(page).toHaveURL(/q=robotica.*categoria=Fundamentos/);
   await expect(page.getByText("1 resultado", { exact: true })).toBeVisible();
   await expect(
-    page.getByRole("heading", { name: "Cursos em produção" }),
+    page.getByRole("heading", { name: "Fundamentos de robótica" }),
   ).toBeVisible();
   await page.goBack();
   await expect(productionFilter).not.toBeChecked();
-  await expect(page.getByText("1 resultado", { exact: true })).toBeVisible();
+  await expect(page.locator(".search-result-card").first()).toBeVisible();
 });
 
 test("limpar filtros preserva o termo da busca", async ({ page }) => {
-  await page.goto("/aprendizado/cursos?q=producao");
+  await page.goto("/aprendizado/cursos?q=robotica");
   await page
     .locator("details", { hasText: "Categoria" })
     .locator("summary")
     .click();
   const productionFilter = page.getByRole("checkbox", {
-    name: /^Em produção/,
+    name: /^Fundamentos/,
   });
   await productionFilter.check();
 
   await page.getByRole("button", { name: "Limpar filtros" }).click();
 
-  await expect(page).toHaveURL(/q=producao/);
+  await expect(page).toHaveURL(/q=robotica/);
   await expect(page).not.toHaveURL(/categoria/);
   await expect(productionFilter).not.toBeChecked();
 });
@@ -83,12 +83,10 @@ test("área permite buscar e ordenar opções", async ({ page }) => {
   await expect(page.getByLabel("Ordenar Área")).toBeVisible();
 });
 
-test("o aviso ocupa sozinho a listagem enquanto não há Aulas reais", async ({
-  page,
-}) => {
+test("lista as oito aulas sem o aviso de produção", async ({ page }) => {
   await page.goto("/aprendizado/aulas");
 
-  await expect(page.locator(".search-result-card")).toHaveCount(1);
+  await expect(page.locator(".search-result-card")).toHaveCount(8);
   await expect(page.locator(".search-result-card > p")).toHaveCount(0);
   await expect(page.getByRole("button", { name: "Próxima" })).toHaveCount(0);
 });
@@ -97,7 +95,7 @@ test("drawer móvel gerencia foco, fecha por teclado e não causa overflow", asy
   page,
 }) => {
   await page.setViewportSize({ width: 360, height: 780 });
-  await page.goto("/aprendizado/aulas/busca?q=producao");
+  await page.goto("/aprendizado/aulas/busca?q=robotica");
 
   const trigger = page.getByRole("button", { name: "Filtros", exact: true });
   await trigger.click();

@@ -1,3 +1,4 @@
+import { Breadcrumbs } from "@shared/components/ui/Breadcrumbs";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
@@ -54,7 +55,17 @@ export default async function AulaPage({ params }: AulaPageProps) {
 
   return (
     <article className="lesson-page">
-      <Suspense fallback={null}>
+      <Suspense
+        fallback={
+          <Breadcrumbs
+            items={[
+              { href: "/aprendizado", label: "Aprendizado" },
+              { href: "/aprendizado/aulas", label: "Aulas" },
+              { label: aula.titulo },
+            ]}
+          />
+        }
+      >
         <AulaBreadcrumbs
           contextos={listarContextosDaAula(aula.slug)}
           titulo={aula.titulo}

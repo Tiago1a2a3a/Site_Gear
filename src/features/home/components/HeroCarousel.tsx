@@ -5,10 +5,11 @@ import { useEffect, useRef, useState, type TouchEvent } from "react";
 
 import { Badge } from "@shared/components/ui/Badge";
 import { Button } from "@shared/components/ui/Button";
+import { CarouselPlaybackButton } from "@shared/components/ui/CarouselPlaybackButton";
+import { useCarouselPlayback } from "@shared/hooks/useCarouselPlayback";
 import { institutionalContent } from "@shared/config/institutional";
 
-const slideDurationMs = 5000;
-const fadeDurationMs = 220;
+const fadeDurationMs = 180;
 const swapPaintDelayMs = 34;
 const swipeThresholdPx = 50;
 
@@ -25,11 +26,11 @@ const slides = [
     mascotTransform: "translate(-50%, 0)",
   },
   {
-    eyebrow: "PROJETOS EM CONSTRUCAO",
+    eyebrow: "PROJETOS EM CONSTRUÇÃO",
     title: "Da teoria ao",
-    accent: "prototipo.",
+    accent: "protótipo.",
     description:
-      "Acompanhe ideias que saem do papel e ganham forma nas maos de estudantes do GEAR.",
+      "Acompanhe ideias que saem do papel e ganham forma nas mãos de estudantes do GEAR.",
     primary: { href: "/projetos", label: "Ver projetos" },
     secondary: { href: "/sobre", label: "Conhecer o GEAR" },
     mascotTransform: "translate(0, 0)",
@@ -39,8 +40,8 @@ const slides = [
     title: "Aprender para",
     accent: "transformar.",
     description:
-      "Estude, experimente e compartilhe conhecimento para construir solucoes reais em robotica.",
-    primary: { href: "/aprendizado", label: "Comecar a aprender" },
+      "Estude, experimente e compartilhe conhecimento para construir soluções reais em robótica.",
+    primary: { href: "/aprendizado", label: "Começar a aprender" },
     secondary: { href: "/aprendizado/trilhas", label: "Ver trilhas" },
     mascotTransform: "translate(0, -50%)",
   },
@@ -48,16 +49,14 @@ const slides = [
 
 export function HeroCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
+  const [isTouching, setIsTouching] = useState(false);
   const [pendingIndex, setPendingIndex] = useState<number | null>(null);
   const [transitionState, setTransitionState] =
     useState<TransitionState>("idle");
   const touchStart = useRef<{ x: number; y: number } | null>(null);
 
-  useEffect(() => {
-    if (isPaused || transitionState !== "idle") return;
-
-    const timer = window.setTimeout(() => {
+  const playback = useCarouselPlayback(
+    () => {
       const nextIndex = (activeIndex + 1) % slides.length;
 
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -67,10 +66,9 @@ export function HeroCarousel() {
 
       setPendingIndex(nextIndex);
       setTransitionState("exiting");
-    }, slideDurationMs);
-
-    return () => window.clearTimeout(timer);
-  }, [activeIndex, isPaused, transitionState]);
+    },
+    !isTouching && transitionState === "idle",
+  );
 
   useEffect(() => {
     if (transitionState === "exiting" && pendingIndex !== null) {
@@ -110,7 +108,7 @@ export function HeroCarousel() {
     if (!touch) return;
 
     touchStart.current = { x: touch.clientX, y: touch.clientY };
-    setIsPaused(true);
+    setIsTouching(true);
   }
 
   function handleTouchEnd(event: TouchEvent<HTMLDivElement>) {
@@ -118,7 +116,7 @@ export function HeroCarousel() {
     const touch = event.changedTouches[0];
 
     touchStart.current = null;
-    setIsPaused(false);
+    setIsTouching(false);
 
     if (!start || !touch) return;
 
@@ -133,13 +131,13 @@ export function HeroCarousel() {
     }
 
     event.preventDefault();
-    const direction = deltaX < 0 ? -1 : 1;
+    const direction = deltaX < 0 ? 1 : -1;
     showSlide((activeIndex + direction + slides.length) % slides.length);
   }
 
   function handleTouchCancel() {
     touchStart.current = null;
-    setIsPaused(false);
+    setIsTouching(false);
   }
 
   const slide = slides[activeIndex];
@@ -147,6 +145,7 @@ export function HeroCarousel() {
   return (
     <div
       className="hero-carousel-swipe-area"
+      {...playback.interactionProps}
       onTouchCancel={handleTouchCancel}
       onTouchEnd={handleTouchEnd}
       onTouchStart={handleTouchStart}
@@ -154,9 +153,6 @@ export function HeroCarousel() {
       <div
         className="hero-content hero-carousel-content"
         data-transition-state={transitionState}
-        onFocus={() => setIsPaused(true)}
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
       >
         <Badge>{slide.eyebrow}</Badge>
         <h1 id="hero-title">
@@ -174,9 +170,6 @@ export function HeroCarousel() {
       <div
         className="hero-brand-panel hero-carousel-panel"
         data-transition-state={transitionState}
-        onFocus={() => setIsPaused(true)}
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
       >
         <Image
           alt="Logo compacto do GEAR"
@@ -197,8 +190,14 @@ export function HeroCarousel() {
             width={1335}
           />
         </div>
-        <p>ROBOTICA · PESQUISA · EDUCACAO</p>
+        <p>ROBÓTICA · PESQUISA · EDUCAÇÃO</p>
         <div aria-label="Slides do destaque" className="hero-carousel-controls">
+          {!playback.reducedMotion ? (
+            <CarouselPlaybackButton
+              isPlaying={playback.isPlaying}
+              onClick={playback.togglePlayback}
+            />
+          ) : null}
           {slides.map((item, index) => (
             <button
               aria-label={`Mostrar destaque ${index + 1}`}

@@ -2,11 +2,20 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { CarouselPlaybackButton } from "@shared/components/ui/CarouselPlaybackButton";
+import { useCarouselPlayback } from "@shared/hooks/useCarouselPlayback";
 
 import { Badge } from "@shared/components/ui/Badge";
 
-import type { Curso } from "@features/cursos/types";
+type Curso = Readonly<{
+  slug: string;
+  titulo: string;
+  descricao: string;
+  dificuldade: string;
+  categoria?: string;
+  imagemCapa: string;
+}>;
 
 type HomeCoursesCarouselProps = Readonly<{
   courses: readonly Curso[];
@@ -14,25 +23,13 @@ type HomeCoursesCarouselProps = Readonly<{
 
 export function HomeCoursesCarousel({ courses }: HomeCoursesCarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-
-  useEffect(() => {
-    const reducedMotion = window.matchMedia?.(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-
-    if (courses.length < 2 || isPaused || reducedMotion) return;
-
-    const timer = window.setInterval(() => {
-      setActiveIndex((current) => (current + 1) % courses.length);
-    }, 4000);
-
-    return () => window.clearInterval(timer);
-  }, [courses.length, isPaused]);
+  const playback = useCarouselPlayback(() => {
+    setActiveIndex((current) => (current + 1) % courses.length);
+  }, courses.length > 1);
 
   if (!courses.length) return null;
 
-  const course = courses[activeIndex]!;
+  const course = courses[activeIndex % courses.length]!;
   const move = (direction: number) =>
     setActiveIndex(
       (current) => (current + direction + courses.length) % courses.length,
@@ -42,20 +39,16 @@ export function HomeCoursesCarousel({ courses }: HomeCoursesCarouselProps) {
     <section
       aria-label="Cursos para explorar"
       className="card home-courses-carousel"
-      onFocus={() => setIsPaused(true)}
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
+      {...playback.interactionProps}
     >
       <Link
         aria-label={`Abrir curso: ${course.titulo}`}
         className="home-course-slide"
         href={`/aprendizado/cursos/${course.slug}`}
-        key={course.slug}
       >
         <Image
           alt=""
           fill
-          priority={activeIndex === 0}
           sizes="(max-width: 48rem) 100vw, 50vw"
           src={course.imagemCapa}
         />
@@ -104,6 +97,12 @@ export function HomeCoursesCarousel({ courses }: HomeCoursesCarouselProps) {
           ) : null}
         </div>
       </div>
+      {courses.length > 1 && !playback.reducedMotion ? (
+        <CarouselPlaybackButton
+          isPlaying={playback.isPlaying}
+          onClick={playback.togglePlayback}
+        />
+      ) : null}
     </section>
   );
 }

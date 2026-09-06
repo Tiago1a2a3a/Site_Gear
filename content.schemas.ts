@@ -16,10 +16,12 @@ const isoDate = () =>
   s
     .string()
     .regex(/^\d{4}-\d{2}-\d{2}$/, "Use uma data no formato YYYY-MM-DD.")
-    .refine(
-      (value) => !Number.isNaN(Date.parse(`${value}T00:00:00Z`)),
-      "Use uma data existente.",
-    );
+    .refine((value) => {
+      const date = new Date(`${value}T00:00:00Z`);
+      return (
+        !Number.isNaN(date.valueOf()) && date.toISOString().startsWith(value)
+      );
+    }, "Use uma data existente.");
 
 const publicationStatus = s.enum(["rascunho", "publicado"]);
 const difficulty = s.enum(["iniciante", "intermediário", "avançado"]);

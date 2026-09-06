@@ -15,14 +15,18 @@ describe("acesso a Cursos", () => {
   it("lista somente Cursos publicados em ordem determinística", () => {
     const cursos = listarCursosPublicados();
 
-    expect(cursos.map((curso) => curso.slug)).toEqual(["em-producao"]);
+    expect(cursos.map((curso) => curso.slug)).toEqual([
+      "documentacao-prototipos",
+      "fundamentos-robotica",
+      "python-para-robotica",
+    ]);
     expect(cursos).toEqual(ordenarCursos(cursos));
   });
 
   it("sorteia somente os cursos publicados com imagem de capa", () => {
     const cursos = listarCursosAleatorios();
 
-    expect(cursos).toHaveLength(1);
+    expect(cursos).toHaveLength(3);
     expect(
       cursos.every(
         (curso) =>
@@ -33,10 +37,14 @@ describe("acesso a Cursos", () => {
   });
 
   it("resolve Aulas na ordem exata de aulaSlugs", () => {
-    const curso = encontrarCursoPorSlug("em-producao");
+    const curso = encontrarCursoPorSlug("fundamentos-robotica");
 
     expect(curso).toBeDefined();
-    expect(resolverAulasDoCurso(curso!)).toEqual([]);
+    expect(resolverAulasDoCurso(curso!).map((aula) => aula.slug)).toEqual([
+      "introducao-robotica",
+      "sensores-e-atuadores",
+      "controle-malha-fechada",
+    ]);
   });
 
   it("não inventa contexto entre os avisos de produção", () => {

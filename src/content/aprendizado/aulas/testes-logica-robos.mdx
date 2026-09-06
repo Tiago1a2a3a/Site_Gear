@@ -1,0 +1,73 @@
+---
+slug: testes-logica-robos
+titulo: Testando a lógica de um robô
+banner: /images/content/python.svg
+resumo: Automatize casos normais, limites e falhas usando unittest e uma função sem hardware.
+tags: [python, testes, qualidade]
+categoria: Programação
+dificuldade: iniciante
+dataPublicacao: 2026-09-05
+autores: [Material didático elaborado com IA]
+preRequisitos: [python-primeiros-passos]
+linksExternos:
+  - titulo: Documentação oficial de unittest
+    url: https://docs.python.org/3/library/unittest.html
+status: publicado
+permiteComentarios: false
+---
+
+## Objetivos
+
+Transformar expectativas em testes repetíveis e distinguir teste de lógica de validação de um robô físico. Use Python 3 e um diretório vazio para os dois arquivos desta atividade.
+
+## Prepare a função
+
+Salve este conteúdo em `decisao.py`:
+
+```python
+def decidir(distancia_cm):
+    if distancia_cm is None or distancia_cm < 0:
+        return "parar"
+    return "parar" if distancia_cm < 20 else "avancar"
+```
+
+## Escreva os casos
+
+No mesmo diretório, salve `test_decisao.py`:
+
+```python
+import unittest
+from decisao import decidir
+
+
+class TestDecisao(unittest.TestCase):
+    def test_obstaculo_proximo(self):
+        self.assertEqual(decidir(12), "parar")
+
+    def test_limite_exato(self):
+        self.assertEqual(decidir(20), "avancar")
+
+    def test_leitura_ausente(self):
+        self.assertEqual(decidir(None), "parar")
+
+    def test_leitura_negativa(self):
+        self.assertEqual(decidir(-1), "parar")
+
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+Execute `python -m unittest -v` no diretório. Devem passar quatro testes. O terminal mostra quais cenários foram executados, permitindo localizar uma divergência.
+
+## Faça o teste falhar de propósito
+
+Troque `< 20` por `<= 20`. O caso do limite exato deve falhar, porque 20 passará a retornar parar. Restaure o código e confirme que a suíte volta a passar. Essa experiência demonstra que o teste detecta uma mudança de comportamento.
+
+## Limites da evidência
+
+Os testes verificam somente a função. Não demonstram precisão do sensor, frenagem, qualidade da alimentação ou funcionamento do circuito. Um projeto físico exige outros experimentos, cada um com seu critério observável.
+
+## Exercício
+
+Adicione um caso de distância longa e outro imediatamente abaixo do limite. Dê nomes que expliquem o comportamento esperado. Um teste útil comunica uma regra, além de retornar sucesso.

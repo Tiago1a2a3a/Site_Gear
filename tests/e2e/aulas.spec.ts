@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-test("visitante lista e abre o aviso de Aulas em produção", async ({
+test("visitante lista e abre a aula Introdução à robótica", async ({
   page,
 }) => {
   await page.goto("/aprendizado/aulas");
@@ -9,18 +9,18 @@ test("visitante lista e abre o aviso de Aulas em produção", async ({
     page.getByRole("heading", { level: 1, name: "Aulas" }),
   ).toBeVisible();
   await page
-    .getByRole("link", { name: "Abrir aula: Aulas em produção" })
+    .getByRole("link", { name: "Abrir aula: Introdução à robótica" })
     .click();
 
   await expect(
-    page.getByRole("heading", { level: 1, name: "Aulas em produção" }),
+    page.getByRole("heading", { level: 1, name: "Introdução à robótica" }),
   ).toBeVisible();
   await expect(
-    page.getByRole("heading", { level: 2, name: "Em produção" }),
+    page.getByRole("heading", { level: 2, name: "Objetivos" }),
   ).toBeVisible();
   await expect(
     page.getByRole("button", { name: "Marcar como concluída" }),
-  ).toHaveCount(0);
+  ).toBeVisible();
 });
 
 test("slugs inexistentes e demonstrativos removidos respondem com 404", async ({
@@ -34,7 +34,7 @@ test("slugs inexistentes e demonstrativos removidos respondem com 404", async ({
 
 test("Aula permanece legível e sem overflow no móvel", async ({ page }) => {
   await page.setViewportSize({ width: 360, height: 780 });
-  await page.goto("/aprendizado/aulas/em-producao");
+  await page.goto("/aprendizado/aulas/introducao-robotica");
 
   const hasHorizontalOverflow = await page.evaluate(
     () =>
@@ -53,7 +53,7 @@ test("Aula permanece legível e sem overflow no móvel", async ({ page }) => {
     );
   expect(headings[0]).toEqual({
     level: "H1",
-    text: "Aulas em produção",
+    text: "Introdução à robótica",
   });
   expect(headings.slice(1).every((heading) => heading.level === "H2")).toBe(
     true,

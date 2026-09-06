@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { CarouselPlaybackButton } from "@shared/components/ui/CarouselPlaybackButton";
+import { useCarouselPlayback } from "@shared/hooks/useCarouselPlayback";
 
 import type { DestaqueAprendizado } from "@features/aprendizado/data/conteudosRecentes";
 
@@ -14,29 +16,19 @@ export function FeaturedCoursesCarousel({
   items,
 }: FeaturedCoursesCarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-
-  useEffect(() => {
-    if (items.length < 2 || isPaused) return;
-
-    const timer = window.setInterval(() => {
-      setActiveIndex((current) => (current + 1) % items.length);
-    }, 4000);
-
-    return () => window.clearInterval(timer);
-  }, [items.length, isPaused]);
+  const playback = useCarouselPlayback(() => {
+    setActiveIndex((current) => (current + 1) % items.length);
+  }, items.length > 1);
 
   if (!items.length) return null;
 
-  const item = items[activeIndex];
+  const item = items[activeIndex % items.length];
 
   return (
     <section
       aria-labelledby="featured-courses-title"
       className="featured-courses"
-      onFocus={() => setIsPaused(true)}
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
+      {...playback.interactionProps}
     >
       <div className="section-heading featured-courses-heading">
         <div>
@@ -49,7 +41,6 @@ export function FeaturedCoursesCarousel({
         aria-label={`Abrir ${item.tipo.toLocaleLowerCase("pt-BR")}: ${item.titulo}`}
         className="featured-course-slide"
         href={item.href}
-        key={item.href}
       >
         <Image
           alt=""
@@ -66,7 +57,10 @@ export function FeaturedCoursesCarousel({
       </Link>
 
       {items.length > 1 ? (
-        <div aria-label="Sugestões para explorar" className="featured-course-dots">
+        <div
+          aria-label="Sugestões para explorar"
+          className="featured-course-dots"
+        >
           {items.map((item, index) => (
             <button
               aria-label={`Mostrar ${item.tipo.toLocaleLowerCase("pt-BR")} ${index + 1}: ${item.titulo}`}
@@ -78,6 +72,12 @@ export function FeaturedCoursesCarousel({
             />
           ))}
         </div>
+      ) : null}
+      {items.length > 1 && !playback.reducedMotion ? (
+        <CarouselPlaybackButton
+          isPlaying={playback.isPlaying}
+          onClick={playback.togglePlayback}
+        />
       ) : null}
     </section>
   );

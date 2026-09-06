@@ -13,15 +13,24 @@ describe("acesso a Trilhas", () => {
   it("lista somente Trilhas publicadas pelo campo ordem", () => {
     const trilhas = listarTrilhasPublicadas();
 
-    expect(trilhas.map((trilha) => trilha.slug)).toEqual(["em-producao"]);
+    expect(trilhas.map((trilha) => trilha.slug)).toEqual([
+      "robotica-do-zero",
+      "da-ideia-ao-prototipo",
+    ]);
     expect(trilhas).toEqual(ordenarTrilhas(trilhas));
-    expect(trilhas.map((trilha) => trilha.ordem)).toEqual([0]);
+    expect(trilhas.map((trilha) => trilha.ordem)).toEqual([1, 2]);
   });
 
-  it("mantém o aviso sem inventar etapas de aprendizado", () => {
-    const trilha = encontrarTrilhaPorSlug("em-producao");
+  it("resolve cursos e aulas diretas na ordem do percurso", () => {
+    const trilha = encontrarTrilhaPorSlug("robotica-do-zero");
 
     expect(trilha).toBeDefined();
-    expect(resolverItensDaTrilha(trilha!)).toEqual([]);
+    expect(
+      resolverItensDaTrilha(trilha!).map((item) => [item.tipo, item.slug]),
+    ).toEqual([
+      ["curso", "fundamentos-robotica"],
+      ["curso", "python-para-robotica"],
+      ["aula", "registro-experimentos"],
+    ]);
   });
 });
